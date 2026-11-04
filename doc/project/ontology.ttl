@@ -1,0 +1,325 @@
+@prefix : <https://w3id.org/cpo/project#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/cpo/project#> .
+
+<https://w3id.org/cpo/project> rdf:type owl:Ontology ;
+                                <http://purl.org/dc/terms/created> "2026-11-04"^^xsd:date ;
+                                <http://purl.org/dc/terms/creator> "Rahel Kebede" ;
+                                <http://purl.org/dc/terms/description> "Building projects, their types, phases and status."@en ;
+                                <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                <http://purl.org/dc/terms/title> "CPO module: Project"@en ;
+                                <http://purl.org/vocab/vann/preferredNamespacePrefix> "cpo" ;
+                                <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/cpo#" ;
+                                rdfs:comment "Building projects, their types, phases and status."@en ;
+                                rdfs:label "CPO module: Project"@en ;
+                                owl:versionInfo "2.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/cpo#follows
+<https://w3id.org/cpo#follows> rdf:type owl:ObjectProperty ;
+                               owl:inverseOf <https://w3id.org/cpo#precedes> ;
+                               rdfs:label "follows"@en ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "A phase follows another if it begins after the other ends. Inverse of precedes."@en .
+
+
+###  https://w3id.org/cpo#hasPhase
+<https://w3id.org/cpo#hasPhase> rdf:type owl:ObjectProperty ;
+                                rdfs:domain <https://w3id.org/cpo#BuildingProject> ;
+                                rdfs:range <https://w3id.org/cpo#ProjectPhase> ;
+                                rdfs:label "has phase"@en ;
+                                <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to one of its phases."@en .
+
+
+###  https://w3id.org/cpo#hasStatus
+<https://w3id.org/cpo#hasStatus> rdf:type owl:ObjectProperty ,
+                                          owl:FunctionalProperty ;
+                                 rdfs:domain <https://w3id.org/cpo#BuildingProject> ;
+                                 rdfs:range <https://w3id.org/cpo#ProjectStatus> ;
+                                 rdfs:label "has status"@en ;
+                                 <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to its current status. Functional: one status at a time."@en .
+
+
+###  https://w3id.org/cpo#isPhaseOf
+<https://w3id.org/cpo#isPhaseOf> rdf:type owl:ObjectProperty ;
+                                 owl:inverseOf <https://w3id.org/cpo#hasPhase> ;
+                                 rdfs:label "is phase of"@en ;
+                                 <http://www.w3.org/2004/02/skos/core#definition> "Relates a phase to the building project it belongs to. Inverse of hasPhase."@en .
+
+
+###  https://w3id.org/cpo#precedes
+<https://w3id.org/cpo#precedes> rdf:type owl:ObjectProperty ,
+                                         owl:TransitiveProperty ;
+                                rdfs:domain <https://w3id.org/cpo#ProjectPhase> ;
+                                rdfs:range <https://w3id.org/cpo#ProjectPhase> ;
+                                rdfs:label "precedes"@en ;
+                                <http://www.w3.org/2004/02/skos/core#definition> "A phase precedes another if it ends before the other begins. Transitive."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/cpo#budget
+<https://w3id.org/cpo#budget> rdf:type owl:DatatypeProperty ,
+                                       owl:FunctionalProperty ;
+                              rdfs:domain <https://w3id.org/cpo#BuildingProject> ;
+                              rdfs:range xsd:decimal ;
+                              rdfs:label "budget"@en ;
+                              <http://www.w3.org/2004/02/skos/core#definition> "The allocated budget of the building project, in SEK."@en .
+
+
+###  https://w3id.org/cpo#endDate
+<https://w3id.org/cpo#endDate> rdf:type owl:DatatypeProperty ,
+                                        owl:FunctionalProperty ;
+                               rdfs:domain <https://w3id.org/cpo#BuildingProject> ;
+                               rdfs:range xsd:dateTime ;
+                               rdfs:label "end date"@en ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "The date on which the building project is planned to be completed."@en .
+
+
+###  https://w3id.org/cpo#startDate
+<https://w3id.org/cpo#startDate> rdf:type owl:DatatypeProperty ,
+                                          owl:FunctionalProperty ;
+                                 rdfs:domain <https://w3id.org/cpo#BuildingProject> ;
+                                 rdfs:range xsd:dateTime ;
+                                 rdfs:label "start date"@en ;
+                                 <http://www.w3.org/2004/02/skos/core#definition> "The date on which the building project begins."@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/cpo#ActiveProject
+<https://w3id.org/cpo#ActiveProject> rdf:type owl:Class ;
+                                     owl:equivalentClass [ owl:intersectionOf ( <https://w3id.org/cpo#BuildingProject>
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <https://w3id.org/cpo#hasStatus> ;
+                                                                                  owl:hasValue <https://w3id.org/cpo#active>
+                                                                                ]
+                                                                              ) ;
+                                                           rdf:type owl:Class
+                                                         ] ;
+                                     rdfs:label "active project"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "A building project whose status is active."@en .
+
+
+###  https://w3id.org/cpo#BuildingProject
+<https://w3id.org/cpo#BuildingProject> rdf:type owl:Class ;
+                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <https://w3id.org/cpo#hasPhase> ;
+                                                         owl:someValuesFrom <https://w3id.org/cpo#ProjectPhase>
+                                                       ] ;
+                                       rdfs:label "building project"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "A project that plans, designs, constructs and hands over a building."@en .
+
+
+###  https://w3id.org/cpo#CommercialBuildingProject
+<https://w3id.org/cpo#CommercialBuildingProject> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <https://w3id.org/cpo#BuildingProject> ;
+                                                 rdfs:label "commercial building project"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for business, such as offices or shops."@en .
+
+
+###  https://w3id.org/cpo#CommissioningPhase
+<https://w3id.org/cpo#CommissioningPhase> rdf:type owl:Class ;
+                                          rdfs:subClassOf <https://w3id.org/cpo#PostConstructionPhase> ;
+                                          rdfs:label "commissioning phase"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#definition> "The part of the post-construction phase in which installed systems are tested and adjusted."@en .
+
+
+###  https://w3id.org/cpo#ConstructionPhase
+<https://w3id.org/cpo#ConstructionPhase> rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://w3id.org/cpo#ProjectPhase> ;
+                                         rdfs:label "construction phase"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the building is built and the products are installed."@en .
+
+
+###  https://w3id.org/cpo#DesignPhase
+<https://w3id.org/cpo#DesignPhase> rdf:type owl:Class ;
+                                   rdfs:subClassOf <https://w3id.org/cpo#ProjectPhase> ;
+                                   rdfs:label "design phase"@en ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the building and its products are designed and specified."@en .
+
+
+###  https://w3id.org/cpo#EducationalBuildingProject
+<https://w3id.org/cpo#EducationalBuildingProject> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <https://w3id.org/cpo#BuildingProject> ;
+                                                  rdfs:label "educational building project"@en ;
+                                                  <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for teaching, such as a school."@en .
+
+
+###  https://w3id.org/cpo#HealthcareBuildingProject
+<https://w3id.org/cpo#HealthcareBuildingProject> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <https://w3id.org/cpo#BuildingProject> ;
+                                                 rdfs:label "healthcare building project"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for care, such as a hospital."@en .
+
+
+###  https://w3id.org/cpo#IndustrialBuildingProject
+<https://w3id.org/cpo#IndustrialBuildingProject> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <https://w3id.org/cpo#BuildingProject> ;
+                                                 rdfs:label "industrial building project"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for production or storage."@en .
+
+
+###  https://w3id.org/cpo#NonResidentialBuildingProject
+<https://w3id.org/cpo#NonResidentialBuildingProject> rdf:type owl:Class ;
+                                                     owl:equivalentClass [ owl:intersectionOf ( <https://w3id.org/cpo#BuildingProject>
+                                                                                                [ rdf:type owl:Class ;
+                                                                                                  owl:complementOf <https://w3id.org/cpo#ResidentialBuildingProject>
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ;
+                                                     rdfs:label "non-residential building project"@en ;
+                                                     <http://www.w3.org/2004/02/skos/core#definition> "A building project that is not a residential building project."@en .
+
+
+###  https://w3id.org/cpo#PlanningPhase
+<https://w3id.org/cpo#PlanningPhase> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://w3id.org/cpo#ProjectPhase> ;
+                                     rdfs:label "planning phase"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the need, the brief and the feasibility of the project are settled."@en .
+
+
+###  https://w3id.org/cpo#PostConstructionPhase
+<https://w3id.org/cpo#PostConstructionPhase> rdf:type owl:Class ;
+                                             rdfs:subClassOf <https://w3id.org/cpo#ProjectPhase> ;
+                                             rdfs:label "post-construction phase"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "The phase after construction: commissioning and handover."@en .
+
+
+###  https://w3id.org/cpo#ProjectPhase
+<https://w3id.org/cpo#ProjectPhase> rdf:type owl:Class ;
+                                    rdfs:label "project phase"@en ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "A period of a building project with its own purpose and deliverables."@en .
+
+
+###  https://w3id.org/cpo#ProjectStatus
+<https://w3id.org/cpo#ProjectStatus> rdf:type owl:Class ;
+                                     owl:equivalentClass [ rdf:type owl:Class ;
+                                                           owl:oneOf ( <https://w3id.org/cpo#active>
+                                                                       <https://w3id.org/cpo#completed>
+                                                                       <https://w3id.org/cpo#onHold>
+                                                                     )
+                                                         ] ;
+                                     rdfs:label "project status"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "The state of a building project: active, on hold or completed."@en .
+
+
+###  https://w3id.org/cpo#ResidentialBuildingProject
+<https://w3id.org/cpo#ResidentialBuildingProject> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <https://w3id.org/cpo#BuildingProject> ;
+                                                  rdfs:label "residential building project"@en ;
+                                                  <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for housing."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/cpo#active
+<https://w3id.org/cpo#active> rdf:type owl:NamedIndividual ,
+                                       <https://w3id.org/cpo#ProjectStatus> ;
+                              rdfs:label "active"@en ;
+                              <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is being carried out."@en .
+
+
+###  https://w3id.org/cpo#completed
+<https://w3id.org/cpo#completed> rdf:type owl:NamedIndividual ,
+                                          <https://w3id.org/cpo#ProjectStatus> ;
+                                 rdfs:label "completed"@en ;
+                                 <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is finished."@en .
+
+
+###  https://w3id.org/cpo#onHold
+<https://w3id.org/cpo#onHold> rdf:type owl:NamedIndividual ,
+                                       <https://w3id.org/cpo#ProjectStatus> ;
+                              rdfs:label "on hold"@en ;
+                              <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is paused."@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <https://w3id.org/cpo#CommercialBuildingProject>
+                <https://w3id.org/cpo#EducationalBuildingProject>
+                <https://w3id.org/cpo#HealthcareBuildingProject>
+                <https://w3id.org/cpo#IndustrialBuildingProject>
+                <https://w3id.org/cpo#ResidentialBuildingProject>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <https://w3id.org/cpo#ConstructionPhase>
+                <https://w3id.org/cpo#DesignPhase>
+                <https://w3id.org/cpo#PlanningPhase>
+                <https://w3id.org/cpo#PostConstructionPhase>
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <https://w3id.org/cpo#active>
+                        <https://w3id.org/cpo#completed>
+                        <https://w3id.org/cpo#onHold>
+                      )
+] .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

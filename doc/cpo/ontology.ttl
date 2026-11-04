@@ -1,0 +1,625 @@
+@prefix : <https://w3id.org/cpo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/cpo#> .
+
+<https://w3id.org/cpo> rdf:type owl:Ontology ;
+                        <http://purl.org/dc/terms/created> "2026-11-04"^^xsd:date ;
+                        <http://purl.org/dc/terms/creator> "Rahel Kebede" ;
+                        <http://purl.org/dc/terms/description> "Building projects, their phases, the products installed in their buildings, and the requirements on their spaces. Worked example of TADS23, HT2026."@en ;
+                        <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                        <http://purl.org/dc/terms/title> "Construction Project Typology Ontology (CPO)"@en ;
+                        <http://purl.org/vocab/vann/preferredNamespacePrefix> "cpo" ;
+                        <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/cpo#" ;
+                        rdfs:comment "Building projects, their phases, the products installed in their buildings, and the requirements on their spaces. Worked example of TADS23, HT2026."@en ;
+                        rdfs:label "Construction Project Typology Ontology (CPO)"@en ;
+                        owl:versionInfo "2.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/bot#containsElement
+<https://w3id.org/bot#containsElement> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/cpo#follows
+:follows rdf:type owl:ObjectProperty ;
+         owl:inverseOf :precedes ;
+         rdfs:label "follows"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "A phase follows another if it begins after the other ends. Inverse of precedes."@en .
+
+
+###  https://w3id.org/cpo#hasArea
+:hasArea rdf:type owl:ObjectProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain <https://w3id.org/bot#Space> ;
+         rdfs:range <http://qudt.org/schema/qudt/QuantityValue> ;
+         rdfs:label "has area"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "The floor area of a space, a quantity value in square metre."@en .
+
+
+###  https://w3id.org/cpo#hasBuilding
+:hasBuilding rdf:type owl:ObjectProperty ;
+             rdfs:domain :BuildingProject ;
+             rdfs:range <https://w3id.org/bot#Building> ;
+             rdfs:label "has building"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to the building it delivers."@en .
+
+
+###  https://w3id.org/cpo#hasLightingRequirement
+:hasLightingRequirement rdf:type owl:ObjectProperty ;
+                        rdfs:domain <https://w3id.org/bot#Space> ;
+                        rdfs:range :LightingRequirement ;
+                        rdfs:label "has lighting requirement"@en ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "Relates a space to the lighting requirement that applies to it."@en .
+
+
+###  https://w3id.org/cpo#hasLuminousFlux
+:hasLuminousFlux rdf:type owl:ObjectProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :LuminaireType ;
+                 rdfs:range <http://qudt.org/schema/qudt/QuantityValue> ;
+                 rdfs:label "has luminous flux"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "The luminous flux of a luminaire type, a quantity value in lumen."@en .
+
+
+###  https://w3id.org/cpo#hasPhase
+:hasPhase rdf:type owl:ObjectProperty ;
+          rdfs:domain :BuildingProject ;
+          rdfs:range :ProjectPhase ;
+          rdfs:label "has phase"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to one of its phases."@en .
+
+
+###  https://w3id.org/cpo#hasProduct
+:hasProduct rdf:type owl:ObjectProperty ;
+            rdfs:domain :BuildingProject ;
+            rdfs:range :Product ;
+            rdfs:label "has product"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to a product installed in its building."@en .
+
+
+###  https://w3id.org/cpo#hasProductType
+:hasProductType rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :Product ;
+                rdfs:range :ProductType ;
+                rdfs:label "has product type"@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Relates an installed product to its type in the catalogue."@en .
+
+
+###  https://w3id.org/cpo#hasRatedPower
+:hasRatedPower rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :LuminaireType ;
+               rdfs:range <http://qudt.org/schema/qudt/QuantityValue> ;
+               rdfs:label "has rated power"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "The rated power of a luminaire type, a quantity value in watt."@en .
+
+
+###  https://w3id.org/cpo#hasRequiredIlluminance
+:hasRequiredIlluminance rdf:type owl:ObjectProperty ,
+                                 owl:FunctionalProperty ;
+                        rdfs:domain :LightingRequirement ;
+                        rdfs:range <http://qudt.org/schema/qudt/QuantityValue> ;
+                        rdfs:label "has required illuminance"@en ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "The maintained illuminance required on the task area, a quantity value in lux."@en .
+
+
+###  https://w3id.org/cpo#hasStatus
+:hasStatus rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :BuildingProject ;
+           rdfs:range :ProjectStatus ;
+           rdfs:label "has status"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to its current status. Functional: one status at a time."@en .
+
+
+###  https://w3id.org/cpo#installedIn
+:installedIn rdf:type owl:ObjectProperty ;
+             owl:inverseOf <https://w3id.org/bot#containsElement> ;
+             rdfs:domain :Product ;
+             rdfs:range <https://w3id.org/bot#Space> ;
+             rdfs:label "installed in"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Relates a product to the space it is installed in. Inverse of bot:containsElement."@en .
+
+
+###  https://w3id.org/cpo#isPhaseOf
+:isPhaseOf rdf:type owl:ObjectProperty ;
+           owl:inverseOf :hasPhase ;
+           rdfs:label "is phase of"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Relates a phase to the building project it belongs to. Inverse of hasPhase."@en .
+
+
+###  https://w3id.org/cpo#isProductOf
+:isProductOf rdf:type owl:ObjectProperty ;
+             owl:inverseOf :hasProduct ;
+             rdfs:label "is product of"@en .
+
+
+###  https://w3id.org/cpo#precedes
+:precedes rdf:type owl:ObjectProperty ,
+                   owl:TransitiveProperty ;
+          rdfs:domain :ProjectPhase ;
+          rdfs:range :ProjectPhase ;
+          rdfs:label "precedes"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "A phase precedes another if it ends before the other begins. Transitive."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/cpo#articleNumber
+:articleNumber rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :ProductType ;
+               rdfs:range xsd:string ;
+               rdfs:label "article number"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "The manufacturer's article number of a product type."@en .
+
+
+###  https://w3id.org/cpo#budget
+:budget rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :BuildingProject ;
+        rdfs:range xsd:decimal ;
+        rdfs:label "budget"@en ;
+        <http://www.w3.org/2004/02/skos/core#definition> "The allocated budget of the building project, in SEK."@en .
+
+
+###  https://w3id.org/cpo#colourRenderingIndex
+:colourRenderingIndex rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain :LuminaireType ;
+                      rdfs:range xsd:integer ;
+                      rdfs:label "colour rendering index"@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "The colour rendering index Ra of a luminaire type."@en .
+
+
+###  https://w3id.org/cpo#colourTemperature
+:colourTemperature rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :LuminaireType ;
+                   rdfs:range xsd:integer ;
+                   rdfs:label "colour temperature"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "The correlated colour temperature of a luminaire type, in kelvin."@en .
+
+
+###  https://w3id.org/cpo#endDate
+:endDate rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :BuildingProject ;
+         rdfs:range xsd:dateTime ;
+         rdfs:label "end date"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "The date on which the building project is planned to be completed."@en .
+
+
+###  https://w3id.org/cpo#minColourRendering
+:minColourRendering rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain :LightingRequirement ;
+                    rdfs:range xsd:integer ;
+                    rdfs:label "minimum colour rendering"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "The minimum colour rendering index Ra."@en .
+
+
+###  https://w3id.org/cpo#sourceStandard
+:sourceStandard rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :LightingRequirement ;
+                rdfs:range xsd:string ;
+                rdfs:label "source standard"@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> "The standard the requirement is taken from, such as EN 12464-1:2021."@en .
+
+
+###  https://w3id.org/cpo#startDate
+:startDate rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :BuildingProject ;
+           rdfs:range xsd:dateTime ;
+           rdfs:label "start date"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "The date on which the building project begins."@en .
+
+
+###  https://w3id.org/cpo#ugrLimit
+:ugrLimit rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :LightingRequirement ;
+          rdfs:range xsd:decimal ;
+          rdfs:label "UGR limit"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "The unified glare rating limit UGRL."@en .
+
+
+###  https://w3id.org/cpo#uniformity
+:uniformity rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :LightingRequirement ;
+            rdfs:range xsd:decimal ;
+            rdfs:label "uniformity"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "The minimum illuminance uniformity Uo."@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://qudt.org/schema/qudt/QuantityValue
+<http://qudt.org/schema/qudt/QuantityValue> rdf:type owl:Class .
+
+
+###  http://w3id.org/CEON/ontology/resourceODP/Resource
+<http://w3id.org/CEON/ontology/resourceODP/Resource> rdf:type owl:Class .
+
+
+###  https://w3id.org/bot#Building
+<https://w3id.org/bot#Building> rdf:type owl:Class .
+
+
+###  https://w3id.org/bot#Element
+<https://w3id.org/bot#Element> rdf:type owl:Class .
+
+
+###  https://w3id.org/bot#Space
+<https://w3id.org/bot#Space> rdf:type owl:Class .
+
+
+###  https://w3id.org/cpo#ActiveProject
+:ActiveProject rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :BuildingProject
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :hasStatus ;
+                                                            owl:hasValue :active
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:label "active project"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "A building project whose status is active."@en .
+
+
+###  https://w3id.org/cpo#BuildingProject
+:BuildingProject rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasPhase ;
+                                   owl:someValuesFrom :ProjectPhase
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasProduct ;
+                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :Product
+                                 ] ;
+                 rdfs:label "building project"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "A project that plans, designs, constructs and hands over a building."@en .
+
+
+###  https://w3id.org/cpo#Classroom
+:Classroom rdf:type owl:Class ;
+           rdfs:subClassOf <https://w3id.org/bot#Space> ;
+           rdfs:label "classroom"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "A space for teaching."@en .
+
+
+###  https://w3id.org/cpo#CommercialBuildingProject
+:CommercialBuildingProject rdf:type owl:Class ;
+                           rdfs:subClassOf :BuildingProject ;
+                           rdfs:label "commercial building project"@en ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for business, such as offices or shops."@en .
+
+
+###  https://w3id.org/cpo#CommissionedFurnishedProject
+:CommissionedFurnishedProject rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( :BuildingProject
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasPhase ;
+                                                                           owl:someValuesFrom :CommissioningPhase
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasProduct ;
+                                                                           owl:someValuesFrom :Furnishing
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:label "commissioned furnished project"@en ;
+                              <http://www.w3.org/2004/02/skos/core#definition> "A building project with at least one furnishing that has reached its commissioning phase."@en .
+
+
+###  https://w3id.org/cpo#CommissioningPhase
+:CommissioningPhase rdf:type owl:Class ;
+                    rdfs:subClassOf :PostConstructionPhase ;
+                    rdfs:label "commissioning phase"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "The part of the post-construction phase in which installed systems are tested and adjusted."@en .
+
+
+###  https://w3id.org/cpo#ConstructionPhase
+:ConstructionPhase rdf:type owl:Class ;
+                   rdfs:subClassOf :ProjectPhase ;
+                   rdfs:label "construction phase"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the building is built and the products are installed."@en .
+
+
+###  https://w3id.org/cpo#Corridor
+:Corridor rdf:type owl:Class ;
+          rdfs:subClassOf <https://w3id.org/bot#Space> ;
+          rdfs:label "corridor"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "A space for circulation between other spaces."@en .
+
+
+###  https://w3id.org/cpo#DesignPhase
+:DesignPhase rdf:type owl:Class ;
+             rdfs:subClassOf :ProjectPhase ;
+             rdfs:label "design phase"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the building and its products are designed and specified."@en .
+
+
+###  https://w3id.org/cpo#EducationalBuildingProject
+:EducationalBuildingProject rdf:type owl:Class ;
+                            rdfs:subClassOf :BuildingProject ;
+                            rdfs:label "educational building project"@en ;
+                            <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for teaching, such as a school."@en .
+
+
+###  https://w3id.org/cpo#Fixture
+:Fixture rdf:type owl:Class ;
+         rdfs:subClassOf :Product ;
+         owl:disjointWith :Furnishing ;
+         rdfs:label "fixture"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "A product fixed to the building, such as a luminaire."@en .
+
+
+###  https://w3id.org/cpo#Furnishing
+:Furnishing rdf:type owl:Class ;
+            rdfs:subClassOf :Product ;
+            rdfs:label "furnishing"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "A movable product, such as a desk or a chair."@en .
+
+
+###  https://w3id.org/cpo#HealthcareBuildingProject
+:HealthcareBuildingProject rdf:type owl:Class ;
+                           rdfs:subClassOf :BuildingProject ;
+                           rdfs:label "healthcare building project"@en ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for care, such as a hospital."@en .
+
+
+###  https://w3id.org/cpo#IndustrialBuildingProject
+:IndustrialBuildingProject rdf:type owl:Class ;
+                           rdfs:subClassOf :BuildingProject ;
+                           rdfs:label "industrial building project"@en ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for production or storage."@en .
+
+
+###  https://w3id.org/cpo#InteriorProduct
+:InteriorProduct rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:unionOf ( :Furnishing
+                                                     :Luminaire
+                                                   )
+                                     ] ;
+                 rdfs:label "interior product"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "A luminaire or a furnishing."@en .
+
+
+###  https://w3id.org/cpo#LightingRequirement
+:LightingRequirement rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasRequiredIlluminance ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass <http://qudt.org/schema/qudt/QuantityValue>
+                                     ] ;
+                     rdfs:label "lighting requirement"@en ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "The lighting a type of space must receive, as set by a standard such as EN 12464-1:2021."@en .
+
+
+###  https://w3id.org/cpo#Luminaire
+:Luminaire rdf:type owl:Class ;
+           rdfs:subClassOf :Fixture ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasProductType ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :LuminaireType
+                           ] ;
+           rdfs:label "luminaire"@en ;
+           <http://www.w3.org/2004/02/skos/core#altLabel> "light fitting"@en ,
+                                                          "lighting fixture"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "One installed luminaire, at one place in one building."@en .
+
+
+###  https://w3id.org/cpo#LuminaireType
+:LuminaireType rdf:type owl:Class ;
+               rdfs:subClassOf :ProductType ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasLuminousFlux ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass <http://qudt.org/schema/qudt/QuantityValue>
+                               ] ;
+               rdfs:label "luminaire type"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "A luminaire article in a manufacturer catalogue."@en .
+
+
+###  https://w3id.org/cpo#NonResidentialBuildingProject
+:NonResidentialBuildingProject rdf:type owl:Class ;
+                               owl:equivalentClass [ owl:intersectionOf ( :BuildingProject
+                                                                          [ rdf:type owl:Class ;
+                                                                            owl:complementOf :ResidentialBuildingProject
+                                                                          ]
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ] ;
+                               rdfs:label "non-residential building project"@en ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "A building project that is not a residential building project."@en .
+
+
+###  https://w3id.org/cpo#PlanningPhase
+:PlanningPhase rdf:type owl:Class ;
+               rdfs:subClassOf :ProjectPhase ;
+               rdfs:label "planning phase"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the need, the brief and the feasibility of the project are settled."@en .
+
+
+###  https://w3id.org/cpo#PostConstructionPhase
+:PostConstructionPhase rdf:type owl:Class ;
+                       rdfs:subClassOf :ProjectPhase ;
+                       rdfs:label "post-construction phase"@en ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "The phase after construction: commissioning and handover."@en .
+
+
+###  https://w3id.org/cpo#Product
+:Product rdf:type owl:Class ;
+         rdfs:subClassOf <https://w3id.org/bot#Element> ;
+         owl:disjointWith :ProductType ;
+         rdfs:label "product"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "One installed product in a building, from materials to finished goods."@en .
+
+
+###  https://w3id.org/cpo#ProductType
+:ProductType rdf:type owl:Class ;
+             rdfs:subClassOf <http://w3id.org/CEON/ontology/resourceODP/Resource> ;
+             rdfs:label "product type"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "A product as described in a manufacturer catalogue: one article, many installed copies."@en .
+
+
+###  https://w3id.org/cpo#ProjectPhase
+:ProjectPhase rdf:type owl:Class ;
+              rdfs:label "project phase"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A period of a building project with its own purpose and deliverables."@en .
+
+
+###  https://w3id.org/cpo#ProjectStatus
+:ProjectStatus rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Class ;
+                                     owl:oneOf ( :active
+                                                 :completed
+                                                 :onHold
+                                               )
+                                   ] ;
+               rdfs:label "project status"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "The state of a building project: active, on hold or completed."@en .
+
+
+###  https://w3id.org/cpo#ResidentialBuildingProject
+:ResidentialBuildingProject rdf:type owl:Class ;
+                            rdfs:subClassOf :BuildingProject ;
+                            rdfs:label "residential building project"@en ;
+                            <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for housing."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/cpo#active
+:active rdf:type owl:NamedIndividual ,
+                 :ProjectStatus ;
+        rdfs:label "active"@en ;
+        <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is being carried out."@en .
+
+
+###  https://w3id.org/cpo#completed
+:completed rdf:type owl:NamedIndividual ,
+                    :ProjectStatus ;
+           rdfs:label "completed"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is finished."@en .
+
+
+###  https://w3id.org/cpo#onHold
+:onHold rdf:type owl:NamedIndividual ,
+                 :ProjectStatus ;
+        rdfs:label "on hold"@en ;
+        <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is paused."@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BuildingProject
+                :LightingRequirement
+                :Product
+                :ProductType
+                :ProjectPhase
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CommercialBuildingProject
+                :EducationalBuildingProject
+                :HealthcareBuildingProject
+                :IndustrialBuildingProject
+                :ResidentialBuildingProject
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ConstructionPhase
+                :DesignPhase
+                :PlanningPhase
+                :PostConstructionPhase
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :active
+                        :completed
+                        :onHold
+                      )
+] .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

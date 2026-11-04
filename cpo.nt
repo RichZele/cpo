@@ -1,0 +1,87 @@
+<https://w3id.org/cpo> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/cpo#" .
+_:n707e3f700e7a43adaa34e4a72f7109f1b10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ProjectPhase> .
+<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#LightingRequirement> .
+<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/bot#Building> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b4 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/cpo#CommissioningPhase> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b8 <http://www.w3.org/2002/07/owl#members> _:n707e3f700e7a43adaa34e4a72f7109f1b9 .
+<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "has lighting requirement"@en .
+<https://w3id.org/cpo#hasProduct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b4 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasPhase> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b1 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/cpo#Product> .
+<https://w3id.org/cpo#installedIn> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/bot#containsElement> .
+<https://w3id.org/cpo#CommissionedFurnishedProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project with at least one furnishing that has reached its commissioning phase."@en .
+_:n707e3f700e7a43adaa34e4a72f7109f1b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n707e3f700e7a43adaa34e4a72f7109f1b10 .
+<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/bot#Space> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/cpo#installedIn> <http://www.w3.org/2000/01/rdf-schema#label> "installed in"@en .
+<https://w3id.org/cpo#Corridor> <http://www.w3.org/2004/02/skos/core#definition> "A space for circulation between other spaces."@en .
+<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#isProductOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/cpo/requirement> .
+<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to the building it delivers."@en .
+<https://w3id.org/cpo#installedIn> <http://www.w3.org/2004/02/skos/core#definition> "Relates a product to the space it is installed in. Inverse of bot:containsElement."@en .
+<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/2000/01/rdf-schema#label> "has building"@en .
+_:n707e3f700e7a43adaa34e4a72f7109f1b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/cpo#isProductOf> <http://www.w3.org/2000/01/rdf-schema#label> "is product of"@en .
+_:n707e3f700e7a43adaa34e4a72f7109f1b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo> <http://www.w3.org/2000/01/rdf-schema#label> "Construction Project Typology Ontology (CPO)"@en .
+<https://w3id.org/cpo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/cpo#installedIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/bot#Space> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#LightingRequirement> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ProductType> .
+<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#Classroom> <http://www.w3.org/2004/02/skos/core#definition> "A space for teaching."@en .
+<https://w3id.org/cpo#hasProduct> <http://www.w3.org/2000/01/rdf-schema#label> "has product"@en .
+_:n707e3f700e7a43adaa34e4a72f7109f1b2 <http://www.w3.org/2002/07/owl#intersectionOf> _:n707e3f700e7a43adaa34e4a72f7109f1b5 .
+<https://w3id.org/cpo#CommissionedFurnishedProject> <http://www.w3.org/2000/01/rdf-schema#label> "commissioned furnished project"@en .
+<https://w3id.org/cpo#installedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#Product> .
+<https://w3id.org/cpo#hasProduct> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/cpo/project> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo> <http://purl.org/dc/terms/created> "2026-11-04"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/cpo#hasProduct> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to a product installed in its building."@en .
+<https://w3id.org/cpo> <http://www.w3.org/2000/01/rdf-schema#comment> "Building projects, their phases, the products installed in their buildings, and the requirements on their spaces. Worked example of TADS23, HT2026."@en .
+<https://w3id.org/cpo> <http://www.w3.org/2002/07/owl#versionInfo> "2.0" .
+<https://w3id.org/cpo#hasArea> <http://www.w3.org/2004/02/skos/core#definition> "The floor area of a space, a quantity value in square metre."@en .
+_:n707e3f700e7a43adaa34e4a72f7109f1b11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#Product> .
+<https://w3id.org/cpo#Classroom> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Space> .
+<https://w3id.org/cpo#Corridor> <http://www.w3.org/2000/01/rdf-schema#label> "corridor"@en .
+<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n707e3f700e7a43adaa34e4a72f7109f1b1 .
+<https://w3id.org/cpo> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/cpo> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/cpo/product> .
+<https://w3id.org/cpo#hasArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/2004/02/skos/core#definition> "Relates a space to the lighting requirement that applies to it."@en .
+<https://w3id.org/cpo#hasArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n707e3f700e7a43adaa34e4a72f7109f1b4 .
+_:n707e3f700e7a43adaa34e4a72f7109f1b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasProduct> .
+<https://w3id.org/cpo#CommissionedFurnishedProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#Classroom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n707e3f700e7a43adaa34e4a72f7109f1b13 .
+<https://w3id.org/cpo#Corridor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#isProductOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/cpo#hasProduct> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b1 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n707e3f700e7a43adaa34e4a72f7109f1b6 .
+_:n707e3f700e7a43adaa34e4a72f7109f1b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n707e3f700e7a43adaa34e4a72f7109f1b7 .
+<https://w3id.org/cpo#Classroom> <http://www.w3.org/2000/01/rdf-schema#label> "classroom"@en .
+<https://w3id.org/cpo#hasArea> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<https://w3id.org/cpo> <http://purl.org/dc/terms/creator> "Rahel Kebede" .
+<https://w3id.org/cpo#installedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Element> .
+<https://w3id.org/cpo> <http://purl.org/vocab/vann/preferredNamespacePrefix> "cpo" .
+_:n707e3f700e7a43adaa34e4a72f7109f1b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#hasProduct> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#Product> .
+<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#hasArea> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/bot#Space> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/cpo#Furnishing> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n707e3f700e7a43adaa34e4a72f7109f1b12 .
+_:n707e3f700e7a43adaa34e4a72f7109f1b10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n707e3f700e7a43adaa34e4a72f7109f1b11 .
+_:n707e3f700e7a43adaa34e4a72f7109f1b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n707e3f700e7a43adaa34e4a72f7109f1b3 .
+<https://w3id.org/cpo#CommissionedFurnishedProject> <http://www.w3.org/2002/07/owl#equivalentClass> _:n707e3f700e7a43adaa34e4a72f7109f1b2 .
+_:n707e3f700e7a43adaa34e4a72f7109f1b1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasProduct> .
+<https://w3id.org/cpo> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/bot#> .
+_:n707e3f700e7a43adaa34e4a72f7109f1b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/cpo#Corridor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Space> .
+<https://w3id.org/cpo#hasArea> <http://www.w3.org/2000/01/rdf-schema#label> "has area"@en .

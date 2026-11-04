@@ -1,0 +1,137 @@
+<https://w3id.org/cpo/requirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/cpo/requirement> <http://purl.org/dc/terms/created> "2026-11-04"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/cpo/requirement> <http://purl.org/dc/terms/creator> "Rahel Kebede" .
+<https://w3id.org/cpo/requirement> <http://purl.org/dc/terms/description> "Lighting requirements for types of space, from a standard such as EN 12464-1:2021."@en .
+<https://w3id.org/cpo/requirement> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/cpo/requirement> <http://purl.org/dc/terms/title> "CPO module: Requirement"@en .
+<https://w3id.org/cpo/requirement> <http://purl.org/vocab/vann/preferredNamespacePrefix> "cpo" .
+<https://w3id.org/cpo/requirement> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/cpo#" .
+<https://w3id.org/cpo/requirement> <http://www.w3.org/2000/01/rdf-schema#comment> "Lighting requirements for types of space, from a standard such as EN 12464-1:2021."@en .
+<https://w3id.org/cpo/requirement> <http://www.w3.org/2000/01/rdf-schema#label> "CPO module: Requirement"@en .
+<https://w3id.org/cpo/requirement> <http://www.w3.org/2002/07/owl#versionInfo> "2.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/cpo#hasRequiredIlluminance
+<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
+<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://qudt.org/schema/qudt/QuantityValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/2000/01/rdf-schema#label> "has required illuminance"@en .
+<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/2004/02/skos/core#definition> "The maintained illuminance required on the task area, a quantity value in lux."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/cpo#minColourRendering
+<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
+<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/2000/01/rdf-schema#label> "minimum colour rendering"@en .
+<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/2004/02/skos/core#definition> "The minimum colour rendering index Ra."@en .
+# 
+# https://w3id.org/cpo#sourceStandard
+<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
+<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/2000/01/rdf-schema#label> "source standard"@en .
+<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/2004/02/skos/core#definition> "The standard the requirement is taken from, such as EN 12464-1:2021."@en .
+# 
+# https://w3id.org/cpo#ugrLimit
+<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
+<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2000/01/rdf-schema#label> "UGR limit"@en .
+<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2004/02/skos/core#definition> "The unified glare rating limit UGRL."@en .
+# 
+# https://w3id.org/cpo#uniformity
+<https://w3id.org/cpo#uniformity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#uniformity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#uniformity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
+<https://w3id.org/cpo#uniformity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/cpo#uniformity> <http://www.w3.org/2000/01/rdf-schema#label> "uniformity"@en .
+<https://w3id.org/cpo#uniformity> <http://www.w3.org/2004/02/skos/core#definition> "The minimum illuminance uniformity Uo."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://qudt.org/schema/qudt/QuantityValue
+# 
+# https://w3id.org/cpo#LightingRequirement
+<https://w3id.org/cpo#LightingRequirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#LightingRequirement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/schema/qudt/QuantityValue> .
+_:genid1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasRequiredIlluminance> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/cpo#LightingRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "lighting requirement"@en .
+<https://w3id.org/cpo#LightingRequirement> <http://www.w3.org/2004/02/skos/core#definition> "The lighting a type of space must receive, as set by a standard such as EN 12464-1:2021."@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

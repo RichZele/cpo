@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/cpo/product#"
+     xml:base="https://w3id.org/cpo/product"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/cpo/product">
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-04</terms:created>
+        <terms:creator>Rahel Kebede</terms:creator>
+        <terms:description xml:lang="en">Installed products, their types from the manufacturer catalogue, and their quantities.</terms:description>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:title xml:lang="en">CPO module: Product</terms:title>
+        <vann:preferredNamespacePrefix>cpo</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://w3id.org/cpo#</vann:preferredNamespaceUri>
+        <rdfs:comment xml:lang="en">Installed products, their types from the manufacturer catalogue, and their quantities.</rdfs:comment>
+        <rdfs:label xml:lang="en">CPO module: Product</rdfs:label>
+        <owl:versionInfo>2.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/cpo#hasLuminousFlux -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cpo#hasLuminousFlux">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cpo#LuminaireType"/>
+        <rdfs:range rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+        <rdfs:label xml:lang="en">has luminous flux</rdfs:label>
+        <skos:definition xml:lang="en">The luminous flux of a luminaire type, a quantity value in lumen.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/cpo#hasProductType -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cpo#hasProductType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cpo#Product"/>
+        <rdfs:range rdf:resource="https://w3id.org/cpo#ProductType"/>
+        <rdfs:label xml:lang="en">has product type</rdfs:label>
+        <skos:definition xml:lang="en">Relates an installed product to its type in the catalogue.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/cpo#hasRatedPower -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cpo#hasRatedPower">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cpo#LuminaireType"/>
+        <rdfs:range rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+        <rdfs:label xml:lang="en">has rated power</rdfs:label>
+        <skos:definition xml:lang="en">The rated power of a luminaire type, a quantity value in watt.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/cpo#articleNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cpo#articleNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cpo#ProductType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">article number</rdfs:label>
+        <skos:definition xml:lang="en">The manufacturer&apos;s article number of a product type.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/cpo#colourRenderingIndex -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cpo#colourRenderingIndex">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cpo#LuminaireType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">colour rendering index</rdfs:label>
+        <skos:definition xml:lang="en">The colour rendering index Ra of a luminaire type.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/cpo#colourTemperature -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cpo#colourTemperature">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cpo#LuminaireType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">colour temperature</rdfs:label>
+        <skos:definition xml:lang="en">The correlated colour temperature of a luminaire type, in kelvin.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://qudt.org/schema/qudt/QuantityValue -->
+
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/QuantityValue"/>
+    
+
+
+    <!-- http://w3id.org/CEON/ontology/resourceODP/Resource -->
+
+
+    <owl:Class rdf:about="http://w3id.org/CEON/ontology/resourceODP/Resource"/>
+    
+
+
+    <!-- https://w3id.org/cpo#Fixture -->
+
+
+    <owl:Class rdf:about="https://w3id.org/cpo#Fixture">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#Product"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/cpo#Furnishing"/>
+        <rdfs:label xml:lang="en">fixture</rdfs:label>
+        <skos:definition xml:lang="en">A product fixed to the building, such as a luminaire.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/cpo#Furnishing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/cpo#Furnishing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#Product"/>
+        <rdfs:label xml:lang="en">furnishing</rdfs:label>
+        <skos:definition xml:lang="en">A movable product, such as a desk or a chair.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/cpo#InteriorProduct -->
+
+
+    <owl:Class rdf:about="https://w3id.org/cpo#InteriorProduct">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/cpo#Furnishing"/>
+                    <rdf:Description rdf:about="https://w3id.org/cpo#Luminaire"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label xml:lang="en">interior product</rdfs:label>
+        <skos:definition xml:lang="en">A luminaire or a furnishing.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/cpo#Luminaire -->
+
+
+    <owl:Class rdf:about="https://w3id.org/cpo#Luminaire">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#Fixture"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/cpo#hasProductType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/cpo#LuminaireType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">luminaire</rdfs:label>
+        <skos:altLabel xml:lang="en">light fitting</skos:altLabel>
+        <skos:altLabel xml:lang="en">lighting fixture</skos:altLabel>
+        <skos:definition xml:lang="en">One installed luminaire, at one place in one building.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/cpo#LuminaireType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/cpo#LuminaireType">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#ProductType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/cpo#hasLuminousFlux"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">luminaire type</rdfs:label>
+        <skos:definition xml:lang="en">A luminaire article in a manufacturer catalogue.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/cpo#Product -->
+
+
+    <owl:Class rdf:about="https://w3id.org/cpo#Product">
+        <owl:disjointWith rdf:resource="https://w3id.org/cpo#ProductType"/>
+        <rdfs:label xml:lang="en">product</rdfs:label>
+        <skos:definition xml:lang="en">One installed product in a building, from materials to finished goods.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/cpo#ProductType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/cpo#ProductType">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/CEON/ontology/resourceODP/Resource"/>
+        <rdfs:label xml:lang="en">product type</rdfs:label>
+        <skos:definition xml:lang="en">A product as described in a manufacturer catalogue: one article, many installed copies.</skos:definition>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

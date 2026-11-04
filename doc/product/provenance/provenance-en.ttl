@@ -1,0 +1,12 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <> .
+<..\index-en.html> a prov:Entity;
+	 dc:title "CPO module: Product";
+	 prov:wasAttributedTo <https://ju.se/en/personinfo?id=3691>;
+	 dc:creator <https://ju.se/en/personinfo?id=3691>;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:specializationOf <https://w3id.org/cpo/product>;
+	 prov:wasGeneratedAt "2026-11-04";
+.

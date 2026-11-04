@@ -1,0 +1,209 @@
+@prefix : <https://w3id.org/cpo/product#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/cpo/product#> .
+
+<https://w3id.org/cpo/product> rdf:type owl:Ontology ;
+                                <http://purl.org/dc/terms/created> "2026-11-04"^^xsd:date ;
+                                <http://purl.org/dc/terms/creator> "Rahel Kebede" ;
+                                <http://purl.org/dc/terms/description> "Installed products, their types from the manufacturer catalogue, and their quantities."@en ;
+                                <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                <http://purl.org/dc/terms/title> "CPO module: Product"@en ;
+                                <http://purl.org/vocab/vann/preferredNamespacePrefix> "cpo" ;
+                                <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/cpo#" ;
+                                rdfs:comment "Installed products, their types from the manufacturer catalogue, and their quantities."@en ;
+                                rdfs:label "CPO module: Product"@en ;
+                                owl:versionInfo "2.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/cpo#hasLuminousFlux
+<https://w3id.org/cpo#hasLuminousFlux> rdf:type owl:ObjectProperty ,
+                                                owl:FunctionalProperty ;
+                                       rdfs:domain <https://w3id.org/cpo#LuminaireType> ;
+                                       rdfs:range <http://qudt.org/schema/qudt/QuantityValue> ;
+                                       rdfs:label "has luminous flux"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "The luminous flux of a luminaire type, a quantity value in lumen."@en .
+
+
+###  https://w3id.org/cpo#hasProductType
+<https://w3id.org/cpo#hasProductType> rdf:type owl:ObjectProperty ,
+                                               owl:FunctionalProperty ;
+                                      rdfs:domain <https://w3id.org/cpo#Product> ;
+                                      rdfs:range <https://w3id.org/cpo#ProductType> ;
+                                      rdfs:label "has product type"@en ;
+                                      <http://www.w3.org/2004/02/skos/core#definition> "Relates an installed product to its type in the catalogue."@en .
+
+
+###  https://w3id.org/cpo#hasRatedPower
+<https://w3id.org/cpo#hasRatedPower> rdf:type owl:ObjectProperty ,
+                                              owl:FunctionalProperty ;
+                                     rdfs:domain <https://w3id.org/cpo#LuminaireType> ;
+                                     rdfs:range <http://qudt.org/schema/qudt/QuantityValue> ;
+                                     rdfs:label "has rated power"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "The rated power of a luminaire type, a quantity value in watt."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/cpo#articleNumber
+<https://w3id.org/cpo#articleNumber> rdf:type owl:DatatypeProperty ,
+                                              owl:FunctionalProperty ;
+                                     rdfs:domain <https://w3id.org/cpo#ProductType> ;
+                                     rdfs:range xsd:string ;
+                                     rdfs:label "article number"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "The manufacturer's article number of a product type."@en .
+
+
+###  https://w3id.org/cpo#colourRenderingIndex
+<https://w3id.org/cpo#colourRenderingIndex> rdf:type owl:DatatypeProperty ,
+                                                     owl:FunctionalProperty ;
+                                            rdfs:domain <https://w3id.org/cpo#LuminaireType> ;
+                                            rdfs:range xsd:integer ;
+                                            rdfs:label "colour rendering index"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "The colour rendering index Ra of a luminaire type."@en .
+
+
+###  https://w3id.org/cpo#colourTemperature
+<https://w3id.org/cpo#colourTemperature> rdf:type owl:DatatypeProperty ,
+                                                  owl:FunctionalProperty ;
+                                         rdfs:domain <https://w3id.org/cpo#LuminaireType> ;
+                                         rdfs:range xsd:integer ;
+                                         rdfs:label "colour temperature"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "The correlated colour temperature of a luminaire type, in kelvin."@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://qudt.org/schema/qudt/QuantityValue
+<http://qudt.org/schema/qudt/QuantityValue> rdf:type owl:Class .
+
+
+###  http://w3id.org/CEON/ontology/resourceODP/Resource
+<http://w3id.org/CEON/ontology/resourceODP/Resource> rdf:type owl:Class .
+
+
+###  https://w3id.org/cpo#Fixture
+<https://w3id.org/cpo#Fixture> rdf:type owl:Class ;
+                               rdfs:subClassOf <https://w3id.org/cpo#Product> ;
+                               owl:disjointWith <https://w3id.org/cpo#Furnishing> ;
+                               rdfs:label "fixture"@en ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "A product fixed to the building, such as a luminaire."@en .
+
+
+###  https://w3id.org/cpo#Furnishing
+<https://w3id.org/cpo#Furnishing> rdf:type owl:Class ;
+                                  rdfs:subClassOf <https://w3id.org/cpo#Product> ;
+                                  rdfs:label "furnishing"@en ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "A movable product, such as a desk or a chair."@en .
+
+
+###  https://w3id.org/cpo#InteriorProduct
+<https://w3id.org/cpo#InteriorProduct> rdf:type owl:Class ;
+                                       owl:equivalentClass [ rdf:type owl:Class ;
+                                                             owl:unionOf ( <https://w3id.org/cpo#Furnishing>
+                                                                           <https://w3id.org/cpo#Luminaire>
+                                                                         )
+                                                           ] ;
+                                       rdfs:label "interior product"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "A luminaire or a furnishing."@en .
+
+
+###  https://w3id.org/cpo#Luminaire
+<https://w3id.org/cpo#Luminaire> rdf:type owl:Class ;
+                                 rdfs:subClassOf <https://w3id.org/cpo#Fixture> ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <https://w3id.org/cpo#hasProductType> ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onClass <https://w3id.org/cpo#LuminaireType>
+                                                 ] ;
+                                 rdfs:label "luminaire"@en ;
+                                 <http://www.w3.org/2004/02/skos/core#altLabel> "light fitting"@en ,
+                                                                                "lighting fixture"@en ;
+                                 <http://www.w3.org/2004/02/skos/core#definition> "One installed luminaire, at one place in one building."@en .
+
+
+###  https://w3id.org/cpo#LuminaireType
+<https://w3id.org/cpo#LuminaireType> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://w3id.org/cpo#ProductType> ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <https://w3id.org/cpo#hasLuminousFlux> ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass <http://qudt.org/schema/qudt/QuantityValue>
+                                                     ] ;
+                                     rdfs:label "luminaire type"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "A luminaire article in a manufacturer catalogue."@en .
+
+
+###  https://w3id.org/cpo#Product
+<https://w3id.org/cpo#Product> rdf:type owl:Class ;
+                               owl:disjointWith <https://w3id.org/cpo#ProductType> ;
+                               rdfs:label "product"@en ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "One installed product in a building, from materials to finished goods."@en .
+
+
+###  https://w3id.org/cpo#ProductType
+<https://w3id.org/cpo#ProductType> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://w3id.org/CEON/ontology/resourceODP/Resource> ;
+                                   rdfs:label "product type"@en ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "A product as described in a manufacturer catalogue: one article, many installed copies."@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

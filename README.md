@@ -3,15 +3,17 @@
 An OWL ontology of building projects, their phases, the products installed in their buildings, and the requirements on their spaces. It is the worked example of the course TADS23 Advanced Building Information Delivery at Jönköping University.
 
 - Ontology: https://w3id.org/cpo
-- Documentation: https://richzele.github.io/cpo/
+- Documentation: https://richzele.github.io/cpo/doc/cpo/, made with [WIDOCO](https://github.com/dgarijo/Widoco), with a WebVOWL diagram of each ontology
 - Namespace: `https://w3id.org/cpo#` (prefix `cpo:`)
 
-| Ontology IRI | File | Content |
-|---|---|---|
-| `https://w3id.org/cpo` | `cpo.ttl` | The composed ontology: imports the modules and BOT, with the alignment and spanning axioms |
-| `https://w3id.org/cpo/project` | `cpo-project.ttl` | Building projects, their types, phases and status |
-| `https://w3id.org/cpo/product` | `cpo-product.ttl` | Installed products, their types and quantities |
-| `https://w3id.org/cpo/requirement` | `cpo-requirement.ttl` | Lighting requirements for types of space |
+| Ontology IRI | File | Documentation | Content |
+|---|---|---|---|
+| `https://w3id.org/cpo` | `cpo.ttl` | [doc/cpo](https://richzele.github.io/cpo/doc/cpo/) | The composed ontology: imports the modules and BOT, with the alignment and spanning axioms. Its documentation covers every term of CPO. |
+| `https://w3id.org/cpo/project` | `cpo-project.ttl` | [doc/project](https://richzele.github.io/cpo/doc/project/) | Building projects, their types, phases and status |
+| `https://w3id.org/cpo/product` | `cpo-product.ttl` | [doc/product](https://richzele.github.io/cpo/doc/product/) | Installed products, their types and quantities |
+| `https://w3id.org/cpo/requirement` | `cpo-requirement.ttl` | [doc/requirement](https://richzele.github.io/cpo/doc/requirement/) | Lighting requirements for types of space |
+
+Each ontology is also available as RDF/XML (`.owl`), JSON-LD (`.jsonld`) and N-Triples (`.nt`). The Turtle files are laid out for reading: one statement per line.
 
 To use it, open `https://w3id.org/cpo` in Protégé (File > Open from URL). The modules and BOT are imported from their own IRIs.
 

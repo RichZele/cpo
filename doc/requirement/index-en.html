@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>CPO module: Requirement</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/cpo#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/cpo#","name":"CPO module: Requirement", "headline":"Lighting requirements for types of space, from a standard such as EN 12464-1:2021.", "datePublished":"2026-11-04", "version":"2.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Rahel Kebede","url":"https://ju.se/en/personinfo?id=3691"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/marked@18.0.1/lib/marked.umd.min.js"></script> 
+<script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.14.0/+esm';mermaid.initialize({startOnLoad:false});window.mermaid=mermaid;</script> 
+    <script> 
+function scrollToHash() {
+  var h = location.hash;
+  if (!h || h.length < 2) return;
+  var id;
+  try { id = decodeURIComponent(h.slice(1)); } catch (e) { id = h.slice(1); }
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView();
+}
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+  if (typeof window.mermaid !== 'undefined') { window.mermaid.run({ querySelector: 'pre code.language-mermaid' }); }
+  loadTOC();
+  scrollToHash();
+  if (document.readyState === 'complete') { setTimeout(scrollToHash, 300); }
+  else { window.addEventListener('load', function(){ setTimeout(scrollToHash, 300); }); }
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>CPO module: Requirement</h1>
+<h2>Release: 2026-11-04</h2>
+
+
+<dl>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/cpo/requirement">https://w3id.org/cpo/requirement</a></dd>
+<dt>Revision:</dt>
+<dd>2.0</dd>
+<dt>Authors:</dt>
+<dd><a href="https://ju.se/en/personinfo?id=3691">Rahel Kebede</a>, <a href="https://ju.se/en">Jönköping University</a></dd>
+
+<dt>Source:</dt>
+<dd><a href="https://github.com/RichZele/cpo">https://github.com/RichZele/cpo</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
+<img src="https://licensebuttons.net/l/by/4.0/88x31.png" style="border-width:0" alt="License" />
+</a>
+<br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Rahel Kebede. Construction Project Typology Ontology (CPO), requirement module, version 2.0. Jönköping University, 2026. https://w3id.org/cpo/requirement</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Educational resource, TADS23</span>
+</div>
+</div><div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">CPO module: Requirement: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns=""
+    xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a>
+   </li>
+</ul>
+<h4>Object Properties</h4><ul xmlns=""
+    xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#hasRequiredIlluminance" title="https://w3id.org/cpo#hasRequiredIlluminance">has required illuminance</a>
+   </li>
+</ul>
+<h4>Data Properties</h4><ul xmlns=""
+    xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#minColourRendering" title="https://w3id.org/cpo#minColourRendering">minimum colour rendering</a>
+   </li>
+   <li>
+      <a href="#sourceStandard" title="https://w3id.org/cpo#sourceStandard">source standard</a>
+   </li>
+   <li>
+      <a href="#ugrLimit" title="https://w3id.org/cpo#ugrLimit">UGR limit</a>
+   </li>
+   <li>
+      <a href="#uniformity" title="https://w3id.org/cpo#uniformity">uniformity</a>
+   </li>
+</ul>
+<iframe src="webvowl/index.html"></iframe> 
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for CPO module: Requirement classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by CPO module: Requirement.
+<div xmlns="" xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a></li>
+ </ul>
+ <div class="entity" id="LightingRequirement">
+  <h3>lighting requirement<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#LightingRequirement</p>
+  <div class="comment">
+   <span class="markdown">The lighting a type of space must receive, as set by a standard such as EN 12464-1:2021.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd></dd>
+   <dt>is in domain of</dt>
+   <dd>
+    <a href="#ugrLimit" title="https://w3id.org/cpo#ugrLimit">UGR limit</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasRequiredIlluminance" title="https://w3id.org/cpo#hasRequiredIlluminance">has required illuminance</a> <sup class="type-op" title="object property">op</sup>, <a href="#minColourRendering" title="https://w3id.org/cpo#minColourRendering">minimum colour rendering</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#sourceStandard" title="https://w3id.org/cpo#sourceStandard">source standard</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#uniformity" title="https://w3id.org/cpo#uniformity">uniformity</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns="" xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#hasRequiredIlluminance" title="https://w3id.org/cpo#hasRequiredIlluminance">has required illuminance</a></li>
+ </ul>
+ <div class="entity" id="hasRequiredIlluminance">
+  <h3>has required illuminance<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#hasRequiredIlluminance</p>
+  <div class="comment">
+   <span class="markdown">The maintained illuminance required on the task area, a quantity value in lux.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://qudt.org/schema/qudt/QuantityValue" target="_blank" title="http://qudt.org/schema/qudt/QuantityValue">Quantity Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns="" xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#minColourRendering" title="https://w3id.org/cpo#minColourRendering">minimum colour rendering</a></li>
+  <li><a href="#sourceStandard" title="https://w3id.org/cpo#sourceStandard">source standard</a></li>
+  <li><a href="#ugrLimit" title="https://w3id.org/cpo#ugrLimit">UGR limit</a></li>
+  <li><a href="#uniformity" title="https://w3id.org/cpo#uniformity">uniformity</a></li>
+ </ul>
+ <div class="entity" id="minColourRendering">
+  <h3>minimum colour rendering<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#minColourRendering</p>
+  <div class="comment">
+   <span class="markdown">The minimum colour rendering index Ra.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="sourceStandard">
+  <h3>source standard<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#sourceStandard</p>
+  <div class="comment">
+   <span class="markdown">The standard the requirement is taken from, such as EN 12464-1:2021.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="ugrLimit">
+  <h3>UGR limit<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#ugrLimit</p>
+  <div class="comment">
+   <span class="markdown">The unified glare rating limit UGRL.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="uniformity">
+  <h3>uniformity<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#uniformity</p>
+  <div class="comment">
+   <span class="markdown">The minimum illuminance uniformity Uo.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

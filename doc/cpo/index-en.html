@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>Construction Project Typology Ontology (CPO)</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/cpo#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/cpo#","name":"Construction Project Typology Ontology (CPO)", "headline":"Building projects, their phases, the products installed in their buildings, and the requirements on their spaces. Worked example of TADS23, HT2026.", "datePublished":"2026-11-04", "version":"2.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Rahel Kebede","url":"https://ju.se/en/personinfo?id=3691"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/marked@18.0.1/lib/marked.umd.min.js"></script> 
+<script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.14.0/+esm';mermaid.initialize({startOnLoad:false});window.mermaid=mermaid;</script> 
+    <script> 
+function scrollToHash() {
+  var h = location.hash;
+  if (!h || h.length < 2) return;
+  var id;
+  try { id = decodeURIComponent(h.slice(1)); } catch (e) { id = h.slice(1); }
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView();
+}
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+  if (typeof window.mermaid !== 'undefined') { window.mermaid.run({ querySelector: 'pre code.language-mermaid' }); }
+  loadTOC();
+  scrollToHash();
+  if (document.readyState === 'complete') { setTimeout(scrollToHash, 300); }
+  else { window.addEventListener('load', function(){ setTimeout(scrollToHash, 300); }); }
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Construction Project Typology Ontology (CPO)</h1>
+<h2>Release: 2026-11-04</h2>
+
+
+<dl>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/cpo">https://w3id.org/cpo</a></dd>
+<dt>Revision:</dt>
+<dd>2.0</dd>
+<dt>Authors:</dt>
+<dd><a href="https://ju.se/en/personinfo?id=3691">Rahel Kebede</a>, <a href="https://ju.se/en">Jönköping University</a></dd>
+
+<dt>Imported Ontologies:</dt>
+<dd><a href="https://w3id.org/cpo/project">CPO module: Project</a></dd><dd><a href="https://w3id.org/cpo/product">CPO module: Product</a></dd><dd><a href="https://w3id.org/cpo/requirement">CPO module: Requirement</a></dd><dd><a href="https://w3id.org/bot">Building Topology Ontology (BOT)</a></dd>
+
+<dt>Source:</dt>
+<dd><a href="https://github.com/RichZele/cpo">https://github.com/RichZele/cpo</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
+<img src="https://licensebuttons.net/l/by/4.0/88x31.png" style="border-width:0" alt="License" />
+</a>
+<br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Rahel Kebede. Construction Project Typology Ontology (CPO), version 2.0. Jönköping University, 2026. https://w3id.org/cpo</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Educational resource, TADS23</span>
+</div>
+</div><div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Construction Project Typology Ontology (CPO): Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns=""
+    xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#ActiveProject" title="https://w3id.org/cpo#ActiveProject">active project</a>
+   </li>
+   <li>
+      <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a>
+   </li>
+   <li>
+      <a href="#Classroom" title="https://w3id.org/cpo#Classroom">classroom</a>
+   </li>
+   <li>
+      <a href="#CommercialBuildingProject" title="https://w3id.org/cpo#CommercialBuildingProject">commercial building project</a>
+   </li>
+   <li>
+      <a href="#CommissionedFurnishedProject"
+         title="https://w3id.org/cpo#CommissionedFurnishedProject">commissioned furnished project</a>
+   </li>
+   <li>
+      <a href="#CommissioningPhase" title="https://w3id.org/cpo#CommissioningPhase">commissioning phase</a>
+   </li>
+   <li>
+      <a href="#ConstructionPhase" title="https://w3id.org/cpo#ConstructionPhase">construction phase</a>
+   </li>
+   <li>
+      <a href="#Corridor" title="https://w3id.org/cpo#Corridor">corridor</a>
+   </li>
+   <li>
+      <a href="#DesignPhase" title="https://w3id.org/cpo#DesignPhase">design phase</a>
+   </li>
+   <li>
+      <a href="#EducationalBuildingProject" title="https://w3id.org/cpo#EducationalBuildingProject">educational building project</a>
+   </li>
+   <li>
+      <a href="#Fixture" title="https://w3id.org/cpo#Fixture">fixture</a>
+   </li>
+   <li>
+      <a href="#Furnishing" title="https://w3id.org/cpo#Furnishing">furnishing</a>
+   </li>
+   <li>
+      <a href="#HealthcareBuildingProject" title="https://w3id.org/cpo#HealthcareBuildingProject">healthcare building project</a>
+   </li>
+   <li>
+      <a href="#IndustrialBuildingProject" title="https://w3id.org/cpo#IndustrialBuildingProject">industrial building project</a>
+   </li>
+   <li>
+      <a href="#InteriorProduct" title="https://w3id.org/cpo#InteriorProduct">interior product</a>
+   </li>
+   <li>
+      <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a>
+   </li>
+   <li>
+      <a href="#Luminaire" title="https://w3id.org/cpo#Luminaire">luminaire</a>
+   </li>
+   <li>
+      <a href="#LuminaireType" title="https://w3id.org/cpo#LuminaireType">luminaire type</a>
+   </li>
+   <li>
+      <a href="#NonResidentialBuildingProject"
+         title="https://w3id.org/cpo#NonResidentialBuildingProject">non-residential building project</a>
+   </li>
+   <li>
+      <a href="#PlanningPhase" title="https://w3id.org/cpo#PlanningPhase">planning phase</a>
+   </li>
+   <li>
+      <a href="#PostConstructionPhase" title="https://w3id.org/cpo#PostConstructionPhase">post-construction phase</a>
+   </li>
+   <li>
+      <a href="#Product" title="https://w3id.org/cpo#Product">product</a>
+   </li>
+   <li>
+      <a href="#ProductType" title="https://w3id.org/cpo#ProductType">product type</a>
+   </li>
+   <li>
+      <a href="#ProjectPhase" title="https://w3id.org/cpo#ProjectPhase">project phase</a>
+   </li>
+   <li>
+      <a href="#ProjectStatus" title="https://w3id.org/cpo#ProjectStatus">project status</a>
+   </li>
+   <li>
+      <a href="#ResidentialBuildingProject" title="https://w3id.org/cpo#ResidentialBuildingProject">residential building project</a>
+   </li>
+</ul>
+<h4>Object Properties</h4><ul xmlns=""
+    xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#follows" title="https://w3id.org/cpo#follows">follows</a>
+   </li>
+   <li>
+      <a href="#hasArea" title="https://w3id.org/cpo#hasArea">has area</a>
+   </li>
+   <li>
+      <a href="#hasBuilding" title="https://w3id.org/cpo#hasBuilding">has building</a>
+   </li>
+   <li>
+      <a href="#hasLightingRequirement" title="https://w3id.org/cpo#hasLightingRequirement">has lighting requirement</a>
+   </li>
+   <li>
+      <a href="#hasLuminousFlux" title="https://w3id.org/cpo#hasLuminousFlux">has luminous flux</a>
+   </li>
+   <li>
+      <a href="#hasPhase" title="https://w3id.org/cpo#hasPhase">has phase</a>
+   </li>
+   <li>
+      <a href="#hasProduct" title="https://w3id.org/cpo#hasProduct">has product</a>
+   </li>
+   <li>
+      <a href="#hasProductType" title="https://w3id.org/cpo#hasProductType">has product type</a>
+   </li>
+   <li>
+      <a href="#hasRatedPower" title="https://w3id.org/cpo#hasRatedPower">has rated power</a>
+   </li>
+   <li>
+      <a href="#hasRequiredIlluminance" title="https://w3id.org/cpo#hasRequiredIlluminance">has required illuminance</a>
+   </li>
+   <li>
+      <a href="#hasStatus" title="https://w3id.org/cpo#hasStatus">has status</a>
+   </li>
+   <li>
+      <a href="#installedIn" title="https://w3id.org/cpo#installedIn">installed in</a>
+   </li>
+   <li>
+      <a href="#isPhaseOf" title="https://w3id.org/cpo#isPhaseOf">is phase of</a>
+   </li>
+   <li>
+      <a href="#isProductOf" title="https://w3id.org/cpo#isProductOf">is product of</a>
+   </li>
+   <li>
+      <a href="#precedes" title="https://w3id.org/cpo#precedes">precedes</a>
+   </li>
+</ul>
+<h4>Data Properties</h4><ul xmlns=""
+    xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#articleNumber" title="https://w3id.org/cpo#articleNumber">article number</a>
+   </li>
+   <li>
+      <a href="#budget" title="https://w3id.org/cpo#budget">budget</a>
+   </li>
+   <li>
+      <a href="#colourRenderingIndex" title="https://w3id.org/cpo#colourRenderingIndex">colour rendering index</a>
+   </li>
+   <li>
+      <a href="#colourTemperature" title="https://w3id.org/cpo#colourTemperature">colour temperature</a>
+   </li>
+   <li>
+      <a href="#endDate" title="https://w3id.org/cpo#endDate">end date</a>
+   </li>
+   <li>
+      <a href="#minColourRendering" title="https://w3id.org/cpo#minColourRendering">minimum colour rendering</a>
+   </li>
+   <li>
+      <a href="#sourceStandard" title="https://w3id.org/cpo#sourceStandard">source standard</a>
+   </li>
+   <li>
+      <a href="#startDate" title="https://w3id.org/cpo#startDate">start date</a>
+   </li>
+   <li>
+      <a href="#ugrLimit" title="https://w3id.org/cpo#ugrLimit">UGR limit</a>
+   </li>
+   <li>
+      <a href="#uniformity" title="https://w3id.org/cpo#uniformity">uniformity</a>
+   </li>
+</ul>
+<h4>Named Individuals</h4><ul xmlns=""
+    xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#active" title="https://w3id.org/cpo#active">active</a>
+   </li>
+   <li>
+      <a href="#completed" title="https://w3id.org/cpo#completed">completed</a>
+   </li>
+   <li>
+      <a href="#onHold" title="https://w3id.org/cpo#onHold">on hold</a>
+   </li>
+</ul>
+<iframe src="webvowl/index.html"></iframe> 
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Construction Project Typology Ontology (CPO) classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Construction Project Typology Ontology (CPO).
+<div xmlns="" xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#ActiveProject" title="https://w3id.org/cpo#ActiveProject">active project</a></li>
+  <li><a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a></li>
+  <li><a href="#Classroom" title="https://w3id.org/cpo#Classroom">classroom</a></li>
+  <li><a href="#CommercialBuildingProject" title="https://w3id.org/cpo#CommercialBuildingProject">commercial building project</a></li>
+  <li><a href="#CommissionedFurnishedProject" title="https://w3id.org/cpo#CommissionedFurnishedProject">commissioned furnished project</a></li>
+  <li><a href="#CommissioningPhase" title="https://w3id.org/cpo#CommissioningPhase">commissioning phase</a></li>
+  <li><a href="#ConstructionPhase" title="https://w3id.org/cpo#ConstructionPhase">construction phase</a></li>
+  <li><a href="#Corridor" title="https://w3id.org/cpo#Corridor">corridor</a></li>
+  <li><a href="#DesignPhase" title="https://w3id.org/cpo#DesignPhase">design phase</a></li>
+  <li><a href="#EducationalBuildingProject" title="https://w3id.org/cpo#EducationalBuildingProject">educational building project</a></li>
+  <li><a href="#Fixture" title="https://w3id.org/cpo#Fixture">fixture</a></li>
+  <li><a href="#Furnishing" title="https://w3id.org/cpo#Furnishing">furnishing</a></li>
+  <li><a href="#HealthcareBuildingProject" title="https://w3id.org/cpo#HealthcareBuildingProject">healthcare building project</a></li>
+  <li><a href="#IndustrialBuildingProject" title="https://w3id.org/cpo#IndustrialBuildingProject">industrial building project</a></li>
+  <li><a href="#InteriorProduct" title="https://w3id.org/cpo#InteriorProduct">interior product</a></li>
+  <li><a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a></li>
+  <li><a href="#Luminaire" title="https://w3id.org/cpo#Luminaire">luminaire</a></li>
+  <li><a href="#LuminaireType" title="https://w3id.org/cpo#LuminaireType">luminaire type</a></li>
+  <li><a href="#NonResidentialBuildingProject" title="https://w3id.org/cpo#NonResidentialBuildingProject">non-residential building project</a></li>
+  <li><a href="#PlanningPhase" title="https://w3id.org/cpo#PlanningPhase">planning phase</a></li>
+  <li><a href="#PostConstructionPhase" title="https://w3id.org/cpo#PostConstructionPhase">post-construction phase</a></li>
+  <li><a href="#Product" title="https://w3id.org/cpo#Product">product</a></li>
+  <li><a href="#ProductType" title="https://w3id.org/cpo#ProductType">product type</a></li>
+  <li><a href="#ProjectPhase" title="https://w3id.org/cpo#ProjectPhase">project phase</a></li>
+  <li><a href="#ProjectStatus" title="https://w3id.org/cpo#ProjectStatus">project status</a></li>
+  <li><a href="#ResidentialBuildingProject" title="https://w3id.org/cpo#ResidentialBuildingProject">residential building project</a></li>
+ </ul>
+ <div class="entity" id="ActiveProject">
+  <h3>active project<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#ActiveProject</p>
+  <div class="comment">
+   <span class="markdown">A building project whose status is active.</span>
+  </div>
+  <dl class="description">
+   <dt>is equivalent to</dt>
+   <dd>
+    <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#hasStatus" title="https://w3id.org/cpo#hasStatus">has status</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#active" title="https://w3id.org/cpo#active">active</a> <sup class="type-ni" title="named individual">ni</sup>)
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="BuildingProject">
+  <h3>building project<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#BuildingProject</p>
+  <div class="comment">
+   <span class="markdown">A project that plans, designs, constructs and hands over a building.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd></dd>
+   <dt>has sub-classes</dt>
+   <dd>
+    <a href="#CommercialBuildingProject" title="https://w3id.org/cpo#CommercialBuildingProject">commercial building project</a> <sup class="type-c" title="class">c</sup>, <a href="#EducationalBuildingProject" title="https://w3id.org/cpo#EducationalBuildingProject">educational building project</a> <sup class="type-c" title="class">c</sup>, <a href="#HealthcareBuildingProject" title="https://w3id.org/cpo#HealthcareBuildingProject">healthcare building project</a> <sup class="type-c" title="class">c</sup>, <a href="#IndustrialBuildingProject" title="https://w3id.org/cpo#IndustrialBuildingProject">industrial building project</a> <sup class="type-c" title="class">c</sup>, <a href="#ResidentialBuildingProject" title="https://w3id.org/cpo#ResidentialBuildingProject">residential building project</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is in domain of</dt>
+   <dd>
+    <a href="#budget" title="https://w3id.org/cpo#budget">budget</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#endDate" title="https://w3id.org/cpo#endDate">end date</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasBuilding" title="https://w3id.org/cpo#hasBuilding">has building</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPhase" title="https://w3id.org/cpo#hasPhase">has phase</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasProduct" title="https://w3id.org/cpo#hasProduct">has product</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasStatus" title="https://w3id.org/cpo#hasStatus">has status</a> <sup class="type-op" title="object property">op</sup>, <a href="#startDate" title="https://w3id.org/cpo#startDate">start date</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>, <a href="#Product" title="https://w3id.org/cpo#Product">product</a> <sup class="type-c" title="class">c</sup>, <a href="#ProductType" title="https://w3id.org/cpo#ProductType">product type</a> <sup class="type-c" title="class">c</sup>, <a href="#ProjectPhase" title="https://w3id.org/cpo#ProjectPhase">project phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Classroom">
+  <h3>classroom<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#Classroom</p>
+  <div class="comment">
+   <span class="markdown">A space for teaching.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="https://w3id.org/bot#Space" target="_blank" title="https://w3id.org/bot#Space">Space</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CommercialBuildingProject">
+  <h3>commercial building project<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#CommercialBuildingProject</p>
+  <div class="comment">
+   <span class="markdown">A building project whose building is used for business, such as offices or shops.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#EducationalBuildingProject" title="https://w3id.org/cpo#EducationalBuildingProject">educational building project</a> <sup class="type-c" title="class">c</sup>, <a href="#HealthcareBuildingProject" title="https://w3id.org/cpo#HealthcareBuildingProject">healthcare building project</a> <sup class="type-c" title="class">c</sup>, <a href="#IndustrialBuildingProject" title="https://w3id.org/cpo#IndustrialBuildingProject">industrial building project</a> <sup class="type-c" title="class">c</sup>, <a href="#ResidentialBuildingProject" title="https://w3id.org/cpo#ResidentialBuildingProject">residential building project</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CommissionedFurnishedProject">
+  <h3>commissioned furnished project<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#CommissionedFurnishedProject</p>
+  <div class="comment">
+   <span class="markdown">A building project with at least one furnishing that has reached its commissioning phase.</span>
+  </div>
+  <dl class="description">
+   <dt>is equivalent to</dt>
+   <dd>
+    <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#hasPhase" title="https://w3id.org/cpo#hasPhase">has phase</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#CommissioningPhase" title="https://w3id.org/cpo#CommissioningPhase">commissioning phase</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#hasProduct" title="https://w3id.org/cpo#hasProduct">has product</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Furnishing" title="https://w3id.org/cpo#Furnishing">furnishing</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CommissioningPhase">
+  <h3>commissioning phase<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#CommissioningPhase</p>
+  <div class="comment">
+   <span class="markdown">The part of the post-construction phase in which installed systems are tested and adjusted.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#PostConstructionPhase" title="https://w3id.org/cpo#PostConstructionPhase">post-construction phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ConstructionPhase">
+  <h3>construction phase<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#ConstructionPhase</p>
+  <div class="comment">
+   <span class="markdown">The phase in which the building is built and the products are installed.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#ProjectPhase" title="https://w3id.org/cpo#ProjectPhase">project phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#DesignPhase" title="https://w3id.org/cpo#DesignPhase">design phase</a> <sup class="type-c" title="class">c</sup>, <a href="#PlanningPhase" title="https://w3id.org/cpo#PlanningPhase">planning phase</a> <sup class="type-c" title="class">c</sup>, <a href="#PostConstructionPhase" title="https://w3id.org/cpo#PostConstructionPhase">post-construction phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Corridor">
+  <h3>corridor<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#Corridor</p>
+  <div class="comment">
+   <span class="markdown">A space for circulation between other spaces.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="https://w3id.org/bot#Space" target="_blank" title="https://w3id.org/bot#Space">Space</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DesignPhase">
+  <h3>design phase<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#DesignPhase</p>
+  <div class="comment">
+   <span class="markdown">The phase in which the building and its products are designed and specified.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#ProjectPhase" title="https://w3id.org/cpo#ProjectPhase">project phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#ConstructionPhase" title="https://w3id.org/cpo#ConstructionPhase">construction phase</a> <sup class="type-c" title="class">c</sup>, <a href="#PlanningPhase" title="https://w3id.org/cpo#PlanningPhase">planning phase</a> <sup class="type-c" title="class">c</sup>, <a href="#PostConstructionPhase" title="https://w3id.org/cpo#PostConstructionPhase">post-construction phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EducationalBuildingProject">
+  <h3>educational building project<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#EducationalBuildingProject</p>
+  <div class="comment">
+   <span class="markdown">A building project whose building is used for teaching, such as a school.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#CommercialBuildingProject" title="https://w3id.org/cpo#CommercialBuildingProject">commercial building project</a> <sup class="type-c" title="class">c</sup>, <a href="#HealthcareBuildingProject" title="https://w3id.org/cpo#HealthcareBuildingProject">healthcare building project</a> <sup class="type-c" title="class">c</sup>, <a href="#IndustrialBuildingProject" title="https://w3id.org/cpo#IndustrialBuildingProject">industrial building project</a> <sup class="type-c" title="class">c</sup>, <a href="#ResidentialBuildingProject" title="https://w3id.org/cpo#ResidentialBuildingProject">residential building project</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Fixture">
+  <h3>fixture<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#Fixture</p>
+  <div class="comment">
+   <span class="markdown">A product fixed to the building, such as a luminaire.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#Product" title="https://w3id.org/cpo#Product">product</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has sub-classes</dt>
+   <dd>
+    <a href="#Luminaire" title="https://w3id.org/cpo#Luminaire">luminaire</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#Furnishing" title="https://w3id.org/cpo#Furnishing">furnishing</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Furnishing">
+  <h3>furnishing<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#Furnishing</p>
+  <div class="comment">
+   <span class="markdown">A movable product, such as a desk or a chair.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#Product" title="https://w3id.org/cpo#Product">product</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#Fixture" title="https://w3id.org/cpo#Fixture">fixture</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="HealthcareBuildingProject">
+  <h3>healthcare building project<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#HealthcareBuildingProject</p>
+  <div class="comment">
+   <span class="markdown">A building project whose building is used for care, such as a hospital.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#CommercialBuildingProject" title="https://w3id.org/cpo#CommercialBuildingProject">commercial building project</a> <sup class="type-c" title="class">c</sup>, <a href="#EducationalBuildingProject" title="https://w3id.org/cpo#EducationalBuildingProject">educational building project</a> <sup class="type-c" title="class">c</sup>, <a href="#IndustrialBuildingProject" title="https://w3id.org/cpo#IndustrialBuildingProject">industrial building project</a> <sup class="type-c" title="class">c</sup>, <a href="#ResidentialBuildingProject" title="https://w3id.org/cpo#ResidentialBuildingProject">residential building project</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="IndustrialBuildingProject">
+  <h3>industrial building project<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#IndustrialBuildingProject</p>
+  <div class="comment">
+   <span class="markdown">A building project whose building is used for production or storage.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#CommercialBuildingProject" title="https://w3id.org/cpo#CommercialBuildingProject">commercial building project</a> <sup class="type-c" title="class">c</sup>, <a href="#EducationalBuildingProject" title="https://w3id.org/cpo#EducationalBuildingProject">educational building project</a> <sup class="type-c" title="class">c</sup>, <a href="#HealthcareBuildingProject" title="https://w3id.org/cpo#HealthcareBuildingProject">healthcare building project</a> <sup class="type-c" title="class">c</sup>, <a href="#ResidentialBuildingProject" title="https://w3id.org/cpo#ResidentialBuildingProject">residential building project</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="InteriorProduct">
+  <h3>interior product<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#InteriorProduct</p>
+  <div class="comment">
+   <span class="markdown">A luminaire or a furnishing.</span>
+  </div>
+  <dl class="description">
+   <dt>is equivalent to</dt>
+   <dd>
+    <a href="#Furnishing" title="https://w3id.org/cpo#Furnishing">furnishing</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Luminaire" title="https://w3id.org/cpo#Luminaire">luminaire</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LightingRequirement">
+  <h3>lighting requirement<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#LightingRequirement</p>
+  <div class="comment">
+   <span class="markdown">The lighting a type of space must receive, as set by a standard such as EN 12464-1:2021.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd></dd>
+   <dt>is in domain of</dt>
+   <dd>
+    <a href="#ugrLimit" title="https://w3id.org/cpo#ugrLimit">UGR limit</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasRequiredIlluminance" title="https://w3id.org/cpo#hasRequiredIlluminance">has required illuminance</a> <sup class="type-op" title="object property">op</sup>, <a href="#minColourRendering" title="https://w3id.org/cpo#minColourRendering">minimum colour rendering</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#sourceStandard" title="https://w3id.org/cpo#sourceStandard">source standard</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#uniformity" title="https://w3id.org/cpo#uniformity">uniformity</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>is in range of</dt>
+   <dd>
+    <a href="#hasLightingRequirement" title="https://w3id.org/cpo#hasLightingRequirement">has lighting requirement</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>, <a href="#Product" title="https://w3id.org/cpo#Product">product</a> <sup class="type-c" title="class">c</sup>, <a href="#ProductType" title="https://w3id.org/cpo#ProductType">product type</a> <sup class="type-c" title="class">c</sup>, <a href="#ProjectPhase" title="https://w3id.org/cpo#ProjectPhase">project phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Luminaire">
+  <h3>luminaire<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#Luminaire</p>
+  <div class="comment">
+   <span class="markdown">One installed luminaire, at one place in one building.</span>
+  </div>
+  <dl>
+   <dt>Alternative label</dt>
+   <dd>light fitting</dd>
+   <dd>lighting fixture</dd>
+  </dl>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#Fixture" title="https://w3id.org/cpo#Fixture">fixture</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LuminaireType">
+  <h3>luminaire type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#LuminaireType</p>
+  <div class="comment">
+   <span class="markdown">A luminaire article in a manufacturer catalogue.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#ProductType" title="https://w3id.org/cpo#ProductType">product type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is in domain of</dt>
+   <dd>
+    <a href="#colourRenderingIndex" title="https://w3id.org/cpo#colourRenderingIndex">colour rendering index</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#colourTemperature" title="https://w3id.org/cpo#colourTemperature">colour temperature</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasLuminousFlux" title="https://w3id.org/cpo#hasLuminousFlux">has luminous flux</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasRatedPower" title="https://w3id.org/cpo#hasRatedPower">has rated power</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="NonResidentialBuildingProject">
+  <h3>non-residential building project<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#NonResidentialBuildingProject</p>
+  <div class="comment">
+   <span class="markdown">A building project that is not a residential building project.</span>
+  </div>
+  <dl class="description">
+   <dt>is equivalent to</dt>
+   <dd>
+    <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">not</span> (<a href="#ResidentialBuildingProject" title="https://w3id.org/cpo#ResidentialBuildingProject">residential building project</a> <sup class="type-c" title="class">c</sup>))
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PlanningPhase">
+  <h3>planning phase<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#PlanningPhase</p>
+  <div class="comment">
+   <span class="markdown">The phase in which the need, the brief and the feasibility of the project are settled.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#ProjectPhase" title="https://w3id.org/cpo#ProjectPhase">project phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#ConstructionPhase" title="https://w3id.org/cpo#ConstructionPhase">construction phase</a> <sup class="type-c" title="class">c</sup>, <a href="#DesignPhase" title="https://w3id.org/cpo#DesignPhase">design phase</a> <sup class="type-c" title="class">c</sup>, <a href="#PostConstructionPhase" title="https://w3id.org/cpo#PostConstructionPhase">post-construction phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PostConstructionPhase">
+  <h3>post-construction phase<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#PostConstructionPhase</p>
+  <div class="comment">
+   <span class="markdown">The phase after construction: commissioning and handover.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#ProjectPhase" title="https://w3id.org/cpo#ProjectPhase">project phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has sub-classes</dt>
+   <dd>
+    <a href="#CommissioningPhase" title="https://w3id.org/cpo#CommissioningPhase">commissioning phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#ConstructionPhase" title="https://w3id.org/cpo#ConstructionPhase">construction phase</a> <sup class="type-c" title="class">c</sup>, <a href="#DesignPhase" title="https://w3id.org/cpo#DesignPhase">design phase</a> <sup class="type-c" title="class">c</sup>, <a href="#PlanningPhase" title="https://w3id.org/cpo#PlanningPhase">planning phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Product">
+  <h3>product<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#Product</p>
+  <div class="comment">
+   <span class="markdown">One installed product in a building, from materials to finished goods.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="https://w3id.org/bot#Element" target="_blank" title="https://w3id.org/bot#Element">Element</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has sub-classes</dt>
+   <dd>
+    <a href="#Fixture" title="https://w3id.org/cpo#Fixture">fixture</a> <sup class="type-c" title="class">c</sup>, <a href="#Furnishing" title="https://w3id.org/cpo#Furnishing">furnishing</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is in domain of</dt>
+   <dd>
+    <a href="#hasProductType" title="https://w3id.org/cpo#hasProductType">has product type</a> <sup class="type-op" title="object property">op</sup>, <a href="#installedIn" title="https://w3id.org/cpo#installedIn">installed in</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>is in range of</dt>
+   <dd>
+    <a href="#hasProduct" title="https://w3id.org/cpo#hasProduct">has product</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#ProductType" title="https://w3id.org/cpo#ProductType">product type</a> <sup class="type-c" title="class">c</sup>, <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>, <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>, <a href="#ProductType" title="https://w3id.org/cpo#ProductType">product type</a> <sup class="type-c" title="class">c</sup>, <a href="#ProjectPhase" title="https://w3id.org/cpo#ProjectPhase">project phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ProductType">
+  <h3>product type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#ProductType</p>
+  <div class="comment">
+   <span class="markdown">A product as described in a manufacturer catalogue: one article, many installed copies.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="http://w3id.org/CEON/ontology/resourceODP/Resource" target="_blank" title="http://w3id.org/CEON/ontology/resourceODP/Resource">Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has sub-classes</dt>
+   <dd>
+    <a href="#LuminaireType" title="https://w3id.org/cpo#LuminaireType">luminaire type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is in domain of</dt>
+   <dd>
+    <a href="#articleNumber" title="https://w3id.org/cpo#articleNumber">article number</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>is in range of</dt>
+   <dd>
+    <a href="#hasProductType" title="https://w3id.org/cpo#hasProductType">has product type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#Product" title="https://w3id.org/cpo#Product">product</a> <sup class="type-c" title="class">c</sup>, <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>, <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>, <a href="#Product" title="https://w3id.org/cpo#Product">product</a> <sup class="type-c" title="class">c</sup>, <a href="#ProjectPhase" title="https://w3id.org/cpo#ProjectPhase">project phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ProjectPhase">
+  <h3>project phase<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#ProjectPhase</p>
+  <div class="comment">
+   <span class="markdown">A period of a building project with its own purpose and deliverables.</span>
+  </div>
+  <dl class="description">
+   <dt>has sub-classes</dt>
+   <dd>
+    <a href="#ConstructionPhase" title="https://w3id.org/cpo#ConstructionPhase">construction phase</a> <sup class="type-c" title="class">c</sup>, <a href="#DesignPhase" title="https://w3id.org/cpo#DesignPhase">design phase</a> <sup class="type-c" title="class">c</sup>, <a href="#PlanningPhase" title="https://w3id.org/cpo#PlanningPhase">planning phase</a> <sup class="type-c" title="class">c</sup>, <a href="#PostConstructionPhase" title="https://w3id.org/cpo#PostConstructionPhase">post-construction phase</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is in domain of</dt>
+   <dd>
+    <a href="#precedes" title="https://w3id.org/cpo#precedes">precedes</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>is in range of</dt>
+   <dd>
+    <a href="#hasPhase" title="https://w3id.org/cpo#hasPhase">has phase</a> <sup class="type-op" title="object property">op</sup>, <a href="#precedes" title="https://w3id.org/cpo#precedes">precedes</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>, <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>, <a href="#Product" title="https://w3id.org/cpo#Product">product</a> <sup class="type-c" title="class">c</sup>, <a href="#ProductType" title="https://w3id.org/cpo#ProductType">product type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ProjectStatus">
+  <h3>project status<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#ProjectStatus</p>
+  <div class="comment">
+   <span class="markdown">The state of a building project: active, on hold or completed.</span>
+  </div>
+  <dl class="description">
+   <dt>is equivalent to</dt>
+   <dd>
+    { <a href="#active" title="https://w3id.org/cpo#active">active</a> <sup class="type-ni" title="named individual">ni</sup> , <a href="#completed" title="https://w3id.org/cpo#completed">completed</a> <sup class="type-ni" title="named individual">ni</sup> , <a href="#onHold" title="https://w3id.org/cpo#onHold">on hold</a> <sup class="type-ni" title="named individual">ni</sup> }
+   </dd>
+   <dt>is in range of</dt>
+   <dd>
+    <a href="#hasStatus" title="https://w3id.org/cpo#hasStatus">has status</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>has members</dt>
+   <dd>
+    <a href="#active" title="https://w3id.org/cpo#active">active</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#completed" title="https://w3id.org/cpo#completed">completed</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#onHold" title="https://w3id.org/cpo#onHold">on hold</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ResidentialBuildingProject">
+  <h3>residential building project<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#ResidentialBuildingProject</p>
+  <div class="comment">
+   <span class="markdown">A building project whose building is used for housing.</span>
+  </div>
+  <dl class="description">
+   <dt>has super-classes</dt>
+   <dd>
+    <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>is disjoint with</dt>
+   <dd>
+    <a href="#CommercialBuildingProject" title="https://w3id.org/cpo#CommercialBuildingProject">commercial building project</a> <sup class="type-c" title="class">c</sup>, <a href="#EducationalBuildingProject" title="https://w3id.org/cpo#EducationalBuildingProject">educational building project</a> <sup class="type-c" title="class">c</sup>, <a href="#HealthcareBuildingProject" title="https://w3id.org/cpo#HealthcareBuildingProject">healthcare building project</a> <sup class="type-c" title="class">c</sup>, <a href="#IndustrialBuildingProject" title="https://w3id.org/cpo#IndustrialBuildingProject">industrial building project</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns="" xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#follows" title="https://w3id.org/cpo#follows">follows</a></li>
+  <li><a href="#hasArea" title="https://w3id.org/cpo#hasArea">has area</a></li>
+  <li><a href="#hasBuilding" title="https://w3id.org/cpo#hasBuilding">has building</a></li>
+  <li><a href="#hasLightingRequirement" title="https://w3id.org/cpo#hasLightingRequirement">has lighting requirement</a></li>
+  <li><a href="#hasLuminousFlux" title="https://w3id.org/cpo#hasLuminousFlux">has luminous flux</a></li>
+  <li><a href="#hasPhase" title="https://w3id.org/cpo#hasPhase">has phase</a></li>
+  <li><a href="#hasProduct" title="https://w3id.org/cpo#hasProduct">has product</a></li>
+  <li><a href="#hasProductType" title="https://w3id.org/cpo#hasProductType">has product type</a></li>
+  <li><a href="#hasRatedPower" title="https://w3id.org/cpo#hasRatedPower">has rated power</a></li>
+  <li><a href="#hasRequiredIlluminance" title="https://w3id.org/cpo#hasRequiredIlluminance">has required illuminance</a></li>
+  <li><a href="#hasStatus" title="https://w3id.org/cpo#hasStatus">has status</a></li>
+  <li><a href="#installedIn" title="https://w3id.org/cpo#installedIn">installed in</a></li>
+  <li><a href="#isPhaseOf" title="https://w3id.org/cpo#isPhaseOf">is phase of</a></li>
+  <li><a href="#isProductOf" title="https://w3id.org/cpo#isProductOf">is product of</a></li>
+  <li><a href="#precedes" title="https://w3id.org/cpo#precedes">precedes</a></li>
+ </ul>
+ <div class="entity" id="follows">
+  <h3>follows<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#follows</p>
+  <div class="comment">
+   <span class="markdown">A phase follows another if it begins after the other ends. Inverse of precedes.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>is inverse of</dt>
+    <dd>
+     <a href="#precedes" title="https://w3id.org/cpo#precedes">precedes</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasArea">
+  <h3>has area<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#hasArea</p>
+  <div class="comment">
+   <span class="markdown">The floor area of a space, a quantity value in square metre.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="https://w3id.org/bot#Space" target="_blank" title="https://w3id.org/bot#Space">Space</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://qudt.org/schema/qudt/QuantityValue" target="_blank" title="http://qudt.org/schema/qudt/QuantityValue">Quantity Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasBuilding">
+  <h3>has building<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#hasBuilding</p>
+  <div class="comment">
+   <span class="markdown">Relates a building project to the building it delivers.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="https://w3id.org/bot#Building" target="_blank" title="https://w3id.org/bot#Building">Building</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasLightingRequirement">
+  <h3>has lighting requirement<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#hasLightingRequirement</p>
+  <div class="comment">
+   <span class="markdown">Relates a space to the lighting requirement that applies to it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="https://w3id.org/bot#Space" target="_blank" title="https://w3id.org/bot#Space">Space</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasLuminousFlux">
+  <h3>has luminous flux<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#hasLuminousFlux</p>
+  <div class="comment">
+   <span class="markdown">The luminous flux of a luminaire type, a quantity value in lumen.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LuminaireType" title="https://w3id.org/cpo#LuminaireType">luminaire type</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://qudt.org/schema/qudt/QuantityValue" target="_blank" title="http://qudt.org/schema/qudt/QuantityValue">Quantity Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasPhase">
+  <h3>has phase<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#hasPhase</p>
+  <div class="comment">
+   <span class="markdown">Relates a building project to one of its phases.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="#ProjectPhase" title="https://w3id.org/cpo#ProjectPhase">project phase</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>is inverse of</dt>
+    <dd>
+     <a href="#isPhaseOf" title="https://w3id.org/cpo#isPhaseOf">is phase of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasProduct">
+  <h3>has product<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#hasProduct</p>
+  <div class="comment">
+   <span class="markdown">Relates a building project to a product installed in its building.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="#Product" title="https://w3id.org/cpo#Product">product</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>is inverse of</dt>
+    <dd>
+     <a href="#isProductOf" title="https://w3id.org/cpo#isProductOf">is product of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasProductType">
+  <h3>has product type<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#hasProductType</p>
+  <div class="comment">
+   <span class="markdown">Relates an installed product to its type in the catalogue.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#Product" title="https://w3id.org/cpo#Product">product</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="#ProductType" title="https://w3id.org/cpo#ProductType">product type</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasRatedPower">
+  <h3>has rated power<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#hasRatedPower</p>
+  <div class="comment">
+   <span class="markdown">The rated power of a luminaire type, a quantity value in watt.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LuminaireType" title="https://w3id.org/cpo#LuminaireType">luminaire type</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://qudt.org/schema/qudt/QuantityValue" target="_blank" title="http://qudt.org/schema/qudt/QuantityValue">Quantity Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasRequiredIlluminance">
+  <h3>has required illuminance<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#hasRequiredIlluminance</p>
+  <div class="comment">
+   <span class="markdown">The maintained illuminance required on the task area, a quantity value in lux.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://qudt.org/schema/qudt/QuantityValue" target="_blank" title="http://qudt.org/schema/qudt/QuantityValue">Quantity Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasStatus">
+  <h3>has status<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#hasStatus</p>
+  <div class="comment">
+   <span class="markdown">Relates a building project to its current status. Functional: one status at a time.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="#ProjectStatus" title="https://w3id.org/cpo#ProjectStatus">project status</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="installedIn">
+  <h3>installed in<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#installedIn</p>
+  <div class="comment">
+   <span class="markdown">Relates a product to the space it is installed in. Inverse of bot:containsElement.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#Product" title="https://w3id.org/cpo#Product">product</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="https://w3id.org/bot#Space" target="_blank" title="https://w3id.org/bot#Space">Space</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>is inverse of</dt>
+    <dd>
+     <a href="https://w3id.org/bot#containsElement" target="_blank" title="https://w3id.org/bot#containsElement">contains Element</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isPhaseOf">
+  <h3>is phase of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#isPhaseOf</p>
+  <div class="comment">
+   <span class="markdown">Relates a phase to the building project it belongs to. Inverse of hasPhase.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>is inverse of</dt>
+    <dd>
+     <a href="#hasPhase" title="https://w3id.org/cpo#hasPhase">has phase</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isProductOf">
+  <h3>is product of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#isProductOf</p>
+  <div class="description">
+   <dl>
+    <dt>is inverse of</dt>
+    <dd>
+     <a href="#hasProduct" title="https://w3id.org/cpo#hasProduct">has product</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="precedes">
+  <h3>precedes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#precedes</p>
+  <div class="comment">
+   <span class="markdown">A phase precedes another if it ends before the other begins. Transitive.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> transitive</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#ProjectPhase" title="https://w3id.org/cpo#ProjectPhase">project phase</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="#ProjectPhase" title="https://w3id.org/cpo#ProjectPhase">project phase</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>is inverse of</dt>
+    <dd>
+     <a href="#follows" title="https://w3id.org/cpo#follows">follows</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns="" xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#articleNumber" title="https://w3id.org/cpo#articleNumber">article number</a></li>
+  <li><a href="#budget" title="https://w3id.org/cpo#budget">budget</a></li>
+  <li><a href="#colourRenderingIndex" title="https://w3id.org/cpo#colourRenderingIndex">colour rendering index</a></li>
+  <li><a href="#colourTemperature" title="https://w3id.org/cpo#colourTemperature">colour temperature</a></li>
+  <li><a href="#endDate" title="https://w3id.org/cpo#endDate">end date</a></li>
+  <li><a href="#minColourRendering" title="https://w3id.org/cpo#minColourRendering">minimum colour rendering</a></li>
+  <li><a href="#sourceStandard" title="https://w3id.org/cpo#sourceStandard">source standard</a></li>
+  <li><a href="#startDate" title="https://w3id.org/cpo#startDate">start date</a></li>
+  <li><a href="#ugrLimit" title="https://w3id.org/cpo#ugrLimit">UGR limit</a></li>
+  <li><a href="#uniformity" title="https://w3id.org/cpo#uniformity">uniformity</a></li>
+ </ul>
+ <div class="entity" id="articleNumber">
+  <h3>article number<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#articleNumber</p>
+  <div class="comment">
+   <span class="markdown">The manufacturer's article number of a product type.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#ProductType" title="https://w3id.org/cpo#ProductType">product type</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="budget">
+  <h3>budget<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#budget</p>
+  <div class="comment">
+   <span class="markdown">The allocated budget of the building project, in SEK.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="colourRenderingIndex">
+  <h3>colour rendering index<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#colourRenderingIndex</p>
+  <div class="comment">
+   <span class="markdown">The colour rendering index Ra of a luminaire type.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LuminaireType" title="https://w3id.org/cpo#LuminaireType">luminaire type</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="colourTemperature">
+  <h3>colour temperature<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#colourTemperature</p>
+  <div class="comment">
+   <span class="markdown">The correlated colour temperature of a luminaire type, in kelvin.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LuminaireType" title="https://w3id.org/cpo#LuminaireType">luminaire type</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="endDate">
+  <h3>end date<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#endDate</p>
+  <div class="comment">
+   <span class="markdown">The date on which the building project is planned to be completed.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="minColourRendering">
+  <h3>minimum colour rendering<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#minColourRendering</p>
+  <div class="comment">
+   <span class="markdown">The minimum colour rendering index Ra.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="sourceStandard">
+  <h3>source standard<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#sourceStandard</p>
+  <div class="comment">
+   <span class="markdown">The standard the requirement is taken from, such as EN 12464-1:2021.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="startDate">
+  <h3>start date<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#startDate</p>
+  <div class="comment">
+   <span class="markdown">The date on which the building project begins.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#BuildingProject" title="https://w3id.org/cpo#BuildingProject">building project</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="ugrLimit">
+  <h3>UGR limit<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#ugrLimit</p>
+  <div class="comment">
+   <span class="markdown">The unified glare rating limit UGRL.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="uniformity">
+  <h3>uniformity<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#uniformity</p>
+  <div class="comment">
+   <span class="markdown">The minimum illuminance uniformity Uo.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>has domain</dt>
+    <dd>
+     <a href="#LightingRequirement" title="https://w3id.org/cpo#LightingRequirement">lighting requirement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns="" xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#active" title="https://w3id.org/cpo#active">active</a></li>
+  <li><a href="#completed" title="https://w3id.org/cpo#completed">completed</a></li>
+  <li><a href="#onHold" title="https://w3id.org/cpo#onHold">on hold</a></li>
+ </ul>
+ <div class="entity" id="active">
+  <h3>active<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#active</p>
+  <div class="comment">
+   <span class="markdown">The status of a building project that is being carried out.</span>
+  </div>
+  <dl class="description">
+   <dt>belongs to</dt>
+   <dd>
+    <a href="#ProjectStatus" title="https://w3id.org/cpo#ProjectStatus">project status</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has facts</dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"The status of a building project that is being carried out."@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="completed">
+  <h3>completed<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#completed</p>
+  <div class="comment">
+   <span class="markdown">The status of a building project that is finished.</span>
+  </div>
+  <dl class="description">
+   <dt>belongs to</dt>
+   <dd>
+    <a href="#ProjectStatus" title="https://w3id.org/cpo#ProjectStatus">project status</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has facts</dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"The status of a building project that is finished."@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="onHold">
+  <h3>on hold<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cpo#onHold</p>
+  <div class="comment">
+   <span class="markdown">The status of a building project that is paused.</span>
+  </div>
+  <dl class="description">
+   <dt>belongs to</dt>
+   <dd>
+    <a href="#ProjectStatus" title="https://w3id.org/cpo#ProjectStatus">project status</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>has facts</dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"The status of a building project that is paused."@en</span>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
