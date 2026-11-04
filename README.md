@@ -8,10 +8,10 @@ An OWL ontology of building projects, their phases, the products installed in th
 
 | Ontology IRI | File | Content |
 |---|---|---|
-| `https://w3id.org/cpo` | `ontology.ttl` | The composed ontology: imports the modules and BOT, with the alignment and spanning axioms |
-| `https://w3id.org/cpo/project` | `project/ontology.ttl` | Building projects, their types, phases and status |
-| `https://w3id.org/cpo/product` | `product/ontology.ttl` | Installed products, their types and quantities |
-| `https://w3id.org/cpo/requirement` | `requirement/ontology.ttl` | Lighting requirements for types of space |
+| `https://w3id.org/cpo` | `cpo.ttl` | The composed ontology: imports the modules and BOT, with the alignment and spanning axioms |
+| `https://w3id.org/cpo/project` | `cpo-project.ttl` | Building projects, their types, phases and status |
+| `https://w3id.org/cpo/product` | `cpo-product.ttl` | Installed products, their types and quantities |
+| `https://w3id.org/cpo/requirement` | `cpo-requirement.ttl` | Lighting requirements for types of space |
 
 To use it, open `https://w3id.org/cpo` in Protégé (File > Open from URL). The modules and BOT are imported from their own IRIs.
 
