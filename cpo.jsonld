@@ -1,95 +1,14 @@
 [
   {
-    "@id": "https://w3id.org/cpo#hasProduct",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
+    "@id": "https://w3id.org/cpo#Product",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/cpo#BuildingProject"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has product"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cpo#Product"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Relates a building project to a product installed in its building."
+        "@id": "https://w3id.org/bot#Element"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#hasBuilding",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#BuildingProject"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has building"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/bot#Building"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Relates a building project to the building it delivers."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#installedIn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#Product"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "installed in"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/bot#Space"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://w3id.org/bot#containsElement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Relates a product to the space it is installed in. Inverse of bot:containsElement."
-      }
-    ]
-  },
-  {
-    "@id": "_:n707e3f700e7a43adaa34e4a72f7109f1b8",
+    "@id": "_:n1687ab45a1fe454e9e777361ad553709b8",
     "@type": [
       "http://www.w3.org/2002/07/owl#AllDisjointClasses"
     ],
@@ -141,6 +60,62 @@
       {
         "@language": "en",
         "@value": "The floor area of a space, a quantity value in square metre."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#hasProduct",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#BuildingProject"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has product"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cpo#Product"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a building project to a product installed in its building."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#hasLightingRequirement",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/bot#Space"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has lighting requirement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cpo#LightingRequirement"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a space to the lighting requirement that applies to it."
       }
     ]
   },
@@ -208,141 +183,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#CommissionedFurnishedProject",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "commissioned furnished project"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "_:n707e3f700e7a43adaa34e4a72f7109f1b2"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A building project with at least one furnishing that has reached its commissioning phase."
-      }
-    ]
-  },
-  {
-    "@id": "_:n707e3f700e7a43adaa34e4a72f7109f1b2",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#intersectionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/cpo#BuildingProject"
-          },
-          {
-            "@id": "_:n707e3f700e7a43adaa34e4a72f7109f1b3"
-          },
-          {
-            "@id": "_:n707e3f700e7a43adaa34e4a72f7109f1b4"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "_:n707e3f700e7a43adaa34e4a72f7109f1b3",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/cpo#hasProduct"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://w3id.org/cpo#Furnishing"
-      }
-    ]
-  },
-  {
-    "@id": "_:n707e3f700e7a43adaa34e4a72f7109f1b4",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/cpo#hasPhase"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://w3id.org/cpo#CommissioningPhase"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#Product",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/bot#Element"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#Classroom",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "classroom"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/bot#Space"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A space for teaching."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#hasLightingRequirement",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/bot#Space"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has lighting requirement"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cpo#LightingRequirement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Relates a space to the lighting requirement that applies to it."
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/cpo#Corridor",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -366,15 +206,152 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#BuildingProject",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "@id": "https://w3id.org/cpo#hasBuilding",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:n707e3f700e7a43adaa34e4a72f7109f1b1"
+        "@id": "https://w3id.org/cpo#BuildingProject"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has building"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/bot#Building"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a building project to the building it delivers."
       }
     ]
   },
   {
-    "@id": "_:n707e3f700e7a43adaa34e4a72f7109f1b1",
+    "@id": "https://w3id.org/cpo#CommissionedFurnishedProject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "commissioned furnished project"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:n1687ab45a1fe454e9e777361ad553709b2"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A building project with at least one furnishing that has reached its commissioning phase."
+      }
+    ]
+  },
+  {
+    "@id": "_:n1687ab45a1fe454e9e777361ad553709b2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/cpo#BuildingProject"
+          },
+          {
+            "@id": "_:n1687ab45a1fe454e9e777361ad553709b3"
+          },
+          {
+            "@id": "_:n1687ab45a1fe454e9e777361ad553709b4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:n1687ab45a1fe454e9e777361ad553709b3",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/cpo#hasProduct"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://w3id.org/cpo#Furnishing"
+      }
+    ]
+  },
+  {
+    "@id": "_:n1687ab45a1fe454e9e777361ad553709b4",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/cpo#hasPhase"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://w3id.org/cpo#CommissioningPhase"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#installedIn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#Product"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "installed in"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/bot#Space"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/bot#containsElement"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a product to the space it is installed in. Inverse of bot:containsElement."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#BuildingProject",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:n1687ab45a1fe454e9e777361ad553709b1"
+      }
+    ]
+  },
+  {
+    "@id": "_:n1687ab45a1fe454e9e777361ad553709b1",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -392,6 +369,29 @@
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
         "@id": "https://w3id.org/cpo#hasProduct"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#Classroom",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "classroom"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/bot#Space"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A space for teaching."
       }
     ]
   },

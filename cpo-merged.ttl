@@ -1,0 +1,376 @@
+@prefix bot: <https://w3id.org/bot#> .
+@prefix cpo: <https://w3id.org/cpo#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/cpo> a owl:Ontology ;
+    rdfs:label "Construction Project Typology Ontology (CPO)"@en ;
+    dcterms:created "2026-11-04"^^xsd:date ;
+    dcterms:creator "Rahel Kebede" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "cpo" ;
+    vann:preferredNamespaceUri "https://w3id.org/cpo#" ;
+    rdfs:comment "Building projects, their phases, the products installed in their buildings, and the requirements on their spaces. Worked example of TADS23, HT2026."@en,
+        "This file is the merged ontology: the three modules and the composed ontology in one file."@en ;
+    owl:imports bot: ;
+    owl:versionInfo "2.0" .
+
+cpo:ActiveProject a owl:Class ;
+    rdfs:label "active project"@en ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( cpo:BuildingProject [ a owl:Restriction ;
+                        owl:hasValue cpo:active ;
+                        owl:onProperty cpo:hasStatus ] ) ] ;
+    skos:definition "A building project whose status is active."@en .
+
+cpo:Classroom a owl:Class ;
+    rdfs:label "classroom"@en ;
+    rdfs:subClassOf bot:Space ;
+    skos:definition "A space for teaching."@en .
+
+cpo:CommissionedFurnishedProject a owl:Class ;
+    rdfs:label "commissioned furnished project"@en ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( cpo:BuildingProject [ a owl:Restriction ;
+                        owl:onProperty cpo:hasProduct ;
+                        owl:someValuesFrom cpo:Furnishing ] [ a owl:Restriction ;
+                        owl:onProperty cpo:hasPhase ;
+                        owl:someValuesFrom cpo:CommissioningPhase ] ) ] ;
+    skos:definition "A building project with at least one furnishing that has reached its commissioning phase."@en .
+
+cpo:Corridor a owl:Class ;
+    rdfs:label "corridor"@en ;
+    rdfs:subClassOf bot:Space ;
+    skos:definition "A space for circulation between other spaces."@en .
+
+cpo:InteriorProduct a owl:Class ;
+    rdfs:label "interior product"@en ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( cpo:Luminaire cpo:Furnishing ) ] ;
+    skos:definition "A luminaire or a furnishing."@en .
+
+cpo:NonResidentialBuildingProject a owl:Class ;
+    rdfs:label "non-residential building project"@en ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( cpo:BuildingProject [ a owl:Class ;
+                        owl:complementOf cpo:ResidentialBuildingProject ] ) ] ;
+    skos:definition "A building project that is not a residential building project."@en .
+
+cpo:articleNumber a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "article number"@en ;
+    rdfs:domain cpo:ProductType ;
+    rdfs:range xsd:string ;
+    skos:definition "The manufacturer's article number of a product type."@en .
+
+cpo:budget a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "budget"@en ;
+    rdfs:domain cpo:BuildingProject ;
+    rdfs:range xsd:decimal ;
+    skos:definition "The allocated budget of the building project, in SEK."@en .
+
+cpo:colourRenderingIndex a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "colour rendering index"@en ;
+    rdfs:domain cpo:LuminaireType ;
+    rdfs:range xsd:integer ;
+    skos:definition "The colour rendering index Ra of a luminaire type."@en .
+
+cpo:colourTemperature a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "colour temperature"@en ;
+    rdfs:domain cpo:LuminaireType ;
+    rdfs:range xsd:integer ;
+    skos:definition "The correlated colour temperature of a luminaire type, in kelvin."@en .
+
+cpo:endDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "end date"@en ;
+    rdfs:domain cpo:BuildingProject ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The date on which the building project is planned to be completed."@en .
+
+cpo:follows a owl:ObjectProperty ;
+    rdfs:label "follows"@en ;
+    owl:inverseOf cpo:precedes ;
+    skos:definition "A phase follows another if it begins after the other ends. Inverse of precedes."@en .
+
+cpo:hasArea a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has area"@en ;
+    rdfs:domain bot:Space ;
+    rdfs:range qudt:QuantityValue ;
+    skos:definition "The floor area of a space, a quantity value in square metre."@en .
+
+cpo:hasBuilding a owl:ObjectProperty ;
+    rdfs:label "has building"@en ;
+    rdfs:domain cpo:BuildingProject ;
+    rdfs:range bot:Building ;
+    skos:definition "Relates a building project to the building it delivers."@en .
+
+cpo:hasLightingRequirement a owl:ObjectProperty ;
+    rdfs:label "has lighting requirement"@en ;
+    rdfs:domain bot:Space ;
+    rdfs:range cpo:LightingRequirement ;
+    skos:definition "Relates a space to the lighting requirement that applies to it."@en .
+
+cpo:hasRatedPower a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has rated power"@en ;
+    rdfs:domain cpo:LuminaireType ;
+    rdfs:range qudt:QuantityValue ;
+    skos:definition "The rated power of a luminaire type, a quantity value in watt."@en .
+
+cpo:installedIn a owl:ObjectProperty ;
+    rdfs:label "installed in"@en ;
+    rdfs:domain cpo:Product ;
+    rdfs:range bot:Space ;
+    owl:inverseOf bot:containsElement ;
+    skos:definition "Relates a product to the space it is installed in. Inverse of bot:containsElement."@en .
+
+cpo:isPhaseOf a owl:ObjectProperty ;
+    rdfs:label "is phase of"@en ;
+    owl:inverseOf cpo:hasPhase ;
+    skos:definition "Relates a phase to the building project it belongs to. Inverse of hasPhase."@en .
+
+cpo:isProductOf a owl:ObjectProperty ;
+    rdfs:label "is product of"@en ;
+    owl:inverseOf cpo:hasProduct .
+
+cpo:minColourRendering a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "minimum colour rendering"@en ;
+    rdfs:domain cpo:LightingRequirement ;
+    rdfs:range xsd:integer ;
+    skos:definition "The minimum colour rendering index Ra."@en .
+
+cpo:sourceStandard a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "source standard"@en ;
+    rdfs:domain cpo:LightingRequirement ;
+    rdfs:range xsd:string ;
+    skos:definition "The standard the requirement is taken from, such as EN 12464-1:2021."@en .
+
+cpo:startDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "start date"@en ;
+    rdfs:domain cpo:BuildingProject ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The date on which the building project begins."@en .
+
+cpo:ugrLimit a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "UGR limit"@en ;
+    rdfs:domain cpo:LightingRequirement ;
+    rdfs:range xsd:decimal ;
+    skos:definition "The unified glare rating limit UGRL."@en .
+
+cpo:uniformity a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "uniformity"@en ;
+    rdfs:domain cpo:LightingRequirement ;
+    rdfs:range xsd:decimal ;
+    skos:definition "The minimum illuminance uniformity Uo."@en .
+
+cpo:CommercialBuildingProject a owl:Class ;
+    rdfs:label "commercial building project"@en ;
+    rdfs:subClassOf cpo:BuildingProject ;
+    skos:definition "A building project whose building is used for business, such as offices or shops."@en .
+
+cpo:CommissioningPhase a owl:Class ;
+    rdfs:label "commissioning phase"@en ;
+    rdfs:subClassOf cpo:PostConstructionPhase ;
+    skos:definition "The part of the post-construction phase in which installed systems are tested and adjusted."@en .
+
+cpo:ConstructionPhase a owl:Class ;
+    rdfs:label "construction phase"@en ;
+    rdfs:subClassOf cpo:ProjectPhase ;
+    skos:definition "The phase in which the building is built and the products are installed."@en .
+
+cpo:DesignPhase a owl:Class ;
+    rdfs:label "design phase"@en ;
+    rdfs:subClassOf cpo:ProjectPhase ;
+    skos:definition "The phase in which the building and its products are designed and specified."@en .
+
+cpo:EducationalBuildingProject a owl:Class ;
+    rdfs:label "educational building project"@en ;
+    rdfs:subClassOf cpo:BuildingProject ;
+    skos:definition "A building project whose building is used for teaching, such as a school."@en .
+
+cpo:HealthcareBuildingProject a owl:Class ;
+    rdfs:label "healthcare building project"@en ;
+    rdfs:subClassOf cpo:BuildingProject ;
+    skos:definition "A building project whose building is used for care, such as a hospital."@en .
+
+cpo:IndustrialBuildingProject a owl:Class ;
+    rdfs:label "industrial building project"@en ;
+    rdfs:subClassOf cpo:BuildingProject ;
+    skos:definition "A building project whose building is used for production or storage."@en .
+
+cpo:Luminaire a owl:Class ;
+    rdfs:label "luminaire"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass cpo:LuminaireType ;
+            owl:onProperty cpo:hasProductType ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        cpo:Fixture ;
+    skos:altLabel "light fitting"@en,
+        "lighting fixture"@en ;
+    skos:definition "One installed luminaire, at one place in one building."@en .
+
+cpo:PlanningPhase a owl:Class ;
+    rdfs:label "planning phase"@en ;
+    rdfs:subClassOf cpo:ProjectPhase ;
+    skos:definition "The phase in which the need, the brief and the feasibility of the project are settled."@en .
+
+cpo:hasLuminousFlux a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has luminous flux"@en ;
+    rdfs:domain cpo:LuminaireType ;
+    rdfs:range qudt:QuantityValue ;
+    skos:definition "The luminous flux of a luminaire type, a quantity value in lumen."@en .
+
+cpo:hasProductType a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has product type"@en ;
+    rdfs:domain cpo:Product ;
+    rdfs:range cpo:ProductType ;
+    skos:definition "Relates an installed product to its type in the catalogue."@en .
+
+cpo:hasRequiredIlluminance a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has required illuminance"@en ;
+    rdfs:domain cpo:LightingRequirement ;
+    rdfs:range qudt:QuantityValue ;
+    skos:definition "The maintained illuminance required on the task area, a quantity value in lux."@en .
+
+cpo:hasStatus a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has status"@en ;
+    rdfs:domain cpo:BuildingProject ;
+    rdfs:range cpo:ProjectStatus ;
+    skos:definition "Relates a building project to its current status. Functional: one status at a time."@en .
+
+cpo:precedes a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "precedes"@en ;
+    rdfs:domain cpo:ProjectPhase ;
+    rdfs:range cpo:ProjectPhase ;
+    skos:definition "A phase precedes another if it ends before the other begins. Transitive."@en .
+
+cpo:Fixture a owl:Class ;
+    rdfs:label "fixture"@en ;
+    rdfs:subClassOf cpo:Product ;
+    skos:definition "A product fixed to the building, such as a luminaire."@en .
+
+cpo:Furnishing a owl:Class ;
+    rdfs:label "furnishing"@en ;
+    rdfs:subClassOf cpo:Product ;
+    owl:disjointWith cpo:Fixture ;
+    skos:definition "A movable product, such as a desk or a chair."@en .
+
+cpo:PostConstructionPhase a owl:Class ;
+    rdfs:label "post-construction phase"@en ;
+    rdfs:subClassOf cpo:ProjectPhase ;
+    skos:definition "The phase after construction: commissioning and handover."@en .
+
+cpo:ResidentialBuildingProject a owl:Class ;
+    rdfs:label "residential building project"@en ;
+    rdfs:subClassOf cpo:BuildingProject ;
+    skos:definition "A building project whose building is used for housing."@en .
+
+cpo:completed a owl:NamedIndividual,
+        cpo:ProjectStatus ;
+    rdfs:label "completed"@en ;
+    skos:definition "The status of a building project that is finished."@en .
+
+cpo:onHold a owl:NamedIndividual,
+        cpo:ProjectStatus ;
+    rdfs:label "on hold"@en ;
+    skos:definition "The status of a building project that is paused."@en .
+
+cpo:active a owl:NamedIndividual,
+        cpo:ProjectStatus ;
+    rdfs:label "active"@en ;
+    skos:definition "The status of a building project that is being carried out."@en .
+
+cpo:hasPhase a owl:ObjectProperty ;
+    rdfs:label "has phase"@en ;
+    rdfs:domain cpo:BuildingProject ;
+    rdfs:range cpo:ProjectPhase ;
+    skos:definition "Relates a building project to one of its phases."@en .
+
+cpo:hasProduct a owl:ObjectProperty ;
+    rdfs:label "has product"@en ;
+    rdfs:domain cpo:BuildingProject ;
+    rdfs:range cpo:Product ;
+    skos:definition "Relates a building project to a product installed in its building."@en .
+
+cpo:ProjectStatus a owl:Class ;
+    rdfs:label "project status"@en ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:oneOf ( cpo:active cpo:onHold cpo:completed ) ] ;
+    skos:definition "The state of a building project: active, on hold or completed."@en .
+
+cpo:LuminaireType a owl:Class ;
+    rdfs:label "luminaire type"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass qudt:QuantityValue ;
+            owl:onProperty cpo:hasLuminousFlux ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        cpo:ProductType ;
+    skos:definition "A luminaire article in a manufacturer catalogue."@en .
+
+cpo:ProductType a owl:Class ;
+    rdfs:label "product type"@en ;
+    rdfs:subClassOf <http://w3id.org/CEON/ontology/resourceODP/Resource> ;
+    skos:definition "A product as described in a manufacturer catalogue: one article, many installed copies."@en .
+
+cpo:LightingRequirement a owl:Class ;
+    rdfs:label "lighting requirement"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass qudt:QuantityValue ;
+            owl:onProperty cpo:hasRequiredIlluminance ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    skos:definition "The lighting a type of space must receive, as set by a standard such as EN 12464-1:2021."@en .
+
+cpo:Product a owl:Class ;
+    rdfs:label "product"@en ;
+    rdfs:subClassOf bot:Element ;
+    owl:disjointWith cpo:ProductType ;
+    skos:definition "One installed product in a building, from materials to finished goods."@en .
+
+cpo:ProjectPhase a owl:Class ;
+    rdfs:label "project phase"@en ;
+    skos:definition "A period of a building project with its own purpose and deliverables."@en .
+
+cpo:BuildingProject a owl:Class ;
+    rdfs:label "building project"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cpo:Product ;
+            owl:onProperty cpo:hasProduct ],
+        [ a owl:Restriction ;
+            owl:onProperty cpo:hasPhase ;
+            owl:someValuesFrom cpo:ProjectPhase ] ;
+    skos:definition "A project that plans, designs, constructs and hands over a building."@en .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( cpo:BuildingProject cpo:ProjectPhase cpo:Product cpo:ProductType cpo:LightingRequirement ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( cpo:PlanningPhase cpo:DesignPhase cpo:ConstructionPhase cpo:PostConstructionPhase ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( cpo:ResidentialBuildingProject cpo:CommercialBuildingProject cpo:IndustrialBuildingProject cpo:EducationalBuildingProject cpo:HealthcareBuildingProject ) .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( cpo:active cpo:onHold cpo:completed ) .
+

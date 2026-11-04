@@ -1,2 +1,326 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Construction Project Typology Ontology (CPO)</title><meta http-equiv="refresh" content="0; url=doc/cpo/"><link rel="canonical" href="https://w3id.org/cpo"></head><body><p><a href="doc/cpo/">Construction Project Typology Ontology (CPO)</a></p></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Construction Project Typology Ontology (CPO)</title>
+<meta name="description" content="Building projects, their phases, the products installed in their buildings, and the requirements on their spaces. Worked example of TADS23, HT2026.">
+<link rel="canonical" href="https://richzele.github.io/cpo/">
+<link rel="alternate" type="text/turtle" href="cpo.ttl">
+<style>
+:root {
+  --bg: #f7f6f2; --surface: #ffffff; --surface-2: #f0eee7; --text: #1b1d22; --muted: #5d6270;
+  --line: #e2dfd5; --accent: #1f5fbf; --accent-ink: #ffffff; --accent-soft: #e5eefb;
+  --class: #fff1a6; --class-line: #c9b545; --shadow: 0 1px 2px rgba(20,20,30,.05), 0 8px 24px rgba(20,20,30,.06);
+  --radius: 14px; --mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121418; --surface: #1a1d23; --surface-2: #22262e; --text: #e9eaee; --muted: #a2a8b6;
+    --line: #2d323c; --accent: #7fb0ff; --accent-ink: #0d1420; --accent-soft: #1d2a40;
+    --class: #4a4318; --class-line: #8a7b2a; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: var(--accent); }
+code { font-family: var(--mono); font-size: .88em; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+/* top bar */
+.top { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; gap: 24px; height: 58px; }
+.mark { display: flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; color: var(--text); letter-spacing: .02em; }
+.mark span { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 7px; background: var(--class); border: 1.5px solid var(--class-line); font-size: 12px; color: var(--text); }
+.top nav { margin-left: auto; display: flex; gap: 20px; font-size: 15px; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--text); }
+
+/* hero */
+.hero { padding-top: 72px; padding-bottom: 40px; }
+.eyebrow { margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.08; letter-spacing: -.02em; margin: 0 0 18px; max-width: 16ch; }
+h1 em { font-style: normal; background: linear-gradient(transparent 62%, var(--class) 62%); }
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 60ch; margin: 0 0 26px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 26px; padding: 0; list-style: none; }
+.chips li { font-size: 13.5px; padding: 4px 11px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); }
+.chips b { color: var(--text); font-weight: 600; }
+.ns { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; max-width: 640px; margin-bottom: 28px; }
+.ns small { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 11.5px; letter-spacing: .06em; }
+.ns code { font-size: 15px; flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.copy { border: 1px solid var(--line); background: var(--surface-2); color: var(--text); border-radius: 7px; padding: 4px 10px; font: inherit; font-size: 13px; cursor: pointer; }
+.copy:hover { border-color: var(--accent); }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; border-radius: 9px; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid var(--accent); }
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--accent); }
+.btn.ghost:hover { background: var(--accent-soft); }
+
+/* sections */
+section { padding: 44px 0; }
+h2 { font-size: 1.7rem; letter-spacing: -.01em; margin: 0 0 6px; }
+.sub { color: var(--muted); margin: 0 0 26px; max-width: 70ch; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+
+/* composed */
+.composed { display: grid; grid-template-columns: 1fr 1.45fr; gap: 0; overflow: hidden; }
+.composed .info { padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+.composed .info h3 { margin: 0; font-size: 1.35rem; }
+.composed .info p { margin: 0; color: var(--muted); }
+.composed figure { margin: 0; background: #fff; border-left: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; }
+.composed figure a { display: block; padding: 14px; }
+.composed figure img { width: 100%; height: auto; display: block; }
+.composed figcaption { font-size: 12.5px; color: #5d6270; padding: 0 16px 12px; }
+.counts { display: flex; flex-wrap: wrap; gap: 6px 16px; list-style: none; padding: 0; margin: 0; font-size: 14px; color: var(--muted); }
+.counts b { color: var(--text); font-size: 1.05rem; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; }
+.links .btn { padding: 8px 13px; font-size: 14px; }
+.formats { display: flex; flex-wrap: wrap; gap: 6px; }
+.fmt { font-family: var(--mono); font-size: 12.5px; padding: 3px 9px; border-radius: 6px; background: var(--surface-2); border: 1px solid var(--line); color: var(--text); text-decoration: none; }
+.fmt:hover { border-color: var(--accent); color: var(--accent); }
+.fmt-label { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin: 0 0 6px; }
+.merged { margin-top: 16px; padding: 18px 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+.merged div:first-child { flex: 1; min-width: 240px; }
+.merged h3 { margin: 0 0 2px; font-size: 1.05rem; }
+.merged p { margin: 0; color: var(--muted); font-size: 14.5px; }
+
+/* modules */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card { display: flex; flex-direction: column; overflow: hidden; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform .15s ease, box-shadow .15s ease; }
+.card:hover { transform: translateY(-2px); }
+.thumb { display: block; background: #fff; border-bottom: 1px solid var(--line); aspect-ratio: 16 / 10; overflow: hidden; }
+.thumb img { width: 100%; height: 100%; object-fit: contain; padding: 10px; }
+.card-body { padding: 20px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.card-body h3 { margin: -6px 0 0; font-size: 1.25rem; }
+.card-body p { margin: 0; color: var(--muted); font-size: 15px; }
+.card-body .eyebrow { margin: 0; font-size: 11.5px; }
+.iri { font-size: 13px; overflow-wrap: anywhere; }
+.card .links { margin-top: auto; }
+
+/* use */
+.use { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.use .panel { padding: 22px; }
+.use h3 { margin: 0 0 10px; font-size: 1.05rem; }
+.use p, .use ol { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
+.use ol { padding-left: 20px; }
+pre { margin: 0; background: var(--surface-2); border: 1px solid var(--line); border-radius: 9px; padding: 12px 14px; overflow-x: auto; font-family: var(--mono); font-size: 13px; line-height: 1.5; }
+
+/* education */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; padding: 0; list-style: none; margin: 0; }
+.steps li { padding: 22px; border-right: 1px solid var(--line); }
+.steps li:last-child { border-right: 0; }
+.steps .num { display: inline-block; font-family: var(--mono); font-size: 13px; font-weight: 700; padding: 2px 9px; border-radius: 6px; background: var(--class); border: 1px solid var(--class-line); margin-bottom: 10px; }
+.steps h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.steps p { margin: 0; color: var(--muted); font-size: 15px; }
+.note { margin: 16px 0 0; color: var(--muted); font-size: 15px; max-width: 75ch; }
+
+footer { border-top: 1px solid var(--line); padding: 34px 0 48px; margin-top: 20px; color: var(--muted); font-size: 14.5px; }
+footer .wrap { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
+footer h4 { margin: 0 0 6px; color: var(--text); font-size: 13px; text-transform: uppercase; letter-spacing: .06em; }
+footer p { margin: 0 0 6px; }
+
+@media (max-width: 900px) {
+  .composed { grid-template-columns: 1fr; }
+  .composed figure { border-left: 0; border-top: 1px solid var(--line); order: -1; }
+  .grid, .use, .steps { grid-template-columns: 1fr; }
+  .steps li { border-right: 0; border-bottom: 1px solid var(--line); }
+  .steps li:last-child { border-bottom: 0; }
+  footer .wrap { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .wrap { padding: 0 16px; }
+  .top nav { display: none; }
+  .hero { padding-top: 44px; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#"><span>cpo</span> CPO</a>
+    <nav>
+      <a href="#composed">Ontology</a>
+      <a href="#modules">Modules</a>
+      <a href="#use">Use it</a>
+      <a href="#education">Education</a>
+      <a href="https://github.com/RichZele/cpo">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero wrap">
+    <p class="eyebrow">TADS23 Advanced Building Information Delivery · Jönköping University</p>
+    <h1>Construction Project <em>Typology</em> Ontology</h1>
+    <p class="lead">Building projects, their phases, the products installed in their buildings, and the requirements on their spaces. Worked example of TADS23, HT2026.</p>
+    <ul class="chips">
+      <li>Version <b>2.0</b></li>
+      <li>Created <b>2026-11-04</b></li>
+      <li>Licence <b>CC BY 4.0</b></li>
+      <li>Prefix <b>cpo:</b></li>
+      <li>3 modules + BOT</li>
+    </ul>
+    <div class="ns">
+      <small>Namespace</small>
+      <code id="ns">https://w3id.org/cpo#</code>
+      <button class="copy" type="button" data-copy="https://w3id.org/cpo#">Copy</button>
+    </div>
+    <div class="cta">
+      <a class="btn" href="doc/cpo/">Read the documentation</a>
+      <a class="btn ghost" href="doc/cpo/webvowl/">Explore in WebVOWL</a>
+      <a class="btn ghost" href="cpo.ttl">View the Turtle</a>
+    </div>
+  </div>
+
+  <section id="composed">
+    <div class="wrap">
+      <h2>The composed ontology</h2>
+      <p class="sub">The composed ontology imports the three modules and the Building Topology Ontology (BOT), aligns CPO with BOT, and holds the spanning axioms that connect the modules.</p>
+      <div class="panel composed">
+        <div class="info">
+          <p class="eyebrow">Lecture 4c · composed ontology</p>
+          <h3>CPO</h3>
+          <p class="iri"><code>https://w3id.org/cpo</code></p>
+          <ul class="counts"><li><b>26</b> classes</li><li><b>15</b> object properties</li><li><b>10</b> data properties</li><li><b>3</b> individuals</li></ul>
+          <p>Its documentation covers every term of CPO, so each <code>cpo:</code> term links to its own entry.</p>
+          <div class="links"><a class="btn" href="doc/cpo/">Documentation</a><a class="btn ghost" href="doc/cpo/webvowl/">WebVOWL</a></div>
+          <div><p class="fmt-label">Download</p><div class="formats"><a class="fmt" href="cpo.ttl" download>Turtle</a><a class="fmt" href="cpo.owl" download>RDF/XML</a><a class="fmt" href="cpo.jsonld" download>JSON-LD</a><a class="fmt" href="cpo.nt" download>N-Triples</a></div></div>
+        </div>
+        <figure>
+          <a href="img/cpo-composed-graffoo.png"><img src="img/cpo-composed-graffoo.png" alt="Graffoo diagram of CPO: the project, product and requirement modules composed with BOT, with the spanning axioms hasBuilding, installedIn and hasLightingRequirement"></a>
+          <figcaption>The modules composed, with the spanning axioms, in Graffoo: yellow boxes are classes, blue arrows object properties, dotted boxes modules. Click to enlarge.</figcaption>
+        </figure>
+      </div>
+      <div class="panel merged">
+        <div>
+          <h3>Merged ontology</h3>
+          <p>The three modules and the composed ontology in one file, with BOT as its only import. Handy for tools that do not follow imports.</p>
+        </div>
+        <div class="formats"><a class="fmt" href="cpo-merged.ttl" download>Turtle</a><a class="fmt" href="cpo-merged.owl" download>RDF/XML</a><a class="fmt" href="cpo-merged.jsonld" download>JSON-LD</a><a class="fmt" href="cpo-merged.nt" download>N-Triples</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="modules">
+    <div class="wrap">
+      <h2>The modules</h2>
+      <p class="sub">Each module is a small ontology of its own, with its own IRI and file. All terms share the namespace <code>https://w3id.org/cpo#</code>.</p>
+      <div class="grid">
+      <article class="card">
+        <a class="thumb" href="img/cpo-project-graffoo.png"><img src="img/cpo-project-graffoo.png" alt="Graffoo diagram of the project module" loading="lazy"></a>
+        <div class="card-body">
+          <p class="eyebrow">Lecture 4a · module</p>
+          <h3>Project</h3>
+          <p>Building projects, their types, phases and status.</p>
+          <ul class="counts"><li><b>15</b> classes</li><li><b>5</b> object properties</li><li><b>3</b> data properties</li><li><b>3</b> individuals</li></ul>
+          <p class="iri"><code>https://w3id.org/cpo/project</code></p>
+          <div class="links"><a class="btn" href="doc/project/">Documentation</a><a class="btn ghost" href="doc/project/webvowl/">WebVOWL</a></div>
+          <div class="formats"><a class="fmt" href="cpo-project.ttl" download>Turtle</a><a class="fmt" href="cpo-project.owl" download>RDF/XML</a><a class="fmt" href="cpo-project.jsonld" download>JSON-LD</a><a class="fmt" href="cpo-project.nt" download>N-Triples</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="img/cpo-product-graffoo.png"><img src="img/cpo-product-graffoo.png" alt="Graffoo diagram of the product module" loading="lazy"></a>
+        <div class="card-body">
+          <p class="eyebrow">Lecture 4b · module</p>
+          <h3>Product</h3>
+          <p>Installed products, their types from the manufacturer catalogue, and their quantities.</p>
+          <ul class="counts"><li><b>7</b> classes</li><li><b>3</b> object properties</li><li><b>3</b> data properties</li></ul>
+          <p class="iri"><code>https://w3id.org/cpo/product</code></p>
+          <div class="links"><a class="btn" href="doc/product/">Documentation</a><a class="btn ghost" href="doc/product/webvowl/">WebVOWL</a></div>
+          <div class="formats"><a class="fmt" href="cpo-product.ttl" download>Turtle</a><a class="fmt" href="cpo-product.owl" download>RDF/XML</a><a class="fmt" href="cpo-product.jsonld" download>JSON-LD</a><a class="fmt" href="cpo-product.nt" download>N-Triples</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="img/cpo-requirement-graffoo.png"><img src="img/cpo-requirement-graffoo.png" alt="Graffoo diagram of the requirement module" loading="lazy"></a>
+        <div class="card-body">
+          <p class="eyebrow">Lecture 4c · module</p>
+          <h3>Requirement</h3>
+          <p>Lighting requirements for types of space, from a standard such as EN 12464-1:2021.</p>
+          <ul class="counts"><li><b>1</b> classes</li><li><b>1</b> object properties</li><li><b>4</b> data properties</li></ul>
+          <p class="iri"><code>https://w3id.org/cpo/requirement</code></p>
+          <div class="links"><a class="btn" href="doc/requirement/">Documentation</a><a class="btn ghost" href="doc/requirement/webvowl/">WebVOWL</a></div>
+          <div class="formats"><a class="fmt" href="cpo-requirement.ttl" download>Turtle</a><a class="fmt" href="cpo-requirement.owl" download>RDF/XML</a><a class="fmt" href="cpo-requirement.jsonld" download>JSON-LD</a><a class="fmt" href="cpo-requirement.nt" download>N-Triples</a></div>
+        </div>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="use">
+    <div class="wrap">
+      <h2>Use it</h2>
+      <p class="sub">Every IRI resolves: a browser gets the documentation, and RDF tools get RDF/XML, JSON-LD, N-Triples or Turtle.</p>
+      <div class="use">
+        <div class="panel">
+          <h3>In Protégé</h3>
+          <ol>
+            <li>File &gt; Open from URL</li>
+            <li>Enter <code>https://w3id.org/cpo</code></li>
+            <li>The modules and BOT are imported from their own IRIs.</li>
+          </ol>
+        </div>
+        <div class="panel">
+          <h3>In SPARQL</h3>
+          <pre>PREFIX cpo: &lt;https://w3id.org/cpo#&gt;
+
+SELECT ?luminaire ?space
+WHERE {
+  ?luminaire a cpo:Luminaire ;
+             cpo:installedIn ?space .
+}</pre>
+        </div>
+        <div class="panel">
+          <h3>By content negotiation</h3>
+          <pre>curl -L -H "Accept: text/turtle" \
+  https://w3id.org/cpo/product</pre>
+          <p style="margin-top:10px">Ask for <code>application/rdf+xml</code>, <code>application/ld+json</code> or <code>application/n-triples</code> for the other formats.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <h2>For education</h2>
+      <p class="sub">CPO is the worked example of TADS23 Advanced Building Information Delivery at Jönköping University. Students build it step by step with ABID-Mo, the course's modular ontology modeling method.</p>
+      <ol class="panel steps">
+        <li><span class="num">4a</span><h3>Project module</h3><p>Building projects, their types, phases and status.</p></li>
+        <li><span class="num">4b</span><h3>Product module</h3><p>Installed products and their types from a manufacturer catalogue.</p></li>
+        <li><span class="num">4c</span><h3>Requirement and composition</h3><p>The requirement module, and the composed ontology that imports the modules, aligns them with BOT and connects them with spanning axioms.</p></li>
+      </ol>
+      <p class="note">Compare your own ontology with these files, and reuse CPO in your project. CPO is kept small on purpose, so that each modeling decision can be explained in class: it is an example for learning, not a complete ontology for practice.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>Cite as</h4>
+      <p>Rahel Kebede. Construction Project Typology Ontology (CPO), version 2.0. Jönköping University, 2026. <a href="https://w3id.org/cpo">https://w3id.org/cpo</a></p>
+    </div>
+    <div>
+      <h4>Licence and source</h4>
+      <p><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · <a href="https://github.com/RichZele/cpo">GitHub repository</a></p>
+      <p>Maintainer: Rahel Kebede, <a href="mailto:rahel.kebede@ju.se">rahel.kebede@ju.se</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll(".copy").forEach(function (b) {
+  b.addEventListener("click", function () {
+    try {
+      navigator.clipboard.writeText(b.dataset.copy).then(function () {
+        b.textContent = "Copied";
+        setTimeout(function () { b.textContent = "Copy"; }, 1500);
+      });
+    } catch (e) {}
+  });
+});
+</script>
+</body>
+</html>

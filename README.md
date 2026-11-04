@@ -2,6 +2,11 @@
 
 An OWL ontology of building projects, their phases, the products installed in their buildings, and the requirements on their spaces. It is the worked example of the course TADS23 Advanced Building Information Delivery at Jönköping University.
 
+![CPO: the project, product and requirement modules composed with BOT, with the spanning axioms, in Graffoo](img/cpo-composed-graffoo.png)
+
+*The composed ontology in Graffoo: yellow boxes are classes, blue arrows object properties, and dotted boxes modules. The spanning axioms `hasBuilding`, `installedIn` and `hasLightingRequirement` connect the modules with BOT.*
+
+- Website: https://richzele.github.io/cpo/, with the modules, the merged ontology, their documentation and every file
 - Ontology: https://w3id.org/cpo
 - Documentation: https://richzele.github.io/cpo/doc/cpo/, made with [WIDOCO](https://github.com/dgarijo/Widoco), with a WebVOWL diagram of each ontology
 - Namespace: `https://w3id.org/cpo#` (prefix `cpo:`)
@@ -14,6 +19,10 @@ An OWL ontology of building projects, their phases, the products installed in th
 | `https://w3id.org/cpo/requirement` | `cpo-requirement.ttl` | [doc/requirement](https://richzele.github.io/cpo/doc/requirement/) | Lighting requirements for types of space |
 
 Each ontology is also available as RDF/XML (`.owl`), JSON-LD (`.jsonld`) and N-Triples (`.nt`). The Turtle files are laid out for reading: one statement per line.
+
+The merged ontology, `cpo-merged.ttl` (also `.owl`, `.jsonld` and `.nt`), holds the three modules and the composed ontology in one file, with BOT as its only import. It is handy for tools that do not follow imports.
+
+The Graffoo diagram of each module is in `img/`.
 
 To use it, open `https://w3id.org/cpo` in Protégé (File > Open from URL). The modules and BOT are imported from their own IRIs.
 
