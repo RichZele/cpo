@@ -1,0 +1,104 @@
+@prefix :         <https://w3id.org/cpo#> .
+@prefix cpo:      <https://w3id.org/cpo#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+
+# =====================================================================
+#  CPO module: Project (with its phases and status)
+#  TADS23 Advanced Building Information Delivery, HT2026, Lecture 4a
+#  Self-contained: uses only its own terms. No imports.
+#  State at the end of Lecture 4a (Checkpoint 4). Labels and definitions as in CPO_annotations.md.
+# =====================================================================
+
+<https://w3id.org/cpo/project> a owl:Ontology ;
+    rdfs:label "CPO module: Project"@en ;
+    rdfs:comment "Building projects, their types, phases and status."@en ;
+    dcterms:creator "Rahel Kebede" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
+
+# ---- building projects
+:BuildingProject a owl:Class ;
+    rdfs:label "building project"@en ;
+    skos:definition "A project that plans, designs, constructs and hands over a building."@en ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty :hasPhase ; owl:someValuesFrom :ProjectPhase ] .
+
+:ResidentialBuildingProject a owl:Class ; rdfs:subClassOf :BuildingProject ;
+    rdfs:label "residential building project"@en ; skos:definition "A building project whose building is used for housing."@en .
+:CommercialBuildingProject a owl:Class ; rdfs:subClassOf :BuildingProject ;
+    rdfs:label "commercial building project"@en ; skos:definition "A building project whose building is used for business, such as offices or shops."@en .
+:IndustrialBuildingProject a owl:Class ; rdfs:subClassOf :BuildingProject ;
+    rdfs:label "industrial building project"@en ; skos:definition "A building project whose building is used for production or storage."@en .
+:EducationalBuildingProject a owl:Class ; rdfs:subClassOf :BuildingProject ;
+    rdfs:label "educational building project"@en ; skos:definition "A building project whose building is used for teaching, such as a school."@en .
+:HealthcareBuildingProject a owl:Class ; rdfs:subClassOf :BuildingProject ;
+    rdfs:label "healthcare building project"@en ; skos:definition "A building project whose building is used for care, such as a hospital."@en .
+[] a owl:AllDisjointClasses ;
+    owl:members ( :ResidentialBuildingProject :CommercialBuildingProject :IndustrialBuildingProject :EducationalBuildingProject :HealthcareBuildingProject ) .
+
+# complement: a defined class
+:NonResidentialBuildingProject a owl:Class ;
+    rdfs:label "non-residential building project"@en ;
+    skos:definition "A building project that is not a residential building project."@en ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( :BuildingProject [ a owl:Class ; owl:complementOf :ResidentialBuildingProject ] ) ] .
+
+# ---- project phases
+:ProjectPhase a owl:Class ;
+    rdfs:label "project phase"@en ; skos:definition "A period of a building project with its own purpose and deliverables."@en .
+:PlanningPhase a owl:Class ; rdfs:subClassOf :ProjectPhase ;
+    rdfs:label "planning phase"@en ; skos:definition "The phase in which the need, the brief and the feasibility of the project are settled."@en .
+:DesignPhase a owl:Class ; rdfs:subClassOf :ProjectPhase ;
+    rdfs:label "design phase"@en ; skos:definition "The phase in which the building and its products are designed and specified."@en .
+:ConstructionPhase a owl:Class ; rdfs:subClassOf :ProjectPhase ;
+    rdfs:label "construction phase"@en ; skos:definition "The phase in which the building is built and the products are installed."@en .
+:PostConstructionPhase a owl:Class ; rdfs:subClassOf :ProjectPhase ;
+    rdfs:label "post-construction phase"@en ; skos:definition "The phase after construction: commissioning and handover."@en .
+:CommissioningPhase a owl:Class ; rdfs:subClassOf :PostConstructionPhase ;
+    rdfs:label "commissioning phase"@en ; skos:definition "The part of the post-construction phase in which installed systems are tested and adjusted."@en .
+[] a owl:AllDisjointClasses ; owl:members ( :PlanningPhase :DesignPhase :ConstructionPhase :PostConstructionPhase ) .
+
+# ---- project status: a value partition, closed with owl:oneOf
+:ProjectStatus a owl:Class ;
+    rdfs:label "project status"@en ;
+    skos:definition "The state of a building project: active, on hold or completed."@en ;
+    owl:equivalentClass [ a owl:Class ; owl:oneOf ( :active :onHold :completed ) ] .
+:active    a owl:NamedIndividual , :ProjectStatus ; rdfs:label "active"@en ;
+    skos:definition "The status of a building project that is being carried out."@en .
+:onHold    a owl:NamedIndividual , :ProjectStatus ; rdfs:label "on hold"@en ;
+    skos:definition "The status of a building project that is paused."@en .
+:completed a owl:NamedIndividual , :ProjectStatus ; rdfs:label "completed"@en ;
+    skos:definition "The status of a building project that is finished."@en .
+[] a owl:AllDifferent ; owl:distinctMembers ( :active :onHold :completed ) .
+
+# value restriction: a defined class, filled by the reasoner
+:ActiveProject a owl:Class ;
+    rdfs:label "active project"@en ;
+    skos:definition "A building project whose status is active."@en ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( :BuildingProject
+                          [ a owl:Restriction ; owl:onProperty :hasStatus ; owl:hasValue :active ] ) ] .
+
+# ---- object properties
+:hasPhase a owl:ObjectProperty ;
+    rdfs:domain :BuildingProject ; rdfs:range :ProjectPhase ;
+    rdfs:label "has phase"@en ; skos:definition "Relates a building project to one of its phases."@en .
+:isPhaseOf a owl:ObjectProperty ; owl:inverseOf :hasPhase ;
+    rdfs:label "is phase of"@en ; skos:definition "Relates a phase to the building project it belongs to. Inverse of hasPhase."@en .
+:precedes a owl:ObjectProperty , owl:TransitiveProperty ;
+    rdfs:domain :ProjectPhase ; rdfs:range :ProjectPhase ;
+    rdfs:label "precedes"@en ; skos:definition "A phase precedes another if it ends before the other begins. Transitive."@en .
+:follows a owl:ObjectProperty ; owl:inverseOf :precedes ;
+    rdfs:label "follows"@en ; skos:definition "A phase follows another if it begins after the other ends. Inverse of precedes."@en .
+:hasStatus a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain :BuildingProject ; rdfs:range :ProjectStatus ;
+    rdfs:label "has status"@en ; skos:definition "Relates a building project to its current status. Functional: one status at a time."@en .
+
+# ---- data properties
+:startDate a owl:DatatypeProperty , owl:FunctionalProperty ; rdfs:domain :BuildingProject ; rdfs:range xsd:dateTime ;
+    rdfs:label "start date"@en ; skos:definition "The date on which the building project begins."@en .
+:endDate a owl:DatatypeProperty , owl:FunctionalProperty ; rdfs:domain :BuildingProject ; rdfs:range xsd:dateTime ;
+    rdfs:label "end date"@en ; skos:definition "The date on which the building project is planned to be completed."@en .
+:budget a owl:DatatypeProperty , owl:FunctionalProperty ; rdfs:domain :BuildingProject ; rdfs:range xsd:decimal ;
+    rdfs:label "budget"@en ; skos:definition "The allocated budget of the building project, in SEK."@en .

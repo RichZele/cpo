@@ -1,0 +1,74 @@
+@prefix :         <https://w3id.org/cpo#> .
+@prefix cpo:      <https://w3id.org/cpo#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix bot:      <https://w3id.org/bot#> .
+@prefix qudt:     <http://qudt.org/schema/qudt/> .
+
+# =====================================================================
+#  CPO: the composed ontology
+#  TADS23 Advanced Building Information Delivery, HT2026, Lecture 4c (week 47)
+#  Imports the three modules and BOT, aligns CPO with BOT, and holds the
+#  spanning axioms: the axioms that connect modules. Nothing else.
+#  Each import resolves through https://w3id.org/cpo.
+# =====================================================================
+
+<https://w3id.org/cpo> a owl:Ontology ;
+    owl:versionInfo "2.0" ;
+    owl:imports <https://w3id.org/cpo/project> ,
+                <https://w3id.org/cpo/product> ,
+                <https://w3id.org/cpo/requirement> ,
+                <https://w3id.org/bot#> ;
+    rdfs:label "Construction Project Typology Ontology (CPO)"@en ;
+    rdfs:comment "Building projects, their phases, the products installed in their buildings, and the requirements on their spaces. Worked example of TADS23, HT2026."@en ;
+    dcterms:creator "Rahel Kebede" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
+
+# ---- alignment with BOT
+:Product rdfs:subClassOf bot:Element .
+:Classroom a owl:Class ; rdfs:subClassOf bot:Space ;
+    rdfs:label "classroom"@en ; skos:definition "A space for teaching."@en .
+:Corridor a owl:Class ; rdfs:subClassOf bot:Space ;
+    rdfs:label "corridor"@en ; skos:definition "A space for circulation between other spaces."@en .
+:hasArea a owl:ObjectProperty , owl:FunctionalProperty ; rdfs:domain bot:Space ; rdfs:range qudt:QuantityValue ;
+    rdfs:label "has area"@en ; skos:definition "The floor area of a space, a quantity value in square metre."@en .
+
+# ---- spanning axioms: Project and Product
+:hasProduct a owl:ObjectProperty ;
+    rdfs:domain :BuildingProject ; rdfs:range :Product ;
+    rdfs:label "has product"@en ; skos:definition "Relates a building project to a product installed in its building."@en .
+:isProductOf a owl:ObjectProperty ; owl:inverseOf :hasProduct ; rdfs:label "is product of"@en .
+:BuildingProject rdfs:subClassOf [ a owl:Restriction ; owl:onProperty :hasProduct ; owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass :Product ] .
+
+# ---- spanning axioms: Project and BOT
+:hasBuilding a owl:ObjectProperty ;
+    rdfs:domain :BuildingProject ; rdfs:range bot:Building ;
+    rdfs:label "has building"@en ; skos:definition "Relates a building project to the building it delivers."@en .
+
+# ---- spanning axioms: Product and BOT
+# Not functional: bot:containsElement has a property chain, so it and its inverse are not simple
+# properties, and OWL 2 DL forbids cardinality on them. 'One space per luminaire' becomes a SHACL constraint in week 48.
+:installedIn a owl:ObjectProperty ;
+    owl:inverseOf bot:containsElement ;
+    rdfs:domain :Product ; rdfs:range bot:Space ;
+    rdfs:label "installed in"@en ; skos:definition "Relates a product to the space it is installed in. Inverse of bot:containsElement."@en .
+
+# ---- spanning axioms: BOT and Requirement
+:hasLightingRequirement a owl:ObjectProperty ;
+    rdfs:domain bot:Space ; rdfs:range :LightingRequirement ;
+    rdfs:label "has lighting requirement"@en ; skos:definition "Relates a space to the lighting requirement that applies to it."@en .
+
+# ---- spanning defined class: Project, its phases, and Product
+:CommissionedFurnishedProject a owl:Class ;
+    rdfs:label "commissioned furnished project"@en ;
+    skos:definition "A building project with at least one furnishing that has reached its commissioning phase."@en ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( :BuildingProject
+        [ a owl:Restriction ; owl:onProperty :hasProduct ; owl:someValuesFrom :Furnishing ]
+        [ a owl:Restriction ; owl:onProperty :hasPhase ; owl:someValuesFrom :CommissioningPhase ] ) ] .
+
+# ---- spanning disjointness: the main classes of different modules
+[] a owl:AllDisjointClasses ; owl:members ( :BuildingProject :ProjectPhase :Product :ProductType :LightingRequirement ) .
