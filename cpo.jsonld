@@ -1,36 +1,18 @@
 [
   {
-    "@id": "https://w3id.org/cpo#Product",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/bot#Element"
-      }
-    ]
-  },
-  {
-    "@id": "_:n1687ab45a1fe454e9e777361ad553709b8",
+    "@id": "https://w3id.org/cpo#isProductOf",
     "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
-    "http://www.w3.org/2002/07/owl#members": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@list": [
-          {
-            "@id": "https://w3id.org/cpo#BuildingProject"
-          },
-          {
-            "@id": "https://w3id.org/cpo#ProjectPhase"
-          },
-          {
-            "@id": "https://w3id.org/cpo#Product"
-          },
-          {
-            "@id": "https://w3id.org/cpo#ProductType"
-          },
-          {
-            "@id": "https://w3id.org/cpo#LightingRequirement"
-          }
-        ]
+        "@language": "en",
+        "@value": "is product of"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/cpo#hasProduct"
       }
     ]
   },
@@ -60,62 +42,6 @@
       {
         "@language": "en",
         "@value": "The floor area of a space, a quantity value in square metre."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#hasProduct",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#BuildingProject"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has product"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cpo#Product"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Relates a building project to a product installed in its building."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#hasLightingRequirement",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/bot#Space"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has lighting requirement"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cpo#LightingRequirement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Relates a space to the lighting requirement that applies to it."
       }
     ]
   },
@@ -183,30 +109,34 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#Corridor",
+    "@id": "_:na0d88f78adce4539a9f599d9c07ff0a4b8",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://www.w3.org/2002/07/owl#members": [
       {
-        "@language": "en",
-        "@value": "corridor"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/bot#Space"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A space for circulation between other spaces."
+        "@list": [
+          {
+            "@id": "https://w3id.org/cpo#BuildingProject"
+          },
+          {
+            "@id": "https://w3id.org/cpo#ProjectPhase"
+          },
+          {
+            "@id": "https://w3id.org/cpo#Product"
+          },
+          {
+            "@id": "https://w3id.org/cpo#ProductType"
+          },
+          {
+            "@id": "https://w3id.org/cpo#LightingRequirement"
+          }
+        ]
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#hasBuilding",
+    "@id": "https://w3id.org/cpo#hasProduct",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -218,94 +148,18 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has building"
+        "@value": "has product"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/bot#Building"
+        "@id": "https://w3id.org/cpo#Product"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Relates a building project to the building it delivers."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#CommissionedFurnishedProject",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "commissioned furnished project"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "_:n1687ab45a1fe454e9e777361ad553709b2"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A building project with at least one furnishing that has reached its commissioning phase."
-      }
-    ]
-  },
-  {
-    "@id": "_:n1687ab45a1fe454e9e777361ad553709b2",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#intersectionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/cpo#BuildingProject"
-          },
-          {
-            "@id": "_:n1687ab45a1fe454e9e777361ad553709b3"
-          },
-          {
-            "@id": "_:n1687ab45a1fe454e9e777361ad553709b4"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "_:n1687ab45a1fe454e9e777361ad553709b3",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/cpo#hasProduct"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://w3id.org/cpo#Furnishing"
-      }
-    ]
-  },
-  {
-    "@id": "_:n1687ab45a1fe454e9e777361ad553709b4",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/cpo#hasPhase"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://w3id.org/cpo#CommissioningPhase"
+        "@value": "Relates a building project to a product installed in its building."
       }
     ]
   },
@@ -343,15 +197,43 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#BuildingProject",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "@id": "https://w3id.org/cpo#hasLightingRequirement",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:n1687ab45a1fe454e9e777361ad553709b1"
+        "@id": "https://w3id.org/bot#Space"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has lighting requirement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cpo#LightingRequirement"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a space to the lighting requirement that applies to it."
       }
     ]
   },
   {
-    "@id": "_:n1687ab45a1fe454e9e777361ad553709b1",
+    "@id": "https://w3id.org/cpo#BuildingProject",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:na0d88f78adce4539a9f599d9c07ff0a4b1"
+      }
+    ]
+  },
+  {
+    "@id": "_:na0d88f78adce4539a9f599d9c07ff0a4b1",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -369,6 +251,90 @@
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
         "@id": "https://w3id.org/cpo#hasProduct"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#CommissionedFurnishedProject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "commissioned furnished project"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:na0d88f78adce4539a9f599d9c07ff0a4b2"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A building project with at least one furnishing that has reached its commissioning phase."
+      }
+    ]
+  },
+  {
+    "@id": "_:na0d88f78adce4539a9f599d9c07ff0a4b2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/cpo#BuildingProject"
+          },
+          {
+            "@id": "_:na0d88f78adce4539a9f599d9c07ff0a4b3"
+          },
+          {
+            "@id": "_:na0d88f78adce4539a9f599d9c07ff0a4b4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:na0d88f78adce4539a9f599d9c07ff0a4b3",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/cpo#hasProduct"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://w3id.org/cpo#Furnishing"
+      }
+    ]
+  },
+  {
+    "@id": "_:na0d88f78adce4539a9f599d9c07ff0a4b4",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/cpo#hasPhase"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://w3id.org/cpo#CommissioningPhase"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#Product",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/bot#Element"
       }
     ]
   },
@@ -396,19 +362,53 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#isProductOf",
+    "@id": "https://w3id.org/cpo#hasBuilding",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#BuildingProject"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "is product of"
+        "@value": "has building"
       }
     ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/cpo#hasProduct"
+        "@id": "https://w3id.org/bot#Building"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a building project to the building it delivers."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#Corridor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "corridor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/bot#Space"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A space for circulation between other spaces."
       }
     ]
   }

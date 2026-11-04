@@ -1,378 +1,378 @@
-_:n12faba8e403f4d14a0a390c916283bf5b1 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/schema/qudt/QuantityValue> .
-_:n1687ab45a1fe454e9e777361ad553709b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/cpo#uniformity> <http://www.w3.org/2004/02/skos/core#definition> "The minimum illuminance uniformity Uo."@en .
-_:n7e5e01cf90574b1e91beca90c1058eeeb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n7e5e01cf90574b1e91beca90c1058eeeb7 .
-_:n7e5e01cf90574b1e91beca90c1058eeeb15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n7e5e01cf90574b1e91beca90c1058eeeb16 .
+<https://w3id.org/cpo#hasArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#CommissionedFurnishedProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project with at least one furnishing that has reached its commissioning phase."@en .
+_:na0d88f78adce4539a9f599d9c07ff0a4b13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to the building it delivers."@en .
+<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project that is not a residential building project."@en .
+_:nab530e9023f6487b80a5941e28675b5cb21 <http://www.w3.org/2002/07/owl#distinctMembers> _:nab530e9023f6487b80a5941e28675b5cb22 .
+<https://w3id.org/cpo#Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/2004/02/skos/core#definition> "Relates a space to the lighting requirement that applies to it."@en .
+_:na2b0caaac4dd445aa24ff92dc4197808b1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasProductType> .
+<https://w3id.org/cpo#LightingRequirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/2002/07/owl#equivalentClass> _:nab530e9023f6487b80a5941e28675b5cb25 .
+_:nab530e9023f6487b80a5941e28675b5cb8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:nab530e9023f6487b80a5941e28675b5cb19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#onHold> .
+<https://w3id.org/cpo#colourRenderingIndex> <http://www.w3.org/2000/01/rdf-schema#label> "colour rendering index"@en .
+<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2004/02/skos/core#definition> "The unified glare rating limit UGRL."@en .
+_:na0d88f78adce4539a9f599d9c07ff0a4b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/cpo#Product> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/cpo#ProductType> .
+<https://w3id.org/cpo#Furnishing> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/cpo#Fixture> .
+<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for business, such as offices or shops."@en .
+<https://w3id.org/cpo#budget> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
+_:nab530e9023f6487b80a5941e28675b5cb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nab530e9023f6487b80a5941e28675b5cb4 .
+<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/cpo#hasArea> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/bot#Space> .
+<https://w3id.org/cpo#Fixture> <http://www.w3.org/2004/02/skos/core#definition> "A product fixed to the building, such as a luminaire."@en .
+_:na0d88f78adce4539a9f599d9c07ff0a4b4 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/cpo#CommissioningPhase> .
+<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
+_:nab530e9023f6487b80a5941e28675b5cb1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasPhase> .
+<https://w3id.org/cpo#LuminaireType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProductType> .
+<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo> <http://purl.org/vocab/vann/preferredNamespacePrefix> "cpo" .
+<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the need, the brief and the feasibility of the project are settled."@en .
+<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "healthcare building project"@en .
+<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/bot#Space> .
+<https://w3id.org/cpo#onHold> <http://www.w3.org/2000/01/rdf-schema#label> "on hold"@en .
+_:nab530e9023f6487b80a5941e28675b5cb7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#HealthcareBuildingProject> .
+<https://w3id.org/cpo#startDate> <http://www.w3.org/2000/01/rdf-schema#label> "start date"@en .
+<https://w3id.org/cpo#hasArea> <http://www.w3.org/2004/02/skos/core#definition> "The floor area of a space, a quantity value in square metre."@en .
+_:n644fcafe7e3d48e98e82be5958147ec2b1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasRequiredIlluminance> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#LightingRequirement> .
+<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProjectPhase> .
+<https://w3id.org/cpo#startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+_:nab530e9023f6487b80a5941e28675b5cb14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#DesignPhase> .
+<https://w3id.org/cpo#Classroom> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Space> .
+<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to one of its phases."@en .
+<https://w3id.org/cpo#hasArea> <http://www.w3.org/2000/01/rdf-schema#label> "has area"@en .
+<https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for housing."@en .
+<https://w3id.org/cpo#colourRenderingIndex> <http://www.w3.org/2004/02/skos/core#definition> "The colour rendering index Ra of a luminaire type."@en .
+<https://w3id.org/cpo#hasLuminousFlux> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for care, such as a hospital."@en .
+_:na2b0caaac4dd445aa24ff92dc4197808b5 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/cpo#startDate> <http://www.w3.org/2004/02/skos/core#definition> "The date on which the building project begins."@en .
+_:nab530e9023f6487b80a5941e28675b5cb9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Element> .
+<https://w3id.org/cpo#Fixture> <http://www.w3.org/2000/01/rdf-schema#label> "fixture"@en .
+_:na0d88f78adce4539a9f599d9c07ff0a4b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:na0d88f78adce4539a9f599d9c07ff0a4b6 .
+<https://w3id.org/cpo#completed> <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is finished."@en .
+_:na0d88f78adce4539a9f599d9c07ff0a4b11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#Product> .
+<https://w3id.org/cpo#InteriorProduct> <http://www.w3.org/2002/07/owl#equivalentClass> _:na2b0caaac4dd445aa24ff92dc4197808b2 .
+<https://w3id.org/cpo#onHold> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/cpo#Product> <http://www.w3.org/2000/01/rdf-schema#label> "product"@en .
+_:nab530e9023f6487b80a5941e28675b5cb12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+<https://w3id.org/cpo#hasProduct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/2002/07/owl#equivalentClass> _:nab530e9023f6487b80a5941e28675b5cb17 .
+<https://w3id.org/cpo#hasProductType> <http://www.w3.org/2004/02/skos/core#definition> "Relates an installed product to its type in the catalogue."@en .
+<https://w3id.org/cpo#active> <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is being carried out."@en .
+<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/2000/01/rdf-schema#label> "active project"@en .
+<https://w3id.org/cpo#colourRenderingIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#Luminaire> <http://www.w3.org/2000/01/rdf-schema#label> "luminaire"@en .
+<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/bot#Building> .
+<https://w3id.org/cpo#hasRatedPower> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+_:nab530e9023f6487b80a5941e28675b5cb12 <http://www.w3.org/2002/07/owl#members> _:nab530e9023f6487b80a5941e28675b5cb13 .
+<https://w3id.org/cpo#hasProduct> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
+_:nab530e9023f6487b80a5941e28675b5cb25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#installedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ProjectPhase> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:nab530e9023f6487b80a5941e28675b5cb28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/cpo#articleNumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/cpo> <http://purl.org/dc/terms/creator> "Rahel Kebede" .
-_:n7e5e01cf90574b1e91beca90c1058eeeb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ResidentialBuildingProject> .
-_:n1687ab45a1fe454e9e777361ad553709b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n1687ab45a1fe454e9e777361ad553709b10 .
-<https://w3id.org/cpo#installedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:n1687ab45a1fe454e9e777361ad553709b3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/cpo#Furnishing> .
-<https://w3id.org/cpo#installedIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/bot#Space> .
-<https://w3id.org/cpo#precedes> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#completed> <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is finished."@en .
-<https://w3id.org/cpo#budget> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n7e5e01cf90574b1e91beca90c1058eeeb6 .
-<https://w3id.org/cpo#hasLuminousFlux> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LuminaireType> .
-<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
-<https://w3id.org/cpo#uniformity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
-<https://w3id.org/cpo#endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
-<https://w3id.org/cpo#budget> <http://www.w3.org/2000/01/rdf-schema#label> "budget"@en .
-<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2000/01/rdf-schema#label> "UGR limit"@en .
-<https://w3id.org/cpo#installedIn> <http://www.w3.org/2004/02/skos/core#definition> "Relates a product to the space it is installed in. Inverse of bot:containsElement."@en .
-<https://w3id.org/cpo#ProductType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://w3id.org/cpo> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/bot#> .
-<https://w3id.org/cpo#startDate> <http://www.w3.org/2004/02/skos/core#definition> "The date on which the building project begins."@en .
-<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#uniformity> <http://www.w3.org/2000/01/rdf-schema#label> "uniformity"@en .
-<https://w3id.org/cpo#colourRenderingIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb21 <http://www.w3.org/2002/07/owl#distinctMembers> _:n7e5e01cf90574b1e91beca90c1058eeeb22 .
-<https://w3id.org/cpo> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n7e5e01cf90574b1e91beca90c1058eeeb28 .
-<https://w3id.org/cpo#Product> <http://www.w3.org/2000/01/rdf-schema#label> "product"@en .
-<https://w3id.org/cpo#precedes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#hasRatedPower> <http://www.w3.org/2000/01/rdf-schema#label> "has rated power"@en .
-<https://w3id.org/cpo#uniformity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/2000/01/rdf-schema#label> "active project"@en .
-<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#endDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/2000/01/rdf-schema#label> "design phase"@en .
-<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2004/02/skos/core#definition> "The unified glare rating limit UGRL."@en .
-<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/2004/02/skos/core#definition> "The state of a building project: active, on hold or completed."@en .
-<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project that is not a residential building project."@en .
-<https://w3id.org/cpo> <http://purl.org/vocab/vann/preferredNamespacePrefix> "cpo" .
-_:n7e5e01cf90574b1e91beca90c1058eeeb24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#completed> .
-_:n1687ab45a1fe454e9e777361ad553709b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-<https://w3id.org/cpo#hasLuminousFlux> <http://www.w3.org/2000/01/rdf-schema#label> "has luminous flux"@en .
-<https://w3id.org/cpo#startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
-_:n1687ab45a1fe454e9e777361ad553709b10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n1687ab45a1fe454e9e777361ad553709b11 .
-<https://w3id.org/cpo#Luminaire> <http://www.w3.org/2000/01/rdf-schema#label> "luminaire"@en .
-<https://w3id.org/cpo#budget> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/cpo#installedIn> <http://www.w3.org/2000/01/rdf-schema#label> "installed in"@en .
-<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#label> "construction phase"@en .
-<https://w3id.org/cpo#colourTemperature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/cpo#articleNumber> <http://www.w3.org/2000/01/rdf-schema#label> "article number"@en .
-<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#ProductType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/CEON/ontology/resourceODP/Resource> .
-<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#label> "has status"@en .
-<https://w3id.org/cpo#follows> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#startDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProjectStatus> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb26 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasStatus> .
-<https://w3id.org/cpo#hasProductType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/bot#Space> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#LuminaireType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProductType> .
-<https://w3id.org/cpo#onHold> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb9 <http://www.w3.org/2002/07/owl#complementOf> <https://w3id.org/cpo#ResidentialBuildingProject> .
-<https://w3id.org/cpo#hasArea> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
-<https://w3id.org/cpo#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://w3id.org/cpo#hasRatedPower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#LightingRequirement> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/2000/01/rdf-schema#label> "planning phase"@en .
-<https://w3id.org/cpo#articleNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:na39ce22ea2d54029858e798e6f403fd5b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb26 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/cpo#active> .
-<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "non-residential building project"@en .
-_:n7e5e01cf90574b1e91beca90c1058eeeb14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#DesignPhase> .
-<https://w3id.org/cpo#Furnishing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#Product> .
-<https://w3id.org/cpo#Classroom> <http://www.w3.org/2004/02/skos/core#definition> "A space for teaching."@en .
-_:n1687ab45a1fe454e9e777361ad553709b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#colourRenderingIndex> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LuminaireType> .
-<https://w3id.org/cpo#Fixture> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#Classroom> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Space> .
-<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the building and its products are designed and specified."@en .
-<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
-<https://w3id.org/cpo#colourRenderingIndex> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
-<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#IndustrialBuildingProject> .
-_:n1687ab45a1fe454e9e777361ad553709b12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ProductType> .
-<https://w3id.org/cpo#hasLuminousFlux> <http://www.w3.org/2004/02/skos/core#definition> "The luminous flux of a luminaire type, a quantity value in lumen."@en .
-_:n7e5e01cf90574b1e91beca90c1058eeeb13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#PlanningPhase> .
-<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n7e5e01cf90574b1e91beca90c1058eeeb1 .
-<https://w3id.org/cpo#uniformity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://w3id.org/cpo#LuminaireType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:na39ce22ea2d54029858e798e6f403fd5b5 .
-<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#label> "post-construction phase"@en .
-_:n7e5e01cf90574b1e91beca90c1058eeeb20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#completed> .
-<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#completed> <http://www.w3.org/2000/01/rdf-schema#label> "completed"@en .
-<https://w3id.org/cpo#Fixture> <http://www.w3.org/2000/01/rdf-schema#label> "fixture"@en .
-<https://w3id.org/cpo#hasLuminousFlux> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
-<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n1687ab45a1fe454e9e777361ad553709b1 .
-_:na39ce22ea2d54029858e798e6f403fd5b5 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/cpo#colourTemperature> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
-<https://w3id.org/cpo#hasProductType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProductType> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#onHold> .
-<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/2000/01/rdf-schema#label> "minimum colour rendering"@en .
-<https://w3id.org/cpo#onHold> <http://www.w3.org/2000/01/rdf-schema#label> "on hold"@en .
-<https://w3id.org/cpo#precedes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#ProjectPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/2002/07/owl#equivalentClass> _:n7e5e01cf90574b1e91beca90c1058eeeb17 .
-<https://w3id.org/cpo#active> <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is being carried out."@en .
-<https://w3id.org/cpo#isProductOf> <http://www.w3.org/2000/01/rdf-schema#label> "is product of"@en .
-<https://w3id.org/cpo#hasRatedPower> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LuminaireType> .
-<https://w3id.org/cpo#startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for business, such as offices or shops."@en .
-<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/2000/01/rdf-schema#label> "is phase of"@en .
-<https://w3id.org/cpo#hasProduct> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "industrial building project"@en .
-<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to the building it delivers."@en .
-_:n1687ab45a1fe454e9e777361ad553709b11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#Product> .
-<https://w3id.org/cpo#colourTemperature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n7e5e01cf90574b1e91beca90c1058eeeb23 .
-_:n7e5e01cf90574b1e91beca90c1058eeeb7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#HealthcareBuildingProject> .
-<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb12 <http://www.w3.org/2002/07/owl#members> _:n7e5e01cf90574b1e91beca90c1058eeeb13 .
-<https://w3id.org/cpo#hasRatedPower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/2002/07/owl#equivalentClass> _:n7e5e01cf90574b1e91beca90c1058eeeb8 .
-<https://w3id.org/cpo#precedes> <http://www.w3.org/2000/01/rdf-schema#label> "precedes"@en .
-_:n7e5e01cf90574b1e91beca90c1058eeeb28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n7e5e01cf90574b1e91beca90c1058eeeb26 .
-<https://w3id.org/cpo#follows> <http://www.w3.org/2004/02/skos/core#definition> "A phase follows another if it begins after the other ends. Inverse of precedes."@en .
-<https://w3id.org/cpo#Furnishing> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/cpo#Fixture> .
-<https://w3id.org/cpo#LightingRequirement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n12faba8e403f4d14a0a390c916283bf5b1 .
-<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
-<https://w3id.org/cpo#hasArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#CommissionedFurnishedProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:n1687ab45a1fe454e9e777361ad553709b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n1687ab45a1fe454e9e777361ad553709b3 .
-_:n7e5e01cf90574b1e91beca90c1058eeeb1 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#CommissionedFurnishedProject> <http://www.w3.org/2000/01/rdf-schema#label> "commissioned furnished project"@en .
-<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/cpo> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/cpo#" .
-_:n7e5e01cf90574b1e91beca90c1058eeeb19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n7e5e01cf90574b1e91beca90c1058eeeb20 .
-<https://w3id.org/cpo#hasArea> <http://www.w3.org/2000/01/rdf-schema#label> "has area"@en .
-<https://w3id.org/cpo#completed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "building project"@en .
-<https://w3id.org/cpo#colourTemperature> <http://www.w3.org/2004/02/skos/core#definition> "The correlated colour temperature of a luminaire type, in kelvin."@en .
-<https://w3id.org/cpo#colourTemperature> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LuminaireType> .
-<https://w3id.org/cpo#startDate> <http://www.w3.org/2000/01/rdf-schema#label> "start date"@en .
-<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase after construction: commissioning and handover."@en .
-<https://w3id.org/cpo#ProductType> <http://www.w3.org/2004/02/skos/core#definition> "A product as described in a manufacturer catalogue: one article, many installed copies."@en .
-<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/2000/01/rdf-schema#label> "has required illuminance"@en .
-<https://w3id.org/cpo#endDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#PostConstructionPhase> .
-<https://w3id.org/cpo#articleNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#ProductType> .
-_:n1687ab45a1fe454e9e777361ad553709b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n1687ab45a1fe454e9e777361ad553709b6 .
-_:n7e5e01cf90574b1e91beca90c1058eeeb9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:n1687ab45a1fe454e9e777361ad553709b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/cpo#Furnishing> <http://www.w3.org/2000/01/rdf-schema#label> "furnishing"@en .
-<https://w3id.org/cpo#CommissionedFurnishedProject> <http://www.w3.org/2002/07/owl#equivalentClass> _:n1687ab45a1fe454e9e777361ad553709b2 .
-<https://w3id.org/cpo#isProductOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/cpo#hasProduct> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#active> .
-_:n1687ab45a1fe454e9e777361ad553709b2 <http://www.w3.org/2002/07/owl#intersectionOf> _:n1687ab45a1fe454e9e777361ad553709b5 .
-_:n1687ab45a1fe454e9e777361ad553709b13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#LightingRequirement> .
-<https://w3id.org/cpo#Luminaire> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#Fixture> .
-_:n12faba8e403f4d14a0a390c916283bf5b1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasRequiredIlluminance> .
-<https://w3id.org/cpo#hasArea> <http://www.w3.org/2004/02/skos/core#definition> "The floor area of a space, a quantity value in square metre."@en .
-<https://w3id.org/cpo#Corridor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#LuminaireType> <http://www.w3.org/2004/02/skos/core#definition> "A luminaire article in a manufacturer catalogue."@en .
-<https://w3id.org/cpo#Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:n1687ab45a1fe454e9e777361ad553709b4 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasPhase> .
-<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the building is built and the products are installed."@en .
-<https://w3id.org/cpo#active> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cpo#ProjectStatus> .
-<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/2004/02/skos/core#definition> "Relates a phase to the building project it belongs to. Inverse of hasPhase."@en .
-<https://w3id.org/cpo#Product> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/cpo#ProductType> .
-<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#LightingRequirement> <http://www.w3.org/2004/02/skos/core#definition> "The lighting a type of space must receive, as set by a standard such as EN 12464-1:2021."@en .
-<https://w3id.org/cpo#ProductType> <http://www.w3.org/2000/01/rdf-schema#label> "product type"@en .
-<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/cpo> <http://www.w3.org/2002/07/owl#versionInfo> "2.0" .
-<https://w3id.org/cpo#isProductOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#budget> <http://www.w3.org/2004/02/skos/core#definition> "The allocated budget of the building project, in SEK."@en .
-<https://w3id.org/cpo> <http://www.w3.org/2000/01/rdf-schema#comment> "Building projects, their phases, the products installed in their buildings, and the requirements on their spaces. Worked example of TADS23, HT2026."@en .
-<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/2004/02/skos/core#definition> "The minimum colour rendering index Ra."@en .
-<https://w3id.org/cpo#CommissionedFurnishedProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project with at least one furnishing that has reached its commissioning phase."@en .
-<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#InteriorProduct> <http://www.w3.org/2002/07/owl#equivalentClass> _:na39ce22ea2d54029858e798e6f403fd5b2 .
-<https://w3id.org/cpo#Furnishing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/cpo#precedes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
-<https://w3id.org/cpo#hasArea> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/bot#Space> .
-<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/bot#Building> .
-<https://w3id.org/cpo#installedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#Product> .
-<https://w3id.org/cpo#LightingRequirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose status is active."@en .
-<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "has lighting requirement"@en .
-<https://w3id.org/cpo#colourTemperature> <http://www.w3.org/2000/01/rdf-schema#label> "colour temperature"@en .
-<https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for housing."@en .
-<https://w3id.org/cpo#LightingRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "lighting requirement"@en .
-_:n12faba8e403f4d14a0a390c916283bf5b1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/cpo#budget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-_:n1687ab45a1fe454e9e777361ad553709b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:n1687ab45a1fe454e9e777361ad553709b12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n1687ab45a1fe454e9e777361ad553709b13 .
-_:n1687ab45a1fe454e9e777361ad553709b1 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/cpo#Product> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:nab530e9023f6487b80a5941e28675b5cb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/2002/07/owl#equivalentClass> _:nab530e9023f6487b80a5941e28675b5cb8 .
 <https://w3id.org/cpo#sourceStandard> <http://www.w3.org/2004/02/skos/core#definition> "The standard the requirement is taken from, such as EN 12464-1:2021."@en .
-<https://w3id.org/cpo#follows> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/cpo#precedes> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#precedes> <http://www.w3.org/2004/02/skos/core#definition> "A phase precedes another if it ends before the other begins. Transitive."@en .
-<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#onHold> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cpo#ProjectStatus> .
-<https://w3id.org/cpo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-_:na39ce22ea2d54029858e798e6f403fd5b2 <http://www.w3.org/2002/07/owl#unionOf> _:na39ce22ea2d54029858e798e6f403fd5b3 .
-<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/2004/02/skos/core#definition> "Relates a space to the lighting requirement that applies to it."@en .
-<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://w3id.org/cpo#installedIn> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/bot#containsElement> .
-<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/cpo#hasPhase> .
-<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-_:n1687ab45a1fe454e9e777361ad553709b8 <http://www.w3.org/2002/07/owl#members> _:n1687ab45a1fe454e9e777361ad553709b9 .
-<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/2000/01/rdf-schema#label> "commissioning phase"@en .
-<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:n1687ab45a1fe454e9e777361ad553709b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n1687ab45a1fe454e9e777361ad553709b4 .
-_:n1687ab45a1fe454e9e777361ad553709b4 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/cpo#CommissioningPhase> .
-<https://w3id.org/cpo#startDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<https://w3id.org/cpo#colourRenderingIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
-<https://w3id.org/cpo#hasProduct> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to a product installed in its building."@en .
-<https://w3id.org/cpo#Classroom> <http://www.w3.org/2000/01/rdf-schema#label> "classroom"@en .
-<https://w3id.org/cpo#Classroom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
-_:na39ce22ea2d54029858e798e6f403fd5b5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasLuminousFlux> .
-<https://w3id.org/cpo#Luminaire> <http://www.w3.org/2004/02/skos/core#definition> "One installed luminaire, at one place in one building."@en .
-_:n7e5e01cf90574b1e91beca90c1058eeeb1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasPhase> .
-<https://w3id.org/cpo#colourRenderingIndex> <http://www.w3.org/2000/01/rdf-schema#label> "colour rendering index"@en .
-<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
-<https://w3id.org/cpo#hasProduct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#hasProductType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#Product> .
-_:na39ce22ea2d54029858e798e6f403fd5b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n7e5e01cf90574b1e91beca90c1058eeeb11 .
-<https://w3id.org/cpo#hasProductType> <http://www.w3.org/2004/02/skos/core#definition> "Relates an installed product to its type in the catalogue."@en .
-_:n7e5e01cf90574b1e91beca90c1058eeeb16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/cpo#follows> <http://www.w3.org/2000/01/rdf-schema#label> "follows"@en .
-<https://w3id.org/cpo#hasLuminousFlux> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo> <http://www.w3.org/2000/01/rdf-schema#label> "Construction Project Typology Ontology (CPO)"@en .
-<https://w3id.org/cpo#hasRatedPower> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#uniformity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n7e5e01cf90574b1e91beca90c1058eeeb15 .
-_:n7e5e01cf90574b1e91beca90c1058eeeb27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
-_:na39ce22ea2d54029858e798e6f403fd5b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#Furnishing> .
-_:n1687ab45a1fe454e9e777361ad553709b1 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#PostConstructionPhase> .
-<https://w3id.org/cpo#hasProductType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-_:n1687ab45a1fe454e9e777361ad553709b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-<https://w3id.org/cpo#Corridor> <http://www.w3.org/2004/02/skos/core#definition> "A space for circulation between other spaces."@en .
-<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/2004/02/skos/core#definition> "The maintained illuminance required on the task area, a quantity value in lux."@en .
-<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/2002/07/owl#equivalentClass> _:n7e5e01cf90574b1e91beca90c1058eeeb25 .
-_:na39ce22ea2d54029858e798e6f403fd5b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#onHold> .
-<https://w3id.org/cpo#Luminaire> <http://www.w3.org/2004/02/skos/core#altLabel> "light fitting"@en .
-_:na39ce22ea2d54029858e798e6f403fd5b1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasProductType> .
-_:na39ce22ea2d54029858e798e6f403fd5b5 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/schema/qudt/QuantityValue> .
-_:n1687ab45a1fe454e9e777361ad553709b1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasProduct> .
-<https://w3id.org/cpo#Product> <http://www.w3.org/2004/02/skos/core#definition> "One installed product in a building, from materials to finished goods."@en .
-<https://w3id.org/cpo#active> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#CommercialBuildingProject> .
-<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/2000/01/rdf-schema#label> "has building"@en .
-<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A project that plans, designs, constructs and hands over a building."@en .
-<https://w3id.org/cpo#Fixture> <http://www.w3.org/2004/02/skos/core#definition> "A product fixed to the building, such as a luminaire."@en .
-_:n1687ab45a1fe454e9e777361ad553709b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n7e5e01cf90574b1e91beca90c1058eeeb4 .
-_:n7e5e01cf90574b1e91beca90c1058eeeb13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n7e5e01cf90574b1e91beca90c1058eeeb14 .
-_:n7e5e01cf90574b1e91beca90c1058eeeb4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n7e5e01cf90574b1e91beca90c1058eeeb5 .
-_:n7e5e01cf90574b1e91beca90c1058eeeb24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/cpo#articleNumber> <http://www.w3.org/2004/02/skos/core#definition> "The manufacturer's article number of a product type."@en .
-<https://w3id.org/cpo#Furnishing> <http://www.w3.org/2004/02/skos/core#definition> "A movable product, such as a desk or a chair."@en .
-_:n7e5e01cf90574b1e91beca90c1058eeeb26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:n1687ab45a1fe454e9e777361ad553709b13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb8 <http://www.w3.org/2002/07/owl#intersectionOf> _:n7e5e01cf90574b1e91beca90c1058eeeb10 .
-<https://w3id.org/cpo#colourRenderingIndex> <http://www.w3.org/2004/02/skos/core#definition> "The colour rendering index Ra of a luminaire type."@en .
+<https://w3id.org/cpo#installedIn> <http://www.w3.org/2000/01/rdf-schema#label> "installed in"@en .
+<https://w3id.org/cpo#CommissionedFurnishedProject> <http://www.w3.org/2002/07/owl#equivalentClass> _:na0d88f78adce4539a9f599d9c07ff0a4b2 .
+<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
+<https://w3id.org/cpo#isProductOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/cpo#hasProduct> .
 <https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/2000/01/rdf-schema#label> "project status"@en .
-_:n7e5e01cf90574b1e91beca90c1058eeeb18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#active> .
-_:na39ce22ea2d54029858e798e6f403fd5b1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:n1687ab45a1fe454e9e777361ad553709b10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "residential building project"@en .
-_:n7e5e01cf90574b1e91beca90c1058eeeb18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n7e5e01cf90574b1e91beca90c1058eeeb19 .
-<https://w3id.org/cpo#articleNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://w3id.org/cpo#Fixture> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#Product> .
-<https://w3id.org/cpo#completed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cpo#ProjectStatus> .
-<https://w3id.org/cpo#LuminaireType> <http://www.w3.org/2000/01/rdf-schema#label> "luminaire type"@en .
-<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/2000/01/rdf-schema#label> "source standard"@en .
-_:n7e5e01cf90574b1e91beca90c1058eeeb11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n7e5e01cf90574b1e91beca90c1058eeeb9 .
 <https://w3id.org/cpo> <http://purl.org/dc/terms/created> "2026-11-04"^^<http://www.w3.org/2001/XMLSchema#date> .
-_:n1687ab45a1fe454e9e777361ad553709b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n1687ab45a1fe454e9e777361ad553709b7 .
-_:na39ce22ea2d54029858e798e6f403fd5b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ConstructionPhase> .
-<https://w3id.org/cpo#Corridor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Space> .
-<https://w3id.org/cpo> <http://www.w3.org/2000/01/rdf-schema#comment> "This file is the merged ontology: the three modules and the composed ontology in one file."@en .
-<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#hasLuminousFlux> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-_:na39ce22ea2d54029858e798e6f403fd5b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:na39ce22ea2d54029858e798e6f403fd5b4 .
-<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for teaching, such as a school."@en .
-_:n7e5e01cf90574b1e91beca90c1058eeeb23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n7e5e01cf90574b1e91beca90c1058eeeb24 .
-<https://w3id.org/cpo#hasPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:na39ce22ea2d54029858e798e6f403fd5b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#Luminaire> .
-<https://w3id.org/cpo#endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb2 <http://www.w3.org/2002/07/owl#members> _:n7e5e01cf90574b1e91beca90c1058eeeb3 .
-<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
-<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb17 <http://www.w3.org/2002/07/owl#oneOf> _:n7e5e01cf90574b1e91beca90c1058eeeb18 .
-<https://w3id.org/cpo#Corridor> <http://www.w3.org/2000/01/rdf-schema#label> "corridor"@en .
-<https://w3id.org/cpo#InteriorProduct> <http://www.w3.org/2000/01/rdf-schema#label> "interior product"@en .
-<https://w3id.org/cpo#endDate> <http://www.w3.org/2004/02/skos/core#definition> "The date on which the building project is planned to be completed."@en .
-<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/cpo#hasProduct> <http://www.w3.org/2000/01/rdf-schema#label> "has product"@en .
-<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to one of its phases."@en .
-<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2000/01/rdf-schema#label> "has phase"@en .
+_:na0d88f78adce4539a9f599d9c07ff0a4b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/2000/01/rdf-schema#label> "commissioning phase"@en .
+<https://w3id.org/cpo#Furnishing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:nab530e9023f6487b80a5941e28675b5cb11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/cpo#Luminaire> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#Fixture> .
+<https://w3id.org/cpo#Luminaire> <http://www.w3.org/2004/02/skos/core#altLabel> "light fitting"@en .
 <https://w3id.org/cpo#hasProduct> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#Product> .
+<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/2000/01/rdf-schema#label> "has building"@en .
+_:na0d88f78adce4539a9f599d9c07ff0a4b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:na0d88f78adce4539a9f599d9c07ff0a4b4 .
+<https://w3id.org/cpo#onHold> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cpo#ProjectStatus> .
+<https://w3id.org/cpo#Corridor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Space> .
 <https://w3id.org/cpo#BuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#active> <http://www.w3.org/2000/01/rdf-schema#label> "active"@en .
-<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#ProjectPhase> <http://www.w3.org/2000/01/rdf-schema#label> "project phase"@en .
-<https://w3id.org/cpo#hasArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/2004/02/skos/core#definition> "The part of the post-construction phase in which installed systems are tested and adjusted."@en .
-<https://w3id.org/cpo#ProjectPhase> <http://www.w3.org/2004/02/skos/core#definition> "A period of a building project with its own purpose and deliverables."@en .
-<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "healthcare building project"@en .
-<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for care, such as a hospital."@en .
-<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to its current status. Functional: one status at a time."@en .
-<https://w3id.org/cpo#onHold> <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is paused."@en .
-<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#Luminaire> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:n7e5e01cf90574b1e91beca90c1058eeeb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#EducationalBuildingProject> .
-_:n1687ab45a1fe454e9e777361ad553709b11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n1687ab45a1fe454e9e777361ad553709b12 .
-<https://w3id.org/cpo#hasProductType> <http://www.w3.org/2000/01/rdf-schema#label> "has product type"@en .
-<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the need, the brief and the feasibility of the project are settled."@en .
-<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "educational building project"@en .
-<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "commercial building project"@en .
-_:n1687ab45a1fe454e9e777361ad553709b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/cpo#LuminaireType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#InteriorProduct> <http://www.w3.org/2004/02/skos/core#definition> "A luminaire or a furnishing."@en .
-<https://w3id.org/cpo#Luminaire> <http://www.w3.org/2004/02/skos/core#altLabel> "lighting fixture"@en .
-_:n7e5e01cf90574b1e91beca90c1058eeeb25 <http://www.w3.org/2002/07/owl#intersectionOf> _:n7e5e01cf90574b1e91beca90c1058eeeb27 .
-<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for production or storage."@en .
-<https://w3id.org/cpo#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Element> .
+<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
+<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+_:nab530e9023f6487b80a5941e28675b5cb23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nab530e9023f6487b80a5941e28675b5cb24 .
+<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#colourTemperature> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LuminaireType> .
+<https://w3id.org/cpo#startDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#uniformity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
+<https://w3id.org/cpo#endDate> <http://www.w3.org/2004/02/skos/core#definition> "The date on which the building project is planned to be completed."@en .
+<https://w3id.org/cpo#Product> <http://www.w3.org/2004/02/skos/core#definition> "One installed product in a building, from materials to finished goods."@en .
+<https://w3id.org/cpo#colourTemperature> <http://www.w3.org/2004/02/skos/core#definition> "The correlated colour temperature of a luminaire type, in kelvin."@en .
+_:nab530e9023f6487b80a5941e28675b5cb23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#onHold> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b1 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/cpo#Product> .
+<https://w3id.org/cpo#endDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/cpo#ProductType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/CEON/ontology/resourceODP/Resource> .
+<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nab530e9023f6487b80a5941e28675b5cb1 .
+<https://w3id.org/cpo#hasLuminousFlux> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LuminaireType> .
+_:nab530e9023f6487b80a5941e28675b5cb18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#active> .
+<https://w3id.org/cpo#uniformity> <http://www.w3.org/2000/01/rdf-schema#label> "uniformity"@en .
+<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#PostConstructionPhase> .
+<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/2000/01/rdf-schema#label> "design phase"@en .
+_:nab530e9023f6487b80a5941e28675b5cb1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/cpo#articleNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#completed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cpo#ProjectStatus> .
+<https://w3id.org/cpo#hasRatedPower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+_:nab530e9023f6487b80a5941e28675b5cb20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#completed> .
+_:na2b0caaac4dd445aa24ff92dc4197808b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "residential building project"@en .
+<https://w3id.org/cpo#colourTemperature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#budget> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+_:n644fcafe7e3d48e98e82be5958147ec2b1 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/schema/qudt/QuantityValue> .
+<https://w3id.org/cpo#LuminaireType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:na2b0caaac4dd445aa24ff92dc4197808b5 .
+_:nab530e9023f6487b80a5941e28675b5cb26 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/cpo#active> .
+_:nab530e9023f6487b80a5941e28675b5cb7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:nab530e9023f6487b80a5941e28675b5cb10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#precedes> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProjectPhase> .
+<https://w3id.org/cpo#hasRatedPower> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LuminaireType> .
+<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/cpo#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:nab530e9023f6487b80a5941e28675b5cb26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/cpo#colourTemperature> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for teaching, such as a school."@en .
+<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#endDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#hasProductType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#Product> .
+_:na2b0caaac4dd445aa24ff92dc4197808b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#Furnishing> .
+<https://w3id.org/cpo#CommissionedFurnishedProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#CommissionedFurnishedProject> <http://www.w3.org/2000/01/rdf-schema#label> "commissioned furnished project"@en .
 <https://w3id.org/cpo#InteriorProduct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:na0d88f78adce4539a9f599d9c07ff0a4b10 .
+<https://w3id.org/cpo#hasProductType> <http://www.w3.org/2000/01/rdf-schema#label> "has product type"@en .
+_:na2b0caaac4dd445aa24ff92dc4197808b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:na2b0caaac4dd445aa24ff92dc4197808b4 .
+<https://w3id.org/cpo#isProductOf> <http://www.w3.org/2000/01/rdf-schema#label> "is product of"@en .
+_:nab530e9023f6487b80a5941e28675b5cb13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#PlanningPhase> .
+_:nab530e9023f6487b80a5941e28675b5cb27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/2004/02/skos/core#definition> "The maintained illuminance required on the task area, a quantity value in lux."@en .
+_:na0d88f78adce4539a9f599d9c07ff0a4b12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ProductType> .
+<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/cpo#DesignPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
-_:na39ce22ea2d54029858e798e6f403fd5b1 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/cpo#LuminaireType> .
-<https://w3id.org/cpo#endDate> <http://www.w3.org/2000/01/rdf-schema#label> "end date"@en .
-<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#Luminaire> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:na39ce22ea2d54029858e798e6f403fd5b1 .
-_:n1687ab45a1fe454e9e777361ad553709b3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasProduct> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
+_:na2b0caaac4dd445aa24ff92dc4197808b1 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/cpo#LuminaireType> .
+<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#Corridor> <http://www.w3.org/2000/01/rdf-schema#label> "corridor"@en .
+<https://w3id.org/cpo#hasProduct> <http://www.w3.org/2000/01/rdf-schema#label> "has product"@en .
+_:nab530e9023f6487b80a5941e28675b5cb28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:nab530e9023f6487b80a5941e28675b5cb26 .
+_:na0d88f78adce4539a9f599d9c07ff0a4b3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasProduct> .
+_:na2b0caaac4dd445aa24ff92dc4197808b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/cpo> <http://www.w3.org/2000/01/rdf-schema#comment> "Building projects, their phases, the products installed in their buildings, and the requirements on their spaces. Worked example of TADS23, HT2026."@en .
+<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/2000/01/rdf-schema#label> "source standard"@en .
+_:nab530e9023f6487b80a5941e28675b5cb18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nab530e9023f6487b80a5941e28675b5cb19 .
+<https://w3id.org/cpo#startDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:nab530e9023f6487b80a5941e28675b5cb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#EducationalBuildingProject> .
+<https://w3id.org/cpo#uniformity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2000/01/rdf-schema#label> "UGR limit"@en .
+<https://w3id.org/cpo#installedIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/bot#Space> .
+<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#label> "construction phase"@en .
+<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/cpo#budget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:n12faba8e403f4d14a0a390c916283bf5b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/cpo#articleNumber> <http://www.w3.org/2004/02/skos/core#definition> "The manufacturer's article number of a product type."@en .
+_:na0d88f78adce4539a9f599d9c07ff0a4b1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasProduct> .
+<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#Fixture> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#precedes> <http://www.w3.org/2004/02/skos/core#definition> "A phase precedes another if it ends before the other begins. Transitive."@en .
+<https://w3id.org/cpo#colourRenderingIndex> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LuminaireType> .
+<https://w3id.org/cpo#colourTemperature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/cpo#InteriorProduct> <http://www.w3.org/2000/01/rdf-schema#label> "interior product"@en .
+<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for production or storage."@en .
+<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/cpo#hasPhase> .
+<https://w3id.org/cpo#onHold> <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is paused."@en .
+<https://w3id.org/cpo#ProjectPhase> <http://www.w3.org/2000/01/rdf-schema#label> "project phase"@en .
+<https://w3id.org/cpo#hasProductType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+_:na2b0caaac4dd445aa24ff92dc4197808b1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose status is active."@en .
 <https://w3id.org/cpo#hasRatedPower> <http://www.w3.org/2004/02/skos/core#definition> "The rated power of a luminaire type, a quantity value in watt."@en .
+<https://w3id.org/cpo> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/cpo#" .
+<https://w3id.org/cpo#budget> <http://www.w3.org/2000/01/rdf-schema#label> "budget"@en .
+_:na2b0caaac4dd445aa24ff92dc4197808b5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasLuminousFlux> .
+_:nab530e9023f6487b80a5941e28675b5cb16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#PostConstructionPhase> .
+<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to its current status. Functional: one status at a time."@en .
+_:nab530e9023f6487b80a5941e28675b5cb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nab530e9023f6487b80a5941e28675b5cb7 .
+_:nab530e9023f6487b80a5941e28675b5cb9 <http://www.w3.org/2002/07/owl#complementOf> <https://w3id.org/cpo#ResidentialBuildingProject> .
+_:nab530e9023f6487b80a5941e28675b5cb25 <http://www.w3.org/2002/07/owl#intersectionOf> _:nab530e9023f6487b80a5941e28675b5cb27 .
+<https://w3id.org/cpo#Furnishing> <http://www.w3.org/2000/01/rdf-schema#label> "furnishing"@en .
+<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "educational building project"@en .
+<https://w3id.org/cpo#precedes> <http://www.w3.org/2000/01/rdf-schema#label> "precedes"@en .
+<https://w3id.org/cpo#ProductType> <http://www.w3.org/2000/01/rdf-schema#label> "product type"@en .
+<https://w3id.org/cpo#LightingRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "lighting requirement"@en .
+<https://w3id.org/cpo#hasArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the building and its products are designed and specified."@en .
+<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#LightingRequirement> .
+_:nab530e9023f6487b80a5941e28675b5cb2 <http://www.w3.org/2002/07/owl#members> _:nab530e9023f6487b80a5941e28675b5cb3 .
+<https://w3id.org/cpo#ProjectPhase> <http://www.w3.org/2004/02/skos/core#definition> "A period of a building project with its own purpose and deliverables."@en .
+_:na0d88f78adce4539a9f599d9c07ff0a4b8 <http://www.w3.org/2002/07/owl#members> _:na0d88f78adce4539a9f599d9c07ff0a4b9 .
+<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#active> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:na0d88f78adce4539a9f599d9c07ff0a4b7 .
+<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#hasRatedPower> <http://www.w3.org/2000/01/rdf-schema#label> "has rated power"@en .
+_:nab530e9023f6487b80a5941e28675b5cb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nab530e9023f6487b80a5941e28675b5cb6 .
+<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/2004/02/skos/core#definition> "Relates a phase to the building project it belongs to. Inverse of hasPhase."@en .
+<https://w3id.org/cpo#follows> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/cpo#precedes> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:na0d88f78adce4539a9f599d9c07ff0a4b13 .
+_:nab530e9023f6487b80a5941e28675b5cb11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:nab530e9023f6487b80a5941e28675b5cb9 .
+_:na0d88f78adce4539a9f599d9c07ff0a4b2 <http://www.w3.org/2002/07/owl#intersectionOf> _:na0d88f78adce4539a9f599d9c07ff0a4b5 .
+<https://w3id.org/cpo#Classroom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:nab530e9023f6487b80a5941e28675b5cb8 <http://www.w3.org/2002/07/owl#intersectionOf> _:nab530e9023f6487b80a5941e28675b5cb10 .
+<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#Luminaire> <http://www.w3.org/2004/02/skos/core#definition> "One installed luminaire, at one place in one building."@en .
+<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProjectStatus> .
+<https://w3id.org/cpo#uniformity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#Corridor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:nab530e9023f6487b80a5941e28675b5cb19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nab530e9023f6487b80a5941e28675b5cb20 .
+<https://w3id.org/cpo#LuminaireType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/2004/02/skos/core#definition> "The state of a building project: active, on hold or completed."@en .
+<https://w3id.org/cpo#follows> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#hasLightingRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "has lighting requirement"@en .
+_:nab530e9023f6487b80a5941e28675b5cb24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#completed> .
+<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "industrial building project"@en .
+<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/2000/01/rdf-schema#label> "minimum colour rendering"@en .
+<https://w3id.org/cpo#isProductOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:nab530e9023f6487b80a5941e28675b5cb27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nab530e9023f6487b80a5941e28675b5cb28 .
+<https://w3id.org/cpo#hasPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#Classroom> <http://www.w3.org/2000/01/rdf-schema#label> "classroom"@en .
+_:nab530e9023f6487b80a5941e28675b5cb20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/cpo#follows> <http://www.w3.org/2004/02/skos/core#definition> "A phase follows another if it begins after the other ends. Inverse of precedes."@en .
+<https://w3id.org/cpo#hasLuminousFlux> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#colourRenderingIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#installedIn> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/bot#containsElement> .
+_:na2b0caaac4dd445aa24ff92dc4197808b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#Luminaire> .
+<https://w3id.org/cpo#active> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cpo#ProjectStatus> .
+<https://w3id.org/cpo#Furnishing> <http://www.w3.org/2004/02/skos/core#definition> "A movable product, such as a desk or a chair."@en .
+<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "commercial building project"@en .
+<https://w3id.org/cpo#hasProductType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:nab530e9023f6487b80a5941e28675b5cb10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nab530e9023f6487b80a5941e28675b5cb11 .
+<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "non-residential building project"@en .
+<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
+<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2000/01/rdf-schema#label> "has phase"@en .
+_:na0d88f78adce4539a9f599d9c07ff0a4b4 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasPhase> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:na0d88f78adce4539a9f599d9c07ff0a4b11 .
+<https://w3id.org/cpo#Corridor> <http://www.w3.org/2004/02/skos/core#definition> "A space for circulation between other spaces."@en .
+_:na0d88f78adce4539a9f599d9c07ff0a4b3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/cpo#Furnishing> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:na0d88f78adce4539a9f599d9c07ff0a4b3 .
+_:nab530e9023f6487b80a5941e28675b5cb22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nab530e9023f6487b80a5941e28675b5cb23 .
+<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/2004/02/skos/core#definition> "The minimum colour rendering index Ra."@en .
+<https://w3id.org/cpo#hasBuilding> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
+_:nab530e9023f6487b80a5941e28675b5cb15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nab530e9023f6487b80a5941e28675b5cb16 .
+<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/2004/02/skos/core#definition> "The part of the post-construction phase in which installed systems are tested and adjusted."@en .
+_:na0d88f78adce4539a9f599d9c07ff0a4b11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:na0d88f78adce4539a9f599d9c07ff0a4b12 .
+<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:na0d88f78adce4539a9f599d9c07ff0a4b1 .
+<https://w3id.org/cpo#ProductType> <http://www.w3.org/2004/02/skos/core#definition> "A product as described in a manufacturer catalogue: one article, many installed copies."@en .
+<https://w3id.org/cpo#LightingRequirement> <http://www.w3.org/2004/02/skos/core#definition> "The lighting a type of space must receive, as set by a standard such as EN 12464-1:2021."@en .
+<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
+<https://w3id.org/cpo#installedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#Product> .
+<https://w3id.org/cpo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/2000/01/rdf-schema#label> "planning phase"@en .
+<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#label> "post-construction phase"@en .
+<https://w3id.org/cpo#InteriorProduct> <http://www.w3.org/2004/02/skos/core#definition> "A luminaire or a furnishing."@en .
+<https://w3id.org/cpo#hasLuminousFlux> <http://www.w3.org/2004/02/skos/core#definition> "The luminous flux of a luminaire type, a quantity value in lumen."@en .
+<https://w3id.org/cpo> <http://www.w3.org/2002/07/owl#versionInfo> "2.0" .
+_:nab530e9023f6487b80a5941e28675b5cb17 <http://www.w3.org/2002/07/owl#oneOf> _:nab530e9023f6487b80a5941e28675b5cb18 .
+<https://w3id.org/cpo#minColourRendering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#ProjectPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n644fcafe7e3d48e98e82be5958147ec2b1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#LightingRequirement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n644fcafe7e3d48e98e82be5958147ec2b1 .
+_:nab530e9023f6487b80a5941e28675b5cb21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:nab530e9023f6487b80a5941e28675b5cb1 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/cpo#ProjectPhase> .
+<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#label> "has status"@en .
+<https://w3id.org/cpo#colourRenderingIndex> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase after construction: commissioning and handover."@en .
+_:nab530e9023f6487b80a5941e28675b5cb26 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasStatus> .
+_:nab530e9023f6487b80a5941e28675b5cb15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ConstructionPhase> .
+<https://w3id.org/cpo#endDate> <http://www.w3.org/2000/01/rdf-schema#label> "end date"@en .
+_:na2b0caaac4dd445aa24ff92dc4197808b2 <http://www.w3.org/2002/07/owl#unionOf> _:na2b0caaac4dd445aa24ff92dc4197808b3 .
+<https://w3id.org/cpo#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#articleNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#uniformity> <http://www.w3.org/2004/02/skos/core#definition> "The minimum illuminance uniformity Uo."@en .
+_:na2b0caaac4dd445aa24ff92dc4197808b5 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/schema/qudt/QuantityValue> .
+<https://w3id.org/cpo#Fixture> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#Product> .
+<https://w3id.org/cpo#endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+_:na2b0caaac4dd445aa24ff92dc4197808b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:nab530e9023f6487b80a5941e28675b5cb24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/cpo#completed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/2000/01/rdf-schema#label> "has required illuminance"@en .
+_:nab530e9023f6487b80a5941e28675b5cb4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#CommercialBuildingProject> .
+<https://w3id.org/cpo#budget> <http://www.w3.org/2004/02/skos/core#definition> "The allocated budget of the building project, in SEK."@en .
+<https://w3id.org/cpo#Luminaire> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#hasArea> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<https://w3id.org/cpo#Furnishing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#Product> .
+<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A project that plans, designs, constructs and hands over a building."@en .
+<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#hasRatedPower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#active> <http://www.w3.org/2000/01/rdf-schema#label> "active"@en .
+<https://w3id.org/cpo> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/bot#> .
+<https://w3id.org/cpo> <http://www.w3.org/2000/01/rdf-schema#comment> "This file is the merged ontology: the three modules and the composed ontology in one file."@en .
+_:nab530e9023f6487b80a5941e28675b5cb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#IndustrialBuildingProject> .
+<https://w3id.org/cpo#hasProduct> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to a product installed in its building."@en .
+<https://w3id.org/cpo#colourTemperature> <http://www.w3.org/2000/01/rdf-schema#label> "colour temperature"@en .
+<https://w3id.org/cpo#Classroom> <http://www.w3.org/2004/02/skos/core#definition> "A space for teaching."@en .
+_:nab530e9023f6487b80a5941e28675b5cb14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nab530e9023f6487b80a5941e28675b5cb15 .
+<https://w3id.org/cpo#follows> <http://www.w3.org/2000/01/rdf-schema#label> "follows"@en .
+<https://w3id.org/cpo#completed> <http://www.w3.org/2000/01/rdf-schema#label> "completed"@en .
+<https://w3id.org/cpo#precedes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
+<https://w3id.org/cpo#hasRequiredIlluminance> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<https://w3id.org/cpo#Luminaire> <http://www.w3.org/2004/02/skos/core#altLabel> "lighting fixture"@en .
+<https://w3id.org/cpo#articleNumber> <http://www.w3.org/2000/01/rdf-schema#label> "article number"@en .
+<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "building project"@en .
+_:nab530e9023f6487b80a5941e28675b5cb4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nab530e9023f6487b80a5941e28675b5cb5 .
+_:nab530e9023f6487b80a5941e28675b5cb16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/2000/01/rdf-schema#label> "is phase of"@en .
+<https://w3id.org/cpo#ProductType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#sourceStandard> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
+<https://w3id.org/cpo#precedes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
+<https://w3id.org/cpo#articleNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#ProductType> .
+_:na0d88f78adce4539a9f599d9c07ff0a4b1 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/cpo#hasLuminousFlux> <http://www.w3.org/2000/01/rdf-schema#label> "has luminous flux"@en .
+_:nab530e9023f6487b80a5941e28675b5cb22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#active> .
+<https://w3id.org/cpo#hasProductType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProductType> .
+_:na2b0caaac4dd445aa24ff92dc4197808b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:nab530e9023f6487b80a5941e28675b5cb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ResidentialBuildingProject> .
+<https://w3id.org/cpo> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/cpo#Luminaire> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:na2b0caaac4dd445aa24ff92dc4197808b1 .
+<https://w3id.org/cpo#LuminaireType> <http://www.w3.org/2000/01/rdf-schema#label> "luminaire type"@en .
+<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#precedes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#ProjectPhase> .
+<https://w3id.org/cpo> <http://www.w3.org/2000/01/rdf-schema#label> "Construction Project Typology Ontology (CPO)"@en .
+_:nab530e9023f6487b80a5941e28675b5cb13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nab530e9023f6487b80a5941e28675b5cb14 .
+_:n644fcafe7e3d48e98e82be5958147ec2b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/cpo#uniformity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the building is built and the products are installed."@en .
+<https://w3id.org/cpo#installedIn> <http://www.w3.org/2004/02/skos/core#definition> "Relates a product to the space it is installed in. Inverse of bot:containsElement."@en .
+<https://w3id.org/cpo#budget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#hasLuminousFlux> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+_:nab530e9023f6487b80a5941e28675b5cb17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#LuminaireType> <http://www.w3.org/2004/02/skos/core#definition> "A luminaire article in a manufacturer catalogue."@en .
+<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
