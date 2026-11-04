@@ -24,46 +24,95 @@
 
 # ---- installed products
 :Product a owl:Class ;
-    rdfs:label "product"@en ; skos:definition "One installed product in a building, from materials to finished goods."@en .
-:Fixture a owl:Class ; rdfs:subClassOf :Product ;
-    rdfs:label "fixture"@en ; skos:definition "A product fixed to the building, such as a luminaire."@en .
-:Furnishing a owl:Class ; rdfs:subClassOf :Product ; owl:disjointWith :Fixture ;
-    rdfs:label "furnishing"@en ; skos:definition "A movable product, such as a desk or a chair."@en .
+    rdfs:label "product"@en ;
+    skos:definition "One installed product in a building, from materials to finished goods."@en .
+
+:Fixture a owl:Class ;
+    rdfs:subClassOf :Product ;
+    rdfs:label "fixture"@en ;
+    skos:definition "A product fixed to the building, such as a luminaire."@en .
+
+:Furnishing a owl:Class ;
+    rdfs:subClassOf :Product ;
+    owl:disjointWith :Fixture ;
+    rdfs:label "furnishing"@en ;
+    skos:definition "A movable product, such as a desk or a chair."@en .
+
 :Luminaire a owl:Class ;
     rdfs:subClassOf :Fixture ,
-        [ a owl:Restriction ; owl:onProperty :hasProductType ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass :LuminaireType ] ;
-    rdfs:label "luminaire"@en ; skos:altLabel "light fitting"@en , "lighting fixture"@en ;
+        [
+            a owl:Restriction ;
+            owl:onProperty :hasProductType ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass :LuminaireType
+        ] ;
+    rdfs:label "luminaire"@en ;
+    skos:altLabel "light fitting"@en , "lighting fixture"@en ;
     skos:definition "One installed luminaire, at one place in one building."@en .
 
 # union: a defined class
 :InteriorProduct a owl:Class ;
-    rdfs:label "interior product"@en ; skos:definition "A luminaire or a furnishing."@en ;
-    owl:equivalentClass [ a owl:Class ; owl:unionOf ( :Luminaire :Furnishing ) ] .
+    rdfs:label "interior product"@en ;
+    skos:definition "A luminaire or a furnishing."@en ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:unionOf ( :Luminaire :Furnishing )
+    ] .
 
 # ---- product types (pattern: product type versus installed product)
 :ProductType a owl:Class ;
     rdfs:subClassOf resourceODP:Resource ;
-    rdfs:label "product type"@en ; skos:definition "A product as described in a manufacturer catalogue: one article, many installed copies."@en .
-:LuminaireType a owl:Class ; rdfs:subClassOf :ProductType ;
-    rdfs:label "luminaire type"@en ; skos:definition "A luminaire article in a manufacturer catalogue."@en .
+    rdfs:label "product type"@en ;
+    skos:definition "A product as described in a manufacturer catalogue: one article, many installed copies."@en .
+
+:LuminaireType a owl:Class ;
+    rdfs:subClassOf :ProductType ;
+    rdfs:label "luminaire type"@en ;
+    skos:definition "A luminaire article in a manufacturer catalogue."@en .
+
 :Product owl:disjointWith :ProductType .
 
 :hasProductType a owl:ObjectProperty , owl:FunctionalProperty ;
-    rdfs:domain :Product ; rdfs:range :ProductType ;
-    rdfs:label "has product type"@en ; skos:definition "Relates an installed product to its type in the catalogue."@en .
+    rdfs:domain :Product ;
+    rdfs:range :ProductType ;
+    rdfs:label "has product type"@en ;
+    skos:definition "Relates an installed product to its type in the catalogue."@en .
 
 # ---- quantities (pattern: QUDT quantity, value, unit)
-:hasLuminousFlux a owl:ObjectProperty , owl:FunctionalProperty ; rdfs:domain :LuminaireType ; rdfs:range qudt:QuantityValue ;
-    rdfs:label "has luminous flux"@en ; skos:definition "The luminous flux of a luminaire type, a quantity value in lumen."@en .
-:hasRatedPower a owl:ObjectProperty , owl:FunctionalProperty ; rdfs:domain :LuminaireType ; rdfs:range qudt:QuantityValue ;
-    rdfs:label "has rated power"@en ; skos:definition "The rated power of a luminaire type, a quantity value in watt."@en .
-:LuminaireType rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty :hasLuminousFlux ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass qudt:QuantityValue ] .
+:hasLuminousFlux a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain :LuminaireType ;
+    rdfs:range qudt:QuantityValue ;
+    rdfs:label "has luminous flux"@en ;
+    skos:definition "The luminous flux of a luminaire type, a quantity value in lumen."@en .
+
+:hasRatedPower a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain :LuminaireType ;
+    rdfs:range qudt:QuantityValue ;
+    rdfs:label "has rated power"@en ;
+    skos:definition "The rated power of a luminaire type, a quantity value in watt."@en .
+
+:LuminaireType rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :hasLuminousFlux ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass qudt:QuantityValue
+    ] .
 
 # ---- data properties
-:articleNumber a owl:DatatypeProperty , owl:FunctionalProperty ; rdfs:domain :ProductType ; rdfs:range xsd:string ;
-    rdfs:label "article number"@en ; skos:definition "The manufacturer's article number of a product type."@en .
-:colourRenderingIndex a owl:DatatypeProperty , owl:FunctionalProperty ; rdfs:domain :LuminaireType ; rdfs:range xsd:integer ;
-    rdfs:label "colour rendering index"@en ; skos:definition "The colour rendering index Ra of a luminaire type."@en .
-:colourTemperature a owl:DatatypeProperty , owl:FunctionalProperty ; rdfs:domain :LuminaireType ; rdfs:range xsd:integer ;
-    rdfs:label "colour temperature"@en ; skos:definition "The correlated colour temperature of a luminaire type, in kelvin."@en .
+:articleNumber a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :ProductType ;
+    rdfs:range xsd:string ;
+    rdfs:label "article number"@en ;
+    skos:definition "The manufacturer's article number of a product type."@en .
+
+:colourRenderingIndex a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :LuminaireType ;
+    rdfs:range xsd:integer ;
+    rdfs:label "colour rendering index"@en ;
+    skos:definition "The colour rendering index Ra of a luminaire type."@en .
+
+:colourTemperature a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :LuminaireType ;
+    rdfs:range xsd:integer ;
+    rdfs:label "colour temperature"@en ;
+    skos:definition "The correlated colour temperature of a luminaire type, in kelvin."@en .

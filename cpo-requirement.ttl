@@ -23,16 +23,39 @@
 :LightingRequirement a owl:Class ;
     rdfs:label "lighting requirement"@en ;
     skos:definition "The lighting a type of space must receive, as set by a standard such as EN 12464-1:2021."@en ;
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty :hasRequiredIlluminance ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass qudt:QuantityValue ] .
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :hasRequiredIlluminance ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass qudt:QuantityValue
+    ] .
 
-:hasRequiredIlluminance a owl:ObjectProperty , owl:FunctionalProperty ; rdfs:domain :LightingRequirement ; rdfs:range qudt:QuantityValue ;
-    rdfs:label "has required illuminance"@en ; skos:definition "The maintained illuminance required on the task area, a quantity value in lux."@en .
+:hasRequiredIlluminance a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain :LightingRequirement ;
+    rdfs:range qudt:QuantityValue ;
+    rdfs:label "has required illuminance"@en ;
+    skos:definition "The maintained illuminance required on the task area, a quantity value in lux."@en .
 
-:ugrLimit a owl:DatatypeProperty , owl:FunctionalProperty ; rdfs:domain :LightingRequirement ; rdfs:range xsd:decimal ;
-    rdfs:label "UGR limit"@en ; skos:definition "The unified glare rating limit UGRL."@en .
-:uniformity a owl:DatatypeProperty , owl:FunctionalProperty ; rdfs:domain :LightingRequirement ; rdfs:range xsd:decimal ;
-    rdfs:label "uniformity"@en ; skos:definition "The minimum illuminance uniformity Uo."@en .
-:minColourRendering a owl:DatatypeProperty , owl:FunctionalProperty ; rdfs:domain :LightingRequirement ; rdfs:range xsd:integer ;
-    rdfs:label "minimum colour rendering"@en ; skos:definition "The minimum colour rendering index Ra."@en .
-:sourceStandard a owl:DatatypeProperty , owl:FunctionalProperty ; rdfs:domain :LightingRequirement ; rdfs:range xsd:string ;
-    rdfs:label "source standard"@en ; skos:definition "The standard the requirement is taken from, such as EN 12464-1:2021."@en .
+:ugrLimit a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :LightingRequirement ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "UGR limit"@en ;
+    skos:definition "The unified glare rating limit UGRL."@en .
+
+:uniformity a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :LightingRequirement ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "uniformity"@en ;
+    skos:definition "The minimum illuminance uniformity Uo."@en .
+
+:minColourRendering a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :LightingRequirement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "minimum colour rendering"@en ;
+    skos:definition "The minimum colour rendering index Ra."@en .
+
+:sourceStandard a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :LightingRequirement ;
+    rdfs:range xsd:string ;
+    rdfs:label "source standard"@en ;
+    skos:definition "The standard the requirement is taken from, such as EN 12464-1:2021."@en .
