@@ -6,6 +6,7 @@
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix vann:     <http://purl.org/vocab/vann/> .
 @prefix bot:      <https://w3id.org/bot#> .
 @prefix qudt:     <http://qudt.org/schema/qudt/> .
 
@@ -19,11 +20,17 @@
 
 <https://w3id.org/cpo> a owl:Ontology ;
     owl:versionInfo "2.0" ;
-    owl:imports <https://w3id.org/cpo/project> , <https://w3id.org/cpo/product> , <https://w3id.org/cpo/requirement> , <https://w3id.org/bot#> ;
+    owl:imports <https://w3id.org/cpo/project> ,
+        <https://w3id.org/cpo/product> ,
+        <https://w3id.org/cpo/requirement> ,
+        <https://w3id.org/bot#> ;
     rdfs:label "Construction Project Typology Ontology (CPO)"@en ;
     rdfs:comment "Building projects, their phases, the products installed in their buildings, and the requirements on their spaces. Worked example of TADS23, HT2026."@en ;
     dcterms:creator "Rahel Kebede" ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:created "2026-11-04"^^xsd:date ;
+    vann:preferredNamespacePrefix "cpo" ;
+    vann:preferredNamespaceUri "https://w3id.org/cpo#" .
 
 # ---- alignment with BOT
 :Product rdfs:subClassOf bot:Element .

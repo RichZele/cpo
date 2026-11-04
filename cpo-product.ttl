@@ -6,6 +6,7 @@
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix vann:     <http://purl.org/vocab/vann/> .
 @prefix qudt:     <http://qudt.org/schema/qudt/> .
 @prefix resourceODP: <http://w3id.org/CEON/ontology/resourceODP/> .
 
@@ -20,7 +21,11 @@
     rdfs:label "CPO module: Product"@en ;
     rdfs:comment "Installed products, their types from the manufacturer catalogue, and their quantities."@en ;
     dcterms:creator "Rahel Kebede" ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:created "2026-11-04"^^xsd:date ;
+    owl:versionInfo "2.0" ;
+    vann:preferredNamespacePrefix "cpo" ;
+    vann:preferredNamespaceUri "https://w3id.org/cpo#" .
 
 # ---- installed products
 :Product a owl:Class ;
