@@ -49,6 +49,64 @@
     ]
   },
   {
+    "@id": "https://w3id.org/cpo#minColourRendering",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#LightingRequirement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "minimum colour rendering"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The minimum colour rendering index Ra."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#hasRequiredIlluminance",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#LightingRequirement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has required illuminance"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://qudt.org/schema/qudt/QuantityValue"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The maintained illuminance required on the task area, a quantity value in lux."
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/cpo#sourceStandard",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty",
@@ -78,6 +136,35 @@
     ]
   },
   {
+    "@id": "https://w3id.org/cpo#uniformity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#LightingRequirement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "uniformity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The minimum illuminance uniformity Uo."
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/cpo#LightingRequirement",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -90,7 +177,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:nf1056c9ef00c40838caedbb76b845fbbb1"
+        "@id": "_:n664c85382cdc421d9f4c349c768377c3b1"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -101,7 +188,7 @@
     ]
   },
   {
-    "@id": "_:nf1056c9ef00c40838caedbb76b845fbbb1",
+    "@id": "_:n664c85382cdc421d9f4c349c768377c3b1",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -148,93 +235,6 @@
       {
         "@language": "en",
         "@value": "The unified glare rating limit UGRL."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#hasRequiredIlluminance",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#LightingRequirement"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has required illuminance"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://qudt.org/schema/qudt/QuantityValue"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The maintained illuminance required on the task area, a quantity value in lux."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#minColourRendering",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#LightingRequirement"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "minimum colour rendering"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The minimum colour rendering index Ra."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#uniformity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#LightingRequirement"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "uniformity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The minimum illuminance uniformity Uo."
       }
     ]
   }

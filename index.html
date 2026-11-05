@@ -85,6 +85,14 @@ h2 { font-size: 1.7rem; letter-spacing: -.01em; margin: 0 0 6px; }
 .merged h3 { margin: 0 0 2px; font-size: 1.05rem; }
 .merged p { margin: 0; color: var(--muted); font-size: 14.5px; }
 
+/* use case */
+.usecase { display: grid; grid-template-columns: 1fr; gap: 22px; }
+.usecase figure { margin: 0; overflow: hidden; }
+.usecase figure a:first-child { display: block; background: #fff; border-bottom: 1px solid var(--line); padding: 10px; }
+.usecase img { width: 100%; height: auto; display: block; }
+.usecase figcaption { padding: 14px 18px 16px; color: var(--muted); font-size: 14.5px; }
+.usecase figcaption b { color: var(--text); }
+
 /* modules */
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .card { display: flex; flex-direction: column; overflow: hidden; }
@@ -125,7 +133,7 @@ footer p { margin: 0 0 6px; }
 @media (max-width: 900px) {
   .composed { grid-template-columns: 1fr; }
   .composed figure { border-left: 0; border-top: 1px solid var(--line); order: -1; }
-  .grid, .use, .steps { grid-template-columns: 1fr; }
+  .grid, .use, .steps, .usecase { grid-template-columns: 1fr; }
   .steps li { border-right: 0; border-bottom: 1px solid var(--line); }
   .steps li:last-child { border-bottom: 0; }
   footer .wrap { grid-template-columns: 1fr; }
@@ -143,6 +151,7 @@ footer p { margin: 0 0 6px; }
   <div class="wrap">
     <a class="mark" href="#"><span>cpo</span> CPO</a>
     <nav>
+      <a href="#usecase">Use case</a>
       <a href="#composed">Ontology</a>
       <a href="#modules">Modules</a>
       <a href="#data">Data</a>
@@ -176,6 +185,23 @@ footer p { margin: 0 0 6px; }
       <a class="btn ghost" href="ontology/cpo.ttl">View the Turtle</a>
     </div>
   </div>
+
+  <section id="usecase">
+    <div class="wrap">
+      <h2>The use case</h2>
+      <p class="sub">ABID-Mo starts from a use case: lighting in a school building project. Who does what, and which information passes between them, is drawn as a process map in BPMN 2.0; where the data comes from, how it reaches the knowledge graph and what uses it, as a system architecture (Lecture 4a).</p>
+      <div class="usecase">
+        <figure class="panel">
+          <a href="process-model/cpo-process-map.png"><img src="process-model/cpo-process-map.png" alt="BPMN process map of CPO: five lanes, from the brief by the client to the as-built data received by the facility manager, with the illuminance check and its exclusive gateway, and six data objects" loading="lazy"></a>
+          <figcaption><b>Process map in BPMN 2.0.</b> Five roles as lanes; tasks, events and an exclusive gateway joined by sequence flows; the six pieces of information exchanged as data objects; the phases as groups. <a href="process-model/cpo-process-map.drawio" download>draw.io source</a></figcaption>
+        </figure>
+        <figure class="panel">
+          <a href="architecture/cpo-architecture.png"><img src="architecture/cpo-architecture.png" alt="System architecture of CPO: four data sources, the tools that turn them into RDF, GraphDB, and the SPARQL, SHACL, analysis and Dynamo outputs, with the course week of each part" loading="lazy"></a>
+          <figcaption><b>System architecture.</b> Who provides the data, its source and format, the tool that turns it into RDF, GraphDB, and what uses it, with the week the course builds each part. <a href="architecture/cpo-architecture.drawio" download>draw.io source</a></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
   <section id="composed">
     <div class="wrap">

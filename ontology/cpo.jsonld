@@ -1,29 +1,76 @@
 [
   {
-    "@id": "https://w3id.org/cpo#hasBuilding",
+    "@id": "_:ncded182ef6fb48359047b7d29ae37939b8",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/cpo#BuildingProject"
+          },
+          {
+            "@id": "https://w3id.org/cpo#ProjectPhase"
+          },
+          {
+            "@id": "https://w3id.org/cpo#Product"
+          },
+          {
+            "@id": "https://w3id.org/cpo#ProductType"
+          },
+          {
+            "@id": "https://w3id.org/cpo#LightingRequirement"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#isProductOf",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#BuildingProject"
-      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has building"
+        "@value": "is product of"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2002/07/owl#inverseOf": [
       {
-        "@id": "https://w3id.org/bot#Building"
+        "@id": "https://w3id.org/cpo#hasProduct"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#Corridor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "corridor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/bot#Space"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Relates a building project to the building it delivers."
+        "@value": "A space for circulation between other spaces."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#Product",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/bot#Element"
       }
     ]
   },
@@ -40,7 +87,7 @@
     ],
     "http://www.w3.org/2002/07/owl#equivalentClass": [
       {
-        "@id": "_:nfd789a3afbb04f50b0d8adc71770ef60b2"
+        "@id": "_:ncded182ef6fb48359047b7d29ae37939b2"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -51,7 +98,7 @@
     ]
   },
   {
-    "@id": "_:nfd789a3afbb04f50b0d8adc71770ef60b2",
+    "@id": "_:ncded182ef6fb48359047b7d29ae37939b2",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -62,17 +109,17 @@
             "@id": "https://w3id.org/cpo#BuildingProject"
           },
           {
-            "@id": "_:nfd789a3afbb04f50b0d8adc71770ef60b3"
+            "@id": "_:ncded182ef6fb48359047b7d29ae37939b3"
           },
           {
-            "@id": "_:nfd789a3afbb04f50b0d8adc71770ef60b4"
+            "@id": "_:ncded182ef6fb48359047b7d29ae37939b4"
           }
         ]
       }
     ]
   },
   {
-    "@id": "_:nfd789a3afbb04f50b0d8adc71770ef60b3",
+    "@id": "_:ncded182ef6fb48359047b7d29ae37939b3",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -88,7 +135,7 @@
     ]
   },
   {
-    "@id": "_:nfd789a3afbb04f50b0d8adc71770ef60b4",
+    "@id": "_:ncded182ef6fb48359047b7d29ae37939b4",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -127,34 +174,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#hasLightingRequirement",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/bot#Space"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has lighting requirement"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cpo#LightingRequirement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Relates a space to the lighting requirement that applies to it."
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/cpo#hasArea",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty",
@@ -184,138 +203,32 @@
     ]
   },
   {
-    "@id": "_:nfd789a3afbb04f50b0d8adc71770ef60b8",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
-    ],
-    "http://www.w3.org/2002/07/owl#members": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/cpo#BuildingProject"
-          },
-          {
-            "@id": "https://w3id.org/cpo#ProjectPhase"
-          },
-          {
-            "@id": "https://w3id.org/cpo#Product"
-          },
-          {
-            "@id": "https://w3id.org/cpo#ProductType"
-          },
-          {
-            "@id": "https://w3id.org/cpo#LightingRequirement"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#Product",
+    "@id": "https://w3id.org/cpo#BuildingProject",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/bot#Element"
+        "@id": "_:ncded182ef6fb48359047b7d29ae37939b1"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#isProductOf",
+    "@id": "_:ncded182ef6fb48359047b7d29ae37939b1",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://www.w3.org/2002/07/owl#minQualifiedCardinality": [
       {
-        "@language": "en",
-        "@value": "is product of"
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
       }
     ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "https://w3id.org/cpo#Product"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
         "@id": "https://w3id.org/cpo#hasProduct"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#hasProduct",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#BuildingProject"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has product"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cpo#Product"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Relates a building project to a product installed in its building."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#Corridor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "corridor"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/bot#Space"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A space for circulation between other spaces."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#installedIn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#Product"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "installed in"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/bot#Space"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://w3id.org/bot#containsElement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Relates a product to the space it is installed in. Inverse of bot:containsElement."
       }
     ]
   },
@@ -383,32 +296,119 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#BuildingProject",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:nfd789a3afbb04f50b0d8adc71770ef60b1"
-      }
-    ]
-  },
-  {
-    "@id": "_:nfd789a3afbb04f50b0d8adc71770ef60b1",
+    "@id": "https://w3id.org/cpo#hasProduct",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
-    "http://www.w3.org/2002/07/owl#minQualifiedCardinality": [
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
+        "@id": "https://w3id.org/cpo#BuildingProject"
       }
     ],
-    "http://www.w3.org/2002/07/owl#onClass": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has product"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "https://w3id.org/cpo#Product"
       }
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@id": "https://w3id.org/cpo#hasProduct"
+        "@language": "en",
+        "@value": "Relates a building project to a product installed in its building."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#installedIn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#Product"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "installed in"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/bot#Space"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/bot#containsElement"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a product to the space it is installed in. Inverse of bot:containsElement."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#hasLightingRequirement",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/bot#Space"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has lighting requirement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cpo#LightingRequirement"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a space to the lighting requirement that applies to it."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#hasBuilding",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#BuildingProject"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has building"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/bot#Building"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a building project to the building it delivers."
       }
     ]
   }

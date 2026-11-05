@@ -1,181 +1,181 @@
-<https://w3id.org/cpo#follows> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo/project> <http://purl.org/dc/terms/created> "2026-11-04"^^<http://www.w3.org/2001/XMLSchema#date> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#EducationalBuildingProject> .
-<https://w3id.org/cpo#startDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb12 <http://www.w3.org/2002/07/owl#members> _:nba791f2cbf104ca1b9cf408dbf9ec51eb13 .
-<https://w3id.org/cpo/project> <http://purl.org/vocab/vann/preferredNamespacePrefix> "cpo" .
-<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/2002/07/owl#equivalentClass> _:nba791f2cbf104ca1b9cf408dbf9ec51eb8 .
-<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#label> "construction phase"@en .
-<https://w3id.org/cpo#active> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cpo#ProjectStatus> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nba791f2cbf104ca1b9cf408dbf9ec51eb6 .
-<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the building is built and the products are installed."@en .
-<https://w3id.org/cpo#completed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase after construction: commissioning and handover."@en .
-<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the need, the brief and the feasibility of the project are settled."@en .
-<https://w3id.org/cpo#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for production or storage."@en .
-<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/cpo#BuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nba791f2cbf104ca1b9cf408dbf9ec51eb19 .
+<https://w3id.org/cpo#startDate> <http://www.w3.org/2004/02/skos/core#definition> "The date on which the building project begins."@en .
+<https://w3id.org/cpo/project> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/cpo#" .
+<https://w3id.org/cpo#endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://w3id.org/cpo#hasPhase> <http://www.w3.org/2000/01/rdf-schema#label> "has phase"@en .
-<https://w3id.org/cpo#completed> <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is finished."@en .
-<https://w3id.org/cpo#precedes> <http://www.w3.org/2004/02/skos/core#definition> "A phase precedes another if it ends before the other begins. Transitive."@en .
-<https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "residential building project"@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nba791f2cbf104ca1b9cf408dbf9ec51eb28 .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nba791f2cbf104ca1b9cf408dbf9ec51eb16 .
-<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#budget> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#active> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nba791f2cbf104ca1b9cf408dbf9ec51eb23 .
-<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "non-residential building project"@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb25 <http://www.w3.org/2002/07/owl#intersectionOf> _:nba791f2cbf104ca1b9cf408dbf9ec51eb27 .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/cpo/project> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/2004/02/skos/core#definition> "The state of a building project: active, on hold or completed."@en .
-<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A project that plans, designs, constructs and hands over a building."@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#IndustrialBuildingProject> .
-<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/2000/01/rdf-schema#label> "design phase"@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n92d287f44f4d476a9266cfcd17c9fcc4b23 .
 <https://w3id.org/cpo#endDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb26 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/cpo#active> .
-<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/2002/07/owl#equivalentClass> _:nba791f2cbf104ca1b9cf408dbf9ec51eb25 .
-<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nba791f2cbf104ca1b9cf408dbf9ec51eb1 .
+<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/2000/01/rdf-schema#label> "active project"@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#completed> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#EducationalBuildingProject> .
+<https://w3id.org/cpo/project> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#precedes> <http://www.w3.org/2004/02/skos/core#definition> "A phase precedes another if it ends before the other begins. Transitive."@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProjectPhase> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b25 <http://www.w3.org/2002/07/owl#intersectionOf> _:n92d287f44f4d476a9266cfcd17c9fcc4b27 .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n92d287f44f4d476a9266cfcd17c9fcc4b14 .
+<https://w3id.org/cpo#precedes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#ProjectPhase> .
+<https://w3id.org/cpo#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ResidentialBuildingProject> .
+<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "healthcare building project"@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n92d287f44f4d476a9266cfcd17c9fcc4b11 .
+<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the building is built and the products are installed."@en .
+<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "educational building project"@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+<https://w3id.org/cpo#budget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b26 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/cpo#active> .
+<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#PostConstructionPhase> .
+<https://w3id.org/cpo/project> <http://www.w3.org/2000/01/rdf-schema#comment> "Building projects, their types, phases and status."@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b9 <http://www.w3.org/2002/07/owl#complementOf> <https://w3id.org/cpo#ResidentialBuildingProject> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n92d287f44f4d476a9266cfcd17c9fcc4b6 .
+<https://w3id.org/cpo#ProjectPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#completed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#label> "has status"@en .
+<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#budget> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#active> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cpo#ProjectStatus> .
+<https://w3id.org/cpo#onHold> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#label> "post-construction phase"@en .
 <https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/cpo#active> <http://www.w3.org/2000/01/rdf-schema#label> "active"@en .
-<https://w3id.org/cpo/project> <http://www.w3.org/2000/01/rdf-schema#comment> "Building projects, their types, phases and status."@en .
-<https://w3id.org/cpo#startDate> <http://www.w3.org/2004/02/skos/core#definition> "The date on which the building project begins."@en .
-<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nba791f2cbf104ca1b9cf408dbf9ec51eb4 .
-<https://w3id.org/cpo#budget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#label> "has status"@en .
-<https://w3id.org/cpo#budget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://w3id.org/cpo#precedes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
-<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/2002/07/owl#equivalentClass> _:nba791f2cbf104ca1b9cf408dbf9ec51eb17 .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:nba791f2cbf104ca1b9cf408dbf9ec51eb9 .
-<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#startDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<https://w3id.org/cpo#ProjectPhase> <http://www.w3.org/2000/01/rdf-schema#label> "project phase"@en .
-<https://w3id.org/cpo#budget> <http://www.w3.org/2004/02/skos/core#definition> "The allocated budget of the building project, in SEK."@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/2000/01/rdf-schema#label> "planning phase"@en .
-<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project that is not a residential building project."@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#completed> .
-<https://w3id.org/cpo#onHold> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cpo#ProjectStatus> .
-<https://w3id.org/cpo#budget> <http://www.w3.org/2000/01/rdf-schema#label> "budget"@en .
-<https://w3id.org/cpo#precedes> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProjectPhase> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ResidentialBuildingProject> .
-<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#follows> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/cpo#precedes> .
-<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "building project"@en .
-<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for business, such as offices or shops."@en .
-<https://w3id.org/cpo#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/2004/02/skos/core#definition> "The part of the post-construction phase in which installed systems are tested and adjusted."@en .
-<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for teaching, such as a school."@en .
-<https://w3id.org/cpo#follows> <http://www.w3.org/2004/02/skos/core#definition> "A phase follows another if it begins after the other ends. Inverse of precedes."@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/cpo#precedes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#ProjectPhase> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#onHold> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nba791f2cbf104ca1b9cf408dbf9ec51eb14 .
-<https://w3id.org/cpo#ProjectPhase> <http://www.w3.org/2004/02/skos/core#definition> "A period of a building project with its own purpose and deliverables."@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:nba791f2cbf104ca1b9cf408dbf9ec51eb26 .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb17 <http://www.w3.org/2002/07/owl#oneOf> _:nba791f2cbf104ca1b9cf408dbf9ec51eb18 .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#CommercialBuildingProject> .
-<https://w3id.org/cpo#onHold> <http://www.w3.org/2000/01/rdf-schema#label> "on hold"@en .
-<https://w3id.org/cpo/project> <http://purl.org/dc/terms/creator> "Rahel Kebede" .
-<https://w3id.org/cpo#active> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/cpo#endDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "industrial building project"@en .
-<https://w3id.org/cpo/project> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/cpo#" .
-<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/2004/02/skos/core#definition> "Relates a phase to the building project it belongs to. Inverse of hasPhase."@en .
-<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/2000/01/rdf-schema#label> "design phase"@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#completed> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/cpo#completed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cpo#ProjectStatus> .
-<https://w3id.org/cpo#precedes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n92d287f44f4d476a9266cfcd17c9fcc4b24 .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/2002/07/owl#equivalentClass> _:n92d287f44f4d476a9266cfcd17c9fcc4b17 .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b1 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/cpo#ProjectPhase> .
 <https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to one of its phases."@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb8 <http://www.w3.org/2002/07/owl#intersectionOf> _:nba791f2cbf104ca1b9cf408dbf9ec51eb10 .
-<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/cpo#hasPhase> .
-<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#ProjectPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#hasPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#onHold> <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is paused."@en .
-<https://w3id.org/cpo#completed> <http://www.w3.org/2000/01/rdf-schema#label> "completed"@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/cpo#endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#onHold> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb1 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/2000/01/rdf-schema#label> "commissioning phase"@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb21 <http://www.w3.org/2002/07/owl#distinctMembers> _:nba791f2cbf104ca1b9cf408dbf9ec51eb22 .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#PostConstructionPhase> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb26 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasStatus> .
-<https://w3id.org/cpo#budget> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/cpo#active> <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is being carried out."@en .
-<https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for housing."@en .
-<https://w3id.org/cpo#startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#DesignPhase> .
-<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/2000/01/rdf-schema#label> "active project"@en .
-<https://w3id.org/cpo#endDate> <http://www.w3.org/2000/01/rdf-schema#label> "end date"@en .
-<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ConstructionPhase> .
-<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to its current status. Functional: one status at a time."@en .
-<https://w3id.org/cpo#endDate> <http://www.w3.org/2004/02/skos/core#definition> "The date on which the building project is planned to be completed."@en .
-<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cpo#precedes> <http://www.w3.org/2000/01/rdf-schema#label> "precedes"@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#HealthcareBuildingProject> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nba791f2cbf104ca1b9cf408dbf9ec51eb7 .
-<https://w3id.org/cpo/project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "healthcare building project"@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nba791f2cbf104ca1b9cf408dbf9ec51eb15 .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nba791f2cbf104ca1b9cf408dbf9ec51eb20 .
-<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "commercial building project"@en .
-<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
-<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for care, such as a hospital."@en .
-<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cpo#onHold> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nba791f2cbf104ca1b9cf408dbf9ec51eb5 .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
-<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProjectStatus> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/2000/01/rdf-schema#label> "is phase of"@en .
-<https://w3id.org/cpo#startDate> <http://www.w3.org/2000/01/rdf-schema#label> "start date"@en .
-<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProjectPhase> .
-<https://w3id.org/cpo#follows> <http://www.w3.org/2000/01/rdf-schema#label> "follows"@en .
-<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "educational building project"@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#active> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#PlanningPhase> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb2 <http://www.w3.org/2002/07/owl#members> _:nba791f2cbf104ca1b9cf408dbf9ec51eb3 .
-<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/2000/01/rdf-schema#label> "project status"@en .
-<https://w3id.org/cpo/project> <http://www.w3.org/2000/01/rdf-schema#label> "CPO module: Project"@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nba791f2cbf104ca1b9cf408dbf9ec51eb11 .
 <https://w3id.org/cpo/project> <http://www.w3.org/2002/07/owl#versionInfo> "2.0" .
-<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#PostConstructionPhase> .
-<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose status is active."@en .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb9 <http://www.w3.org/2002/07/owl#complementOf> <https://w3id.org/cpo#ResidentialBuildingProject> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasPhase> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#BuildingProject> .
-_:nba791f2cbf104ca1b9cf408dbf9ec51eb23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nba791f2cbf104ca1b9cf408dbf9ec51eb24 .
-<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the building and its products are designed and specified."@en .
 <https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#budget> <http://www.w3.org/2000/01/rdf-schema#label> "budget"@en .
+<https://w3id.org/cpo#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#completed> .
+<https://w3id.org/cpo#precedes> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProjectPhase> .
+<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/2000/01/rdf-schema#label> "is phase of"@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#active> .
+<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase after construction: commissioning and handover."@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#HealthcareBuildingProject> .
+<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to its current status. Functional: one status at a time."@en .
+<https://w3id.org/cpo#ProjectPhase> <http://www.w3.org/2000/01/rdf-schema#label> "project phase"@en .
+<https://w3id.org/cpo#precedes> <http://www.w3.org/2000/01/rdf-schema#label> "precedes"@en .
+<https://w3id.org/cpo/project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/cpo#follows> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cpo#ProjectStatus> .
+<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for care, such as a hospital."@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/2002/07/owl#equivalentClass> _:n92d287f44f4d476a9266cfcd17c9fcc4b25 .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n92d287f44f4d476a9266cfcd17c9fcc4b9 .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n92d287f44f4d476a9266cfcd17c9fcc4b20 .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b17 <http://www.w3.org/2002/07/owl#oneOf> _:n92d287f44f4d476a9266cfcd17c9fcc4b18 .
+<https://w3id.org/cpo#precedes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#startDate> <http://www.w3.org/2000/01/rdf-schema#label> "start date"@en .
+<https://w3id.org/cpo#follows> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/cpo#precedes> .
+<https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for housing."@en .
+<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#PostConstructionPhase> .
+<https://w3id.org/cpo#onHold> <http://www.w3.org/2000/01/rdf-schema#label> "on hold"@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+<https://w3id.org/cpo#startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/2000/01/rdf-schema#label> "project status"@en .
+<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the need, the brief and the feasibility of the project are settled."@en .
+<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for teaching, such as a school."@en .
+<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#PlanningPhase> .
+<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/2004/02/skos/core#definition> "The part of the post-construction phase in which installed systems are tested and adjusted."@en .
+<https://w3id.org/cpo#endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "industrial building project"@en .
+<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#ConstructionPhase> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b21 <http://www.w3.org/2002/07/owl#distinctMembers> _:n92d287f44f4d476a9266cfcd17c9fcc4b22 .
+<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/cpo#hasPhase> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b8 <http://www.w3.org/2002/07/owl#intersectionOf> _:n92d287f44f4d476a9266cfcd17c9fcc4b10 .
+<https://w3id.org/cpo/project> <http://purl.org/vocab/vann/preferredNamespacePrefix> "cpo" .
+<https://w3id.org/cpo#active> <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is being carried out."@en .
+<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo/project> <http://purl.org/dc/terms/created> "2026-11-04"^^<http://www.w3.org/2001/XMLSchema#date> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2004/02/skos/core#definition> "Relates a building project to one of its phases."@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/cpo#precedes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n92d287f44f4d476a9266cfcd17c9fcc4b5 .
+<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/2002/07/owl#equivalentClass> _:n92d287f44f4d476a9266cfcd17c9fcc4b8 .
+<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/2000/01/rdf-schema#label> "planning phase"@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b2 <http://www.w3.org/2002/07/owl#members> _:n92d287f44f4d476a9266cfcd17c9fcc4b3 .
+<https://w3id.org/cpo#budget> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b12 <http://www.w3.org/2002/07/owl#members> _:n92d287f44f4d476a9266cfcd17c9fcc4b13 .
+<https://w3id.org/cpo#ResidentialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "residential building project"@en .
+<https://w3id.org/cpo#active> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/cpo#budget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/cpo#PlanningPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose status is active."@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#onHold> <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is paused."@en .
+<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "building project"@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n92d287f44f4d476a9266cfcd17c9fcc4b19 .
+<https://w3id.org/cpo#endDate> <http://www.w3.org/2000/01/rdf-schema#label> "end date"@en .
+<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#label> "construction phase"@en .
+<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#follows> <http://www.w3.org/2000/01/rdf-schema#label> "follows"@en .
+<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "non-residential building project"@en .
+<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/2000/01/rdf-schema#label> "commercial building project"@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#onHold> .
+<https://w3id.org/cpo#active> <http://www.w3.org/2000/01/rdf-schema#label> "active"@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#DesignPhase> .
+<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n92d287f44f4d476a9266cfcd17c9fcc4b7 .
+<https://w3id.org/cpo#hasPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#completed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cpo#ProjectStatus> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#budget> <http://www.w3.org/2004/02/skos/core#definition> "The allocated budget of the building project, in SEK."@en .
+<https://w3id.org/cpo#NonResidentialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project that is not a residential building project."@en .
+<https://w3id.org/cpo#onHold> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cpo#ProjectStatus> .
+<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/cpo#follows> <http://www.w3.org/2004/02/skos/core#definition> "A phase follows another if it begins after the other ends. Inverse of precedes."@en .
+<https://w3id.org/cpo#CommissioningPhase> <http://www.w3.org/2000/01/rdf-schema#label> "commissioning phase"@en .
+<https://w3id.org/cpo#endDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/cpo#isPhaseOf> <http://www.w3.org/2004/02/skos/core#definition> "Relates a phase to the building project it belongs to. Inverse of hasPhase."@en .
+<https://w3id.org/cpo#ConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n92d287f44f4d476a9266cfcd17c9fcc4b16 .
+<https://w3id.org/cpo#completed> <http://www.w3.org/2000/01/rdf-schema#label> "completed"@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasPhase> .
+<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n92d287f44f4d476a9266cfcd17c9fcc4b1 .
+<https://w3id.org/cpo#ProjectPhase> <http://www.w3.org/2004/02/skos/core#definition> "A period of a building project with its own purpose and deliverables."@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#onHold> .
+<https://w3id.org/cpo#ActiveProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#CommercialBuildingProject> .
+<https://w3id.org/cpo#startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n92d287f44f4d476a9266cfcd17c9fcc4b15 .
+<https://w3id.org/cpo#CommercialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for business, such as offices or shops."@en .
+<https://w3id.org/cpo#PostConstructionPhase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#ProjectPhase> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#active> .
+<https://w3id.org/cpo#IndustrialBuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A building project whose building is used for production or storage."@en .
+<https://w3id.org/cpo#hasPhase> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n92d287f44f4d476a9266cfcd17c9fcc4b4 .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#IndustrialBuildingProject> .
+<https://w3id.org/cpo#startDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/cpo#EducationalBuildingProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#BuildingProject> <http://www.w3.org/2004/02/skos/core#definition> "A project that plans, designs, constructs and hands over a building."@en .
+<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/cpo#startDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#BuildingProject> .
+<https://w3id.org/cpo#completed> <http://www.w3.org/2004/02/skos/core#definition> "The status of a building project that is finished."@en .
+<https://w3id.org/cpo#DesignPhase> <http://www.w3.org/2004/02/skos/core#definition> "The phase in which the building and its products are designed and specified."@en .
+<https://w3id.org/cpo#HealthcareBuildingProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b26 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasStatus> .
+<https://w3id.org/cpo#endDate> <http://www.w3.org/2004/02/skos/core#definition> "The date on which the building project is planned to be completed."@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n92d287f44f4d476a9266cfcd17c9fcc4b28 .
+<https://w3id.org/cpo#ProjectStatus> <http://www.w3.org/2004/02/skos/core#definition> "The state of a building project: active, on hold or completed."@en .
+_:n92d287f44f4d476a9266cfcd17c9fcc4b28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n92d287f44f4d476a9266cfcd17c9fcc4b26 .
+<https://w3id.org/cpo/project> <http://www.w3.org/2000/01/rdf-schema#label> "CPO module: Project"@en .
+<https://w3id.org/cpo/project> <http://purl.org/dc/terms/creator> "Rahel Kebede" .

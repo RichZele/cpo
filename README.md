@@ -18,10 +18,24 @@ An OWL ontology of building projects, their phases, the products installed in th
 | `https://w3id.org/cpo/product` | `ontology/cpo-product.ttl` | [doc/product](https://richzele.github.io/cpo/doc/product/) | Installed products, their types and quantities |
 | `https://w3id.org/cpo/requirement` | `ontology/cpo-requirement.ttl` | [doc/requirement](https://richzele.github.io/cpo/doc/requirement/) | Lighting requirements for types of space |
 
+## The use case
+
+ABID-Mo starts from a use case: lighting in a school building project (Lecture 4a).
+
+**Process map in BPMN 2.0.** Five roles as lanes in one pool; tasks, a start and an end event and an exclusive gateway joined by sequence flows; the six pieces of information exchanged as data objects; the phases as groups; and the pain point, the late manual check of illuminance, as a text annotation.
+
+![CPO process map in BPMN 2.0: from the brief by the client to the as-built data received by the facility manager](process-model/cpo-process-map.png)
+
+**System architecture.** Who provides the data, its source and format, the tool that turns it into RDF, GraphDB, and what uses it, with the course week that builds each part.
+
+![CPO system architecture: four data sources, the tools that turn them into RDF, GraphDB, and the SPARQL, SHACL, analysis and Dynamo outputs](architecture/cpo-architecture.png)
+
 ## Folders
 
 | Folder | What is in it |
 |---|---|
+| `process-model/` | The use case as a process map in BPMN 2.0 (`cpo-process-map.drawio` and `.png`): five roles as lanes in one pool; tasks, a start and an end event and an exclusive gateway joined by sequence flows; the six pieces of information exchanged as data objects with data associations; the phases as groups; and the pain point as a text annotation. |
+| `architecture/` | The system architecture (`cpo-architecture.drawio` and `.png`): who provides the data, its source and format, the tool that turns it into RDF, GraphDB, and what uses it, with the course week of each part. |
 | `ontology/` | The composed ontology and the three modules. Also `cpo-merged.ttl`, the merged ontology: the modules and the composed ontology in one file, with BOT as its only import, handy for tools that do not follow imports. |
 | `diagrams/` | The schema diagrams in Graffoo: the composed ontology (step 7, the modules side by side; step 8, with the spanning axioms), the project module (classes; data and definitions), the product module and the requirement module. Each `.drawio` file is the source, to open and edit in [draw.io](https://app.diagrams.net); each `.png` is an export of one of its pages. |
 | `data/` | `cpo-school-data.ttl`: the individuals of the worked example, one school building project with its building, spaces, lighting requirement, luminaire types and installed luminaires. They have their own namespace, `https://w3id.org/cpo/data/`, and the file imports the composed ontology. |
