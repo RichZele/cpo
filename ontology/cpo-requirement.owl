@@ -26,23 +26,21 @@
     <vann:preferredNamespacePrefix>cpo</vann:preferredNamespacePrefix>
     <vann:preferredNamespaceUri>https://w3id.org/cpo#</vann:preferredNamespaceUri>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cpo#uniformity">
+  <rdf:Description rdf:about="https://w3id.org/cpo#sourceStandard">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     <rdfs:domain rdf:resource="https://w3id.org/cpo#LightingRequirement"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:label xml:lang="en">uniformity</rdfs:label>
-    <skos:definition xml:lang="en">The minimum illuminance uniformity Uo.</skos:definition>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">source standard</rdfs:label>
+    <skos:definition xml:lang="en">The standard the requirement is taken from, such as EN 12464-1:2021.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cpo#hasRequiredIlluminance">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cpo#LightingRequirement"/>
-    <rdfs:range rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
-    <rdfs:label xml:lang="en">has required illuminance</rdfs:label>
-    <skos:definition xml:lang="en">The maintained illuminance required on the task area, a quantity value in lux.</skos:definition>
+  <rdf:Description rdf:about="https://w3id.org/cpo#LightingRequirement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">lighting requirement</rdfs:label>
+    <skos:definition xml:lang="en">The lighting a type of space must receive, as set by a standard such as EN 12464-1:2021.</skos:definition>
+    <rdfs:subClassOf rdf:nodeID="n6233798837e14540ad77713499e9be9fb1"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="ncddb7faae68f493cbef87bb6d7f72800b1">
+  <rdf:Description rdf:nodeID="n6233798837e14540ad77713499e9be9fb1">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:onProperty rdf:resource="https://w3id.org/cpo#hasRequiredIlluminance"/>
     <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
@@ -56,18 +54,20 @@
     <rdfs:label xml:lang="en">UGR limit</rdfs:label>
     <skos:definition xml:lang="en">The unified glare rating limit UGRL.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cpo#sourceStandard">
+  <rdf:Description rdf:about="https://w3id.org/cpo#hasRequiredIlluminance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cpo#LightingRequirement"/>
+    <rdfs:range rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+    <rdfs:label xml:lang="en">has required illuminance</rdfs:label>
+    <skos:definition xml:lang="en">The maintained illuminance required on the task area, a quantity value in lux.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#uniformity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     <rdfs:domain rdf:resource="https://w3id.org/cpo#LightingRequirement"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label xml:lang="en">source standard</rdfs:label>
-    <skos:definition xml:lang="en">The standard the requirement is taken from, such as EN 12464-1:2021.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cpo#LightingRequirement">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">lighting requirement</rdfs:label>
-    <skos:definition xml:lang="en">The lighting a type of space must receive, as set by a standard such as EN 12464-1:2021.</skos:definition>
-    <rdfs:subClassOf rdf:nodeID="ncddb7faae68f493cbef87bb6d7f72800b1"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label xml:lang="en">uniformity</rdfs:label>
+    <skos:definition xml:lang="en">The minimum illuminance uniformity Uo.</skos:definition>
   </rdf:Description>
 </rdf:RDF>
