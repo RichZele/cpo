@@ -4,7 +4,7 @@ An OWL ontology of building projects, their phases, the products installed in th
 
 ![CPO: the project, product and requirement modules composed with BOT, with the spanning axioms, in Graffoo](diagrams/cpo-composed-graffoo.png)
 
-*The composed ontology in Graffoo: yellow boxes are classes, blue arrows object properties, and dotted boxes modules. The spanning axioms `hasBuilding`, `installedIn` and `hasLightingRequirement` connect the modules with BOT.*
+*The composed ontology in Graffoo (Lecture 4c, step 8): yellow boxes are classes, blue arrows object properties, and dotted boxes modules. The spanning axioms `hasBuilding`, `installedIn` and `hasLightingRequirement` connect the modules with BOT.*
 
 - Website: https://richzele.github.io/cpo/, with the modules, the merged ontology, the data, their documentation and every file
 - Ontology: https://w3id.org/cpo
@@ -23,7 +23,7 @@ An OWL ontology of building projects, their phases, the products installed in th
 | Folder | What is in it |
 |---|---|
 | `ontology/` | The composed ontology and the three modules. Also `cpo-merged.ttl`, the merged ontology: the modules and the composed ontology in one file, with BOT as its only import, handy for tools that do not follow imports. |
-| `diagrams/` | The schema diagrams in Graffoo: the composed ontology, the project module (classes; data and definitions), the product module and the requirement module. Each `.drawio` file is the source, to open and edit in [draw.io](https://app.diagrams.net); each `.png` is an export of one of its pages. |
+| `diagrams/` | The schema diagrams in Graffoo: the composed ontology (step 7, the modules side by side; step 8, with the spanning axioms), the project module (classes; data and definitions), the product module and the requirement module. Each `.drawio` file is the source, to open and edit in [draw.io](https://app.diagrams.net); each `.png` is an export of one of its pages. |
 | `data/` | `cpo-school-data.ttl`: the individuals of the worked example, one school building project with its building, spaces, lighting requirement, luminaire types and installed luminaires. They have their own namespace, `https://w3id.org/cpo/data/`, and the file imports the composed ontology. |
 | `doc/` | The WIDOCO documentation of each ontology, with its WebVOWL diagram. |
 

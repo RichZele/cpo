@@ -354,16 +354,13 @@ cpo:ProjectPhase a owl:Class ;
 cpo:BuildingProject a owl:Class ;
     rdfs:label "building project"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty cpo:hasPhase ;
+            owl:someValuesFrom cpo:ProjectPhase ],
+        [ a owl:Restriction ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass cpo:Product ;
-            owl:onProperty cpo:hasProduct ],
-        [ a owl:Restriction ;
-            owl:onProperty cpo:hasPhase ;
-            owl:someValuesFrom cpo:ProjectPhase ] ;
+            owl:onProperty cpo:hasProduct ] ;
     skos:definition "A project that plans, designs, constructs and hands over a building."@en .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( cpo:BuildingProject cpo:ProjectPhase cpo:Product cpo:ProductType cpo:LightingRequirement ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( cpo:PlanningPhase cpo:DesignPhase cpo:ConstructionPhase cpo:PostConstructionPhase ) .
@@ -373,4 +370,7 @@ cpo:BuildingProject a owl:Class ;
 
 [] a owl:AllDifferent ;
     owl:distinctMembers ( cpo:active cpo:onHold cpo:completed ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( cpo:BuildingProject cpo:ProjectPhase cpo:Product cpo:ProductType cpo:LightingRequirement ) .
 

@@ -1,5 +1,34 @@
 [
   {
+    "@id": "https://w3id.org/cpo#colourRenderingIndex",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#LuminaireType"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "colour rendering index"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The colour rendering index Ra of a luminaire type."
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/cpo#articleNumber",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty",
@@ -25,35 +54,6 @@
       {
         "@language": "en",
         "@value": "The manufacturer's article number of a product type."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#colourTemperature",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#LuminaireType"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "colour temperature"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The correlated colour temperature of a luminaire type, in kelvin."
       }
     ]
   },
@@ -107,6 +107,29 @@
     ]
   },
   {
+    "@id": "https://w3id.org/cpo#Product",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "product"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/cpo#ProductType"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "One installed product in a building, from materials to finished goods."
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/cpo#Furnishing",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -150,7 +173,7 @@
         "@id": "https://w3id.org/cpo#ProductType"
       },
       {
-        "@id": "_:n97f554e9961a46238f5bbdb3fc3cedf5b5"
+        "@id": "_:n838f3629264743e99346703e0443d0b5b5"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -161,7 +184,7 @@
     ]
   },
   {
-    "@id": "_:n97f554e9961a46238f5bbdb3fc3cedf5b5",
+    "@id": "_:n838f3629264743e99346703e0443d0b5b5",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -179,110 +202,6 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
         "@value": "1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#hasRatedPower",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#LuminaireType"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has rated power"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://qudt.org/schema/qudt/QuantityValue"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The rated power of a luminaire type, a quantity value in watt."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#Fixture",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "fixture"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/cpo#Product"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A product fixed to the building, such as a luminaire."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#Product",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "product"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/cpo#ProductType"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "One installed product in a building, from materials to finished goods."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#colourRenderingIndex",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#LuminaireType"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "colour rendering index"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The colour rendering index Ra of a luminaire type."
       }
     ]
   },
@@ -316,6 +235,76 @@
     ]
   },
   {
+    "@id": "https://w3id.org/cpo#InteriorProduct",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "interior product"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:n838f3629264743e99346703e0443d0b5b2"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A luminaire or a furnishing."
+      }
+    ]
+  },
+  {
+    "@id": "_:n838f3629264743e99346703e0443d0b5b2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/cpo#Luminaire"
+          },
+          {
+            "@id": "https://w3id.org/cpo#Furnishing"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#colourTemperature",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#LuminaireType"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "colour temperature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The correlated colour temperature of a luminaire type, in kelvin."
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/cpo#Luminaire",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -331,7 +320,7 @@
         "@id": "https://w3id.org/cpo#Fixture"
       },
       {
-        "@id": "_:n97f554e9961a46238f5bbdb3fc3cedf5b1"
+        "@id": "_:n838f3629264743e99346703e0443d0b5b1"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#altLabel": [
@@ -352,7 +341,7 @@
     ]
   },
   {
-    "@id": "_:n97f554e9961a46238f5bbdb3fc3cedf5b1",
+    "@id": "_:n838f3629264743e99346703e0443d0b5b1",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -374,66 +363,25 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#ProductType",
+    "@id": "https://w3id.org/cpo#Fixture",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "product type"
+        "@value": "fixture"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://w3id.org/CEON/ontology/resourceODP/Resource"
+        "@id": "https://w3id.org/cpo#Product"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A product as described in a manufacturer catalogue: one article, many installed copies."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#InteriorProduct",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "interior product"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "_:n97f554e9961a46238f5bbdb3fc3cedf5b2"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A luminaire or a furnishing."
-      }
-    ]
-  },
-  {
-    "@id": "_:n97f554e9961a46238f5bbdb3fc3cedf5b2",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/cpo#Luminaire"
-          },
-          {
-            "@id": "https://w3id.org/cpo#Furnishing"
-          }
-        ]
+        "@value": "A product fixed to the building, such as a luminaire."
       }
     ]
   },
@@ -463,6 +411,58 @@
       {
         "@language": "en",
         "@value": "The luminous flux of a luminaire type, a quantity value in lumen."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#ProductType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "product type"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://w3id.org/CEON/ontology/resourceODP/Resource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A product as described in a manufacturer catalogue: one article, many installed copies."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#hasRatedPower",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#LuminaireType"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has rated power"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://qudt.org/schema/qudt/QuantityValue"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The rated power of a luminaire type, a quantity value in watt."
       }
     ]
   }
