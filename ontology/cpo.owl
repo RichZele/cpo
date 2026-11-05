@@ -7,38 +7,34 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:vann="http://purl.org/vocab/vann/"
 >
-  <rdf:Description rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b8">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b9"/>
+  <rdf:Description rdf:nodeID="n408c993de8284e948bfc471e8db31463b11">
+    <rdf:first rdf:resource="https://w3id.org/cpo#Product"/>
+    <rdf:rest rdf:nodeID="n408c993de8284e948bfc471e8db31463b12"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b2">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:intersectionOf rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b5"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cpo#BuildingProject">
-    <rdfs:subClassOf rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b1"/>
+  <rdf:Description rdf:nodeID="n408c993de8284e948bfc471e8db31463b10">
+    <rdf:first rdf:resource="https://w3id.org/cpo#ProjectPhase"/>
+    <rdf:rest rdf:nodeID="n408c993de8284e948bfc471e8db31463b11"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cpo#CommissionedFurnishedProject">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">commissioned furnished project</rdfs:label>
     <skos:definition xml:lang="en">A building project with at least one furnishing that has reached its commissioning phase.</skos:definition>
-    <owl:equivalentClass rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b2"/>
+    <owl:equivalentClass rdf:nodeID="n408c993de8284e948bfc471e8db31463b2"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cpo#hasArea">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/bot#Space"/>
-    <rdfs:range rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
-    <rdfs:label xml:lang="en">has area</rdfs:label>
-    <skos:definition xml:lang="en">The floor area of a space, a quantity value in square metre.</skos:definition>
+  <rdf:Description rdf:nodeID="n408c993de8284e948bfc471e8db31463b1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cpo#hasProduct"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cpo#Product"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b9">
-    <rdf:first rdf:resource="https://w3id.org/cpo#BuildingProject"/>
-    <rdf:rest rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b10"/>
+  <rdf:Description rdf:nodeID="n408c993de8284e948bfc471e8db31463b6">
+    <rdf:first rdf:nodeID="n408c993de8284e948bfc471e8db31463b3"/>
+    <rdf:rest rdf:nodeID="n408c993de8284e948bfc471e8db31463b7"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b10">
-    <rdf:first rdf:resource="https://w3id.org/cpo#ProjectPhase"/>
-    <rdf:rest rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b11"/>
+  <rdf:Description rdf:nodeID="n408c993de8284e948bfc471e8db31463b4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cpo#hasPhase"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/cpo#CommissioningPhase"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cpo">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
@@ -62,16 +58,22 @@
     <rdfs:label xml:lang="en">has product</rdfs:label>
     <skos:definition xml:lang="en">Relates a building project to a product installed in its building.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b1">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/cpo#hasProduct"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-    <owl:onClass rdf:resource="https://w3id.org/cpo#Product"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cpo#isProductOf">
+  <rdf:Description rdf:about="https://w3id.org/cpo#hasBuilding">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/cpo#hasProduct"/>
-    <rdfs:label xml:lang="en">is product of</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdfs:range rdf:resource="https://w3id.org/bot#Building"/>
+    <rdfs:label xml:lang="en">has building</rdfs:label>
+    <skos:definition xml:lang="en">Relates a building project to the building it delivers.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#Corridor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Space"/>
+    <rdfs:label xml:lang="en">corridor</rdfs:label>
+    <skos:definition xml:lang="en">A space for circulation between other spaces.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n408c993de8284e948bfc471e8db31463b5">
+    <rdf:first rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdf:rest rdf:nodeID="n408c993de8284e948bfc471e8db31463b6"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cpo#installedIn">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -81,24 +83,6 @@
     <rdfs:label xml:lang="en">installed in</rdfs:label>
     <skos:definition xml:lang="en">Relates a product to the space it is installed in. Inverse of bot:containsElement.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b12">
-    <rdf:first rdf:resource="https://w3id.org/cpo#ProductType"/>
-    <rdf:rest rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b13"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cpo#Classroom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Space"/>
-    <rdfs:label xml:lang="en">classroom</rdfs:label>
-    <skos:definition xml:lang="en">A space for teaching.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b13">
-    <rdf:first rdf:resource="https://w3id.org/cpo#LightingRequirement"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b6">
-    <rdf:first rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b3"/>
-    <rdf:rest rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b7"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cpo#hasLightingRequirement">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:domain rdf:resource="https://w3id.org/bot#Space"/>
@@ -106,42 +90,58 @@
     <rdfs:label xml:lang="en">has lighting requirement</rdfs:label>
     <skos:definition xml:lang="en">Relates a space to the lighting requirement that applies to it.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b3">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/cpo#hasProduct"/>
-    <owl:someValuesFrom rdf:resource="https://w3id.org/cpo#Furnishing"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b4">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/cpo#hasPhase"/>
-    <owl:someValuesFrom rdf:resource="https://w3id.org/cpo#CommissioningPhase"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b7">
-    <rdf:first rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b4"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cpo#hasBuilding">
+  <rdf:Description rdf:about="https://w3id.org/cpo#hasArea">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cpo#BuildingProject"/>
-    <rdfs:range rdf:resource="https://w3id.org/bot#Building"/>
-    <rdfs:label xml:lang="en">has building</rdfs:label>
-    <skos:definition xml:lang="en">Relates a building project to the building it delivers.</skos:definition>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/bot#Space"/>
+    <rdfs:range rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+    <rdfs:label xml:lang="en">has area</rdfs:label>
+    <skos:definition xml:lang="en">The floor area of a space, a quantity value in square metre.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cpo#Product">
     <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Element"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cpo#Corridor">
+  <rdf:Description rdf:about="https://w3id.org/cpo#isProductOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/cpo#hasProduct"/>
+    <rdfs:label xml:lang="en">is product of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#BuildingProject">
+    <rdfs:subClassOf rdf:nodeID="n408c993de8284e948bfc471e8db31463b1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n408c993de8284e948bfc471e8db31463b13">
+    <rdf:first rdf:resource="https://w3id.org/cpo#LightingRequirement"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n408c993de8284e948bfc471e8db31463b12">
+    <rdf:first rdf:resource="https://w3id.org/cpo#ProductType"/>
+    <rdf:rest rdf:nodeID="n408c993de8284e948bfc471e8db31463b13"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n408c993de8284e948bfc471e8db31463b7">
+    <rdf:first rdf:nodeID="n408c993de8284e948bfc471e8db31463b4"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#Classroom">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Space"/>
-    <rdfs:label xml:lang="en">corridor</rdfs:label>
-    <skos:definition xml:lang="en">A space for circulation between other spaces.</skos:definition>
+    <rdfs:label xml:lang="en">classroom</rdfs:label>
+    <skos:definition xml:lang="en">A space for teaching.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b5">
+  <rdf:Description rdf:nodeID="n408c993de8284e948bfc471e8db31463b3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cpo#hasProduct"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/cpo#Furnishing"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n408c993de8284e948bfc471e8db31463b2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="n408c993de8284e948bfc471e8db31463b5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n408c993de8284e948bfc471e8db31463b9">
     <rdf:first rdf:resource="https://w3id.org/cpo#BuildingProject"/>
-    <rdf:rest rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b6"/>
+    <rdf:rest rdf:nodeID="n408c993de8284e948bfc471e8db31463b10"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b11">
-    <rdf:first rdf:resource="https://w3id.org/cpo#Product"/>
-    <rdf:rest rdf:nodeID="n513913ec0c3145ab813b0a8238f5cc95b12"/>
+  <rdf:Description rdf:nodeID="n408c993de8284e948bfc471e8db31463b8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="n408c993de8284e948bfc471e8db31463b9"/>
   </rdf:Description>
 </rdf:RDF>

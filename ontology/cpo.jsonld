@@ -23,110 +23,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#hasProduct",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#BuildingProject"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has product"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cpo#Product"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Relates a building project to a product installed in its building."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#hasArea",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/bot#Space"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has area"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://qudt.org/schema/qudt/QuantityValue"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The floor area of a space, a quantity value in square metre."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#BuildingProject",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:n513913ec0c3145ab813b0a8238f5cc95b1"
-      }
-    ]
-  },
-  {
-    "@id": "_:n513913ec0c3145ab813b0a8238f5cc95b1",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#minQualifiedCardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onClass": [
-      {
-        "@id": "https://w3id.org/cpo#Product"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/cpo#hasProduct"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#isProductOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is product of"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://w3id.org/cpo#hasProduct"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/cpo#Classroom",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -150,57 +46,52 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#hasBuilding",
+    "@id": "https://w3id.org/cpo#isProductOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is product of"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/cpo#hasProduct"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#installedIn",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://w3id.org/cpo#BuildingProject"
+        "@id": "https://w3id.org/cpo#Product"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has building"
+        "@value": "installed in"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/bot#Building"
+        "@id": "https://w3id.org/bot#Space"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/bot#containsElement"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Relates a building project to the building it delivers."
-      }
-    ]
-  },
-  {
-    "@id": "_:n513913ec0c3145ab813b0a8238f5cc95b8",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
-    ],
-    "http://www.w3.org/2002/07/owl#members": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/cpo#BuildingProject"
-          },
-          {
-            "@id": "https://w3id.org/cpo#ProjectPhase"
-          },
-          {
-            "@id": "https://w3id.org/cpo#Product"
-          },
-          {
-            "@id": "https://w3id.org/cpo#ProductType"
-          },
-          {
-            "@id": "https://w3id.org/cpo#LightingRequirement"
-          }
-        ]
+        "@value": "Relates a product to the space it is installed in. Inverse of bot:containsElement."
       }
     ]
   },
@@ -268,6 +159,63 @@
     ]
   },
   {
+    "@id": "https://w3id.org/cpo#BuildingProject",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:n408c993de8284e948bfc471e8db31463b1"
+      }
+    ]
+  },
+  {
+    "@id": "_:n408c993de8284e948bfc471e8db31463b1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#minQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "https://w3id.org/cpo#Product"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/cpo#hasProduct"
+      }
+    ]
+  },
+  {
+    "@id": "_:n408c993de8284e948bfc471e8db31463b8",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/cpo#BuildingProject"
+          },
+          {
+            "@id": "https://w3id.org/cpo#ProjectPhase"
+          },
+          {
+            "@id": "https://w3id.org/cpo#Product"
+          },
+          {
+            "@id": "https://w3id.org/cpo#ProductType"
+          },
+          {
+            "@id": "https://w3id.org/cpo#LightingRequirement"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/cpo#hasLightingRequirement",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -296,47 +244,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#Product",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/bot#Element"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#installedIn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#Product"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "installed in"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/bot#Space"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://w3id.org/bot#containsElement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Relates a product to the space it is installed in. Inverse of bot:containsElement."
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/cpo#CommissionedFurnishedProject",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -349,7 +256,7 @@
     ],
     "http://www.w3.org/2002/07/owl#equivalentClass": [
       {
-        "@id": "_:n513913ec0c3145ab813b0a8238f5cc95b2"
+        "@id": "_:n408c993de8284e948bfc471e8db31463b2"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -360,7 +267,7 @@
     ]
   },
   {
-    "@id": "_:n513913ec0c3145ab813b0a8238f5cc95b2",
+    "@id": "_:n408c993de8284e948bfc471e8db31463b2",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -371,17 +278,17 @@
             "@id": "https://w3id.org/cpo#BuildingProject"
           },
           {
-            "@id": "_:n513913ec0c3145ab813b0a8238f5cc95b3"
+            "@id": "_:n408c993de8284e948bfc471e8db31463b3"
           },
           {
-            "@id": "_:n513913ec0c3145ab813b0a8238f5cc95b4"
+            "@id": "_:n408c993de8284e948bfc471e8db31463b4"
           }
         ]
       }
     ]
   },
   {
-    "@id": "_:n513913ec0c3145ab813b0a8238f5cc95b3",
+    "@id": "_:n408c993de8284e948bfc471e8db31463b3",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -397,7 +304,7 @@
     ]
   },
   {
-    "@id": "_:n513913ec0c3145ab813b0a8238f5cc95b4",
+    "@id": "_:n408c993de8284e948bfc471e8db31463b4",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -409,6 +316,99 @@
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
         "@id": "https://w3id.org/cpo#CommissioningPhase"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#hasProduct",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#BuildingProject"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has product"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cpo#Product"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a building project to a product installed in its building."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#hasArea",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/bot#Space"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has area"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://qudt.org/schema/qudt/QuantityValue"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The floor area of a space, a quantity value in square metre."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#Product",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/bot#Element"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#hasBuilding",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#BuildingProject"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has building"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/bot#Building"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a building project to the building it delivers."
       }
     ]
   }

@@ -23,7 +23,7 @@ An OWL ontology of building projects, their phases, the products installed in th
 | Folder | What is in it |
 |---|---|
 | `ontology/` | The composed ontology and the three modules. Also `cpo-merged.ttl`, the merged ontology: the modules and the composed ontology in one file, with BOT as its only import, handy for tools that do not follow imports. |
-| `diagrams/` | The schema diagrams in Graffoo: the composed ontology, the project module (classes; data and definitions), the product module and the requirement module. |
+| `diagrams/` | The schema diagrams in Graffoo: the composed ontology, the project module (classes; data and definitions), the product module and the requirement module. Each `.drawio` file is the source, to open and edit in [draw.io](https://app.diagrams.net); each `.png` is an export of one of its pages. |
 | `data/` | `cpo-school-data.ttl`: the individuals of the worked example, one school building project with its building, spaces, lighting requirement, luminaire types and installed luminaires. They have their own namespace, `https://w3id.org/cpo/data/`, and the file imports the composed ontology. |
 | `doc/` | The WIDOCO documentation of each ontology, with its WebVOWL diagram. |
 

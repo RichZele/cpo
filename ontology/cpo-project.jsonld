@@ -1,58 +1,35 @@
 [
   {
-    "@id": "https://w3id.org/cpo#IndustrialBuildingProject",
+    "@id": "https://w3id.org/cpo#startDate",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "industrial building project"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://w3id.org/cpo#BuildingProject"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A building project whose building is used for production or storage."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#precedes",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#TransitiveProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#ProjectPhase"
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "precedes"
+        "@value": "start date"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/cpo#ProjectPhase"
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A phase precedes another if it ends before the other begins. Transitive."
+        "@value": "The date on which the building project begins."
       }
     ]
   },
   {
-    "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb2",
+    "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b12",
     "@type": [
       "http://www.w3.org/2002/07/owl#AllDisjointClasses"
     ],
@@ -60,58 +37,18 @@
       {
         "@list": [
           {
-            "@id": "https://w3id.org/cpo#ResidentialBuildingProject"
+            "@id": "https://w3id.org/cpo#PlanningPhase"
           },
           {
-            "@id": "https://w3id.org/cpo#CommercialBuildingProject"
+            "@id": "https://w3id.org/cpo#DesignPhase"
           },
           {
-            "@id": "https://w3id.org/cpo#IndustrialBuildingProject"
+            "@id": "https://w3id.org/cpo#ConstructionPhase"
           },
           {
-            "@id": "https://w3id.org/cpo#EducationalBuildingProject"
-          },
-          {
-            "@id": "https://w3id.org/cpo#HealthcareBuildingProject"
+            "@id": "https://w3id.org/cpo#PostConstructionPhase"
           }
         ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#ProjectPhase",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "project phase"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A period of a building project with its own purpose and deliverables."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#onHold",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "https://w3id.org/cpo#ProjectStatus"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "on hold"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The status of a building project that is paused."
       }
     ]
   },
@@ -145,25 +82,163 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#follows",
+    "@id": "https://w3id.org/cpo#ProjectStatus",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "follows"
+        "@value": "project status"
       }
     ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
       {
-        "@id": "https://w3id.org/cpo#precedes"
+        "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b17"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A phase follows another if it begins after the other ends. Inverse of precedes."
+        "@value": "The state of a building project: active, on hold or completed."
+      }
+    ]
+  },
+  {
+    "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b17",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#oneOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/cpo#active"
+          },
+          {
+            "@id": "https://w3id.org/cpo#onHold"
+          },
+          {
+            "@id": "https://w3id.org/cpo#completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#onHold",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://w3id.org/cpo#ProjectStatus"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "on hold"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The status of a building project that is paused."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#ConstructionPhase",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "construction phase"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/cpo#ProjectPhase"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The phase in which the building is built and the products are installed."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#active",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://w3id.org/cpo#ProjectStatus"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "active"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The status of a building project that is being carried out."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#precedes",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#TransitiveProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#ProjectPhase"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "precedes"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cpo#ProjectPhase"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A phase precedes another if it ends before the other begins. Transitive."
+      }
+    ]
+  },
+  {
+    "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/cpo#ResidentialBuildingProject"
+          },
+          {
+            "@id": "https://w3id.org/cpo#CommercialBuildingProject"
+          },
+          {
+            "@id": "https://w3id.org/cpo#IndustrialBuildingProject"
+          },
+          {
+            "@id": "https://w3id.org/cpo#EducationalBuildingProject"
+          },
+          {
+            "@id": "https://w3id.org/cpo#HealthcareBuildingProject"
+          }
+        ]
       }
     ]
   },
@@ -196,50 +271,41 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#completed",
+    "@id": "https://w3id.org/cpo#BuildingProject",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "https://w3id.org/cpo#ProjectStatus"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "completed"
+        "@value": "building project"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b1"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The status of a building project that is finished."
+        "@value": "A project that plans, designs, constructs and hands over a building."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#startDate",
+    "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b1",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "https://w3id.org/cpo#BuildingProject"
+        "@id": "https://w3id.org/cpo#hasPhase"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@language": "en",
-        "@value": "start date"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The date on which the building project begins."
+        "@id": "https://w3id.org/cpo#ProjectPhase"
       }
     ]
   },
@@ -267,212 +333,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#ProjectStatus",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "project status"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb17"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The state of a building project: active, on hold or completed."
-      }
-    ]
-  },
-  {
-    "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb17",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#oneOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/cpo#active"
-          },
-          {
-            "@id": "https://w3id.org/cpo#onHold"
-          },
-          {
-            "@id": "https://w3id.org/cpo#completed"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#HealthcareBuildingProject",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "healthcare building project"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/cpo#BuildingProject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A building project whose building is used for care, such as a hospital."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#PostConstructionPhase",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "post-construction phase"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/cpo#ProjectPhase"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The phase after construction: commissioning and handover."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#BuildingProject",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "building project"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb1"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A project that plans, designs, constructs and hands over a building."
-      }
-    ]
-  },
-  {
-    "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb1",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/cpo#hasPhase"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://w3id.org/cpo#ProjectPhase"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#DesignPhase",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "design phase"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/cpo#ProjectPhase"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The phase in which the building and its products are designed and specified."
-      }
-    ]
-  },
-  {
-    "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb12",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
-    ],
-    "http://www.w3.org/2002/07/owl#members": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/cpo#PlanningPhase"
-          },
-          {
-            "@id": "https://w3id.org/cpo#DesignPhase"
-          },
-          {
-            "@id": "https://w3id.org/cpo#ConstructionPhase"
-          },
-          {
-            "@id": "https://w3id.org/cpo#PostConstructionPhase"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#endDate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#BuildingProject"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "end date"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The date on which the building project is planned to be completed."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#active",
+    "@id": "https://w3id.org/cpo#completed",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual",
       "https://w3id.org/cpo#ProjectStatus"
@@ -480,86 +341,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "active"
+        "@value": "completed"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The status of a building project that is being carried out."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#budget",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cpo#BuildingProject"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "budget"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The allocated budget of the building project, in SEK."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#EducationalBuildingProject",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "educational building project"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/cpo#BuildingProject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A building project whose building is used for teaching, such as a school."
-      }
-    ]
-  },
-  {
-    "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb21",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDifferent"
-    ],
-    "http://www.w3.org/2002/07/owl#distinctMembers": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/cpo#active"
-          },
-          {
-            "@id": "https://w3id.org/cpo#onHold"
-          },
-          {
-            "@id": "https://w3id.org/cpo#completed"
-          }
-        ]
+        "@value": "The status of a building project that is finished."
       }
     ]
   },
@@ -613,6 +401,50 @@
     ]
   },
   {
+    "@id": "https://w3id.org/cpo#EducationalBuildingProject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "educational building project"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/cpo#BuildingProject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A building project whose building is used for teaching, such as a school."
+      }
+    ]
+  },
+  {
+    "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b21",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDifferent"
+    ],
+    "http://www.w3.org/2002/07/owl#distinctMembers": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/cpo#active"
+          },
+          {
+            "@id": "https://w3id.org/cpo#onHold"
+          },
+          {
+            "@id": "https://w3id.org/cpo#completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/cpo#CommissioningPhase",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -636,14 +468,95 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cpo#ConstructionPhase",
+    "@id": "https://w3id.org/cpo#budget",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#BuildingProject"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "budget"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The allocated budget of the building project, in SEK."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#NonResidentialBuildingProject",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "construction phase"
+        "@value": "non-residential building project"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b8"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A building project that is not a residential building project."
+      }
+    ]
+  },
+  {
+    "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b8",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/cpo#BuildingProject"
+          },
+          {
+            "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b9"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#complementOf": [
+      {
+        "@id": "https://w3id.org/cpo#ResidentialBuildingProject"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#DesignPhase",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "design phase"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -654,7 +567,30 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The phase in which the building is built and the products are installed."
+        "@value": "The phase in which the building and its products are designed and specified."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#follows",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "follows"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/cpo#precedes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A phase follows another if it begins after the other ends. Inverse of precedes."
       }
     ]
   },
@@ -682,6 +618,75 @@
     ]
   },
   {
+    "@id": "https://w3id.org/cpo#IndustrialBuildingProject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "industrial building project"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/cpo#BuildingProject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A building project whose building is used for production or storage."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#HealthcareBuildingProject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "healthcare building project"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/cpo#BuildingProject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A building project whose building is used for care, such as a hospital."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#PostConstructionPhase",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "post-construction phase"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/cpo#ProjectPhase"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The phase after construction: commissioning and handover."
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/cpo#isPhaseOf",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -705,6 +710,110 @@
     ]
   },
   {
+    "@id": "https://w3id.org/cpo#ProjectPhase",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "project phase"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A period of a building project with its own purpose and deliverables."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#endDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cpo#BuildingProject"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "end date"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The date on which the building project is planned to be completed."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo#ActiveProject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "active project"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b25"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A building project whose status is active."
+      }
+    ]
+  },
+  {
+    "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b25",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/cpo#BuildingProject"
+          },
+          {
+            "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b26"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:na592d6c0f07f4c14ae69c8e5fe265904b26",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#hasValue": [
+      {
+        "@id": "https://w3id.org/cpo#active"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/cpo#hasStatus"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/cpo#PlanningPhase",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -724,115 +833,6 @@
       {
         "@language": "en",
         "@value": "The phase in which the need, the brief and the feasibility of the project are settled."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#NonResidentialBuildingProject",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "non-residential building project"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb8"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A building project that is not a residential building project."
-      }
-    ]
-  },
-  {
-    "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb8",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#intersectionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/cpo#BuildingProject"
-          },
-          {
-            "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb9"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb9",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#complementOf": [
-      {
-        "@id": "https://w3id.org/cpo#ResidentialBuildingProject"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cpo#ActiveProject",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "active project"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb25"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A building project whose status is active."
-      }
-    ]
-  },
-  {
-    "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb25",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#intersectionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/cpo#BuildingProject"
-          },
-          {
-            "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb26"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "_:na8994a5bfd904167a9f6205c6a4f431cb26",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#hasValue": [
-      {
-        "@id": "https://w3id.org/cpo#active"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/cpo#hasStatus"
       }
     ]
   }
