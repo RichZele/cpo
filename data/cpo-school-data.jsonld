@@ -1,0 +1,1133 @@
+[
+  {
+    "@id": "https://w3id.org/cpo/data/producing_23916-529",
+    "@type": [
+      "http://w3id.org/CEON/ontology/actor/ProducingResource"
+    ],
+    "http://w3id.org/CEON/ontology/actorODP/participantRole": [
+      {
+        "@id": "https://w3id.org/cpo/data/manufacturerRole"
+      }
+    ],
+    "http://w3id.org/CEON/ontology/actorODP/participatingActor": [
+      {
+        "@id": "https://w3id.org/cpo/data/fagerhult"
+      }
+    ],
+    "http://w3id.org/CEON/ontology/actorODP/participatingResource": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/req_EN12464_classroom",
+    "@type": [
+      "https://w3id.org/cpo#LightingRequirement"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "EN 12464-1:2021, classrooms"
+      }
+    ],
+    "https://w3id.org/cpo#hasRequiredIlluminance": [
+      {
+        "@id": "https://w3id.org/cpo/data/em_classroom"
+      }
+    ],
+    "https://w3id.org/cpo#minColourRendering": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 80
+      }
+    ],
+    "https://w3id.org/cpo#sourceStandard": [
+      {
+        "@value": "EN 12464-1:2021"
+      }
+    ],
+    "https://w3id.org/cpo#ugrLimit": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "19"
+      }
+    ],
+    "https://w3id.org/cpo#uniformity": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0.60"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/buildingA",
+    "@type": [
+      "https://w3id.org/bot#Building"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Building A"
+      }
+    ],
+    "https://w3id.org/bot#hasStorey": [
+      {
+        "@id": "https://w3id.org/cpo/data/storey2"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_14_L08",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23784-402"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_14"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/fagerhult",
+    "@type": [
+      "http://w3id.org/CEON/ontology/actorODP/Actor"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Fagerhult"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/flux_23916-529",
+    "@type": [
+      "http://qudt.org/schema/qudt/QuantityValue"
+    ],
+    "http://qudt.org/schema/qudt/numericValue": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3853"
+      }
+    ],
+    "http://qudt.org/schema/qudt/unit": [
+      {
+        "@id": "http://qudt.org/vocab/unit/LM"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L11",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/power_23784-402",
+    "@type": [
+      "http://qudt.org/schema/qudt/QuantityValue"
+    ],
+    "http://qudt.org/schema/qudt/numericValue": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "37"
+      }
+    ],
+    "http://qudt.org/schema/qudt/unit": [
+      {
+        "@id": "http://qudt.org/vocab/unit/W"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/area_2_15",
+    "@type": [
+      "http://qudt.org/schema/qudt/QuantityValue"
+    ],
+    "http://qudt.org/schema/qudt/numericValue": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "60"
+      }
+    ],
+    "http://qudt.org/schema/qudt/unit": [
+      {
+        "@id": "http://qudt.org/vocab/unit/M2"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/em_classroom",
+    "@type": [
+      "http://qudt.org/schema/qudt/QuantityValue"
+    ],
+    "http://qudt.org/schema/qudt/numericValue": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "500"
+      }
+    ],
+    "http://qudt.org/schema/qudt/unit": [
+      {
+        "@id": "http://qudt.org/vocab/unit/LUX"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L13",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/area_2_14",
+    "@type": [
+      "http://qudt.org/schema/qudt/QuantityValue"
+    ],
+    "http://qudt.org/schema/qudt/numericValue": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "60"
+      }
+    ],
+    "http://qudt.org/schema/qudt/unit": [
+      {
+        "@id": "http://qudt.org/vocab/unit/M2"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_14_L01",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23784-402"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_14"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/classroom_2_14",
+    "@type": [
+      "https://w3id.org/cpo#Classroom"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Classroom 2.14"
+      }
+    ],
+    "https://w3id.org/cpo#hasArea": [
+      {
+        "@id": "https://w3id.org/cpo/data/area_2_14"
+      }
+    ],
+    "https://w3id.org/cpo#hasLightingRequirement": [
+      {
+        "@id": "https://w3id.org/cpo/data/req_EN12464_classroom"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L09",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_14_L05",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23784-402"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_14"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L03",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_C1_L04",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_73029-520"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/corridor_2_C1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/corridor_2_C1",
+    "@type": [
+      "https://w3id.org/cpo#Corridor"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Corridor 2.C1"
+      }
+    ],
+    "https://w3id.org/cpo#hasArea": [
+      {
+        "@id": "https://w3id.org/cpo/data/area_2_C1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/designPhase1",
+    "@type": [
+      "https://w3id.org/cpo#DesignPhase"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Design phase 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_C1_L03",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_73029-520"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/corridor_2_C1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_14_L07",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23784-402"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_14"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L12",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_14_L02",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23784-402"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_14"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/classroom_2_15",
+    "@type": [
+      "https://w3id.org/cpo#Classroom"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Classroom 2.15"
+      }
+    ],
+    "https://w3id.org/cpo#hasArea": [
+      {
+        "@id": "https://w3id.org/cpo/data/area_2_15"
+      }
+    ],
+    "https://w3id.org/cpo#hasLightingRequirement": [
+      {
+        "@id": "https://w3id.org/cpo/data/req_EN12464_classroom"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/type_73029-520",
+    "@type": [
+      "https://w3id.org/cpo#LuminaireType"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Pleiad G4 165"
+      }
+    ],
+    "https://w3id.org/cpo#articleNumber": [
+      {
+        "@value": "73029-520"
+      }
+    ],
+    "https://w3id.org/cpo#colourRenderingIndex": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 80
+      }
+    ],
+    "https://w3id.org/cpo#colourTemperature": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 3000
+      }
+    ],
+    "https://w3id.org/cpo#hasLuminousFlux": [
+      {
+        "@id": "https://w3id.org/cpo/data/flux_73029-520"
+      }
+    ],
+    "https://w3id.org/cpo#hasRatedPower": [
+      {
+        "@id": "https://w3id.org/cpo/data/power_73029-520"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L14",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/power_23916-529",
+    "@type": [
+      "http://qudt.org/schema/qudt/QuantityValue"
+    ],
+    "http://qudt.org/schema/qudt/numericValue": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "30.5"
+      }
+    ],
+    "http://qudt.org/schema/qudt/unit": [
+      {
+        "@id": "http://qudt.org/vocab/unit/W"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L06",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/flux_73029-520",
+    "@type": [
+      "http://qudt.org/schema/qudt/QuantityValue"
+    ],
+    "http://qudt.org/schema/qudt/numericValue": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "938"
+      }
+    ],
+    "http://qudt.org/schema/qudt/unit": [
+      {
+        "@id": "http://qudt.org/vocab/unit/LM"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/manufacturerRole",
+    "@type": [
+      "http://w3id.org/CEON/ontology/actorODP/Role"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "manufacturer"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L05",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L07",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L02",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/storey2",
+    "@type": [
+      "https://w3id.org/bot#Storey"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Level 2"
+      }
+    ],
+    "https://w3id.org/bot#hasSpace": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_14"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/corridor_2_C1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_14_L03",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23784-402"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_14"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L04",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L08",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/schoolProject",
+    "@type": [
+      "https://w3id.org/cpo#EducationalBuildingProject"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Södra skolan, new school building"
+      }
+    ],
+    "https://w3id.org/cpo#budget": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "48000000"
+      }
+    ],
+    "https://w3id.org/cpo#endDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2027-08-15T00:00:00"
+      }
+    ],
+    "https://w3id.org/cpo#hasBuilding": [
+      {
+        "@id": "https://w3id.org/cpo/data/buildingA"
+      }
+    ],
+    "https://w3id.org/cpo#hasPhase": [
+      {
+        "@id": "https://w3id.org/cpo/data/designPhase1"
+      }
+    ],
+    "https://w3id.org/cpo#hasProduct": [
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_14_L01"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_14_L02"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_14_L03"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_14_L04"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_14_L05"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_14_L06"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_14_L07"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_14_L08"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L01"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L02"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L03"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L04"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L05"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L06"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L07"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L08"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L09"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L10"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L11"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L12"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L13"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L14"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_15_L15"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_C1_L01"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_C1_L02"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_C1_L03"
+      },
+      {
+        "@id": "https://w3id.org/cpo/data/luminaire_2_C1_L04"
+      }
+    ],
+    "https://w3id.org/cpo#hasStatus": [
+      {
+        "@id": "https://w3id.org/cpo#active"
+      }
+    ],
+    "https://w3id.org/cpo#startDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2026-03-01T00:00:00"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_C1_L01",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_73029-520"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/corridor_2_C1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/power_73029-520",
+    "@type": [
+      "http://qudt.org/schema/qudt/QuantityValue"
+    ],
+    "http://qudt.org/schema/qudt/numericValue": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "9.5"
+      }
+    ],
+    "http://qudt.org/schema/qudt/unit": [
+      {
+        "@id": "http://qudt.org/vocab/unit/W"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_14_L06",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23784-402"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_14"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/type_23916-529",
+    "@type": [
+      "https://w3id.org/cpo#LuminaireType"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Multilume Flat Delta 300x1200"
+      }
+    ],
+    "https://w3id.org/cpo#articleNumber": [
+      {
+        "@value": "23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#colourRenderingIndex": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 80
+      }
+    ],
+    "https://w3id.org/cpo#colourTemperature": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 4000
+      }
+    ],
+    "https://w3id.org/cpo#hasLuminousFlux": [
+      {
+        "@id": "https://w3id.org/cpo/data/flux_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#hasRatedPower": [
+      {
+        "@id": "https://w3id.org/cpo/data/power_23916-529"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L15",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L10",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_C1_L02",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_73029-520"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/corridor_2_C1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_15_L01",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23916-529"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_15"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2026-11-04"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@value": "Rahel Kebede"
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The individuals of the worked example: one school building project, its building and spaces, the lighting requirement for classrooms, three luminaire types from a manufacturer catalogue, and the luminaires installed in the spaces."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "CPO example data: a school building project"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "https://w3id.org/cpo"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "2.0"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/area_2_C1",
+    "@type": [
+      "http://qudt.org/schema/qudt/QuantityValue"
+    ],
+    "http://qudt.org/schema/qudt/numericValue": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "42"
+      }
+    ],
+    "http://qudt.org/schema/qudt/unit": [
+      {
+        "@id": "http://qudt.org/vocab/unit/M2"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/producing_23784-402",
+    "@type": [
+      "http://w3id.org/CEON/ontology/actor/ProducingResource"
+    ],
+    "http://w3id.org/CEON/ontology/actorODP/participantRole": [
+      {
+        "@id": "https://w3id.org/cpo/data/manufacturerRole"
+      }
+    ],
+    "http://w3id.org/CEON/ontology/actorODP/participatingActor": [
+      {
+        "@id": "https://w3id.org/cpo/data/fagerhult"
+      }
+    ],
+    "http://w3id.org/CEON/ontology/actorODP/participatingResource": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23784-402"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/flux_23784-402",
+    "@type": [
+      "http://qudt.org/schema/qudt/QuantityValue"
+    ],
+    "http://qudt.org/schema/qudt/numericValue": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4231"
+      }
+    ],
+    "http://qudt.org/schema/qudt/unit": [
+      {
+        "@id": "http://qudt.org/vocab/unit/LM"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/type_23784-402",
+    "@type": [
+      "https://w3id.org/cpo#LuminaireType"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Multilume Flat Delta 600x600"
+      }
+    ],
+    "https://w3id.org/cpo#articleNumber": [
+      {
+        "@value": "23784-402"
+      }
+    ],
+    "https://w3id.org/cpo#colourRenderingIndex": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 90
+      }
+    ],
+    "https://w3id.org/cpo#colourTemperature": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 4000
+      }
+    ],
+    "https://w3id.org/cpo#hasLuminousFlux": [
+      {
+        "@id": "https://w3id.org/cpo/data/flux_23784-402"
+      }
+    ],
+    "https://w3id.org/cpo#hasRatedPower": [
+      {
+        "@id": "https://w3id.org/cpo/data/power_23784-402"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/luminaire_2_14_L04",
+    "@type": [
+      "https://w3id.org/cpo#Luminaire"
+    ],
+    "https://w3id.org/cpo#hasProductType": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_23784-402"
+      }
+    ],
+    "https://w3id.org/cpo#installedIn": [
+      {
+        "@id": "https://w3id.org/cpo/data/classroom_2_14"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpo/data/producing_73029-520",
+    "@type": [
+      "http://w3id.org/CEON/ontology/actor/ProducingResource"
+    ],
+    "http://w3id.org/CEON/ontology/actorODP/participantRole": [
+      {
+        "@id": "https://w3id.org/cpo/data/manufacturerRole"
+      }
+    ],
+    "http://w3id.org/CEON/ontology/actorODP/participatingActor": [
+      {
+        "@id": "https://w3id.org/cpo/data/fagerhult"
+      }
+    ],
+    "http://w3id.org/CEON/ontology/actorODP/participatingResource": [
+      {
+        "@id": "https://w3id.org/cpo/data/type_73029-520"
+      }
+    ]
+  }
+]

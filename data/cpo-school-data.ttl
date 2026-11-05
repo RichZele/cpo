@@ -1,0 +1,322 @@
+@prefix cpo:  <https://w3id.org/cpo#> .
+@prefix inst: <https://w3id.org/cpo/data/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix bot:  <https://w3id.org/bot#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix actorODP: <http://w3id.org/CEON/ontology/actorODP/> .
+@prefix actor: <http://w3id.org/CEON/ontology/actor/> .
+
+# =====================================================================
+#  CPO worked example: one school building project (option C IRIs: data in its own namespace)
+#  Product data: Fagerhult product pages, articles 23784-402, 23916-529, 73029-520 (accessed October 2026).
+#  Requirement: EN 12464-1:2021, classrooms in primary and secondary schools: Em 500 lx (the 2011 edition gave 300 lx).
+#  Names: version 2 of CPO (modules Project, Product, Requirement; composed in cpo.ttl).
+#  Numbers are plain values; the unit is stated with qudt:unit.
+# =====================================================================
+
+<https://w3id.org/cpo/data> a owl:Ontology ;
+    owl:imports <https://w3id.org/cpo> ;
+    rdfs:label "CPO example data: a school building project"@en ;
+    rdfs:comment "The individuals of the worked example: one school building project, its building and spaces, the lighting requirement for classrooms, three luminaire types from a manufacturer catalogue, and the luminaires installed in the spaces."@en ;
+    dcterms:creator "Rahel Kebede" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:created "2026-11-04"^^xsd:date ;
+    owl:versionInfo "2.0" .
+
+# ---- the project
+inst:schoolProject a cpo:EducationalBuildingProject ;
+    rdfs:label "Södra skolan, new school building"@en ;
+    cpo:hasStatus cpo:active ;
+    cpo:startDate "2026-03-01T00:00:00"^^xsd:dateTime ;
+    cpo:endDate "2027-08-15T00:00:00"^^xsd:dateTime ;
+    cpo:budget "48000000"^^xsd:decimal ;
+    cpo:hasPhase inst:designPhase1 ;
+    cpo:hasBuilding inst:buildingA .
+
+inst:designPhase1 a cpo:DesignPhase ;
+    rdfs:label "Design phase 1"@en .
+
+# ---- the building and its spaces (BOT)
+inst:buildingA a bot:Building ;
+    rdfs:label "Building A"@en ;
+    bot:hasStorey inst:storey2 .
+
+inst:storey2 a bot:Storey ;
+    rdfs:label "Level 2"@en ;
+    bot:hasSpace inst:classroom_2_14 , inst:classroom_2_15 , inst:corridor_2_C1 .
+
+inst:classroom_2_14 a cpo:Classroom ;
+    rdfs:label "Classroom 2.14"@en ;
+    cpo:hasArea inst:area_2_14 ;
+    cpo:hasLightingRequirement inst:req_EN12464_classroom .
+
+inst:area_2_14 a qudt:QuantityValue ;
+    qudt:numericValue "60"^^xsd:decimal ;
+    qudt:unit unit:M2 .
+
+inst:classroom_2_15 a cpo:Classroom ;
+    rdfs:label "Classroom 2.15"@en ;
+    cpo:hasArea inst:area_2_15 ;
+    cpo:hasLightingRequirement inst:req_EN12464_classroom .
+
+inst:area_2_15 a qudt:QuantityValue ;
+    qudt:numericValue "60"^^xsd:decimal ;
+    qudt:unit unit:M2 .
+
+inst:corridor_2_C1 a cpo:Corridor ;
+    rdfs:label "Corridor 2.C1"@en ;
+    cpo:hasArea inst:area_2_C1 .
+
+inst:area_2_C1 a qudt:QuantityValue ;
+    qudt:numericValue "42"^^xsd:decimal ;
+    qudt:unit unit:M2 .
+
+# ---- the requirement (EN 12464-1:2021, classrooms)
+inst:req_EN12464_classroom a cpo:LightingRequirement ;
+    rdfs:label "EN 12464-1:2021, classrooms"@en ;
+    cpo:sourceStandard "EN 12464-1:2021" ;
+    cpo:hasRequiredIlluminance inst:em_classroom ;
+    cpo:ugrLimit "19"^^xsd:decimal ;
+    cpo:uniformity "0.60"^^xsd:decimal ;
+    cpo:minColourRendering 80 .
+
+inst:em_classroom a qudt:QuantityValue ;
+    qudt:numericValue "500"^^xsd:decimal ;
+    qudt:unit unit:LUX .
+
+# ---- manufacturer and luminaire types (the catalogue: one article, many copies)
+inst:fagerhult a actorODP:Actor ;
+    rdfs:label "Fagerhult"@en .
+
+inst:manufacturerRole a actorODP:Role ;
+    rdfs:label "manufacturer"@en .
+
+inst:type_23784-402 a cpo:LuminaireType ;
+    rdfs:label "Multilume Flat Delta 600x600"@en ;
+    cpo:articleNumber "23784-402" ;
+    cpo:hasLuminousFlux inst:flux_23784-402 ;
+    cpo:hasRatedPower inst:power_23784-402 ;
+    cpo:colourTemperature 4000 ;
+    cpo:colourRenderingIndex 90 .
+
+inst:producing_23784-402 a actor:ProducingResource ;
+    actorODP:participatingActor inst:fagerhult ;
+    actorODP:participatingResource inst:type_23784-402 ;
+    actorODP:participantRole inst:manufacturerRole .
+
+inst:flux_23784-402 a qudt:QuantityValue ;
+    qudt:numericValue "4231"^^xsd:decimal ;
+    qudt:unit unit:LM .
+
+inst:power_23784-402 a qudt:QuantityValue ;
+    qudt:numericValue "37"^^xsd:decimal ;
+    qudt:unit unit:W .
+
+inst:type_23916-529 a cpo:LuminaireType ;
+    rdfs:label "Multilume Flat Delta 300x1200"@en ;
+    cpo:articleNumber "23916-529" ;
+    cpo:hasLuminousFlux inst:flux_23916-529 ;
+    cpo:hasRatedPower inst:power_23916-529 ;
+    cpo:colourTemperature 4000 ;
+    cpo:colourRenderingIndex 80 .
+
+inst:producing_23916-529 a actor:ProducingResource ;
+    actorODP:participatingActor inst:fagerhult ;
+    actorODP:participatingResource inst:type_23916-529 ;
+    actorODP:participantRole inst:manufacturerRole .
+
+inst:flux_23916-529 a qudt:QuantityValue ;
+    qudt:numericValue "3853"^^xsd:decimal ;
+    qudt:unit unit:LM .
+
+inst:power_23916-529 a qudt:QuantityValue ;
+    qudt:numericValue "30.5"^^xsd:decimal ;
+    qudt:unit unit:W .
+
+inst:type_73029-520 a cpo:LuminaireType ;
+    rdfs:label "Pleiad G4 165"@en ;
+    cpo:articleNumber "73029-520" ;
+    cpo:hasLuminousFlux inst:flux_73029-520 ;
+    cpo:hasRatedPower inst:power_73029-520 ;
+    cpo:colourTemperature 3000 ;
+    cpo:colourRenderingIndex 80 .
+
+inst:producing_73029-520 a actor:ProducingResource ;
+    actorODP:participatingActor inst:fagerhult ;
+    actorODP:participatingResource inst:type_73029-520 ;
+    actorODP:participantRole inst:manufacturerRole .
+
+inst:flux_73029-520 a qudt:QuantityValue ;
+    qudt:numericValue "938"^^xsd:decimal ;
+    qudt:unit unit:LM .
+
+inst:power_73029-520 a qudt:QuantityValue ;
+    qudt:numericValue "9.5"^^xsd:decimal ;
+    qudt:unit unit:W .
+
+# ---- installed luminaires (the BIM side: one copy, one place)
+inst:luminaire_2_14_L01 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn inst:classroom_2_14 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_14_L01 .
+
+inst:luminaire_2_14_L02 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn inst:classroom_2_14 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_14_L02 .
+
+inst:luminaire_2_14_L03 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn inst:classroom_2_14 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_14_L03 .
+
+inst:luminaire_2_14_L04 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn inst:classroom_2_14 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_14_L04 .
+
+inst:luminaire_2_14_L05 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn inst:classroom_2_14 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_14_L05 .
+
+inst:luminaire_2_14_L06 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn inst:classroom_2_14 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_14_L06 .
+
+inst:luminaire_2_14_L07 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn inst:classroom_2_14 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_14_L07 .
+
+inst:luminaire_2_14_L08 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn inst:classroom_2_14 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_14_L08 .
+
+inst:luminaire_2_15_L01 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L01 .
+
+inst:luminaire_2_15_L02 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L02 .
+
+inst:luminaire_2_15_L03 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L03 .
+
+inst:luminaire_2_15_L04 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L04 .
+
+inst:luminaire_2_15_L05 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L05 .
+
+inst:luminaire_2_15_L06 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L06 .
+
+inst:luminaire_2_15_L07 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L07 .
+
+inst:luminaire_2_15_L08 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L08 .
+
+inst:luminaire_2_15_L09 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L09 .
+
+inst:luminaire_2_15_L10 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L10 .
+
+inst:luminaire_2_15_L11 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L11 .
+
+inst:luminaire_2_15_L12 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L12 .
+
+inst:luminaire_2_15_L13 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L13 .
+
+inst:luminaire_2_15_L14 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L14 .
+
+inst:luminaire_2_15_L15 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn inst:classroom_2_15 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_15_L15 .
+
+inst:luminaire_2_C1_L01 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_73029-520 ;
+    cpo:installedIn inst:corridor_2_C1 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_C1_L01 .
+
+inst:luminaire_2_C1_L02 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_73029-520 ;
+    cpo:installedIn inst:corridor_2_C1 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_C1_L02 .
+
+inst:luminaire_2_C1_L03 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_73029-520 ;
+    cpo:installedIn inst:corridor_2_C1 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_C1_L03 .
+
+inst:luminaire_2_C1_L04 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_73029-520 ;
+    cpo:installedIn inst:corridor_2_C1 .
+
+inst:schoolProject cpo:hasProduct inst:luminaire_2_C1_L04 .

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+>
+  <rdf:Description rdf:about="https://w3id.org/cpo#hasStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdfs:range rdf:resource="https://w3id.org/cpo#ProjectStatus"/>
+    <rdfs:label xml:lang="en">has status</rdfs:label>
+    <skos:definition xml:lang="en">Relates a building project to its current status. Functional: one status at a time.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b16">
+    <rdf:first rdf:resource="https://w3id.org/cpo#PostConstructionPhase"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#HealthcareBuildingProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdfs:label xml:lang="en">healthcare building project</rdfs:label>
+    <skos:definition xml:lang="en">A building project whose building is used for care, such as a hospital.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#EducationalBuildingProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdfs:label xml:lang="en">educational building project</rdfs:label>
+    <skos:definition xml:lang="en">A building project whose building is used for teaching, such as a school.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#ProjectStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">project status</rdfs:label>
+    <skos:definition xml:lang="en">The state of a building project: active, on hold or completed.</skos:definition>
+    <owl:equivalentClass rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b17"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#ResidentialBuildingProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdfs:label xml:lang="en">residential building project</rdfs:label>
+    <skos:definition xml:lang="en">A building project whose building is used for housing.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b7">
+    <rdf:first rdf:resource="https://w3id.org/cpo#HealthcareBuildingProject"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#ConstructionPhase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#ProjectPhase"/>
+    <rdfs:label xml:lang="en">construction phase</rdfs:label>
+    <skos:definition xml:lang="en">The phase in which the building is built and the products are installed.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#BuildingProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">building project</rdfs:label>
+    <skos:definition xml:lang="en">A project that plans, designs, constructs and hands over a building.</skos:definition>
+    <rdfs:subClassOf rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b18">
+    <rdf:first rdf:resource="https://w3id.org/cpo#active"/>
+    <rdf:rest rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b19"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#isPhaseOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/cpo#hasPhase"/>
+    <rdfs:label xml:lang="en">is phase of</rdfs:label>
+    <skos:definition xml:lang="en">Relates a phase to the building project it belongs to. Inverse of hasPhase.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#active">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/cpo#ProjectStatus"/>
+    <rdfs:label xml:lang="en">active</rdfs:label>
+    <skos:definition xml:lang="en">The status of a building project that is being carried out.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#completed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/cpo#ProjectStatus"/>
+    <rdfs:label xml:lang="en">completed</rdfs:label>
+    <skos:definition xml:lang="en">The status of a building project that is finished.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#DesignPhase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#ProjectPhase"/>
+    <rdfs:label xml:lang="en">design phase</rdfs:label>
+    <skos:definition xml:lang="en">The phase in which the building and its products are designed and specified.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b26">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cpo#hasStatus"/>
+    <owl:hasValue rdf:resource="https://w3id.org/cpo#active"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#endDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">end date</rdfs:label>
+    <skos:definition xml:lang="en">The date on which the building project is planned to be completed.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#precedes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cpo#ProjectPhase"/>
+    <rdfs:range rdf:resource="https://w3id.org/cpo#ProjectPhase"/>
+    <rdfs:label xml:lang="en">precedes</rdfs:label>
+    <skos:definition xml:lang="en">A phase precedes another if it ends before the other begins. Transitive.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b12">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b13"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b5">
+    <rdf:first rdf:resource="https://w3id.org/cpo#IndustrialBuildingProject"/>
+    <rdf:rest rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#CommissioningPhase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#PostConstructionPhase"/>
+    <rdfs:label xml:lang="en">commissioning phase</rdfs:label>
+    <skos:definition xml:lang="en">The part of the post-construction phase in which installed systems are tested and adjusted.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#hasPhase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdfs:range rdf:resource="https://w3id.org/cpo#ProjectPhase"/>
+    <rdfs:label xml:lang="en">has phase</rdfs:label>
+    <skos:definition xml:lang="en">Relates a building project to one of its phases.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#follows">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/cpo#precedes"/>
+    <rdfs:label xml:lang="en">follows</rdfs:label>
+    <skos:definition xml:lang="en">A phase follows another if it begins after the other ends. Inverse of precedes.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#CommercialBuildingProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdfs:label xml:lang="en">commercial building project</rdfs:label>
+    <skos:definition xml:lang="en">A building project whose building is used for business, such as offices or shops.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b25">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b27"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#IndustrialBuildingProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdfs:label xml:lang="en">industrial building project</rdfs:label>
+    <skos:definition xml:lang="en">A building project whose building is used for production or storage.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#budget">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label xml:lang="en">budget</rdfs:label>
+    <skos:definition xml:lang="en">The allocated budget of the building project, in SEK.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b17">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:oneOf rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b18"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#onHold">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/cpo#ProjectStatus"/>
+    <rdfs:label xml:lang="en">on hold</rdfs:label>
+    <skos:definition xml:lang="en">The status of a building project that is paused.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b4">
+    <rdf:first rdf:resource="https://w3id.org/cpo#CommercialBuildingProject"/>
+    <rdf:rest rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b15">
+    <rdf:first rdf:resource="https://w3id.org/cpo#ConstructionPhase"/>
+    <rdf:rest rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b16"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b10">
+    <rdf:first rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdf:rest rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b11"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#PostConstructionPhase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#ProjectPhase"/>
+    <rdfs:label xml:lang="en">post-construction phase</rdfs:label>
+    <skos:definition xml:lang="en">The phase after construction: commissioning and handover.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b20">
+    <rdf:first rdf:resource="https://w3id.org/cpo#completed"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b3">
+    <rdf:first rdf:resource="https://w3id.org/cpo#ResidentialBuildingProject"/>
+    <rdf:rest rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b23">
+    <rdf:first rdf:resource="https://w3id.org/cpo#onHold"/>
+    <rdf:rest rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b24"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b14">
+    <rdf:first rdf:resource="https://w3id.org/cpo#DesignPhase"/>
+    <rdf:rest rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#PlanningPhase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cpo#ProjectPhase"/>
+    <rdfs:label xml:lang="en">planning phase</rdfs:label>
+    <skos:definition xml:lang="en">The phase in which the need, the brief and the feasibility of the project are settled.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b19">
+    <rdf:first rdf:resource="https://w3id.org/cpo#onHold"/>
+    <rdf:rest rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b20"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b24">
+    <rdf:first rdf:resource="https://w3id.org/cpo#completed"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b10"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b13">
+    <rdf:first rdf:resource="https://w3id.org/cpo#PlanningPhase"/>
+    <rdf:rest rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/project">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="en">CPO module: Project</rdfs:label>
+    <rdfs:comment xml:lang="en">Building projects, their types, phases and status.</rdfs:comment>
+    <dcterms:creator>Rahel Kebede</dcterms:creator>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-04</dcterms:created>
+    <owl:versionInfo>2.0</owl:versionInfo>
+    <vann:preferredNamespacePrefix>cpo</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>https://w3id.org/cpo#</vann:preferredNamespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b11">
+    <rdf:first rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b9"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#NonResidentialBuildingProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">non-residential building project</rdfs:label>
+    <skos:definition xml:lang="en">A building project that is not a residential building project.</skos:definition>
+    <owl:equivalentClass rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#startDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">start date</rdfs:label>
+    <skos:definition xml:lang="en">The date on which the building project begins.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#ProjectPhase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">project phase</rdfs:label>
+    <skos:definition xml:lang="en">A period of a building project with its own purpose and deliverables.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo#ActiveProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">active project</rdfs:label>
+    <skos:definition xml:lang="en">A building project whose status is active.</skos:definition>
+    <owl:equivalentClass rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b25"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b27">
+    <rdf:first rdf:resource="https://w3id.org/cpo#BuildingProject"/>
+    <rdf:rest rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b28"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b22">
+    <rdf:first rdf:resource="https://w3id.org/cpo#active"/>
+    <rdf:rest rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b23"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cpo#hasPhase"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/cpo#ProjectPhase"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b28">
+    <rdf:first rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b26"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b21">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+    <owl:distinctMembers rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b22"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:resource="https://w3id.org/cpo#ResidentialBuildingProject"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b6">
+    <rdf:first rdf:resource="https://w3id.org/cpo#EducationalBuildingProject"/>
+    <rdf:rest rdf:nodeID="neec5896b8b7244a5a8bd371efc9d8988b7"/>
+  </rdf:Description>
+</rdf:RDF>

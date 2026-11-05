@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:actorODP="http://w3id.org/CEON/ontology/actorODP/"
+   xmlns:bot="https://w3id.org/bot#"
+   xmlns:cpo="https://w3id.org/cpo#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:qudt="http://qudt.org/schema/qudt/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/type_73029-520">
+    <rdf:type rdf:resource="https://w3id.org/cpo#LuminaireType"/>
+    <rdfs:label xml:lang="en">Pleiad G4 165</rdfs:label>
+    <cpo:articleNumber>73029-520</cpo:articleNumber>
+    <cpo:hasLuminousFlux rdf:resource="https://w3id.org/cpo/data/flux_73029-520"/>
+    <cpo:hasRatedPower rdf:resource="https://w3id.org/cpo/data/power_73029-520"/>
+    <cpo:colourTemperature rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3000</cpo:colourTemperature>
+    <cpo:colourRenderingIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</cpo:colourRenderingIndex>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/schoolProject">
+    <rdf:type rdf:resource="https://w3id.org/cpo#EducationalBuildingProject"/>
+    <rdfs:label xml:lang="en">Södra skolan, new school building</rdfs:label>
+    <cpo:hasStatus rdf:resource="https://w3id.org/cpo#active"/>
+    <cpo:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-01T00:00:00</cpo:startDate>
+    <cpo:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-08-15T00:00:00</cpo:endDate>
+    <cpo:budget rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48000000</cpo:budget>
+    <cpo:hasPhase rdf:resource="https://w3id.org/cpo/data/designPhase1"/>
+    <cpo:hasBuilding rdf:resource="https://w3id.org/cpo/data/buildingA"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_14_L01"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_14_L02"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_14_L03"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_14_L04"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_14_L05"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_14_L06"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_14_L07"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_14_L08"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L01"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L02"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L03"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L04"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L05"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L06"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L07"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L08"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L09"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L10"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L11"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L12"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L13"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L14"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_15_L15"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_C1_L01"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_C1_L02"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_C1_L03"/>
+    <cpo:hasProduct rdf:resource="https://w3id.org/cpo/data/luminaire_2_C1_L04"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/type_23784-402">
+    <rdf:type rdf:resource="https://w3id.org/cpo#LuminaireType"/>
+    <rdfs:label xml:lang="en">Multilume Flat Delta 600x600</rdfs:label>
+    <cpo:articleNumber>23784-402</cpo:articleNumber>
+    <cpo:hasLuminousFlux rdf:resource="https://w3id.org/cpo/data/flux_23784-402"/>
+    <cpo:hasRatedPower rdf:resource="https://w3id.org/cpo/data/power_23784-402"/>
+    <cpo:colourTemperature rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4000</cpo:colourTemperature>
+    <cpo:colourRenderingIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</cpo:colourRenderingIndex>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_C1_L04">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_73029-520"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/corridor_2_C1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/classroom_2_15">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Classroom"/>
+    <rdfs:label xml:lang="en">Classroom 2.15</rdfs:label>
+    <cpo:hasArea rdf:resource="https://w3id.org/cpo/data/area_2_15"/>
+    <cpo:hasLightingRequirement rdf:resource="https://w3id.org/cpo/data/req_EN12464_classroom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/flux_23916-529">
+    <rdf:type rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+    <qudt:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3853</qudt:numericValue>
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/LM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_C1_L03">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_73029-520"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/corridor_2_C1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/type_23916-529">
+    <rdf:type rdf:resource="https://w3id.org/cpo#LuminaireType"/>
+    <rdfs:label xml:lang="en">Multilume Flat Delta 300x1200</rdfs:label>
+    <cpo:articleNumber>23916-529</cpo:articleNumber>
+    <cpo:hasLuminousFlux rdf:resource="https://w3id.org/cpo/data/flux_23916-529"/>
+    <cpo:hasRatedPower rdf:resource="https://w3id.org/cpo/data/power_23916-529"/>
+    <cpo:colourTemperature rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4000</cpo:colourTemperature>
+    <cpo:colourRenderingIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</cpo:colourRenderingIndex>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/producing_23916-529">
+    <rdf:type rdf:resource="http://w3id.org/CEON/ontology/actor/ProducingResource"/>
+    <actorODP:participatingActor rdf:resource="https://w3id.org/cpo/data/fagerhult"/>
+    <actorODP:participatingResource rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <actorODP:participantRole rdf:resource="https://w3id.org/cpo/data/manufacturerRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/area_2_C1">
+    <rdf:type rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+    <qudt:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42</qudt:numericValue>
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/M2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/power_23916-529">
+    <rdf:type rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+    <qudt:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30.5</qudt:numericValue>
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/W"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L14">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L08">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/power_23784-402">
+    <rdf:type rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+    <qudt:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">37</qudt:numericValue>
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/W"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/req_EN12464_classroom">
+    <rdf:type rdf:resource="https://w3id.org/cpo#LightingRequirement"/>
+    <rdfs:label xml:lang="en">EN 12464-1:2021, classrooms</rdfs:label>
+    <cpo:sourceStandard>EN 12464-1:2021</cpo:sourceStandard>
+    <cpo:hasRequiredIlluminance rdf:resource="https://w3id.org/cpo/data/em_classroom"/>
+    <cpo:ugrLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">19</cpo:ugrLimit>
+    <cpo:uniformity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.60</cpo:uniformity>
+    <cpo:minColourRendering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</cpo:minColourRendering>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L06">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/producing_23784-402">
+    <rdf:type rdf:resource="http://w3id.org/CEON/ontology/actor/ProducingResource"/>
+    <actorODP:participatingActor rdf:resource="https://w3id.org/cpo/data/fagerhult"/>
+    <actorODP:participatingResource rdf:resource="https://w3id.org/cpo/data/type_23784-402"/>
+    <actorODP:participantRole rdf:resource="https://w3id.org/cpo/data/manufacturerRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:imports rdf:resource="https://w3id.org/cpo"/>
+    <rdfs:label xml:lang="en">CPO example data: a school building project</rdfs:label>
+    <rdfs:comment xml:lang="en">The individuals of the worked example: one school building project, its building and spaces, the lighting requirement for classrooms, three luminaire types from a manufacturer catalogue, and the luminaires installed in the spaces.</rdfs:comment>
+    <dcterms:creator>Rahel Kebede</dcterms:creator>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-04</dcterms:created>
+    <owl:versionInfo>2.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L15">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L13">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/corridor_2_C1">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Corridor"/>
+    <rdfs:label xml:lang="en">Corridor 2.C1</rdfs:label>
+    <cpo:hasArea rdf:resource="https://w3id.org/cpo/data/area_2_C1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_14_L02">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23784-402"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/area_2_14">
+    <rdf:type rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+    <qudt:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</qudt:numericValue>
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/M2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_14_L05">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23784-402"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_14_L01">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23784-402"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_C1_L01">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_73029-520"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/corridor_2_C1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_14_L07">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23784-402"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/buildingA">
+    <rdf:type rdf:resource="https://w3id.org/bot#Building"/>
+    <rdfs:label xml:lang="en">Building A</rdfs:label>
+    <bot:hasStorey rdf:resource="https://w3id.org/cpo/data/storey2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_14_L03">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23784-402"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L02">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/storey2">
+    <rdf:type rdf:resource="https://w3id.org/bot#Storey"/>
+    <rdfs:label xml:lang="en">Level 2</rdfs:label>
+    <bot:hasSpace rdf:resource="https://w3id.org/cpo/data/classroom_2_14"/>
+    <bot:hasSpace rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+    <bot:hasSpace rdf:resource="https://w3id.org/cpo/data/corridor_2_C1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/flux_73029-520">
+    <rdf:type rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+    <qudt:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">938</qudt:numericValue>
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/LM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/power_73029-520">
+    <rdf:type rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+    <qudt:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9.5</qudt:numericValue>
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/W"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/area_2_15">
+    <rdf:type rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+    <qudt:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</qudt:numericValue>
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/M2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L03">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/flux_23784-402">
+    <rdf:type rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+    <qudt:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4231</qudt:numericValue>
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/LM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/em_classroom">
+    <rdf:type rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+    <qudt:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">500</qudt:numericValue>
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/LUX"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_14_L04">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23784-402"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_14_L08">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23784-402"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L07">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/producing_73029-520">
+    <rdf:type rdf:resource="http://w3id.org/CEON/ontology/actor/ProducingResource"/>
+    <actorODP:participatingActor rdf:resource="https://w3id.org/cpo/data/fagerhult"/>
+    <actorODP:participatingResource rdf:resource="https://w3id.org/cpo/data/type_73029-520"/>
+    <actorODP:participantRole rdf:resource="https://w3id.org/cpo/data/manufacturerRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/manufacturerRole">
+    <rdf:type rdf:resource="http://w3id.org/CEON/ontology/actorODP/Role"/>
+    <rdfs:label xml:lang="en">manufacturer</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_14_L06">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23784-402"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L11">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_C1_L02">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_73029-520"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/corridor_2_C1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/classroom_2_14">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Classroom"/>
+    <rdfs:label xml:lang="en">Classroom 2.14</rdfs:label>
+    <cpo:hasArea rdf:resource="https://w3id.org/cpo/data/area_2_14"/>
+    <cpo:hasLightingRequirement rdf:resource="https://w3id.org/cpo/data/req_EN12464_classroom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L01">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L05">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L12">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/designPhase1">
+    <rdf:type rdf:resource="https://w3id.org/cpo#DesignPhase"/>
+    <rdfs:label xml:lang="en">Design phase 1</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L09">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/fagerhult">
+    <rdf:type rdf:resource="http://w3id.org/CEON/ontology/actorODP/Actor"/>
+    <rdfs:label xml:lang="en">Fagerhult</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L04">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cpo/data/luminaire_2_15_L10">
+    <rdf:type rdf:resource="https://w3id.org/cpo#Luminaire"/>
+    <cpo:hasProductType rdf:resource="https://w3id.org/cpo/data/type_23916-529"/>
+    <cpo:installedIn rdf:resource="https://w3id.org/cpo/data/classroom_2_15"/>
+  </rdf:Description>
+</rdf:RDF>

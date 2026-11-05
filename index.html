@@ -6,7 +6,7 @@
 <title>Construction Project Typology Ontology (CPO)</title>
 <meta name="description" content="Building projects, their phases, the products installed in their buildings, and the requirements on their spaces. Worked example of TADS23, HT2026.">
 <link rel="canonical" href="https://richzele.github.io/cpo/">
-<link rel="alternate" type="text/turtle" href="cpo.ttl">
+<link rel="alternate" type="text/turtle" href="ontology/cpo.ttl">
 <style>
 :root {
   --bg: #f7f6f2; --surface: #ffffff; --surface-2: #f0eee7; --text: #1b1d22; --muted: #5d6270;
@@ -145,6 +145,7 @@ footer p { margin: 0 0 6px; }
     <nav>
       <a href="#composed">Ontology</a>
       <a href="#modules">Modules</a>
+      <a href="#data">Data</a>
       <a href="#use">Use it</a>
       <a href="#education">Education</a>
       <a href="https://github.com/RichZele/cpo">GitHub</a>
@@ -172,7 +173,7 @@ footer p { margin: 0 0 6px; }
     <div class="cta">
       <a class="btn" href="doc/cpo/">Read the documentation</a>
       <a class="btn ghost" href="doc/cpo/webvowl/">Explore in WebVOWL</a>
-      <a class="btn ghost" href="cpo.ttl">View the Turtle</a>
+      <a class="btn ghost" href="ontology/cpo.ttl">View the Turtle</a>
     </div>
   </div>
 
@@ -188,10 +189,10 @@ footer p { margin: 0 0 6px; }
           <ul class="counts"><li><b>26</b> classes</li><li><b>15</b> object properties</li><li><b>10</b> data properties</li><li><b>3</b> individuals</li></ul>
           <p>Its documentation covers every term of CPO, so each <code>cpo:</code> term links to its own entry.</p>
           <div class="links"><a class="btn" href="doc/cpo/">Documentation</a><a class="btn ghost" href="doc/cpo/webvowl/">WebVOWL</a></div>
-          <div><p class="fmt-label">Download</p><div class="formats"><a class="fmt" href="cpo.ttl" download>Turtle</a><a class="fmt" href="cpo.owl" download>RDF/XML</a><a class="fmt" href="cpo.jsonld" download>JSON-LD</a><a class="fmt" href="cpo.nt" download>N-Triples</a></div></div>
+          <div><p class="fmt-label">Download</p><div class="formats"><a class="fmt" href="ontology/cpo.ttl" download>Turtle</a><a class="fmt" href="ontology/cpo.owl" download>RDF/XML</a><a class="fmt" href="ontology/cpo.jsonld" download>JSON-LD</a><a class="fmt" href="ontology/cpo.nt" download>N-Triples</a></div></div>
         </div>
         <figure>
-          <a href="img/cpo-composed-graffoo.png"><img src="img/cpo-composed-graffoo.png" alt="Graffoo diagram of CPO: the project, product and requirement modules composed with BOT, with the spanning axioms hasBuilding, installedIn and hasLightingRequirement"></a>
+          <a href="diagrams/cpo-composed-graffoo.png"><img src="diagrams/cpo-composed-graffoo.png" alt="Graffoo diagram of CPO: the project, product and requirement modules composed with BOT, with the spanning axioms hasBuilding, installedIn and hasLightingRequirement"></a>
           <figcaption>The modules composed, with the spanning axioms, in Graffoo: yellow boxes are classes, blue arrows object properties, dotted boxes modules. Click to enlarge.</figcaption>
         </figure>
       </div>
@@ -200,7 +201,7 @@ footer p { margin: 0 0 6px; }
           <h3>Merged ontology</h3>
           <p>The three modules and the composed ontology in one file, with BOT as its only import. Handy for tools that do not follow imports.</p>
         </div>
-        <div class="formats"><a class="fmt" href="cpo-merged.ttl" download>Turtle</a><a class="fmt" href="cpo-merged.owl" download>RDF/XML</a><a class="fmt" href="cpo-merged.jsonld" download>JSON-LD</a><a class="fmt" href="cpo-merged.nt" download>N-Triples</a></div>
+        <div class="formats"><a class="fmt" href="ontology/cpo-merged.ttl" download>Turtle</a><a class="fmt" href="ontology/cpo-merged.owl" download>RDF/XML</a><a class="fmt" href="ontology/cpo-merged.jsonld" download>JSON-LD</a><a class="fmt" href="ontology/cpo-merged.nt" download>N-Triples</a></div>
       </div>
     </div>
   </section>
@@ -211,20 +212,20 @@ footer p { margin: 0 0 6px; }
       <p class="sub">Each module is a small ontology of its own, with its own IRI and file. All terms share the namespace <code>https://w3id.org/cpo#</code>.</p>
       <div class="grid">
       <article class="card">
-        <a class="thumb" href="img/cpo-project-graffoo.png"><img src="img/cpo-project-graffoo.png" alt="Graffoo diagram of the project module" loading="lazy"></a>
+        <a class="thumb" href="diagrams/cpo-project-graffoo.png"><img src="diagrams/cpo-project-graffoo.png" alt="Graffoo diagram of the project module" loading="lazy"></a>
         <div class="card-body">
           <p class="eyebrow">Lecture 4a · module</p>
           <h3>Project</h3>
           <p>Building projects, their types, phases and status.</p>
           <ul class="counts"><li><b>15</b> classes</li><li><b>5</b> object properties</li><li><b>3</b> data properties</li><li><b>3</b> individuals</li></ul>
           <p class="iri"><code>https://w3id.org/cpo/project</code></p>
-          <p class="more">Diagrams: <a href="img/cpo-project-graffoo.png">1 classes</a> · <a href="img/cpo-project-graffoo-2.png">2 data and definitions</a></p>
+          <p class="more">Diagrams: <a href="diagrams/cpo-project-graffoo.png">1 classes</a> · <a href="diagrams/cpo-project-graffoo-2.png">2 data and definitions</a></p>
           <div class="links"><a class="btn" href="doc/project/">Documentation</a><a class="btn ghost" href="doc/project/webvowl/">WebVOWL</a></div>
-          <div class="formats"><a class="fmt" href="cpo-project.ttl" download>Turtle</a><a class="fmt" href="cpo-project.owl" download>RDF/XML</a><a class="fmt" href="cpo-project.jsonld" download>JSON-LD</a><a class="fmt" href="cpo-project.nt" download>N-Triples</a></div>
+          <div class="formats"><a class="fmt" href="ontology/cpo-project.ttl" download>Turtle</a><a class="fmt" href="ontology/cpo-project.owl" download>RDF/XML</a><a class="fmt" href="ontology/cpo-project.jsonld" download>JSON-LD</a><a class="fmt" href="ontology/cpo-project.nt" download>N-Triples</a></div>
         </div>
       </article>
       <article class="card">
-        <a class="thumb" href="img/cpo-product-graffoo.png"><img src="img/cpo-product-graffoo.png" alt="Graffoo diagram of the product module" loading="lazy"></a>
+        <a class="thumb" href="diagrams/cpo-product-graffoo.png"><img src="diagrams/cpo-product-graffoo.png" alt="Graffoo diagram of the product module" loading="lazy"></a>
         <div class="card-body">
           <p class="eyebrow">Lecture 4b · module</p>
           <h3>Product</h3>
@@ -232,11 +233,11 @@ footer p { margin: 0 0 6px; }
           <ul class="counts"><li><b>7</b> classes</li><li><b>3</b> object properties</li><li><b>3</b> data properties</li></ul>
           <p class="iri"><code>https://w3id.org/cpo/product</code></p>
           <div class="links"><a class="btn" href="doc/product/">Documentation</a><a class="btn ghost" href="doc/product/webvowl/">WebVOWL</a></div>
-          <div class="formats"><a class="fmt" href="cpo-product.ttl" download>Turtle</a><a class="fmt" href="cpo-product.owl" download>RDF/XML</a><a class="fmt" href="cpo-product.jsonld" download>JSON-LD</a><a class="fmt" href="cpo-product.nt" download>N-Triples</a></div>
+          <div class="formats"><a class="fmt" href="ontology/cpo-product.ttl" download>Turtle</a><a class="fmt" href="ontology/cpo-product.owl" download>RDF/XML</a><a class="fmt" href="ontology/cpo-product.jsonld" download>JSON-LD</a><a class="fmt" href="ontology/cpo-product.nt" download>N-Triples</a></div>
         </div>
       </article>
       <article class="card">
-        <a class="thumb" href="img/cpo-requirement-graffoo.png"><img src="img/cpo-requirement-graffoo.png" alt="Graffoo diagram of the requirement module" loading="lazy"></a>
+        <a class="thumb" href="diagrams/cpo-requirement-graffoo.png"><img src="diagrams/cpo-requirement-graffoo.png" alt="Graffoo diagram of the requirement module" loading="lazy"></a>
         <div class="card-body">
           <p class="eyebrow">Lecture 4c · module</p>
           <h3>Requirement</h3>
@@ -244,9 +245,26 @@ footer p { margin: 0 0 6px; }
           <ul class="counts"><li><b>1</b> classes</li><li><b>1</b> object properties</li><li><b>4</b> data properties</li></ul>
           <p class="iri"><code>https://w3id.org/cpo/requirement</code></p>
           <div class="links"><a class="btn" href="doc/requirement/">Documentation</a><a class="btn ghost" href="doc/requirement/webvowl/">WebVOWL</a></div>
-          <div class="formats"><a class="fmt" href="cpo-requirement.ttl" download>Turtle</a><a class="fmt" href="cpo-requirement.owl" download>RDF/XML</a><a class="fmt" href="cpo-requirement.jsonld" download>JSON-LD</a><a class="fmt" href="cpo-requirement.nt" download>N-Triples</a></div>
+          <div class="formats"><a class="fmt" href="ontology/cpo-requirement.ttl" download>Turtle</a><a class="fmt" href="ontology/cpo-requirement.owl" download>RDF/XML</a><a class="fmt" href="ontology/cpo-requirement.jsonld" download>JSON-LD</a><a class="fmt" href="ontology/cpo-requirement.nt" download>N-Triples</a></div>
         </div>
       </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="data">
+    <div class="wrap">
+      <h2>The data</h2>
+      <p class="sub">The individuals of the worked example live apart from the ontology, in their own namespace <code>https://w3id.org/cpo/data/</code>, as in Lecture 3 (option C).</p>
+      <div class="panel merged">
+        <div>
+          <p class="eyebrow">Worked example · data</p>
+          <h3>Södra skolan: a school building project</h3>
+          <p>One school building project with its building, storey and spaces; the EN 12464-1:2021 lighting requirement for classrooms; three luminaire types from the Fagerhult catalogue; and the luminaires installed in each space. It imports the composed ontology, so a reasoner sees the data and the ontology together.</p>
+          <ul class="counts" style="margin-top:12px"><li><b>53</b> individuals</li><li><b>27</b> installed luminaires</li><li><b>3</b> luminaire types</li><li><b>2</b> classrooms</li><li><b>1</b> corridor</li><li><b>1</b> lighting requirement</li></ul>
+          <p class="iri" style="margin-top:10px"><code>https://w3id.org/cpo/data</code></p>
+        </div>
+        <div><p class="fmt-label">Download</p><div class="formats"><a class="fmt" href="data/cpo-school-data.ttl" download>Turtle</a><a class="fmt" href="data/cpo-school-data.owl" download>RDF/XML</a><a class="fmt" href="data/cpo-school-data.jsonld" download>JSON-LD</a><a class="fmt" href="data/cpo-school-data.nt" download>N-Triples</a></div></div>
       </div>
     </div>
   </section>

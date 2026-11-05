@@ -2,29 +2,34 @@
 
 An OWL ontology of building projects, their phases, the products installed in their buildings, and the requirements on their spaces. It is the worked example of the course TADS23 Advanced Building Information Delivery at Jönköping University.
 
-![CPO: the project, product and requirement modules composed with BOT, with the spanning axioms, in Graffoo](img/cpo-composed-graffoo.png)
+![CPO: the project, product and requirement modules composed with BOT, with the spanning axioms, in Graffoo](diagrams/cpo-composed-graffoo.png)
 
 *The composed ontology in Graffoo: yellow boxes are classes, blue arrows object properties, and dotted boxes modules. The spanning axioms `hasBuilding`, `installedIn` and `hasLightingRequirement` connect the modules with BOT.*
 
-- Website: https://richzele.github.io/cpo/, with the modules, the merged ontology, their documentation and every file
+- Website: https://richzele.github.io/cpo/, with the modules, the merged ontology, the data, their documentation and every file
 - Ontology: https://w3id.org/cpo
 - Documentation: https://richzele.github.io/cpo/doc/cpo/, made with [WIDOCO](https://github.com/dgarijo/Widoco), with a WebVOWL diagram of each ontology
 - Namespace: `https://w3id.org/cpo#` (prefix `cpo:`)
 
 | Ontology IRI | File | Documentation | Content |
 |---|---|---|---|
-| `https://w3id.org/cpo` | `cpo.ttl` | [doc/cpo](https://richzele.github.io/cpo/doc/cpo/) | The composed ontology: imports the modules and BOT, with the alignment and spanning axioms. Its documentation covers every term of CPO. |
-| `https://w3id.org/cpo/project` | `cpo-project.ttl` | [doc/project](https://richzele.github.io/cpo/doc/project/) | Building projects, their types, phases and status |
-| `https://w3id.org/cpo/product` | `cpo-product.ttl` | [doc/product](https://richzele.github.io/cpo/doc/product/) | Installed products, their types and quantities |
-| `https://w3id.org/cpo/requirement` | `cpo-requirement.ttl` | [doc/requirement](https://richzele.github.io/cpo/doc/requirement/) | Lighting requirements for types of space |
+| `https://w3id.org/cpo` | `ontology/cpo.ttl` | [doc/cpo](https://richzele.github.io/cpo/doc/cpo/) | The composed ontology: imports the modules and BOT, with the alignment and spanning axioms. Its documentation covers every term of CPO. |
+| `https://w3id.org/cpo/project` | `ontology/cpo-project.ttl` | [doc/project](https://richzele.github.io/cpo/doc/project/) | Building projects, their types, phases and status |
+| `https://w3id.org/cpo/product` | `ontology/cpo-product.ttl` | [doc/product](https://richzele.github.io/cpo/doc/product/) | Installed products, their types and quantities |
+| `https://w3id.org/cpo/requirement` | `ontology/cpo-requirement.ttl` | [doc/requirement](https://richzele.github.io/cpo/doc/requirement/) | Lighting requirements for types of space |
 
-Each ontology is also available as RDF/XML (`.owl`), JSON-LD (`.jsonld`) and N-Triples (`.nt`). The Turtle files are laid out for reading: one statement per line.
+## Folders
 
-The merged ontology, `cpo-merged.ttl` (also `.owl`, `.jsonld` and `.nt`), holds the three modules and the composed ontology in one file, with BOT as its only import. It is handy for tools that do not follow imports.
+| Folder | What is in it |
+|---|---|
+| `ontology/` | The composed ontology and the three modules. Also `cpo-merged.ttl`, the merged ontology: the modules and the composed ontology in one file, with BOT as its only import, handy for tools that do not follow imports. |
+| `diagrams/` | The schema diagrams in Graffoo: the composed ontology, the project module (classes; data and definitions), the product module and the requirement module. |
+| `data/` | `cpo-school-data.ttl`: the individuals of the worked example, one school building project with its building, spaces, lighting requirement, luminaire types and installed luminaires. They have their own namespace, `https://w3id.org/cpo/data/`, and the file imports the composed ontology. |
+| `doc/` | The WIDOCO documentation of each ontology, with its WebVOWL diagram. |
 
-The Graffoo diagram of each module is in `img/`.
+Every ontology and the data are available as Turtle (`.ttl`), RDF/XML (`.owl`), JSON-LD (`.jsonld`) and N-Triples (`.nt`). The Turtle files are laid out for reading: one statement per line.
 
-To use it, open `https://w3id.org/cpo` in Protégé (File > Open from URL). The modules and BOT are imported from their own IRIs.
+To use it, open `https://w3id.org/cpo` in Protégé (File > Open from URL). The modules and BOT are imported from their own IRIs. To see the ontology with the example data, open `https://w3id.org/cpo/data` instead.
 
 ## For education
 
