@@ -103,7 +103,7 @@ xsd:date rdf:type rdfs:Datatype .
                                 rdfs:domain <https://w3id.org/cpo#LightingRequirement> ;
                                 rdfs:range xsd:decimal ;
                                 rdfs:label "UGR limit"@en ;
-                                <http://www.w3.org/2004/02/skos/core#definition> "The unified glare rating limit UGRL."@en .
+                                <http://www.w3.org/2004/02/skos/core#definition> "The unified glare rating limit RUGL, as in EN 12464-1:2021."@en .
 
 
 ###  https://w3id.org/cpo#uniformity

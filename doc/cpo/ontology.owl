@@ -445,7 +445,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/cpo#LightingRequirement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:label xml:lang="en">UGR limit</rdfs:label>
-        <skos:definition xml:lang="en">The unified glare rating limit UGRL.</skos:definition>
+        <skos:definition xml:lang="en">The unified glare rating limit RUGL, as in EN 12464-1:2021.</skos:definition>
     </owl:DatatypeProperty>
     
 

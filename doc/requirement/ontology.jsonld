@@ -121,7 +121,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "The unified glare rating limit UGRL."
+    "@value" : "The unified glare rating limit RUGL, as in EN 12464-1:2021."
   } ]
 }, {
   "@id" : "https://w3id.org/cpo#uniformity",

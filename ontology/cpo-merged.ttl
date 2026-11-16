@@ -170,7 +170,7 @@ cpo:ugrLimit a owl:DatatypeProperty,
     rdfs:label "UGR limit"@en ;
     rdfs:domain cpo:LightingRequirement ;
     rdfs:range xsd:decimal ;
-    skos:definition "The unified glare rating limit UGRL."@en .
+    skos:definition "The unified glare rating limit RUGL, as in EN 12464-1:2021."@en .
 
 cpo:uniformity a owl:DatatypeProperty,
         owl:FunctionalProperty ;

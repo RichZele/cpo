@@ -13,7 +13,7 @@
 # =====================================================================
 #  CPO worked example: one school building project (option C IRIs: data in its own namespace)
 #  Product data: Fagerhult product pages, articles 23784-402, 23916-529, 73029-520 (accessed October 2026).
-#  Requirement: EN 12464-1:2021, classrooms in primary and secondary schools: Em 500 lx (the 2011 edition gave 300 lx).
+#  Requirement: SS-EN 12464-1:2021, Table 44 (Educational premises, Educational buildings), ref. no. 44.1 Classroom, general activities: Em 500 lx (the 2011 edition gave 300 lx).
 #  Names: version 2 of CPO (modules Project, Product, Requirement; composed in cpo.ttl).
 #  Numbers are plain values; the unit is stated with qudt:unit.
 # =====================================================================

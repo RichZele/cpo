@@ -319,7 +319,7 @@ _:n92d287f44f4d476a9266cfcd17c9fcc4b1 <http://www.w3.org/1999/02/22-rdf-syntax-n
 _:n46d809eb62204030b6f9d9da8bda6a64b5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cpo#hasLuminousFlux> .
 <https://w3id.org/cpo#active> <http://www.w3.org/2000/01/rdf-schema#label> "active"@en .
 _:n92d287f44f4d476a9266cfcd17c9fcc4b14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/cpo#DesignPhase> .
-<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2004/02/skos/core#definition> "The unified glare rating limit UGRL."@en .
+<https://w3id.org/cpo#ugrLimit> <http://www.w3.org/2004/02/skos/core#definition> "The unified glare rating limit RUGL, as in EN 12464-1:2021."@en .
 _:n46d809eb62204030b6f9d9da8bda6a64b2 <http://www.w3.org/2002/07/owl#unionOf> _:n46d809eb62204030b6f9d9da8bda6a64b3 .
 <https://w3id.org/cpo#uniformity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cpo#LightingRequirement> .
 <https://w3id.org/cpo#sourceStandard> <http://www.w3.org/2000/01/rdf-schema#label> "source standard"@en .
