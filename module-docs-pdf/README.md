@@ -1,4 +1,6 @@
-# CPO documentation, module by module
+# Design documentation (PDF), module by module
+
+This folder holds the design of each module as a PDF. For the reference documentation of every class and property as a website, made with WIDOCO, see [doc/](../doc/) or https://richzele.github.io/cpo/doc/cpo/.
 
 One PDF per CPO module, in the layout of MODL, the Modular Ontology Design Library (Shimizu, Hirt and Hitzler, 2019). Each PDF has a module card, the Graffoo schema diagram, a summary, the axioms in description logic, one explanation per axiom, and the competency questions the module answers.
 

@@ -8,9 +8,9 @@ An OWL ontology of building projects, their phases, the products installed in th
 
 - Website: https://richzele.github.io/cpo/, with the modules, the merged ontology, the data, their documentation and every file
 - Ontology: https://w3id.org/cpo
-- Documentation: https://richzele.github.io/cpo/doc/cpo/, made with [WIDOCO](https://github.com/dgarijo/Widoco), with a WebVOWL diagram of each ontology
+- Reference documentation (HTML): https://richzele.github.io/cpo/doc/cpo/, made with [WIDOCO](https://github.com/dgarijo/Widoco), with a WebVOWL diagram of each ontology (folder `doc/`)
 - Namespace: `https://w3id.org/cpo#` (prefix `cpo:`)
-- Module-by-module documentation in the MODL layout, one PDF per module, with the axioms in description logic: [documentation/](documentation/)
+- Design documentation (PDF), module by module in the MODL layout, with the axioms in description logic: [module-docs-pdf/](module-docs-pdf/)
 
 | Ontology IRI | File | Documentation | Content |
 |---|---|---|---|
@@ -40,8 +40,8 @@ ABID-Mo starts from a use case: lighting in a school building project (Lecture 4
 | `ontology/` | The composed ontology and the three modules. Also `cpo-merged.ttl`, the merged ontology: the modules and the composed ontology in one file, with BOT as its only import, handy for tools that do not follow imports. |
 | `diagrams/` | The schema diagrams in Graffoo: the composed ontology (step 7, the modules side by side; step 8, with the spanning axioms), the project module (classes; data and definitions), the product module and the requirement module. Each `.drawio` file is the source, to open and edit in [draw.io](https://app.diagrams.net); each `.png` is an export of one of its pages. |
 | `data/` | `cpo-school-data.ttl`: the individuals of the worked example, one school building project with its building, spaces, lighting requirement, luminaire types and installed luminaires. They have their own namespace, `https://w3id.org/cpo/data/`, and the file imports the composed ontology. |
-| `doc/` | The WIDOCO documentation of each ontology, with its WebVOWL diagram. |
-| `documentation/` | The CPO documentation, module by module, in the MODL layout: one PDF per module with its module card, Graffoo diagram, summary, axioms in description logic, explanations and competency questions. Its README lists each PDF with its ontology IRI. |
+| `doc/` | Reference documentation (HTML), made with WIDOCO: one website per ontology, with every class and property and a WebVOWL diagram. Browsers that open `https://w3id.org/cpo` are sent here. |
+| `module-docs-pdf/` | Design documentation (PDF), module by module, in the MODL layout: one PDF per module with its module card, Graffoo diagram, summary, axioms in description logic, explanations and competency questions. Its README lists each PDF with its ontology IRI. |
 
 Every ontology and the data are available as Turtle (`.ttl`), RDF/XML (`.owl`), JSON-LD (`.jsonld`) and N-Triples (`.nt`). The Turtle files are laid out for reading: one statement per line.
 
