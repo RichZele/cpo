@@ -1,0 +1,64 @@
+# This repository publishes results only: the ontology, the data, the diagrams, the PDFs and the website.
+# Scripts, sources, presentations and other working files stay out.
+
+# scripts
+*.py
+*.pyc
+__pycache__/
+*.ipynb
+*.sh
+*.ps1
+*.bat
+*.cmd
+*.r
+*.R
+*.dyn
+
+# LaTeX sources and build files
+*.tex
+*.bib
+*.bst
+*.cls
+*.sty
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.spl
+*.synctex.gz
+*.toc
+
+# presentations, office documents and archives
+*.ppt
+*.pptx
+*.potx
+*.key
+*.doc
+*.docx
+*.dotx
+*.xls
+*.xlsx
+*.csv
+*.zip
+*.7z
+*.rar
+
+# working folders
+source/
+scripts/
+tools/
+*.jar
+
+# editors and operating systems
+.vscode/
+.idea/
+.claude/
+*.bak
+*.tmp
+~$*
+Thumbs.db
+desktop.ini
+.DS_Store
