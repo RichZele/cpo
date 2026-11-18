@@ -15,7 +15,8 @@
 #  TADS23 Advanced Building Information Delivery, HT2026, Lecture 4c (week 47)
 #  Imports the three modules and BOT, aligns CPO with BOT, and holds the
 #  spanning axioms: the axioms that connect modules. Nothing else.
-#  Each import resolves through https://w3id.org/cpo.
+#  Course version for TADS23: the imports resolve to the local files through catalog-v001.xml,
+#  and BOT is the reduced copy in bot.ttl.
 # =====================================================================
 
 <https://w3id.org/cpo> a owl:Ontology ;
@@ -77,9 +78,8 @@
     skos:definition "Relates a building project to the building it delivers."@en .
 
 # ---- spanning axioms: Product and BOT
-# Not functional: bot:containsElement has a property chain, so it and its inverse are not simple
-# properties, and OWL 2 DL forbids cardinality on them. 'One space per luminaire' becomes a SHACL constraint in week 48.
-:installedIn a owl:ObjectProperty ;
+# Functional: a product is installed in one space.
+:installedIn a owl:ObjectProperty , owl:FunctionalProperty ;
     owl:inverseOf bot:containsElement ;
     rdfs:domain :Product ;
     rdfs:range bot:Space ;

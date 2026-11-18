@@ -1,0 +1,48 @@
+# Reduced copy of the Building Topology Ontology (BOT) 0.3.2, for TADS23 HT2026.
+# Copyright 2017-2020 W3C Linked Building Data Community Group, CC BY.
+# Only the terms CPO uses; BOT's other axioms are left out.
+
+@prefix bot: <https://w3id.org/bot#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+bot:Building a owl:Class ;
+    rdfs:label "Building"@en ;
+    rdfs:comment "An independent unit of the built environment with a characteristic spatial structure, intended to serve at least one function or user activity [ISO 12006-2:2013]. A bot:Building is a part of the physical world or a virtual world that is inherently both located in this world and having a 3D spatial extent, is contained in a building site, and can contain one or more storeys that are vertically connected."@en ;
+    rdfs:isDefinedBy bot: .
+
+bot:Element a owl:Class ;
+    rdfs:label "Building element"@en ;
+    rdfs:comment "Constituent of a construction entity with a characteristic technical function, form or position [ISO 12006-2:2015, 3.4.7]"@en ;
+    rdfs:isDefinedBy bot: .
+
+bot:Space a owl:Class ;
+    rdfs:label "Space"@en ;
+    rdfs:comment "A part of the physical world or a virtual world whose 3D spatial extent is bounded actually or theoretically, and provides for certain functions within the zone it is contained in."@en ;
+    rdfs:isDefinedBy bot: .
+
+bot:Storey a owl:Class ;
+    rdfs:label "Storey"@en ;
+    rdfs:comment "A part of the physical world or a virtual world that is inherently both located in this world and having a 3D spatial extent. A bot:Storey is contained in one or more buildings, and is intended to contain one or more spaces that are horizontally connected. Storeys of a building are connected by means of vertical connections such as elevators and stairs. A bot:Storey encompasses both zones above and below ground, for example, a building with 21 floors above ground, one ground floor and 3 basements is equal to the sentence: A building has 25 instances of bot:Storey."@en ;
+    rdfs:isDefinedBy bot: .
+
+bot:containsElement a owl:ObjectProperty ;
+    rdfs:label "contains element"@en ;
+    rdfs:comment "Relation to a building element contained in a zone."@en ;
+    rdfs:isDefinedBy bot: .
+
+bot:hasSpace a owl:ObjectProperty ;
+    rdfs:label "has space"@en ;
+    rdfs:comment "Relation to spaces contained in a zone. The typical domains of bot:hasSpace are instances of bot:Storey or bot:Building."@en ;
+    rdfs:isDefinedBy bot: .
+
+bot:hasStorey a owl:ObjectProperty ;
+    rdfs:label "has storey"@en ;
+    rdfs:comment "Relation to storeys contained in a zone. The typical domains of bot:hasStorey are instances of bot:Building."@en ;
+    rdfs:isDefinedBy bot: .
+
+bot: a owl:Ontology ;
+    rdfs:label "The Building Topology Ontology (BOT), reduced copy for TADS23"@en ;
+    rdfs:comment "A reduced copy of BOT 0.3.2 (https://w3id.org/bot) with only the terms used by CPO: the classes Building, Storey, Space and Element, and the properties hasStorey, hasSpace and containsElement. Labels and definitions are taken from BOT; its other axioms are left out. Licensed CC BY by the W3C Linked Building Data Community Group."@en ;
+    owl:versionInfo "0.3.2-TADS23" .
+

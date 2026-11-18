@@ -279,6 +279,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cpo#installedIn">
         <owl:inverseOf rdf:resource="https://w3id.org/bot#containsElement"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/cpo#Product"/>
         <rdfs:range rdf:resource="https://w3id.org/bot#Space"/>
         <rdfs:label xml:lang="en">installed in</rdfs:label>

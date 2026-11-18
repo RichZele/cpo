@@ -170,6 +170,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/cpo#installedIn
 :installedIn rdf:type owl:ObjectProperty ;
              owl:inverseOf <https://w3id.org/bot#containsElement> ;
+             rdf:type owl:FunctionalProperty ;
              rdfs:domain :Product ;
              rdfs:range <https://w3id.org/bot#Space> ;
              rdfs:label "installed in"@en ;

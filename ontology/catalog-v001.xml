@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="CPO module: Project" name="https://w3id.org/cpo/project" uri="cpo-project.ttl"/>
+    <uri id="CPO module: Product" name="https://w3id.org/cpo/product" uri="cpo-product.ttl"/>
+    <uri id="CPO module: Requirement" name="https://w3id.org/cpo/requirement" uri="cpo-requirement.ttl"/>
+    <uri id="CPO, composed ontology" name="https://w3id.org/cpo" uri="cpo.ttl"/>
+    <uri id="CPO example data" name="https://w3id.org/cpo/data" uri="../data/cpo-school-data.ttl"/>
+    <uri id="BOT, local copy" name="https://w3id.org/bot#" uri="bot.ttl"/>
+    <uri id="BOT, local copy (no hash)" name="https://w3id.org/bot" uri="bot.ttl"/>
+</catalog>

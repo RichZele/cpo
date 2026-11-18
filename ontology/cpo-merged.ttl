@@ -9,6 +9,21 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+bot:Storey a owl:Class ;
+    rdfs:label "Storey"@en ;
+    rdfs:comment "A part of the physical world or a virtual world that is inherently both located in this world and having a 3D spatial extent. A bot:Storey is contained in one or more buildings, and is intended to contain one or more spaces that are horizontally connected. Storeys of a building are connected by means of vertical connections such as elevators and stairs. A bot:Storey encompasses both zones above and below ground, for example, a building with 21 floors above ground, one ground floor and 3 basements is equal to the sentence: A building has 25 instances of bot:Storey."@en ;
+    rdfs:isDefinedBy bot: .
+
+bot:hasSpace a owl:ObjectProperty ;
+    rdfs:label "has space"@en ;
+    rdfs:comment "Relation to spaces contained in a zone. The typical domains of bot:hasSpace are instances of bot:Storey or bot:Building."@en ;
+    rdfs:isDefinedBy bot: .
+
+bot:hasStorey a owl:ObjectProperty ;
+    rdfs:label "has storey"@en ;
+    rdfs:comment "Relation to storeys contained in a zone. The typical domains of bot:hasStorey are instances of bot:Building."@en ;
+    rdfs:isDefinedBy bot: .
+
 <https://w3id.org/cpo> a owl:Ontology ;
     rdfs:label "Construction Project Typology Ontology (CPO)"@en ;
     dcterms:created "2026-11-04"^^xsd:date ;
@@ -17,8 +32,7 @@
     vann:preferredNamespacePrefix "cpo" ;
     vann:preferredNamespaceUri "https://w3id.org/cpo#" ;
     rdfs:comment "Building projects, their phases, the products installed in their buildings, and the requirements on their spaces. Worked example of TADS23, HT2026."@en,
-        "This file is the merged ontology: the three modules and the composed ontology in one file."@en ;
-    owl:imports bot: ;
+        "This file is the merged ontology: the three modules, the composed ontology and the reduced copy of BOT in one file."@en ;
     owl:versionInfo "2.0" .
 
 cpo:ActiveProject a owl:Class ;
@@ -128,7 +142,8 @@ cpo:hasRatedPower a owl:FunctionalProperty,
     rdfs:range qudt:QuantityValue ;
     skos:definition "The rated power of a luminaire type, a quantity value in watt."@en .
 
-cpo:installedIn a owl:ObjectProperty ;
+cpo:installedIn a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:label "installed in"@en ;
     rdfs:domain cpo:Product ;
     rdfs:range bot:Space ;
@@ -178,6 +193,21 @@ cpo:uniformity a owl:DatatypeProperty,
     rdfs:domain cpo:LightingRequirement ;
     rdfs:range xsd:decimal ;
     skos:definition "The minimum illuminance uniformity Uo."@en .
+
+bot:Building a owl:Class ;
+    rdfs:label "Building"@en ;
+    rdfs:comment "An independent unit of the built environment with a characteristic spatial structure, intended to serve at least one function or user activity [ISO 12006-2:2013]. A bot:Building is a part of the physical world or a virtual world that is inherently both located in this world and having a 3D spatial extent, is contained in a building site, and can contain one or more storeys that are vertically connected."@en ;
+    rdfs:isDefinedBy bot: .
+
+bot:Element a owl:Class ;
+    rdfs:label "Building element"@en ;
+    rdfs:comment "Constituent of a construction entity with a characteristic technical function, form or position [ISO 12006-2:2015, 3.4.7]"@en ;
+    rdfs:isDefinedBy bot: .
+
+bot:containsElement a owl:ObjectProperty ;
+    rdfs:label "contains element"@en ;
+    rdfs:comment "Relation to a building element contained in a zone."@en ;
+    rdfs:isDefinedBy bot: .
 
 cpo:CommercialBuildingProject a owl:Class ;
     rdfs:label "commercial building project"@en ;
@@ -318,6 +348,11 @@ cpo:ProjectStatus a owl:Class ;
     owl:equivalentClass [ a owl:Class ;
             owl:oneOf ( cpo:active cpo:onHold cpo:completed ) ] ;
     skos:definition "The state of a building project: active, on hold or completed."@en .
+
+bot:Space a owl:Class ;
+    rdfs:label "Space"@en ;
+    rdfs:comment "A part of the physical world or a virtual world whose 3D spatial extent is bounded actually or theoretically, and provides for certain functions within the zone it is contained in."@en ;
+    rdfs:isDefinedBy bot: .
 
 cpo:LuminaireType a owl:Class ;
     rdfs:label "luminaire type"@en ;
