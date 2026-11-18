@@ -30,7 +30,6 @@ All modules share one namespace, `https://w3id.org/cpo#`, with the prefix `cpo:`
 
 ## Source
 
-`source/` holds what builds the PDFs; see [source/README.md](source/README.md).
 
 Reference: C. Shimizu, Q. Hirt and P. Hitzler (2019), MODL: A Modular Ontology Design Library, in Proceedings of the 10th Workshop on Ontology Design and Patterns (WOP 2019), CEUR Workshop Proceedings 2459.
 
