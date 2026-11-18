@@ -42,7 +42,7 @@ ABID-Mo starts from a use case: lighting in a school building project (Lecture 4
 | `data/` | `cpo-school-data.ttl`: the individuals of the worked example, one school building project with its building, spaces, lighting requirement, luminaire types and installed luminaires. They have their own namespace, `https://w3id.org/cpo/data/`, and the file imports the composed ontology. |
 | `doc/` | Reference documentation (HTML), made with WIDOCO: one website per ontology, with every class and property and a WebVOWL diagram. Browsers that open `https://w3id.org/cpo` are sent here. |
 | `module-docs-pdf/` | Design documentation (PDF), module by module, in the MODL layout: one PDF per module with its module card, Graffoo diagram, summary, axioms in description logic, explanations and competency questions. Its README lists each PDF with its ontology IRI. |
-| `paper/` | The CPO paper, the worked example written with the course's report template ([cpo-paper.pdf](paper/cpo-paper.pdf), with its LaTeX source and figures). It goes as far as the course has reached; the Discussion and the Conclusions follow later. |
+| `paper/` | The CPO paper, the worked example written with the course's report template , as a PDF: [cpo-paper.pdf](paper/cpo-paper.pdf). It goes as far as the course has reached; the Discussion and the Conclusions follow later. |
 
 Every ontology and the data are available as Turtle (`.ttl`), RDF/XML (`.owl`), JSON-LD (`.jsonld`) and N-Triples (`.nt`). The Turtle files are laid out for reading: one statement per line.
 
