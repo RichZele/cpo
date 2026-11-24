@@ -41,11 +41,15 @@ ABID-Mo starts from a use case: lighting in a school building project (Lecture 4
 | `diagrams/` | The schema diagrams in Graffoo: the composed ontology (step 7, the modules side by side; step 8, with the spanning axioms), the project module (classes; data and definitions), the product module and the requirement module. Each `.drawio` file is the source, to open and edit in [draw.io](https://app.diagrams.net); each `.png` is an export of one of its pages. |
 | `data/` | `cpo-school-data.ttl`: the individuals of the worked example, one school building project with its building, spaces, lighting requirement, luminaire types and installed luminaires. They have their own namespace, `https://w3id.org/cpo/data/`, and the file imports the composed ontology. |
 | `graphdb/` | The three files to load into GraphDB, each into its own named graph: the ontology (`cpo-all.ttl`), the school data (`cpo-school-data.ttl`) and the duplex model converted from IFC (`ifcmodel_LBD.ttl`). Its README lists the named graphs. |
+| `queries/` | The SPARQL queries of Lecture 6 (`cpo-sparql-queries.rq`), numbered as on the slides: the competency questions CQ1 to CQ6 run on the graph, and the update that links the school data with the duplex model. Its README gives each result. |
+| `classification/` | The classes of the worked example as SKOS (`cpo-classification.ttl`): Uniclass 2015, which follows ISO 12006-2, and IEC 81346-2; and the links from the spaces and luminaire types to their classes, with two duplex rooms used as classrooms (`cpo-lecture7-data.ttl`). |
+| `shapes/` | The level of information need for classroom lighting (ISO 7817-1) as SHACL shapes (`cpo-lighting-shapes.ttl`). Its README gives the LOIN table, the constraint for each row, and the validation report. |
+| `rules/` | The SWRL rules of Lecture 8 (`cpo-rules.ttl`), in one ontology with CPO and the data, to open in Protégé and run with the SWRLTab and Drools. |
 | `doc/` | Reference documentation (HTML), made with WIDOCO: one website per ontology, with every class and property and a WebVOWL diagram. Browsers that open `https://w3id.org/cpo` are sent here. |
 | `module-docs-pdf/` | Design documentation (PDF), module by module, in the MODL layout: one PDF per module with its module card, Graffoo diagram, summary, axioms in description logic, explanations and competency questions. Its README lists each PDF with its ontology IRI. |
-| `paper/` | The CPO paper, the worked example written with the course's report template, as a PDF: [cpo-paper.pdf](paper/cpo-paper.pdf). It goes as far as the course has reached; the Discussion and the Conclusions follow later. |
+| `paper/` | The CPO paper, the worked example written with the course's report template, as a PDF: [cpo-paper.pdf](paper/cpo-paper.pdf). It goes as far as the course has reached, Lecture 8; the Discussion and the Conclusions follow later. |
 
-Every ontology and the data are available as Turtle (`.ttl`), RDF/XML (`.owl`), JSON-LD (`.jsonld`) and N-Triples (`.nt`). The Turtle files are laid out for reading: one statement per line.
+Every ontology and the school data are available as Turtle (`.ttl`), RDF/XML (`.owl`), JSON-LD (`.jsonld`) and N-Triples (`.nt`). The Turtle files are laid out for reading: one statement per line. The files of Lectures 6 to 8, in `queries/`, `classification/`, `shapes/` and `rules/`, are the files used in class, in Turtle or SPARQL.
 
 To use it in Protégé, open the merged ontology with File > Open from URL, `https://richzele.github.io/cpo/ontology/cpo-merged.ttl`: every module and BOT in one file. To work with the modules as separate files, download the repository and open `ontology/cpo.ttl`; `catalog-v001.xml` beside it resolves each import, BOT included, to its local file. To see the ontology with the example data, open `data/cpo-school-data.ttl` the same way.
 
@@ -59,9 +63,22 @@ This repository is made for teaching. CPO is the worked example of the course TA
 | 4b | The product module: installed products and their types from a manufacturer catalogue |
 | 4c | The requirement module, and the composed ontology that imports the modules, aligns them with BOT and connects them with spanning axioms |
 
-### A modeling note
+After the ontology, the course runs the information delivery cycle on it:
+
+| Lecture | Step of the cycle | What is done |
+|---|---|---|
+| 5 | 1 · Revit to the graph | The duplex model, exported from Revit as IFC, read with IfcOpenShell, checked against the competency questions, and converted to RDF with BOT by IFCtoLBD (`graphdb/ifcmodel_LBD.ttl`) |
+| 6 | 5 · Answers | The ontology, the school data and the duplex graph in GraphDB, each in its own named graph; the competency questions as SPARQL queries; one update that links the two (`queries/`) |
+| 7 | 2 · Classification; 3 · Requirements | The spaces and luminaire types classified with Uniclass and IEC 81346-2, as SKOS (`classification/`); the level of information need for classroom lighting (`shapes/README.md`) |
+| 8 | 3 · Requirements; 4 · Rules | The LOIN as SHACL shapes, the graph validated with pySHACL and fixed at the source (`shapes/`); two SWRL rules run in Protégé (`rules/`) |
+
+Lecture 9 follows: the illuminance of each classroom calculated with the lumen method (CQ7), and the result back in Revit.
+
+### Modeling notes
 
 **Why is the required illuminance a quantity value, and the other requirement values are not?** A literal holds only a value, never a value and its unit: "500 lx" in one string cannot be compared or calculated with, and "500" alone loses the unit. So a value with a unit becomes a node of its own, a `qudt:QuantityValue` with a number and a unit. `hasRequiredIlluminance` (500, `unit:LUX`) is therefore an object property with the range `qudt:QuantityValue`. `ugrLimit`, `uniformity` and `minColourRendering` have no physical unit, and `sourceStandard` is text, so each is a data property with a plain literal. All five have the domain `LightingRequirement` and are functional. The same pattern holds the luminous flux (lm), the rated power (W) and the area (m²). QUDT could also model the four unitless values as quantity values with `unit:UNITLESS`; CPO keeps the simpler model, with fewer nodes.
+
+**Why does the area of a duplex room fail the SHACL check?** IFCtoLBD writes the area of a space from the Revit property set as `props:area`, a plain number with no unit. The level of information need asks for `cpo:hasArea`, a quantity value in square metres, as on the school's classrooms. The SHACL report shows the difference, and a SPARQL update fixes it at the source: it makes a `qudt:QuantityValue` with `unit:M2` from each `props:area`. The shape stays as it is, because the shape is the requirement.
 
 Students can compare their own ontology with the files here and reuse CPO in their projects. The ontology is kept small on purpose, so that each modeling decision can be explained in class; it is an example for learning, not a complete ontology for practice.
 

@@ -95,6 +95,7 @@ h2 { font-size: 1.7rem; letter-spacing: -.01em; margin: 0 0 6px; }
 
 /* modules */
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.grid.two { grid-template-columns: repeat(2, 1fr); }
 .card { display: flex; flex-direction: column; overflow: hidden; }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform .15s ease, box-shadow .15s ease; }
 .card:hover { transform: translateY(-2px); }
@@ -120,6 +121,7 @@ pre { margin: 0; background: var(--surface-2); border: 1px solid var(--line); bo
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; padding: 0; list-style: none; margin: 0; }
 .steps li { padding: 22px; border-right: 1px solid var(--line); }
 .steps li:last-child { border-right: 0; }
+.steps.four { grid-template-columns: repeat(4, 1fr); margin-top: 14px; }
 .steps .num { display: inline-block; font-family: var(--mono); font-size: 13px; font-weight: 700; padding: 2px 9px; border-radius: 6px; background: var(--class); border: 1px solid var(--class-line); margin-bottom: 10px; }
 .steps h3 { margin: 0 0 6px; font-size: 1.05rem; }
 .steps p { margin: 0; color: var(--muted); font-size: 15px; }
@@ -133,7 +135,7 @@ footer p { margin: 0 0 6px; }
 @media (max-width: 900px) {
   .composed { grid-template-columns: 1fr; }
   .composed figure { border-left: 0; border-top: 1px solid var(--line); order: -1; }
-  .grid, .use, .steps, .usecase { grid-template-columns: 1fr; }
+  .grid, .grid.two, .use, .steps, .steps.four, .usecase { grid-template-columns: 1fr; }
   .steps li { border-right: 0; border-bottom: 1px solid var(--line); }
   .steps li:last-child { border-bottom: 0; }
   footer .wrap { grid-template-columns: 1fr; }
@@ -155,6 +157,7 @@ footer p { margin: 0 0 6px; }
       <a href="#composed">Ontology</a>
       <a href="#modules">Modules</a>
       <a href="#data">Data</a>
+      <a href="#cycle">Cycle</a>
       <a href="#use">Use it</a>
       <a href="#education">Education</a>
       <a href="https://github.com/RichZele/cpo">GitHub</a>
@@ -295,6 +298,55 @@ footer p { margin: 0 0 6px; }
     </div>
   </section>
 
+  <section id="cycle">
+    <div class="wrap">
+      <h2>The information delivery cycle</h2>
+      <p class="sub">After the ontology, the course runs the cycle on it: the duplex model from Revit becomes a graph (Lecture 5), the competency questions are answered in GraphDB (Lecture 6), the spaces and luminaire types are classified and the level of information need is written (Lecture 7), and the graph is validated with SHACL and extended with SWRL rules (Lecture 8).</p>
+      <div class="grid two">
+      <article class="card">
+        <div class="card-body">
+          <p class="eyebrow">Lecture 6 · cycle step 5 · ABID-Mo step 11</p>
+          <h3>Queries</h3>
+          <p>The competency questions CQ1 to CQ6 as SPARQL, run on the ontology, the school data and the duplex graph, each in its own named graph; and one update that links a luminaire made by hand to a room from the IFC model.</p>
+          <ul class="counts"><li><b>30</b> queries</li><li><b>6</b> of 7 CQs answered</li><li><b>15,581</b> triples in GraphDB</li></ul>
+          <div class="links"><a class="btn" href="https://github.com/RichZele/cpo/tree/main/queries">README</a><a class="btn ghost" href="https://github.com/RichZele/cpo/tree/main/graphdb">GraphDB files</a></div>
+          <div class="formats"><a class="fmt" href="queries/cpo-sparql-queries.rq" download>SPARQL</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <p class="eyebrow">Lecture 7 · cycle step 2</p>
+          <h3>Classification</h3>
+          <p>The classrooms and the luminaire types classified with Uniclass 2015, which follows ISO 12006-2, and with IEC 81346-2, written as SKOS concept schemes and linked with <code>dcterms:subject</code>.</p>
+          <ul class="counts"><li><b>9</b> Uniclass classes</li><li><b>6</b> IEC 81346-2 classes</li><li><b>4</b> classrooms</li><li><b>3</b> luminaire types</li></ul>
+          <div class="links"><a class="btn" href="https://github.com/RichZele/cpo/tree/main/classification">README</a></div>
+          <div class="formats"><a class="fmt" href="classification/cpo-classification.ttl" download>Classes, Turtle</a><a class="fmt" href="classification/cpo-lecture7-data.ttl" download>Links, Turtle</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <p class="eyebrow">Lectures 7 and 8 · cycle step 3</p>
+          <h3>Shapes</h3>
+          <p>The level of information need for classroom lighting (ISO 7817-1) as SHACL shapes, one property shape per row. Validated with pySHACL: three violations on the duplex rooms, fixed at the source, and then the graph conforms.</p>
+          <ul class="counts"><li><b>2</b> node shapes</li><li><b>6</b> LOIN rows</li><li><b>3</b> violations, then <b>0</b></li></ul>
+          <div class="links"><a class="btn" href="https://github.com/RichZele/cpo/tree/main/shapes">LOIN and report</a></div>
+          <div class="formats"><a class="fmt" href="shapes/cpo-lighting-shapes.ttl" download>Turtle</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <p class="eyebrow">Lecture 8 · cycle step 4</p>
+          <h3>Rules</h3>
+          <p>Two SWRL rules, run in Protégé with the SWRLTab and Drools: a luminaire type of at least 110 lm/W is a high-efficacy type, and each installed luminaire of such a type is a high-efficacy luminaire.</p>
+          <ul class="counts"><li><b>2</b> rules</li><li><b>2</b> high-efficacy types</li><li><b>23</b> high-efficacy luminaires</li></ul>
+          <div class="links"><a class="btn" href="https://github.com/RichZele/cpo/tree/main/rules">README</a></div>
+          <div class="formats"><a class="fmt" href="rules/cpo-rules.ttl" download>Turtle</a></div>
+        </div>
+      </article>
+      </div>
+    </div>
+  </section>
+
   <section id="use">
     <div class="wrap">
       <h2>Use it</h2>
@@ -336,6 +388,12 @@ WHERE {
         <li><span class="num">4a</span><h3>Project module</h3><p>Building projects, their types, phases and status.</p></li>
         <li><span class="num">4b</span><h3>Product module</h3><p>Installed products and their types from a manufacturer catalogue.</p></li>
         <li><span class="num">4c</span><h3>Requirement and composition</h3><p>The requirement module, and the composed ontology that imports the modules, aligns them with BOT and connects them with spanning axioms.</p></li>
+      </ol>
+      <ol class="panel steps four">
+        <li><span class="num">5</span><h3>From Revit to the graph</h3><p>The duplex model as IFC, checked with IfcOpenShell and converted to RDF with BOT by IFCtoLBD.</p></li>
+        <li><span class="num">6</span><h3>GraphDB and SPARQL</h3><p>Three named graphs, and the competency questions answered as queries.</p></li>
+        <li><span class="num">7</span><h3>Classification and LOIN</h3><p>Uniclass and IEC 81346-2 as SKOS, and the level of information need for classroom lighting.</p></li>
+        <li><span class="num">8</span><h3>SHACL and SWRL</h3><p>The LOIN checked as SHACL shapes, and new knowledge derived with SWRL rules.</p></li>
       </ol>
       <p class="note">Compare your own ontology with these files, and reuse CPO in your project. CPO is kept small on purpose, so that each modeling decision can be explained in class: it is an example for learning, not a complete ontology for practice.</p>
     </div>
