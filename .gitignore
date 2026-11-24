@@ -13,6 +13,8 @@ __pycache__/
 *.r
 *.R
 *.dyn
+# except the course notebooks, which students open in Colab from here
+!notebooks/*.ipynb
 
 # LaTeX sources and build files
 *.tex
@@ -45,6 +47,8 @@ __pycache__/
 *.zip
 *.7z
 *.rar
+# except the level of information need, which is a result
+!loin/*.xlsx
 
 # working folders
 source/

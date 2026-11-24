@@ -39,4 +39,4 @@ Fixed at the source with one SPARQL update: for each classroom with `props:area`
 
 Never weaken a shape just to make the data pass: the shape is the LOIN. A violation that cannot be fixed stays in the report as a finding.
 
-The notebook of Lecture 8 runs this validation in Google Colab; it reads the school data from this repository.
+The notebook of Lecture 8, [`../notebooks/cpo-lecture8-shacl.ipynb`](../notebooks/cpo-lecture8-shacl.ipynb), runs this validation in Google Colab: [open in Colab](https://colab.research.google.com/github/RichZele/cpo/blob/main/notebooks/cpo-lecture8-shacl.ipynb). The LOIN table itself is a spreadsheet in [`../loin/`](../loin/).

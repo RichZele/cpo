@@ -4,7 +4,7 @@ Step 4 of the information delivery cycle (Lecture 8): SWRL rules that derive new
 
 | File | What is in it |
 |---|---|
-| [`cpo-rules.ttl`](cpo-rules.ttl) | One ontology to open in Protégé, `https://w3id.org/cpo/lecture7`: CPO, the school data, the classification and the Duplex classrooms, the classes `HighEfficacyLuminaireType` and `HighEfficacyLuminaire`, and two SWRL rules. Saved from Protégé, with no imports. On Canvas it is `TADS23_kebreh_Lecture-7_CPO-rules_2026-11-25.ttl`. |
+| [`cpo-rules.ttl`](cpo-rules.ttl) | One ontology to open in Protégé, `https://w3id.org/cpo/lecture7`: CPO, the school data, the classification and the Duplex classrooms, the classes `HighEfficacyLuminaireType` and `HighEfficacyLuminaire`, and two SWRL rules. Saved from Protégé, with no imports. Open it in Protégé with File > Open. |
 
 ## The rules
 
