@@ -1,0 +1,49 @@
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix cpo:     <https://w3id.org/cpo#> .
+@prefix qudt:    <http://qudt.org/schema/qudt/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix shapes:  <https://w3id.org/cpo/shapes/> .
+
+# =====================================================================
+#  CPO worked example, Lecture 7: the LOIN for classroom lighting, as SHACL shapes
+#  Purpose: check that classroom lighting can be designed and verified (EN 12464-1:2021)
+#  Property definitions: CEN/TS 17623:2021, 04-0005 rated luminous flux (lm), 02-0002 rated input power (W)
+# =====================================================================
+
+shapes:ClassroomShape a sh:NodeShape ;
+    sh:targetClass cpo:Classroom ;
+    sh:property [
+        sh:path cpo:hasArea ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class qudt:QuantityValue ;
+        sh:message "LOIN: a classroom has one floor area, in m2."@en ] ;
+    sh:property [
+        sh:path cpo:hasLightingRequirement ;
+        sh:minCount 1 ;
+        sh:message "LOIN: a classroom has a lighting requirement."@en ] ;
+    sh:property [
+        sh:path dcterms:subject ;
+        sh:minCount 1 ;
+        sh:class skos:Concept ;
+        sh:message "LOIN: a classroom is classified."@en ] .
+
+shapes:LuminaireTypeShape a sh:NodeShape ;
+    sh:targetClass cpo:LuminaireType ;
+    sh:property [
+        sh:path ( cpo:hasLuminousFlux qudt:numericValue ) ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minExclusive 0 ;
+        sh:message "LOIN: rated luminous flux, in lm, greater than 0."@en ] ;
+    sh:property [
+        sh:path ( cpo:hasRatedPower qudt:numericValue ) ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minExclusive 0 ;
+        sh:message "LOIN: rated input power, in W, greater than 0."@en ] ;
+    sh:property [
+        sh:path dcterms:subject ;
+        sh:minCount 1 ;
+        sh:message "LOIN: a luminaire type is classified."@en ] .

@@ -1,0 +1,34 @@
+@prefix cpo:     <https://w3id.org/cpo#> .
+@prefix inst:    <https://w3id.org/cpo/data/> .
+@prefix ifcdata: <https://w3id.org/cpo/duplex/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix props:   <https://w3id.org/props#> .
+@prefix uc:      <https://uniclass.thenbs.com/taxon/> .
+@prefix iec:     <https://w3id.org/cpo/class/iec81346-2/> .
+
+# =====================================================================
+#  CPO worked example, Lecture 7: classification links and two Duplex rooms used as classrooms
+#  Classes are linked with dcterms:subject (Dublin Core, used with SKOS for "is about / is classified as").
+# =====================================================================
+
+# ---- the school: spaces and luminaire types classified
+inst:classroom_2_14 dcterms:subject uc:sl_25_10_14 .
+inst:classroom_2_15 dcterms:subject uc:sl_25_10_14 .
+inst:type_23784-402 dcterms:subject uc:pr_70_70_48_45 , iec:UAC .
+inst:type_23916-529 dcterms:subject uc:pr_70_70_48_45 , iec:UAC .
+inst:type_73029-520 dcterms:subject uc:pr_70_70_48_70 , iec:UAC .
+
+# ---- the Duplex: two rooms from the IFC model, now used as classrooms
+#      Their area comes from IFC as props:area (a plain number, no unit); the LOIN asks for cpo:hasArea.
+ifcdata:space_0BTBFw6f90Nfh9rP1dlXr2 a cpo:Classroom ;
+    rdfs:label "A102" ;
+    props:area 30.14165 ;
+    cpo:hasLightingRequirement inst:req_EN12464_classroom ;
+    dcterms:subject uc:sl_25_10_14 .
+
+ifcdata:space_0BTBFw6f90Nfh9rP1dl_CZ a cpo:Classroom ;
+    rdfs:label "B102" ;
+    props:area 30.14165 ;
+    dcterms:subject uc:sl_25_10_14 .

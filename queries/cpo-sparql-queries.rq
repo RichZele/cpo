@@ -1,0 +1,444 @@
+# TADS23 Lecture 6 · SPARQL queries · Thu 19 Nov 2026
+# Every query has a number, and the same number is on the slide.
+#   D1 to D9:  DBpedia, at https://dbpedia.org/sparql
+#   Q1 to Q21: our data in GraphDB, in your group's repository on the course server
+# Copy ONE query at a time: from the line under its number down to the next ═══ line.
+# Paste it into the SPARQL editor and click Run.
+# GraphDB data: cpo-all.ttl in <https://w3id.org/cpo>, cpo-school-data.ttl in <https://w3id.org/cpo/data>,
+#               ifcmodel_LBD.ttl in <https://w3id.org/cpo/duplex>
+
+# ############################  PART 1 · DBpedia  ############################
+
+# ═══════════════════════════════════════════════════════════════
+# D1 · Your first query: writers and their notable works, in English (slide 18)
+# ═══════════════════════════════════════════════════════════════
+PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?author ?title
+WHERE {
+  ?author a dbo:Writer ;
+          dbo:notableWork ?work .
+  ?work rdfs:label ?title .
+  FILTER (LANG(?title) = "en")
+}
+LIMIT 10
+
+# ═══════════════════════════════════════════════════════════════
+# D2 · The same, without doubles: DISTINCT (slide 19)
+# ═══════════════════════════════════════════════════════════════
+PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?author ?title
+WHERE {
+  ?author a dbo:Writer ;
+          dbo:notableWork ?work .
+  ?work rdfs:label ?title .
+  FILTER (LANG(?title) = "en")
+}
+LIMIT 10
+
+# ═══════════════════════════════════════════════════════════════
+# D3 · Your turn: any 10 persons (slide 20)
+# ═══════════════════════════════════════════════════════════════
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?person
+WHERE { ?person a foaf:Person . }
+LIMIT 10
+
+# ═══════════════════════════════════════════════════════════════
+# D4 · ORDER BY, LIMIT, OFFSET (slide 25)
+# ═══════════════════════════════════════════════════════════════
+PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?author_name ?title
+WHERE {
+  ?author a dbo:Writer ;
+          rdfs:label ?author_name ;
+          dbo:notableWork ?work .
+  ?work rdfs:label ?title .
+  FILTER (LANG(?author_name) = "en" && LANG(?title) = "en")
+}
+ORDER BY ASC(?author_name)
+LIMIT 100
+OFFSET 10
+
+# ═══════════════════════════════════════════════════════════════
+# D5 · FILTER on a string: names that start with A (slide 28)
+# ═══════════════════════════════════════════════════════════════
+PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?name
+WHERE {
+  ?person a dbo:Writer ;
+          foaf:name ?name .
+  FILTER (STRSTARTS(?name, "A"))
+}
+LIMIT 100
+
+# ═══════════════════════════════════════════════════════════════
+# D6 · FILTER on a number: works of 501 to 1000 pages (slide 28)
+# ═══════════════════════════════════════════════════════════════
+PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?author_name ?title ?pages
+WHERE {
+  ?author a dbo:Writer ;
+          rdfs:label ?author_name ;
+          dbo:notableWork ?work .
+  ?work rdfs:label ?title ;
+        dbo:numberOfPages ?pages .
+  FILTER (?pages > 500 && ?pages <= 1000)
+}
+LIMIT 100
+
+# ═══════════════════════════════════════════════════════════════
+# D7 · OPTIONAL: writers, with a homepage if they have one (slide 31)
+# ═══════════════════════════════════════════════════════════════
+PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?name ?homepage
+WHERE {
+  ?person a dbo:Writer ;
+          foaf:name ?name .
+  OPTIONAL { ?person foaf:homepage ?homepage . }
+}
+LIMIT 100
+
+# ═══════════════════════════════════════════════════════════════
+# D8 · UNION: poets or writers (slide 32)
+# ═══════════════════════════════════════════════════════════════
+PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?person ?name
+WHERE {
+  { ?person a dbo:Poet . }
+  UNION
+  { ?person a dbo:Writer . }
+  ?person foaf:name ?name .
+}
+LIMIT 100
+
+# ═══════════════════════════════════════════════════════════════
+# D9 · MINUS: writers without a date of death (slide 32)
+# ═══════════════════════════════════════════════════════════════
+PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?name
+WHERE {
+  ?person a dbo:Writer ;
+          foaf:name ?name .
+  MINUS { ?person dbo:deathDate ?d . }
+}
+LIMIT 100
+
+# ############################  PART 2 · GraphDB  ############################
+
+# ═══════════════════════════════════════════════════════════════
+# Q1 · Count the triples in our three graphs (slide 42)
+# ═══════════════════════════════════════════════════════════════
+SELECT (COUNT(*) AS ?triples)
+FROM <https://w3id.org/cpo>
+FROM <https://w3id.org/cpo/data>
+FROM <https://w3id.org/cpo/duplex>
+WHERE { ?s ?p ?o . }
+
+# ═══════════════════════════════════════════════════════════════
+# Q2 · The classrooms (slide 44)
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?room ?label
+FROM <https://w3id.org/cpo/data>
+WHERE {
+  ?room a cpo:Classroom .
+  ?room rdfs:label ?label .
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q3 · Luminaires in classroom 2.14, with their type (slide 45)
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX inst: <https://w3id.org/cpo/data/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?luminaire ?typeName
+FROM <https://w3id.org/cpo/data>
+WHERE {
+  ?luminaire cpo:installedIn inst:classroom_2_14 ;
+             cpo:hasProductType ?type .
+  ?type rdfs:label ?typeName .
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q4 · Luminaire types by flux (ORDER BY) (slide 46)
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?typeName ?flux
+FROM <https://w3id.org/cpo/data>
+WHERE {
+  ?type a cpo:LuminaireType ;
+        rdfs:label ?typeName ;
+        cpo:hasLuminousFlux ?q .
+  ?q qudt:numericValue ?flux .
+}
+ORDER BY DESC(?flux)
+
+# ═══════════════════════════════════════════════════════════════
+# Q5 · Types with more than 3000 lm (FILTER) (slide 46)
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?typeName ?flux
+FROM <https://w3id.org/cpo/data>
+WHERE {
+  ?type a cpo:LuminaireType ;
+        rdfs:label ?typeName ;
+        cpo:hasLuminousFlux ?q .
+  ?q qudt:numericValue ?flux .
+  FILTER (?flux > 3000)
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q6 · Spaces on level 2 and their requirement (OPTIONAL) (slide 47)
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX bot: <https://w3id.org/bot#>
+PREFIX inst: <https://w3id.org/cpo/data/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?label ?requirement
+FROM <https://w3id.org/cpo/data>
+WHERE {
+  inst:storey2 bot:hasSpace ?room .
+  ?room rdfs:label ?label .
+  OPTIONAL { ?room cpo:hasLightingRequirement ?requirement . }
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q7 · Classrooms or corridors (UNION) (extra, not on a slide)
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?room ?label
+FROM <https://w3id.org/cpo/data>
+WHERE {
+  { ?room a cpo:Classroom . }
+  UNION
+  { ?room a cpo:Corridor . }
+  ?room rdfs:label ?label .
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q8 · CQ1: Project status (slide 51)
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?project ?status
+FROM <https://w3id.org/cpo/data>
+WHERE {
+  ?project cpo:hasStatus ?status .
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q9 · CQ2: Products in a project (slide 52)
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX inst: <https://w3id.org/cpo/data/>
+SELECT ?product
+FROM <https://w3id.org/cpo/data>
+WHERE {
+  inst:schoolProject cpo:hasProduct ?product .
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q10 · CQ3: Projects and budgets (slide 53)
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?name ?budget
+FROM <https://w3id.org/cpo/data>
+WHERE {
+  ?project cpo:budget ?budget ;
+           rdfs:label ?name .
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q11 · CQ4: Luminaires per room (slide 54)
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?room (COUNT(?luminaire) AS ?luminaires)
+FROM <https://w3id.org/cpo/data>
+FROM <https://w3id.org/cpo/duplex>
+WHERE {
+  ?luminaire a cpo:Luminaire ;
+             cpo:installedIn ?r .
+  ?r rdfs:label ?room .
+}
+GROUP BY ?room
+ORDER BY ?room
+
+# ═══════════════════════════════════════════════════════════════
+# Q12 · CQ5: Flux, power and manufacturer of each luminaire type (slide 55)
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX actorODP: <http://w3id.org/CEON/ontology/actorODP/>
+SELECT ?typeName ?flux ?power ?maker
+FROM <https://w3id.org/cpo/data>
+WHERE {
+  ?type a cpo:LuminaireType ;
+        rdfs:label ?typeName ;
+        cpo:hasLuminousFlux ?f ;
+        cpo:hasRatedPower ?w .
+  ?f qudt:numericValue ?flux .
+  ?w qudt:numericValue ?power .
+  ?p actorODP:participatingResource ?type ;
+     actorODP:participatingActor ?m .
+  ?m rdfs:label ?maker .
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q13 · CQ6: Required illuminance per room (slide 56)
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?room ?lux ?standard
+FROM <https://w3id.org/cpo/data>
+WHERE {
+  ?r rdfs:label ?room ;
+     cpo:hasLightingRequirement ?req .
+  ?req cpo:hasRequiredIlluminance ?e ;
+       cpo:sourceStandard ?standard .
+  ?e qudt:numericValue ?lux .
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q14 · Duplex: storeys and spaces (slide 61)
+# ═══════════════════════════════════════════════════════════════
+PREFIX ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL#>
+PREFIX bot: <https://w3id.org/bot#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?storey (COUNT(?space) AS ?spaces)
+FROM <https://w3id.org/cpo/duplex>
+WHERE {
+  ?s a ifc:IfcBuildingStorey ;
+     rdfs:label ?storey ;
+     bot:hasSpace ?space .
+}
+GROUP BY ?storey
+ORDER BY ?storey
+
+# ═══════════════════════════════════════════════════════════════
+# Q15 · Duplex: what is in living room A102 (slide 62)
+# ═══════════════════════════════════════════════════════════════
+PREFIX bot: <https://w3id.org/bot#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX props: <https://w3id.org/props#>
+SELECT ?element ?name
+FROM <https://w3id.org/cpo/duplex>
+WHERE {
+  ?space rdfs:label "A102" ;
+         bot:containsElement ?element .
+  ?element rdfs:label ?name .
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q16 · Duplex: the five largest spaces (slide 63)
+# ═══════════════════════════════════════════════════════════════
+PREFIX bot: <https://w3id.org/bot#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX props: <https://w3id.org/props#>
+SELECT ?space ?type ?area
+FROM <https://w3id.org/cpo/duplex>
+WHERE {
+  ?s a bot:Space ;
+     rdfs:label ?space ;
+     props:category_Description ?type ;
+     props:area ?area .
+}
+ORDER BY DESC(?area)
+LIMIT 5
+
+# ═══════════════════════════════════════════════════════════════
+# Q17 · Duplex: spaces with no element (MINUS) (slide 64)
+# ═══════════════════════════════════════════════════════════════
+PREFIX bot: <https://w3id.org/bot#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?name
+FROM <https://w3id.org/cpo/duplex>
+WHERE {
+  ?space a bot:Space ;
+         rdfs:label ?name .
+  MINUS { ?space bot:containsElement ?element . }
+}
+ORDER BY ?name
+
+# ═══════════════════════════════════════════════════════════════
+# Q18 · CONSTRUCT: spaces, names and areas as a new graph (slide 68)
+# ═══════════════════════════════════════════════════════════════
+PREFIX bot: <https://w3id.org/bot#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX props: <https://w3id.org/props#>
+CONSTRUCT {
+  ?s a bot:Space ;
+     rdfs:label ?name ;
+     props:area ?area .
+}
+FROM <https://w3id.org/cpo/duplex>
+WHERE {
+  ?s a bot:Space ;
+     rdfs:label ?name ;
+     props:area ?area .
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q19 · ASK: is there a luminaire in A102? (slide 69)
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX bot: <https://w3id.org/bot#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ASK
+FROM <https://w3id.org/cpo/data>
+FROM <https://w3id.org/cpo/duplex>
+WHERE {
+  ?luminaire a cpo:Luminaire ;
+             cpo:installedIn ?space .
+  ?space rdfs:label "A102" .
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q20 · UPDATE: link a luminaire to A102 (slide 70)
+# This changes the data. Run it once, then run Q19 (ASK) and Q11 (CQ4) again.
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX inst: <https://w3id.org/cpo/data/>
+PREFIX bot: <https://w3id.org/bot#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+INSERT {
+  GRAPH <https://w3id.org/cpo/data> {
+    inst:luminaire_A102_L01 a cpo:Luminaire ;
+        cpo:hasProductType inst:type_73029-520 ;
+        cpo:installedIn ?space .
+  }
+}
+WHERE {
+  GRAPH <https://w3id.org/cpo/duplex> {
+    ?space a bot:Space ;
+           rdfs:label "A102" .
+  }
+}
+
+# ═══════════════════════════════════════════════════════════════
+# Q21 · UNDO the update (slide 72)
+# Removes the luminaire that Q20 added. Run it at the end.
+# ═══════════════════════════════════════════════════════════════
+PREFIX inst: <https://w3id.org/cpo/data/>
+DELETE WHERE {
+  GRAPH <https://w3id.org/cpo/data> {
+    inst:luminaire_A102_L01 ?p ?o .
+  }
+}

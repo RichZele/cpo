@@ -1,0 +1,58 @@
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uc:      <https://uniclass.thenbs.com/taxon/> .
+@prefix iec:     <https://w3id.org/cpo/class/iec81346-2/> .
+
+# =====================================================================
+#  CPO worked example, Lecture 7: classification as SKOS concept schemes
+#  Uniclass 2015 follows ISO 12006-2; its codes are published at uniclass.thenbs.com,
+#  so the taxon pages are used as IRIs (Spaces/locations v1.37, October 2026).
+#  IEC 81346-2:2019, Table 1 and Table 2: classes of objects by inherent function.
+#  Only the classes the worked example needs.
+# =====================================================================
+
+# ---- Uniclass 2015, table SL: spaces and locations
+uc:sl a skos:ConceptScheme ;
+    skos:prefLabel "Uniclass 2015, Spaces/ locations"@en ;
+    dcterms:source "ISO 12006-2 framework, Uniclass 2015 (NBS)" .
+
+uc:sl_25 a skos:Concept ; skos:inScheme uc:sl ; skos:topConceptOf uc:sl ;
+    skos:notation "SL_25" ; skos:prefLabel "Cultural, educational, scientific and information spaces"@en .
+uc:sl_25_10 a skos:Concept ; skos:inScheme uc:sl ; skos:broader uc:sl_25 ;
+    skos:notation "SL_25_10" ; skos:prefLabel "Educational spaces"@en .
+uc:sl_25_10_14 a skos:Concept ; skos:inScheme uc:sl ; skos:broader uc:sl_25_10 ;
+    skos:notation "SL_25_10_14" ; skos:prefLabel "Classrooms"@en .
+
+# ---- Uniclass 2015, table Pr: products
+uc:pr a skos:ConceptScheme ;
+    skos:prefLabel "Uniclass 2015, Products"@en ;
+    dcterms:source "ISO 12006-2 framework, Uniclass 2015 (NBS)" .
+
+uc:pr_70 a skos:Concept ; skos:inScheme uc:pr ; skos:topConceptOf uc:pr ;
+    skos:notation "Pr_70" ; skos:prefLabel "Services and process outlet products"@en .
+uc:pr_70_70 a skos:Concept ; skos:inScheme uc:pr ; skos:broader uc:pr_70 ;
+    skos:notation "Pr_70_70" ; skos:prefLabel "Power and lighting outlet products"@en .
+uc:pr_70_70_48 a skos:Concept ; skos:inScheme uc:pr ; skos:broader uc:pr_70_70 ;
+    skos:notation "Pr_70_70_48" ; skos:prefLabel "Luminaires, lighting track and lighting accessories"@en .
+uc:pr_70_70_48_45 a skos:Concept ; skos:inScheme uc:pr ; skos:broader uc:pr_70_70_48 ;
+    skos:notation "Pr_70_70_48_45" ; skos:prefLabel "LED light panels"@en .
+uc:pr_70_70_48_70 a skos:Concept ; skos:inScheme uc:pr ; skos:broader uc:pr_70_70_48 ;
+    skos:notation "Pr_70_70_48_70" ; skos:prefLabel "Recessed downlights"@en .
+
+# ---- IEC 81346-2:2019: classes of objects by inherent function (product aspect)
+iec:scheme a skos:ConceptScheme ;
+    skos:prefLabel "IEC 81346-2:2019, classes of objects"@en .
+
+iec:E a skos:Concept ; skos:inScheme iec:scheme ; skos:topConceptOf iec:scheme ;
+    skos:notation "E" ; skos:prefLabel "emitting object"@en ; skos:definition "object for emitting"@en .
+iec:EA a skos:Concept ; skos:inScheme iec:scheme ; skos:broader iec:E ;
+    skos:notation "EA" ; skos:prefLabel "light object"@en ; skos:definition "emitting object of light"@en .
+iec:EAA a skos:Concept ; skos:inScheme iec:scheme ; skos:broader iec:EA ;
+    skos:notation "EAA" ; skos:prefLabel "electric lamp"@en ; skos:definition "light object by electricity"@en .
+iec:U a skos:Concept ; skos:inScheme iec:scheme ; skos:topConceptOf iec:scheme ;
+    skos:notation "U" ; skos:prefLabel "holding object"@en ; skos:definition "object for localising of other objects"@en .
+iec:UA a skos:Concept ; skos:inScheme iec:scheme ; skos:broader iec:U ;
+    skos:notation "UA" ; skos:prefLabel "positioning object"@en ; skos:definition "holding object by fixing at a defined position"@en .
+iec:UAC a skos:Concept ; skos:inScheme iec:scheme ; skos:broader iec:UA ;
+    skos:notation "UAC" ; skos:prefLabel "light fixture"@en ; skos:definition "positioning object for light source"@en .
