@@ -43,8 +43,12 @@ The rules use built-ins (`swrlb:divide`, `swrlb:greaterThanOrEqual`), which Herm
 | Multilume Flat Delta 300x1200 | 3853 ÷ 30.5 = 126.3 | high efficacy |
 | Pleiad G4 165 | 938 ÷ 9.5 = 98.7 | no inference |
 
+The same rules also run without Protégé, with the reasoner Pellet in owlready2: Runs 6 and 7 of the notebook [`../notebooks/cpo-lecture8-rules.ipynb`](../notebooks/cpo-lecture8-rules.ipynb), with the same result.
+
 R2 then marks the 23 luminaires of the two panel types as high-efficacy luminaires: 8 in classroom 2.14 and 15 in classroom 2.15. The four Pleiad downlights in the corridor are not marked. That does not make them non-compliant: under the open world, a fact that is not inferred is unknown, not false.
 
 ## SHACL or SWRL?
 
 SHACL checks whether the required information is there, in the right form, under the closed world, and its output is a report (`../shapes/`). SWRL derives what follows from the data, under the open world, and its output is new triples. Whether a flux is present is a question for SHACL; whether a luminaire is high efficacy is one for SWRL. A rule that must count or sum, such as the total flux in a room, needs a SPARQL-based rule, because SWRL does not aggregate.
+
+The two meet in SHACL Advanced Features: a SHACL rule (`sh:rule`) derives triples, as SWRL does. `../shapes/cpo-derive-type-rule.ttl` derives the conclusion of R1 with SPARQL, and `../shapes/cpo-efficacy-sparql-shape.ttl` reports the type that R1 leaves out.

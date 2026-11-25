@@ -1,0 +1,31 @@
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix cpo:    <https://w3id.org/cpo#> .
+@prefix qudt:   <http://qudt.org/schema/qudt/> .
+@prefix shapes: <https://w3id.org/cpo/shapes/> .
+
+# =====================================================================
+#  CPO worked example, Lecture 8: a SHACL-SPARQL constraint
+#  Luminous efficacy (CEN/TS 17623:2021, 04-0007) = rated luminous flux / rated input power.
+#  A luminaire type below 110 lm/W is reported; the same threshold as the SWRL rule in ../rules/cpo-rules.ttl.
+#  Data graph: ../rules/cpo-rules.ttl. Result: one violation, inst:type_73029-520 (Pleiad G4 165, 99 lm/W).
+# =====================================================================
+
+shapes:EfficacyShape a sh:NodeShape ;
+    sh:targetClass cpo:LuminaireType ;
+    sh:sparql [
+        sh:message "Efficacy {?eff} lm/W is below 110 lm/W."@en ;
+        sh:prefixes shapes:prefixes ;
+        sh:select """
+            SELECT $this ?eff
+            WHERE {
+                $this cpo:hasLuminousFlux/qudt:numericValue ?flux ;
+                      cpo:hasRatedPower/qudt:numericValue  ?power .
+                FILTER (?power > 0)
+                BIND (?flux / ?power AS ?e)
+                BIND (ROUND(?e) AS ?eff)
+                FILTER (?e < 110)
+            }""" ] .
+
+shapes:prefixes sh:declare
+    [ sh:prefix "cpo"  ; sh:namespace "https://w3id.org/cpo#"^^<http://www.w3.org/2001/XMLSchema#anyURI> ] ,
+    [ sh:prefix "qudt" ; sh:namespace "http://qudt.org/schema/qudt/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ] .

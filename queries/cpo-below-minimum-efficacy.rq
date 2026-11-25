@@ -1,0 +1,10 @@
+# CPO worked example, Lecture 8: which luminaire types have a luminous efficacy below 110 lm/W?
+# An ordinary SELECT on the data graph (../rules/cpo-rules.ttl). Result: one row, the Pleiad G4 165: 938 lm, 9.5 W.
+PREFIX cpo: <https://w3id.org/cpo#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+SELECT ?type ?flux ?power WHERE {
+  ?type a cpo:LuminaireType ;
+    cpo:hasLuminousFlux/qudt:numericValue ?flux ;
+    cpo:hasRatedPower/qudt:numericValue ?power .
+  FILTER (?power > 0 && ?flux / ?power < 110)
+}

@@ -1,10 +1,11 @@
 # Queries
 
-The SPARQL queries of Lecture 6: ABID-Mo step 11, the test of the competency questions, and step 5 of the information delivery cycle.
+The SPARQL queries of Lecture 6: ABID-Mo step 11, the test of the competency questions, and step 5 of the information delivery cycle. And one query of Lecture 8.
 
 | File | What is in it |
 |---|---|
 | [`cpo-sparql-queries.rq`](cpo-sparql-queries.rq) | 30 queries, numbered as on the slides: D1 to D9 on DBpedia (`https://dbpedia.org/sparql`), to learn the language; Q1 to Q21 on the CPO graph in GraphDB, with the three files of `../graphdb/`, each in its own named graph |
+| [`cpo-below-minimum-efficacy.rq`](cpo-below-minimum-efficacy.rq) | Lecture 8: which luminaire types have a luminous efficacy below 110 lm/W? On `../rules/cpo-rules.ttl`. One row: the Pleiad G4 165, 938 lm, 9.5 W. The same condition as the SHACL-SPARQL constraint in `../shapes/` and the opposite of SWRL rule R1 in `../rules/`. |
 
 Copy one query at a time, from the line under its number down to the next line of double bars, paste it into the SPARQL editor and click Run.
 

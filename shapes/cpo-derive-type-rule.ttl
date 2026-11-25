@@ -1,0 +1,27 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix cpo: <https://w3id.org/cpo#> .
+@prefix shapes: <https://w3id.org/cpo/shapes/> .
+
+# =====================================================================
+#  CPO worked example, Lecture 8: a SHACL rule (SHACL Advanced Features, W3C Working Group Note 2017)
+#  For each luminaire type with luminous efficacy >= 110 lm/W, derive: $this a cpo:HighEfficacyLuminaireType.
+#  The same conclusion as SWRL rule R1 in ../rules/cpo-rules.ttl. Not SHACL Core: run it with pySHACL, advanced=True.
+#  Data graph: ../rules/cpo-rules.ttl. Result: two new triples, for inst:type_23784-402 and inst:type_23916-529.
+# =====================================================================
+
+shapes:DeriveType a sh:NodeShape ;
+    sh:targetClass cpo:LuminaireType ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX cpo: <https://w3id.org/cpo#>
+            PREFIX qudt: <http://qudt.org/schema/qudt/>
+            CONSTRUCT { $this a cpo:HighEfficacyLuminaireType }
+            WHERE {
+                $this cpo:hasLuminousFlux/qudt:numericValue ?flux ;
+                      cpo:hasRatedPower/qudt:numericValue ?power .
+                FILTER (?power > 0 && ?flux / ?power >= 110)
+            }
+        """
+    ] .
+
