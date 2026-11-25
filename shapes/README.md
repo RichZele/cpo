@@ -4,7 +4,7 @@ Step 3 of the information delivery cycle (Lectures 7 and 8): the level of inform
 
 | File | What is in it | Triples |
 |---|---|---|
-| [`cpo-lighting-shapes.ttl`](cpo-lighting-shapes.ttl) | Two node shapes, one for classrooms and one for luminaire types, with one property shape per row of the LOIN table | 43 |
+| [`cpo-lighting-shapes.ttl`](cpo-lighting-shapes.ttl) | Two node shapes, one for classrooms and one for luminaire types: one property shape per row of the LOIN table, and one more for the unit of the flux and of the power (8 in all) | 61 |
 | [`cpo-efficacy-sparql-shape.ttl`](cpo-efficacy-sparql-shape.ttl) | A SHACL-SPARQL constraint (Lecture 8): a luminaire type with a rated power above 0 and a luminous efficacy below 110 lm/W is reported | 12 |
 | [`cpo-derive-type-rule.ttl`](cpo-derive-type-rule.ttl) | A SHACL rule (SHACL Advanced Features, Lecture 8): a luminaire type of at least 110 lm/W is a `cpo:HighEfficacyLuminaireType`, the same conclusion as SWRL rule R1 | 5 |
 
@@ -16,14 +16,14 @@ Step 3 of the information delivery cycle (Lectures 7 and 8): the level of inform
 
 | Object | Information | Unit, type | Source of the definition | SHACL constraint |
 |---|---|---|---|---|
-| Luminaire type | rated luminous flux | lm, decimal | CEN/TS 17623:2021, 04-0005 | `sh:path ( cpo:hasLuminousFlux qudt:numericValue )`, `sh:minCount 1`, `sh:datatype xsd:decimal`, `sh:minExclusive 0` |
-| Luminaire type | rated input power | W, decimal | CEN/TS 17623:2021, 02-0002 | `sh:path ( cpo:hasRatedPower qudt:numericValue )`, `sh:minCount 1`, `sh:datatype xsd:decimal`, `sh:minExclusive 0` |
+| Luminaire type | rated luminous flux | lm, decimal | CEN/TS 17623:2021, 04-0005 | `sh:path ( cpo:hasLuminousFlux qudt:numericValue )`, `sh:minCount 1`, `sh:datatype xsd:decimal`, `sh:minExclusive 0`; and `sh:path ( cpo:hasLuminousFlux qudt:unit )`, `sh:hasValue unit:LM`, `sh:maxCount 1` |
+| Luminaire type | rated input power | W, decimal | CEN/TS 17623:2021, 02-0002 | `sh:path ( cpo:hasRatedPower qudt:numericValue )`, `sh:minCount 1`, `sh:datatype xsd:decimal`, `sh:minExclusive 0`; and `sh:path ( cpo:hasRatedPower qudt:unit )`, `sh:hasValue unit:W`, `sh:maxCount 1` |
 | Luminaire type | classification | a class | Uniclass, IEC 81346-2 | `sh:path dcterms:subject`, `sh:minCount 1` |
 | Classroom | floor area | m², one value | the model (IFC) | `sh:path cpo:hasArea`, `sh:minCount 1`, `sh:maxCount 1`, `sh:class qudt:QuantityValue` |
 | Classroom | lighting requirement | a requirement | EN 12464-1:2021 | `sh:path cpo:hasLightingRequirement`, `sh:minCount 1` |
 | Classroom | classification | a class | Uniclass SL | `sh:path dcterms:subject`, `sh:minCount 1`, `sh:class skos:Concept` |
 
-The flux and the power are quantity values, so their paths take two hops: from the type to the quantity node, and from the quantity node to its number.
+The flux and the power are quantity values, so their paths take two hops: from the type to the quantity node, and from the quantity node to its number, or to its unit. The number and the unit need two property shapes, because they are two different paths. A unit written in `sh:message` ("in lm") checks nothing: only `sh:hasValue unit:LM` does. The unit of the floor area (m²) is not checked here: `sh:hasValue` on `( cpo:hasArea qudt:unit )` would report A102 and B102 a second time, because they have no `cpo:hasArea` at all.
 
 ## The validation
 

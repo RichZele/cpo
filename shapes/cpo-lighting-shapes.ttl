@@ -4,6 +4,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix unit:    <http://qudt.org/vocab/unit/> .
 @prefix shapes:  <https://w3id.org/cpo/shapes/> .
 
 # =====================================================================
@@ -38,11 +39,21 @@ shapes:LuminaireTypeShape a sh:NodeShape ;
         sh:minExclusive 0 ;
         sh:message "LOIN: rated luminous flux, in lm, greater than 0."@en ] ;
     sh:property [
+        sh:path ( cpo:hasLuminousFlux qudt:unit ) ;
+        sh:hasValue unit:LM ;
+        sh:maxCount 1 ;
+        sh:message "LOIN: rated luminous flux in lumen, unit:LM."@en ] ;
+    sh:property [
         sh:path ( cpo:hasRatedPower qudt:numericValue ) ;
         sh:minCount 1 ;
         sh:datatype xsd:decimal ;
         sh:minExclusive 0 ;
         sh:message "LOIN: rated input power, in W, greater than 0."@en ] ;
+    sh:property [
+        sh:path ( cpo:hasRatedPower qudt:unit ) ;
+        sh:hasValue unit:W ;
+        sh:maxCount 1 ;
+        sh:message "LOIN: rated input power in watt, unit:W."@en ] ;
     sh:property [
         sh:path dcterms:subject ;
         sh:minCount 1 ;
