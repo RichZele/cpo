@@ -1,0 +1,196 @@
+{
+  "Uuid": "c5552538-ab65-42d2-987e-cff1c97585f1",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "cpo-graphdb-to-revit",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "75cceecbfb974e23807d424797164180",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "dfdd6bd7f6324337bfd87324910c8a74",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "https://jthkg2.hj.se/repositories/TwinPass_Implementation"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# TADS23 Lecture 9 · Back to Revit\r\n# Dynamo Python Script node (CPython3, Dynamo for Revit 2024).\r\n# Sends a SPARQL query to GraphDB and writes the answers into room parameters of the open Revit model;\r\n# here for the Lecture 9 use case, classroom lighting: query L9-6 in queries/cpo-deliver-queries.rq.\r\n#\r\n# Inputs of the node:\r\n#   IN[0]  SPARQL endpoint of your GraphDB repository, e.g. https://<server>/repositories/<repository>\r\n#   IN[1]  optional: user name, only if the repository needs a login (add inputs with + on the node)\r\n#   IN[2]  optional: password; never save a password in a file you share\r\n#\r\n# Before you run it, add three project parameters to the category Rooms (instance parameters):\r\n#   Lighting Status          Text\r\n#   Calculated Illuminance   Number\r\n#   Recommended Luminaire    Text\r\n# Rooms are matched by their number (Revit: Number; in the graph: props:number, from IFC).\r\n\r\nimport clr, json\r\nimport urllib.request, urllib.parse\r\n\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, BuiltInParameter\r\nclr.AddReference('RevitServices')\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\n\r\nendpoint = IN[0]; user, password = (IN[1], IN[2]) if len(IN) > 2 else ('', '')\r\n\r\nQUERY = \"\"\"\r\nPREFIX cpo:   <https://w3id.org/cpo#>\r\nPREFIX qudt:  <http://qudt.org/schema/qudt/>\r\nPREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>\r\nPREFIX props: <https://w3id.org/props#>\r\nSELECT ?number ?calculated ?status ?recommended\r\nWHERE {\r\n  ?room props:number ?number ;\r\n        cpo:lightingStatus ?status ;\r\n        cpo:hasCalculatedIlluminance/qudt:numericValue ?calculated .\r\n  OPTIONAL {\r\n    SELECT ?room (GROUP_CONCAT(?fix; separator=\", \") AS ?recommended)\r\n    WHERE {\r\n      { SELECT ?room (COUNT(?lum) AS ?n) WHERE { ?lum a cpo:Luminaire ; cpo:installedIn ?room . } GROUP BY ?room }\r\n      ?room cpo:lightingStatus \"FAIL\" ;\r\n            cpo:hasArea/qudt:numericValue ?area ;\r\n            cpo:hasLightingRequirement/cpo:hasRequiredIlluminance/qudt:numericValue ?required .\r\n      ?type a cpo:LuminaireType ; rdfs:label ?fix ;\r\n            cpo:hasLuminousFlux/qudt:numericValue ?flux .\r\n      FILTER (ROUND(?n * ?flux * 0.6 * 0.8 / ?area) >= ?required)\r\n    }\r\n    GROUP BY ?room\r\n  }\r\n}\r\n\"\"\"\r\n\r\n# 1 · Ask GraphDB: an HTTP GET with the query, the answer as SPARQL JSON\r\nheaders = {'Accept': 'application/sparql-results+json'}\r\nif user:\r\n    # GraphDB with security on: log in once; the answer carries a token for the next requests\r\n    server = endpoint.split('/repositories/')[0]\r\n    login = urllib.request.Request(server + '/rest/login', method='POST',\r\n                                   data=json.dumps({'username': user, 'password': password}).encode('utf-8'),\r\n                                   headers={'Content-Type': 'application/json'})\r\n    headers['Authorization'] = urllib.request.urlopen(login, timeout=30).headers['Authorization']\r\nurl = endpoint + '?' + urllib.parse.urlencode({'query': QUERY})\r\nrequest = urllib.request.Request(url, headers=headers)\r\nrows = json.loads(urllib.request.urlopen(request, timeout=30).read().decode('utf-8'))['results']['bindings']\r\n\r\n# one entry per room number: {'A102': {'calculated': 491.0, 'status': 'FAIL', 'recommended': '...'}}\r\nresults = {}\r\nfor row in rows:\r\n    results[row['number']['value']] = {\r\n        'calculated': float(row['calculated']['value']),\r\n        'status': row['status']['value'],\r\n        'recommended': row['recommended']['value'] if 'recommended' in row else ''}\r\n\r\n# 2 · Write the answers into the rooms of the open model, in one transaction\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nrooms = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Rooms) \\\r\n                                     .WhereElementIsNotElementType().ToElements()\r\nreport = []\r\nTransactionManager.Instance.EnsureInTransaction(doc)\r\nfor room in rooms:\r\n    number = room.get_Parameter(BuiltInParameter.ROOM_NUMBER).AsString()\r\n    if number not in results:\r\n        continue\r\n    r = results[number]\r\n    room.LookupParameter('Lighting Status').Set(r['status'])\r\n    room.LookupParameter('Calculated Illuminance').Set(r['calculated'])\r\n    room.LookupParameter('Recommended Luminaire').Set(r['recommended'])\r\n    report.append('{}: {} lx, {} {}'.format(number, int(r['calculated']), r['status'], r['recommended']).strip())\r\nTransactionManager.Instance.TransactionTaskDone()\r\n\r\nOUT = report        # e.g. ['A102: 491 lx, FAIL Multilume Flat Delta 600x600', 'B102: 539 lx, PASS']\r\n",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "8ece5edc64d14f67bb023725c8c56507",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "023259471eb548b693adc3056529db86",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d8fbc1e3a3b2419c9d05d13b6f014032",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "b4b3526c3ac6499292e0b87534c650c6",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "45e7910e89564210b29326cd8c3299a5",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "237773bcd9f2422cbcef26c646cfbb87",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "dfdd6bd7f6324337bfd87324910c8a74",
+      "End": "023259471eb548b693adc3056529db86",
+      "Id": "2aac98ed02a5479ab19b2ef2b8ad6ab5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d8fbc1e3a3b2419c9d05d13b6f014032",
+      "End": "45e7910e89564210b29326cd8c3299a5",
+      "Id": "a0e74f52c8f14fcabcfda61d498c78c7",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "75cceecbfb974e23807d424797164180",
+        "Name": "GraphDB endpoint",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -66.461221767174266,
+        "Y": 245.12002717525209
+      },
+      {
+        "Id": "8ece5edc64d14f67bb023725c8c56507",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 509.794739166808,
+        "Y": 341.39213163438643
+      },
+      {
+        "Id": "b4b3526c3ac6499292e0b87534c650c6",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1027.8990278238753,
+        "Y": 381.1883473005891
+      }
+    ],
+    "Annotations": [],
+    "X": 381.60303096025063,
+    "Y": 55.869198470601816,
+    "Zoom": 0.70422587858429053
+  }
+}
