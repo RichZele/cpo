@@ -1,0 +1,185 @@
+# TADS23 Lecture 9 · Deliver · SPARQL queries
+# Every query has a number, and the same number is on the slide.
+# Step 5 of the information delivery cycle (answers) and the bridge to step 6 (back to Revit).
+#
+# GraphDB data, each file in its own named graph:
+#   graphdb/cpo-all.ttl                    in <https://w3id.org/cpo>
+#   graphdb/cpo-school-data.ttl            in <https://w3id.org/cpo/data>
+#   graphdb/ifcmodel_LBD.ttl               in <https://w3id.org/cpo/duplex>
+#   data/cpo-duplex-lighting.ttl           in <https://w3id.org/cpo/duplex-lighting>   (new, Lecture 9)
+# The rule L9-2 writes its results into a graph of their own: <https://w3id.org/cpo/results>.
+#
+# The lumen method: E = n x flux x UF x MF / A
+#   n     number of luminaires in the room
+#   flux  rated luminous flux of one luminaire, lm
+#   UF    utilisation factor, 0.6  (teaching assumption: share of the light that reaches the work plane)
+#   MF    maintenance factor, 0.8  (teaching assumption: dirt and ageing)
+#   A     floor area, m2
+#   E     average maintained illuminance on the work plane, lx
+#
+# Copy ONE query at a time: from the line under its number down to the next ═══ line.
+
+# ═══════════════════════════════════════════════════════════════
+# L9-1 · The inputs: luminaires, installed flux and area per classroom
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo:  <https://w3id.org/cpo#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?label (COUNT(?lum) AS ?n) (SUM(?flux) AS ?totalFlux) ?area ?required
+WHERE {
+  ?room a cpo:Classroom ;
+        rdfs:label ?label ;
+        cpo:hasArea/qudt:numericValue ?area ;
+        cpo:hasLightingRequirement/cpo:hasRequiredIlluminance/qudt:numericValue ?required .
+  ?lum cpo:installedIn ?room ;
+       cpo:hasProductType/cpo:hasLuminousFlux/qudt:numericValue ?flux .
+}
+GROUP BY ?label ?area ?required
+ORDER BY ?label
+
+# ═══════════════════════════════════════════════════════════════
+# L9-2 · The rule: compute E with the lumen method, and write it into the graph
+#        Run it again after a change: first L9-7, then L9-2.
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo:  <https://w3id.org/cpo#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX unit: <http://qudt.org/vocab/unit/>
+INSERT {
+  GRAPH <https://w3id.org/cpo/results> {
+    ?room cpo:hasCalculatedIlluminance ?e .
+    ?e a qudt:QuantityValue ;
+       qudt:numericValue ?E ;
+       qudt:unit unit:LUX .
+    ?room cpo:lightingStatus ?status .
+  }
+}
+WHERE {
+  {
+    SELECT ?room (SUM(?flux) AS ?totalFlux)
+    WHERE {
+      ?lum a cpo:Luminaire ;
+           cpo:installedIn ?room ;
+           cpo:hasProductType/cpo:hasLuminousFlux/qudt:numericValue ?flux .
+    }
+    GROUP BY ?room
+  }
+  ?room a cpo:Classroom ;
+        cpo:hasArea/qudt:numericValue ?area ;
+        cpo:hasLightingRequirement/cpo:hasRequiredIlluminance/qudt:numericValue ?required .
+  BIND (0.6 AS ?UF)
+  BIND (0.8 AS ?MF)
+  BIND (ROUND(?totalFlux * ?UF * ?MF / ?area) AS ?E)
+  BIND (IF(?E >= ?required, "PASS", "FAIL") AS ?status)
+  BIND (IRI(CONCAT(STR(?room), "_illuminance")) AS ?e)
+}
+
+# ═══════════════════════════════════════════════════════════════
+# L9-3 · CQ1: which classrooms are below the required illuminance?
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo:  <https://w3id.org/cpo#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?label ?calculated ?required ?status
+WHERE {
+  ?room cpo:lightingStatus ?status ;
+        rdfs:label ?label ;
+        cpo:hasCalculatedIlluminance/qudt:numericValue ?calculated ;
+        cpo:hasLightingRequirement/cpo:hasRequiredIlluminance/qudt:numericValue ?required .
+  FILTER (?status = "FAIL")
+}
+ORDER BY ?calculated
+
+# ═══════════════════════════════════════════════════════════════
+# L9-4 · CQ3: which catalogue types make a failing classroom compliant,
+#        with the same number of luminaires? And at what power?
+#        W/m2 = lighting power density: installed power per floor area.
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo:  <https://w3id.org/cpo#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?label ?n ?calculated ?wm2Now ?newType ?newE ?wm2New
+WHERE {
+  {
+    SELECT ?room (COUNT(?lum) AS ?n) (SUM(?p) AS ?watt)
+    WHERE {
+      ?lum cpo:installedIn ?room ;
+           cpo:hasProductType/cpo:hasRatedPower/qudt:numericValue ?p .
+    }
+    GROUP BY ?room
+  }
+  ?room cpo:lightingStatus "FAIL" ;
+        rdfs:label ?label ;
+        cpo:hasCalculatedIlluminance/qudt:numericValue ?calculated ;
+        cpo:hasArea/qudt:numericValue ?area ;
+        cpo:hasLightingRequirement/cpo:hasRequiredIlluminance/qudt:numericValue ?required .
+  ?type a cpo:LuminaireType ;
+        rdfs:label ?newType ;
+        cpo:hasLuminousFlux/qudt:numericValue ?flux ;
+        cpo:hasRatedPower/qudt:numericValue ?power .
+  BIND (ROUND(?n * ?flux * 0.6 * 0.8 / ?area) AS ?newE)
+  FILTER (?newE >= ?required)
+  BIND (ROUND(10 * ?watt / ?area) / 10 AS ?wm2Now)
+  BIND (ROUND(10 * ?n * ?power / ?area) / 10 AS ?wm2New)
+}
+ORDER BY ?label ?wm2New
+
+# ═══════════════════════════════════════════════════════════════
+# L9-5 · And with the type that is there: how many luminaires would the room need?
+#        n = required x A / (flux x UF x MF), rounded up
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo:  <https://w3id.org/cpo#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?label ?type (COUNT(?lum) AS ?nNow) ?nNeeded
+WHERE {
+  ?room cpo:lightingStatus "FAIL" ;
+        rdfs:label ?label ;
+        cpo:hasArea/qudt:numericValue ?area ;
+        cpo:hasLightingRequirement/cpo:hasRequiredIlluminance/qudt:numericValue ?required .
+  ?lum cpo:installedIn ?room ;
+       cpo:hasProductType ?t .
+  ?t rdfs:label ?type ;
+     cpo:hasLuminousFlux/qudt:numericValue ?flux .
+  BIND (CEIL(?required * ?area / (?flux * 0.6 * 0.8)) AS ?nNeeded)
+}
+GROUP BY ?label ?type ?nNeeded
+ORDER BY ?label
+
+# ═══════════════════════════════════════════════════════════════
+# L9-6 · For Dynamo: one row per room of the Revit model, matched by the room number
+#        The Dynamo script sends this query to GraphDB and writes the answers into Revit.
+# ═══════════════════════════════════════════════════════════════
+PREFIX cpo:   <https://w3id.org/cpo#>
+PREFIX qudt:  <http://qudt.org/schema/qudt/>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX props: <https://w3id.org/props#>
+SELECT ?number ?calculated ?status ?recommended
+WHERE {
+  ?room props:number ?number ;
+        cpo:lightingStatus ?status ;
+        cpo:hasCalculatedIlluminance/qudt:numericValue ?calculated .
+  OPTIONAL {                       # only for a failing room: the types that fix it (as L9-4)
+    SELECT ?room (GROUP_CONCAT(?fix; separator=", ") AS ?recommended)
+    WHERE {
+      {
+        SELECT ?room (COUNT(?lum) AS ?n)
+        WHERE { ?lum a cpo:Luminaire ; cpo:installedIn ?room . }
+        GROUP BY ?room
+      }
+      ?room cpo:lightingStatus "FAIL" ;
+            cpo:hasArea/qudt:numericValue ?area ;
+            cpo:hasLightingRequirement/cpo:hasRequiredIlluminance/qudt:numericValue ?required .
+      ?type a cpo:LuminaireType ;
+            rdfs:label ?fix ;
+            cpo:hasLuminousFlux/qudt:numericValue ?flux .
+      FILTER (ROUND(?n * ?flux * 0.6 * 0.8 / ?area) >= ?required)
+    }
+    GROUP BY ?room
+  }
+}
+ORDER BY ?number
+
+# ═══════════════════════════════════════════════════════════════
+# L9-7 · Undo: remove the results, before you run L9-2 again
+# ═══════════════════════════════════════════════════════════════
+DROP SILENT GRAPH <https://w3id.org/cpo/results>

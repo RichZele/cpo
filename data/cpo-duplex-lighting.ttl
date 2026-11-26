@@ -1,0 +1,135 @@
+@prefix cpo:     <https://w3id.org/cpo#> .
+@prefix inst:    <https://w3id.org/cpo/data/> .
+@prefix ifcdata: <https://w3id.org/cpo/duplex/> .
+@prefix qudt:    <http://qudt.org/schema/qudt/> .
+@prefix unit:    <http://qudt.org/vocab/unit/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+# =====================================================================
+#  CPO worked example, Lecture 9: luminaires in the two Duplex classrooms
+#  A102 and B102 come from the Duplex IFC model (graphdb/ifcmodel_LBD.ttl), same IRIs.
+#  Area and requirement: as after the repair in Lecture 8 (notebook cpo-lecture8-shacl, Run 6):
+#  props:area 30.14165 from IFC, rounded to 30.14 m2; requirement EN 12464-1:2021, 500 lx.
+#  The luminaires: eight in each room, as placed in the Revit model for Lecture 9.
+#    A102: 8 x Multilume Flat Delta 300x1200 (23916-529, 3853 lm, 30.5 W)
+#    B102: 8 x Multilume Flat Delta 600x600  (23784-402, 4231 lm, 37 W)
+#  Until the luminaires are exported from Revit through IFC, they are stated here, with
+#  IRIs of the form ifcdata:luminaire_<room>_Lnn.
+#  The types are in data/cpo-school-data.ttl (the catalogue).
+#  Two new properties for the results of the lumen method: proposed for the Requirement module.
+# =====================================================================
+
+<https://w3id.org/cpo/data/duplex-lighting> a owl:Ontology ;
+    rdfs:label "CPO example data: luminaires in the Duplex classrooms"@en ;
+    owl:versionInfo "1.0" .
+
+# ---- two new properties: written by the lumen-method rule, read by Dynamo
+cpo:hasCalculatedIlluminance a owl:ObjectProperty ;
+    rdfs:label "has calculated illuminance"@en ;
+    rdfs:comment "The average maintained illuminance of a space, calculated with the lumen method: E = n x flux x UF x MF / A. A qudt:QuantityValue in lux."@en ;
+    rdfs:range qudt:QuantityValue .
+
+cpo:lightingStatus a owl:DatatypeProperty ;
+    rdfs:label "lighting status"@en ;
+    rdfs:comment "PASS if the calculated illuminance meets the required illuminance, otherwise FAIL."@en ;
+    rdfs:range xsd:string .
+
+# ---- the two classrooms (A102 and B102 in the IFC model)
+ifcdata:space_0BTBFw6f90Nfh9rP1dlXr2 a cpo:Classroom ;
+    cpo:hasArea ifcdata:space_0BTBFw6f90Nfh9rP1dlXr2_area ;
+    cpo:hasLightingRequirement inst:req_EN12464_classroom .
+
+ifcdata:space_0BTBFw6f90Nfh9rP1dlXr2_area a qudt:QuantityValue ;
+    qudt:numericValue "30.14"^^xsd:decimal ;
+    qudt:unit unit:M2 .
+
+ifcdata:space_0BTBFw6f90Nfh9rP1dl_CZ a cpo:Classroom ;
+    cpo:hasArea ifcdata:space_0BTBFw6f90Nfh9rP1dl_CZ_area ;
+    cpo:hasLightingRequirement inst:req_EN12464_classroom .
+
+ifcdata:space_0BTBFw6f90Nfh9rP1dl_CZ_area a qudt:QuantityValue ;
+    qudt:numericValue "30.14"^^xsd:decimal ;
+    qudt:unit unit:M2 .
+
+# ---- the luminaires: eight per room
+ifcdata:luminaire_A102_L01 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dlXr2 .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_A102_L01 .
+
+ifcdata:luminaire_A102_L02 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dlXr2 .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_A102_L02 .
+
+ifcdata:luminaire_A102_L03 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dlXr2 .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_A102_L03 .
+
+ifcdata:luminaire_A102_L04 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dlXr2 .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_A102_L04 .
+
+ifcdata:luminaire_A102_L05 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dlXr2 .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_A102_L05 .
+
+ifcdata:luminaire_A102_L06 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dlXr2 .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_A102_L06 .
+
+ifcdata:luminaire_A102_L07 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dlXr2 .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_A102_L07 .
+
+ifcdata:luminaire_A102_L08 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23916-529 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dlXr2 .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_A102_L08 .
+
+ifcdata:luminaire_B102_L01 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dl_CZ .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_B102_L01 .
+
+ifcdata:luminaire_B102_L02 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dl_CZ .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_B102_L02 .
+
+ifcdata:luminaire_B102_L03 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dl_CZ .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_B102_L03 .
+
+ifcdata:luminaire_B102_L04 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dl_CZ .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_B102_L04 .
+
+ifcdata:luminaire_B102_L05 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dl_CZ .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_B102_L05 .
+
+ifcdata:luminaire_B102_L06 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dl_CZ .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_B102_L06 .
+
+ifcdata:luminaire_B102_L07 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dl_CZ .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_B102_L07 .
+
+ifcdata:luminaire_B102_L08 a cpo:Luminaire ;
+    cpo:hasProductType inst:type_23784-402 ;
+    cpo:installedIn ifcdata:space_0BTBFw6f90Nfh9rP1dl_CZ .
+inst:schoolProject cpo:hasProduct ifcdata:luminaire_B102_L08 .
